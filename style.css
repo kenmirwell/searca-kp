@@ -1,0 +1,31 @@
+/*
+    Theme Name: Serca Knowlege Platform
+    Theme URI: https://wordpress.org/themes/searca/
+    Author: Blink Creative Studio
+    Version: 1.0
+*/
+
+body {
+    font-family: 'inter';
+}
+
+.primary-menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    position: relative;
+}
+
+.primary-menu .sub-menu {
+    display: none;
+    font-weight: 200;
+    position: absolute;
+    background-color: #ffffff;
+}
+
+.primary-menu .sub-menu li {
+    padding: 5px 15px;
+    font-size: 14px;
+    max-width: 235px;
+}
