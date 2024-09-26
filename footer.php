@@ -1,8 +1,8 @@
 <div class="bg-[#101010] mt-[50px]">
-    <div class="w-[1300px] mx-auto py-[50px] font-extralight">
+    <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[35px] lg:py-[50px] font-extralight">
         <div class="border-b-[1px] border-[#ffffff]">
-            <div>
-                <svg width="233" height="57" viewBox="0 0 233 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="w-[100px] md:w-[200px]">
+                <svg width="full" height="full" viewBox="0 0 233 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M70.599 0.130316C70.7061 0.716266 70.6311 1.75796 70.6632 2.35476C70.5348 2.60433 70.385 2.2354 70.3101 2.17029C69.6038 1.64945 67.5918 1.31307 67.4099 2.64773C67.3671 2.96241 67.4955 3.29879 67.7631 3.61347C68.6941 4.67686 70.7382 5.14345 71.5515 6.55407C72.3541 7.94299 71.894 10.0589 71.0164 11.003C70.2673 11.8059 68.9831 12.2834 67.6988 12.2074C66.939 12.164 66.008 11.6757 65.2695 12.0881V9.62489C65.8688 10.0589 66.9176 10.6883 68.1697 10.5255C69.2292 10.3953 70.3315 9.42957 69.9462 7.99725C69.4539 6.18514 65.9973 5.78366 65.4408 3.61347C64.8736 1.37817 66.7678 -0.173511 68.876 0.0109551C69.4432 0.0543589 70.0639 0.379887 70.599 0.130316Z" fill="white"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M129.329 0.0107422C131.17 3.87368 132.743 8.00789 134.605 11.8491C134.049 12.1095 133.043 11.9034 132.294 11.9685C132.411 10.9376 131.791 10.2215 131.523 9.38596C130.292 9.24489 128.815 9.36425 127.488 9.32085C127.157 10.113 126.547 10.9159 126.664 11.9685H124.535C124.449 11.6864 124.674 11.491 124.77 11.2523C125.862 8.60469 126.996 5.8377 128.088 3.13581C128.516 2.08327 128.848 1.01988 129.329 0.0107422ZM128.023 7.5847H130.806C130.442 6.22833 129.875 5.07813 129.383 3.86283C128.869 5.04558 128.366 6.23918 128.023 7.5847Z" fill="white"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M220.639 0.0764959C223.464 -0.21648 225.637 1.40031 226.568 3.25582C227.135 4.40602 227.242 5.65388 227.157 6.73897C226.996 8.87661 225.658 10.5368 224.31 11.3615C222.683 12.3598 220.072 12.5117 218.21 11.3615C216.369 10.2221 215.128 7.91088 215.427 5.2958C215.609 3.66816 216.262 2.70242 217.15 1.81265C218.007 0.944571 218.959 0.250111 220.65 0.0656449L220.639 0.0764959ZM217.322 4.57964C216.316 7.46599 218.467 10.1679 220.757 10.4066C221.988 10.5368 223.347 10.1245 224.256 9.20214C224.995 8.45342 225.765 6.80408 225.38 5.12218C224.931 3.13646 223.111 1.46542 220.521 1.87775C218.98 2.12732 217.76 3.32093 217.322 4.57964Z" fill="white"/>
@@ -60,11 +60,11 @@
                     <path d="M45.1406 40.1592C45.0654 40.1917 45.0117 40.2026 44.9688 40.2351" stroke="white" stroke-width="0.14" stroke-linecap="round"/>
                 </svg>
             </div>
-            <div class="flex justify-between items-center py-[20px]">
-                <div class="text-[#ffffff]">
+            <div class="flex flex-col lg:flex-row lg:justify-between py-[20px]">
+                <div class="text-[#ffffff] text-[12px] md:text-[14px] lg:text-[16px]">
                     <p>SEARCA’s Agriculture, Forestry, and Natural<br> Resources (AFNR) Knowledge Platform</p>
                 </div>
-                <div class="flex justify-between gap-[15px]">
+                <div class="flex lg:justify-between gap-[6px] lg:gap-[15px]">
                     <div>
                         <svg width="30" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 0C8.955 0 0 8.955 0 20C0 31.045 8.955 40 20 40C31.045 40 40 31.045 40 20C40 8.955 31.045 0 20 0ZM24.36 19.9987H21.5613V30.1537H17.365V20H15.2688V16.5H17.365V14.3988C17.365 11.5437 18.5487 9.84625 21.9112 9.84625H24.7112V13.3463H22.9613C21.6525 13.3463 21.565 13.8363 21.565 14.7475L21.5613 16.5H24.7313L24.36 19.9987Z" fill="white"/>
@@ -84,11 +84,11 @@
                 </div>
             </div>
         </div>
-        <div class="text-[#ffffff] flex justify-between py-[10px]">
-            <div>
+        <div class="text-[#ffffff] flex flex-col-reverse lg:flex-row justify-between py-[10px]">
+            <div class="pt-[5px] lg:pt-0 text-[12px] md:text-[14px] lg:text-[16px]">
                 <p>© 2024 SEAMEO SEARCA, All Rights Reserved.</p>
             </div>
-            <ul class="flex justify-between gap-[20px]">
+            <ul class="flex flex-wrap lg:flex-nowrap text-[12px] md:text-[14px] lg:text-[16px] gap-[7px] lg:gap-[20px]">
                 <li>News & Update</li>
                 <li>Knowlege Products</li>
                 <li>Tools & Services</li>

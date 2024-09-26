@@ -17,15 +17,249 @@ body {
     position: relative;
 }
 
+.primary-menu .menu-item {
+    font-size: 16px;
+    min-width: 100px; 
+    transition: all 0.1s ease;
+}
+
+.primary-menu .menu-item:hover {
+    color: #096936;
+    font-weight: 600;
+}
+
+.primary-menu .menu-item-type-custom:hover > .sub-menu {
+    display: block;
+}
+
 .primary-menu .sub-menu {
+    color: #000000;
     display: none;
     font-weight: 200;
     position: absolute;
     background-color: #ffffff;
+    z-index: 9999;
+    width: 250px;
 }
 
 .primary-menu .sub-menu li {
     padding: 5px 15px;
     font-size: 14px;
-    max-width: 235px;
+    width: 100%;
+}
+
+.primary-menu .sub-menu li:hover {
+    color: red;
+    width: 100%;
+}
+
+.banner-slider .slide-container .slide-content {
+    color: #ffffff;
+}
+
+.banner-slider .slide-container .slide-content h1 {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.banner-slider .slide-container > .text-left {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.banner-slider .slide-container .text-left .text-container p {
+    padding: 30px 0;
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+.banner-slider .slide-container .text-left .text-container a {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #F3BD1C;
+    border-radius: 5px;
+}
+
+.banner-slider .slide-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 600px !important;
+}
+
+.banner-slider .slide-container > .text-right {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.banner-slider .slide-container .text-right .text-container p {
+    padding: 30px 0;
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+.banner-slider .slide-container .text-right .text-container a {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #F3BD1C;
+    border-radius: 5px;
+}
+
+.banner-slider .slide-container > .center-align {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+
+.banner-slider .slide-container .center-align .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-slider .slide-container .center-align .text-container p {
+    padding: 30px 0;
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+.banner-slider .slide-container .center-align .text-container .wp-block-buttons {
+    justify-content: center;
+}
+
+.banner-slider .slide-container .center-align .text-container a {
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #F3BD1C;
+    border-radius: 5px;
+}
+
+.banner-slider .slick-dots {
+    bottom: 35px !important;
+}
+
+.banner-slider .slick-dots li button:before {
+    font-size: 8px !important;
+    color: #ffffff !important;
+}
+
+.banner-slider .slick-dots li.slick-active button:before {
+    font-size: 8px !important;
+}
+
+.banner-slider .slick-dots li.slick-active button:before {
+    color: #ffffff !important;
+}
+
+
+
+.custom-checkbox {
+    display: none; /* Hide the default checkbox */
+}
+
+.custom-checkbox + label {
+    position: relative;
+    padding-left: 25px; /* Space for custom checkbox */
+    cursor: pointer;
+}
+
+.custom-checkbox + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 18px; /* Size of the custom checkbox */
+    height: 18px;
+    border: 1px solid #9A9A9A; /* Border color */
+    border-radius: 3px; /* Optional: rounded corners */
+    background-color: #fff; /* Default background color */
+}
+
+.custom-checkbox:checked + label::before {
+    background-color: #196129; /* Background color when checked */
+    border-color: #196129; /* Border color when checked */
+}
+
+.featured-material-slider .slick-track {
+    display: flex !important; 
+    gap: 20px !important;
+}
+
+.featured-material-slider .slick-dots {
+    bottom: -40px !important;
+}
+
+.featured-material-slider .slick-dots li button:before {
+    font-size: 8px !important;
+    color: #000000 !important;
+}
+
+.featured-material-slider .slick-dots li.slick-active button:before {
+    font-size: 8px !important;
+}
+
+.featured-material-slider .slick-dots li.slick-active button:before {
+    color: #000000 !important;
+}
+
+@media (max-width: 1280px) {
+    .primary-menu .menu-item {
+        font-size: 14px;
+    }
+
+    .custom-logo-link img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 1024px) {.banner-slider 
+    .primary-menu {
+        display: none;
+    }
+
+    .slide-container > .text-left {
+        flex-direction: column-reverse;
+    }
+
+    .slide-container .slide-content h1 {
+        font-size: 22px;
+    }
+
+    .slide-container .text-left .text-container p {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+    
+    .slide-container .text-left .text-container a {
+        font-size: 12px;
+    }
+
+    /** right align hero banner */
+    .slide-container > .text-right {
+        flex-direction: column-reverse;
+    }
+
+    .slide-container .text-right .text-container p {
+        font-size: 12px;
+        padding: 10px 0;
+    }
+    
+    .slide-container .text-right .text-container a {
+        font-size: 12px;
+    }
+
+    /** center */
+    .slide-container .center-align .text-container p {
+        font-size: 12px;
+    }
+
+    .slide-container .center-align .text-container a {
+       font-size: 12px;
+    }
 }
