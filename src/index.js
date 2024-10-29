@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let isShown = false;
     let onSearch = false;
     let modalStatus = false;
+    let popupStatus = false;
     const overview = document.getElementById("material-overview")
     const content = document.getElementById("material-content")
     const testimonials = document.getElementById("material-testimonials")
@@ -63,13 +64,29 @@ document.addEventListener("DOMContentLoaded", function () {
     window.onModal = function(id) {
         const modal = document.getElementById(id)
 
-        console.log("id", id)
+        const popup = document.getElementById('auth')
+        popup.style.display = "none"
+        popupStatus = false;
+
+
         if(modalStatus) {
             modal.style.display = "none"
             modalStatus = false;
         } else {
             modal.style.display = "flex"
             modalStatus = true;
+        }   
+    }
+
+    window.handlePopup = function(id) {
+        const popup = document.getElementById('auth')
+
+        if(popupStatus) {
+            popup.style.display = "none"
+            popupStatus = false;
+        } else {
+            popup.style.display = "flex"
+            popupStatus = true;
         }
     }
 

@@ -6,13 +6,14 @@
 
         $thematic_area = get_field("thematic_area");
         $downloadable = get_field("downloadable");
+        $external_source = get_field("external_source");
 ?>
     <div>
         <div class="w-[1100px] mx-auto">
-            <div class="pt-[20px] pb-[60px] text-[14px] font-light flex gap-[5px]">
-                <p><a href="/">Home |</a></p>
-                <p><a href="<?php echo get_the_permalink( $thematic_area); ?>"><?php echo get_the_title( $thematic_area ); ?></a> |</p>
-                <p><?php the_title(); ?></p>
+            <div class="pt-[20px] pb-[60px] text-[14px] font-extralight flex gap-[5px]">
+                <p class="cursor-pointer"><a href="/">Home |</a></p>
+                <p class="cursor-pointer"><a href="<?php echo get_the_permalink( $thematic_area); ?>"><?php echo get_the_title( $thematic_area ); ?></a> |</p>
+                <p class="cursor-pointer"><?php the_title(); ?></p>
             </div>
         </div>
         <div class="w-[1100px] mx-auto">
@@ -42,7 +43,13 @@
                         </div>
                     </div>
                     <div>
+                        <?php 
+                            if($downloadable) {
+                        ?>
                         <a href="<?php echo $downloadable ?>">Download</a> 
+                        <?php } else { ?>
+                        <a href="<?php echo $external_source ?>">Download</a> 
+                        <?php }?>
                     </div>
                 </div>
             </div>

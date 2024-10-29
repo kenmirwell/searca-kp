@@ -13,19 +13,18 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
+    width: 700px;
 }
 
-.primary-menu .menu-item {
-    font-size: 16px;
-    min-width: 100px; 
+.primary-menu > .menu-item {
+    font-size: 14px;
     transition: all 0.1s ease;
 }
 
 .primary-menu .menu-item:hover {
     color: #096936;
-    font-weight: 600;
 }
 
 .primary-menu .menu-item-type-custom:hover > .sub-menu {
@@ -40,6 +39,8 @@ body {
     background-color: #ffffff;
     z-index: 9999;
     width: 250px;
+    padding: 10px 0;
+    border-radius: 10px;
 }
 
 .primary-menu .sub-menu li {
@@ -49,8 +50,12 @@ body {
 }
 
 .primary-menu .sub-menu li:hover {
-    color: red;
+    color: #096936;
     width: 100%;
+}
+
+.menu-item-type-custom {
+    display: none;
 }
 
 .banner-slider .slide-container .slide-content {
@@ -206,6 +211,40 @@ body {
 
 .featured-material-slider .slick-dots li.slick-active button:before {
     color: #000000 !important;
+}
+
+.custom-logo-link img {
+    width: 150px;
+}
+
+.component-list {
+    list-style: none; 
+    padding-left: 0; 
+  }
+  
+.component-list li {
+    position: relative; 
+    padding-left: 20px; 
+}
+
+.component-list li::before {
+    content: "•"; 
+    position: absolute;
+    left: 0; 
+    color: #ffffff; 
+    font-size: 14px;
+}
+
+#login h1 {
+    /* display: none; */
+}
+
+#verified_email {
+    outline: none;
+    border-color: #e5e7eb;
+    font-style: italic;
+    color: #196129;
+    cursor: not-allowed;
 }
 
 @media (max-width: 1280px) {

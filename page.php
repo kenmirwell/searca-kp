@@ -3,8 +3,22 @@
 
     while (have_posts()) {
         the_post();
-?>
 
+        $cadre_objectives = get_field("cadre-objectives");
+?>
+<div class="bg-[#196129]">
+    <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[10px] font-light">
+        <div>
+            <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight">
+                <p class="cursor-pointer"><a href="/">Home |</a></p>
+                <p class="cursor-pointer"><?php the_title()?></p>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+    the_content();
+?>
 
 <?php }
 

@@ -3,6 +3,14 @@
 
     while (have_posts()) {
         the_post();
+
+        $agpractices_brief_description = get_field("agpractices_brief_description");
+        $agpractices_gallery = get_field("aggallery_item");
+        $link_to_agpractices = get_field("link_to_agpractices");
+        $cop_image = get_field("cop_image");
+        $cop_title = get_field("cop_title");
+        $cop_description = get_field("cop_description");
+        $cop_link = get_field("cop_link");
 ?>
     <div>
         <div class="bg-[#196129]">
@@ -80,10 +88,10 @@
                 </div>
             </div>
         </div>
-        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[10px]">
-            <div class="pb-[20px] md:pb-[40px]">
+        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pt-[100px]">
+            <div class="flex flex-col gap-[5px] items-center text-center w-[700px] mx-auto pb-[20px] md:pb-[40px]">
                 <div class="text-[22px] lg:text-[32px]">
-                    <h2>Thematic Areas</h2>
+                    <h2>Components</h2>
                 </div>
                 <div class="font-light md:font-normal text-[12px] lg:text-[16px]">
                     <p>Knowledge products by thematic areas from the research initiatives and various activities of SEARCA and its partners</p>
@@ -102,7 +110,11 @@
 
                             $logo_url = get_field("thematic_logo");
 
-                            $card_color = get_field("thematic_color")
+                            $card_color = get_field("thematic_color");
+
+                            $aspiring_outcome = get_field("aspirational_outcome");
+
+                            $expected_output = get_field("expected_output");
                 ?>
                 <div class="hidden sm:block w-[200px] lg:w-[330px] h-[300px] xl:h-[500px] mb-[100px]">
                     <div class="h-[65%] xl:h-[50%] overflow-hidden rounded-t-xl relative bg-[#ffffff]">
@@ -130,7 +142,7 @@
                                     <h4><?php the_title()?></h4>
                                 </div>
                                 <div class="pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff]">
-                                    <?php the_content()?>
+                                    <?php echo $aspiring_outcome?>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +166,7 @@
                                             <h4><?php the_title()?></h4>
                                         </div>
                                         <div class="pt-[5px] font-extralight text-[10px] text-[#ffffff]">
-                                            <?php the_content()?>
+                                            <?php echo $aspiring_outcome?>
                                         </div>
                                     </div>
                                 </div>
@@ -171,6 +183,129 @@
                     </div>
                 </div>
                 <?php } } ?>
+            </div>
+        </div>
+        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pt-[200px]">
+            <div class="flex flex-col gap-[5px] items-center text-center w-[700px] mx-auto pb-[20px] md:pb-[40px]">
+                <div class="text-[22px] lg:text-[32px]">
+                    <h2>AgPractices & Domains Platform</h2>
+                </div>
+                <div class="font-light md:font-normal text-[12px] lg:text-[16px]">
+                    <p><?php echo $agpractices_brief_description ?></p>
+                </div>
+            </div>
+            <div class="w-[1000px] mx-auto pt-[50px]">
+                <div class="grid grid-cols-3 gap-[20px]">
+                        <?php  
+                            foreach($agpractices_gallery as $agpractices_item) {
+                        ?>
+                        <div class="flex justify-center">
+                            <div class="rounded-lg shadow overflow-hidden">
+                                <div class="w-[100%] hover:scale-105 transition-all duration-200 ease">
+                                    <img class="w-full h-full object-cover" src="<?php echo esc_url($agpractices_item['ag_item_image']) ?>" alt="">
+                                </div>
+                                <div class="p-[10px]">
+                                    <h6><?php echo $agpractices_item['ag_item_author'] ?></h6>
+                                    <h6><?php echo $agpractices_item['ag_item_country'] ?></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                            }
+                        ?>
+                </div>
+            </div>
+            <div class="flex justify-center pt-[50px]">
+                <a class="p-[20px] border-[1px] border-[#000000] rounded-lg" href="<?php echo $link_to_agpractices ?>">Learn More</a>
+            </div>
+        </div>
+        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pt-[200px]">
+            <div class="flex items-center gap-[40px] relative">
+                <div class="rounded-lg overflow-hidden">
+                    <img src="<?php echo esc_url($cop_image) ?>" alt="">
+                </div>
+                <div class="pt-[20px] absolute font-[600] text-center top-[75%] w-[100%]">
+                    <a href="<?php echo esc_url($cop_link) ?>">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pt-[200px]">
+            <div class="w-[100%] flex justify-center items-center">
+                <h6 class="text-[24px] font-[600]">Knowledge Management</h6>
+            </div>
+            <div class="w-[100%] flex justify-center text-center pt-[20px]">
+                <p>All research results and events documentation will be disseminated through this component. A database of relevant statistical data will also be built, beginning with data on priority agricultural commodities and other socio-economic indicators. Regular bulletins will be produced to report the updates on CADRE's initiatives. This component will also create and manage a dedicated webpage and social media accounts. A Community of Practice (COP) will be formed under CADRE to facilitate discussions on relevant agricultural issues in the region.</p>
+            </div>
+            <div class="w-[100%] text-center pt-[50px] font-[600]">
+                <p>Featured Resources</p>
+            </div>
+            <div class="flex justify-between gap-[30px] relative py-[20px] w-[1000px] mx-auto">
+                <?php 
+                    $knowledge_management = new WP_Query(array(
+                        "post_type" => "knowledge-management",
+                        "tax_query" => array(
+                            array(
+                                "taxonomy" => "km_category",
+                                "field"    => "slug",
+                                "terms"    => "Featured",
+                            ),
+                        ),
+                    ));
+
+                    if ($knowledge_management->have_posts()) {
+                        while ($knowledge_management->have_posts()){
+                            $knowledge_management->the_post();
+                ?>
+                    <div class="flex justify-start gap-[20px] w-[320px]">
+                        <div class="h-[420px] rounded-[15px] overflow-hidden group hover:shadow-md transition-all duration-200 ease cursor-pointer">
+                                <div class="h-[30%] overflow-hidden relative bg-[#ffffff]">
+                                    <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
+                                    <div class="w-[100%] h-[100%] absolute top-0 left-0">
+                                            <?php
+                                                if ( has_post_thumbnail() ) {
+                                                    $thumbnail_url = get_the_post_thumbnail_url();
+                                            ?>
+                                                <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
+                                            <?php
+                                                }
+                                            ?>
+                                    </div>
+                                </div>
+                                <div class="h-[100%] px-[20px] pb-[40px] bg-[#EAE9E5] group-hover:bg-[#FFF7E0] transition-all duration-200 ease">
+                                    <div class="flex justify-between items-center pt-[10px]">
+                                        <div class="flex items-center gap-[10px]">
+                                            <div onclick="onModal('author-modal')" class="rounded-full h-[40px] w-[40px] bg-[#ffffff]"></div>
+                                            <div>
+                                                <p class="text-[#7C7C7C] text-[12px]">
+                                                    <?php if($author_ID){ ?>        
+                                                            <p class="text-[#7C7C7C] text-[12px]"><?php echo get_the_title( $author_ID ); ?></p>
+                                                    <?php } else { ?>    
+                                                            <p class="text-[#7C7C7C] text-[12px]"></p>
+                                                    <?php } ?>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <p class="text-[#7C7C7C] text-center font-light text-[12px]">30 mins</p>
+                                    </div>
+                                    <div class="text-[16px] font-bold pt-[20px]">
+                                        <h4><?php the_title()?></h4>
+                                    </div>
+                                    <div class="pt-[10px] font-extralight text-[12px] h-[50px] overflow-hidden">
+                                        <p><?php the_content()?></p>
+                                    </div>
+                                    <div class="flex justify-between items-center mt-[30px]">
+                                        <p class="text-[14px] font-light text-[#7C7C7C]">Published Date</p>
+                                        <a href="<?php echo get_permalink($learning_materials_id) ?>" class="text-[#196129] px-[8px] py-[5px] text-[14px]">View Now</a>  
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                <?php   }
+                    }
+                ?>
+            </div>
+            <div class="w-[100%] text-center items-center">
+                <a href="https://bcsdevelopmentgator.site/knowledge-management/">See More</a>
             </div>
         </div>
     </div>
