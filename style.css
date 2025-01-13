@@ -7,6 +7,7 @@
 
 body {
     font-family: 'inter';
+    line-height: 1.675;
 }
 
 .primary-menu {
@@ -15,7 +16,7 @@ body {
     gap: 20px;
     align-items: flex-start;
     position: relative;
-    width: 700px;
+    width: 705px;
 }
 
 .primary-menu > .menu-item {
@@ -55,7 +56,11 @@ body {
 }
 
 .menu-item-type-custom {
-    display: none;
+    /* display: none; */
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0 !important;
 }
 
 .banner-slider .slide-container .slide-content {
@@ -165,12 +170,12 @@ body {
 
 
 .custom-checkbox {
-    display: none; /* Hide the default checkbox */
+    display: none; 
 }
 
 .custom-checkbox + label {
     position: relative;
-    padding-left: 25px; /* Space for custom checkbox */
+    padding-left: 25px; 
     cursor: pointer;
 }
 
@@ -179,16 +184,16 @@ body {
     position: absolute;
     left: 0;
     top: 2px;
-    width: 18px; /* Size of the custom checkbox */
+    width: 18px; 
     height: 18px;
-    border: 1px solid #9A9A9A; /* Border color */
-    border-radius: 3px; /* Optional: rounded corners */
-    background-color: #fff; /* Default background color */
+    border: 1px solid #9A9A9A; 
+    border-radius: 3px; 
+    background-color: #fff; 
 }
 
 .custom-checkbox:checked + label::before {
-    background-color: #196129; /* Background color when checked */
-    border-color: #196129; /* Border color when checked */
+    background-color: #196129; 
+    border-color: #196129; 
 }
 
 .featured-material-slider .slick-track {
@@ -235,6 +240,10 @@ body {
     font-size: 14px;
 }
 
+.component-banner-description ul li {
+    padding: 20px 0px 0px 20px;
+}
+
 #login h1 {
     /* display: none; */
 }
@@ -245,6 +254,140 @@ body {
     font-style: italic;
     color: #196129;
     cursor: not-allowed;
+}
+
+.arrowed-list, .check-list, .numbered-list, .numbered, .bulleted {
+    position: relative;;
+}
+
+.check-list li, .arrowed-list li, .numbered-list li, .numbered li, .bulleted li{
+    padding-left: 30px;
+    margin-bottom: 5px
+}
+
+.check-list li::before {
+    content: "\2713";
+    position: absolute;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    background-color: #196129;
+}
+
+.arrowed-list li::before {
+    content: "\2192";
+    position: absolute;
+    background-repeat: no-repeat;
+    color: #196129;
+    border: 2px solid #196129;
+}
+
+.bulleted li::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    left: 0px;
+    margin-top: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numbered-list, .numbered {
+    counter-reset: list-counter;
+}
+
+.numbered-list li, .numbered li {
+    counter-increment: list-counter;
+}
+
+.numbered li::before {
+    content: counter(list-counter);
+    position: absolute;
+    background-repeat: no-repeat;
+    color: #000000
+} 
+
+.numbered-list li::before {
+    content: counter(list-counter);
+    position: absolute;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    background-color: #196129;
+    border-radius: 5px;
+}
+
+.check-list li::before, .arrowed-list li::before, .numbered-list li::before, .numbered li::before {
+    position: absolute;
+    background-repeat: no-repeat;
+    left: 0px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span .current {
+    color: #196129;
+    border-bottom: 2px solid #196129;
+    margin-bottom: 5px;
+}
+
+.loader-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #34db55; 
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    animation: spin 2s linear infinite;
+}
+
+#research_author {
+    width: 100%;
+}
+
+.search-item-content {
+    max-height: 85px;
+    overflow-y: hidden;
+}
+
+.active-page {
+    color: #196129;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.numbered-pagination-button {
+    padding: 5px 15px;
+}
+
+.elipsis {
+    padding: 0px 10px;
+}
+
+.e-con-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0px !important;
+}
+
+.elementor-element {
+    padding: 0px !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 @media (max-width: 1280px) {

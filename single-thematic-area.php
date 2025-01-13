@@ -86,47 +86,47 @@
                             ?>
                             <div class="flex justify-start gap-[20px]">
                                 <div class="h-[420px] rounded-[15px] overflow-hidden group hover:shadow-md transition-all duration-200 ease cursor-pointer">
-                                        <div class="h-[30%] overflow-hidden relative bg-[#ffffff]">
-                                            <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
-                                            <div class="w-[100%] h-[100%] absolute top-0 left-0">
-                                                    <?php
-                                                        if ( has_post_thumbnail() ) {
-                                                            $thumbnail_url = get_the_post_thumbnail_url();
-                                                    ?>
-                                                        <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
-                                                    <?php
-                                                        }
-                                                    ?>
-                                            </div>
-                                        </div>
-                                        <div class="h-[100%] px-[20px] pb-[40px] bg-[#EAE9E5] group-hover:bg-[#FFF7E0] transition-all duration-200 ease">
-                                            <div class="flex justify-between items-center pt-[10px]">
-                                                <div class="flex items-center gap-[10px]">
-                                                    <div onclick="onModal('author-modal')" class="rounded-full h-[40px] w-[40px] bg-[#ffffff]"></div>
-                                                    <div>
-                                                        <p class="text-[#7C7C7C] text-[12px]">
-                                                            <?php if($author_ID){ ?>        
-                                                                    <p class="text-[#7C7C7C] text-[12px]"><?php echo get_the_title( $author_ID ); ?></p>
-                                                            <?php } else { ?>    
-                                                                    <p class="text-[#7C7C7C] text-[12px]"></p>
-                                                            <?php } ?>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <p class="text-[#7C7C7C] text-center font-light text-[12px]">30 mins</p>
-                                            </div>
-                                            <div class="text-[16px] font-bold pt-[20px]">
-                                                <h4><?php the_title()?></h4>
-                                            </div>
-                                            <div class="pt-[10px] font-extralight text-[12px] h-[50px] overflow-hidden">
-                                                <p><?php the_content()?></p>
-                                            </div>
-                                            <div class="flex justify-between items-center mt-[30px]">
-                                                <p class="text-[14px] font-light text-[#7C7C7C]">Published Date</p>
-                                                <a href="<?php echo get_permalink($learning_materials_id) ?>" class="text-[#196129] px-[8px] py-[5px] text-[14px]">View Now</a>  
-                                            </div>
+                                    <div class="h-[30%] overflow-hidden relative bg-[#ffffff]">
+                                        <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
+                                        <div class="w-[100%] h-[100%] absolute top-0 left-0">
+                                                <?php
+                                                    if ( has_post_thumbnail() ) {
+                                                        $thumbnail_url = get_the_post_thumbnail_url();
+                                                ?>
+                                                    <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
+                                                <?php
+                                                    }
+                                                ?>
                                         </div>
                                     </div>
+                                    <div class="h-[100%] px-[20px] pb-[40px] bg-[#EAE9E5] group-hover:bg-[#FFF7E0] transition-all duration-200 ease">
+                                        <div class="flex justify-between items-center pt-[10px]">
+                                            <div class="flex items-center gap-[10px]">
+                                                <div onclick="onModal('author-modal')" class="rounded-full h-[40px] w-[40px] bg-[#ffffff]"></div>
+                                                <div>
+                                                    <p class="text-[#7C7C7C] text-[12px]">
+                                                        <?php if($author_ID){ ?>        
+                                                                <p class="text-[#7C7C7C] text-[12px]"><?php echo get_the_title( $author_ID ); ?></p>
+                                                        <?php } else { ?>    
+                                                                <p class="text-[#7C7C7C] text-[12px]"></p>
+                                                        <?php } ?>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <p class="text-[#7C7C7C] text-center font-light text-[12px]">30 mins</p>
+                                        </div>
+                                        <div class="text-[16px] font-bold pt-[20px]">
+                                            <h4><?php the_title()?></h4>
+                                        </div>
+                                        <div class="pt-[10px] font-extralight text-[12px] h-[50px] overflow-hidden">
+                                            <p><?php the_content()?></p>
+                                        </div>
+                                        <div class="flex justify-between items-center mt-[30px]">
+                                            <p class="text-[14px] font-light text-[#7C7C7C]">Published Date</p>
+                                            <a href="<?php echo get_permalink($learning_materials_id) ?>" class="text-[#196129] px-[8px] py-[5px] text-[14px]">View Now</a>  
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         <?php }?>
                     </div>

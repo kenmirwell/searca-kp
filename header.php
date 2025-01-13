@@ -8,19 +8,37 @@
 </head>
 <body <?php body_class() ?>>
     <div id="search-modal" class="hidden justify-center">
-        <div class="search-modal z-[999] fixed w-[700px] top-[30%] bg-[#ffffff] px-[50px] py-[20px]">
-            <div onclick="onModal('search-modal')" class="absolute top-[-20px] right-[-20px] bg-[#ffffff] rounded-full p-[10px]">
-                <svg width="20" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 2L2 17M2 2L17 17" stroke="#7C7C7C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+        <!-- <div class="search-modal z-[999] absolute w-[90%] h-[95%] top-[5%] bg-[#ffffff] px-[50px] py-[20px]"> -->
+        <div id="search-modal-content" class="search-modal z-[999] fixed bg-[#ffffff] w-[100%] opacity-95 h-[100vh] overflow-y-scroll">
+            <div class="w-[100%]">
+                <div class="w-[80%] py-[20px] mx-auto">
+                    <div class="flex items-center relative">
+                        <div class="w-[100%] flex items-center">
+                            <div class="p-[16px] absolute top-0 left-0">
+                                <svg width="20" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.91189 0C3.55164 0 0 3.55164 0 7.91189C0 12.2721 3.55164 15.8238 7.91189 15.8238C9.80798 15.8238 11.5493 15.1505 12.914 14.0328L17.6379 18.7567C17.7109 18.8327 17.7982 18.8933 17.8948 18.9351C17.9914 18.9768 18.0954 18.9989 18.2007 19C18.3059 19.001 18.4104 18.9811 18.5078 18.9413C18.6053 18.9015 18.6938 18.8427 18.7682 18.7682C18.8427 18.6938 18.9015 18.6053 18.9413 18.5078C18.9811 18.4104 19.001 18.3059 19 18.2007C18.9989 18.0954 18.9768 17.9914 18.9351 17.8948C18.8933 17.7982 18.8327 17.7109 18.7567 17.6379L14.0328 12.914C15.1505 11.5493 15.8238 9.80798 15.8238 7.91189C15.8238 3.55164 12.2721 0 7.91189 0ZM7.91189 1.58238C11.417 1.58238 14.2414 4.40683 14.2414 7.91189C14.2414 11.417 11.417 14.2414 7.91189 14.2414C4.40683 14.2414 1.58238 11.417 1.58238 7.91189C1.58238 4.40683 4.40683 1.58238 7.91189 1.58238Z" fill="#00b428"/>
+                                </svg>
+                            </div>
+                            <input id="global-search" class="pl-[50px] w-[100%] p-[10px] border-[3px] border-[#00b428] rounded-l-lg" type="text" placeholder="What are you looking for?">
+                        </div>
+                        <div onclick="onModal('search-modal', 'close')" class="p-[16px] bg-[#00b428] rounded-r-lg">
+                            <svg width="20" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 2L2 17M2 2L17 17" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="global-search-content" class="w-[100%]">
+                    </div>
+                    <div class="flex gap-[5px] py-[20px]" id="pagination-container">
+                    </div>
+                </div>
             </div>
-            <h6>Search section</h6>
         </div>
-        <div class="search-modal z-[99] fixed bg-[#000000] opacity-70 w-[100%] h-[100vh]"></div>
+        <!-- <div class="search-modal z-[99] fixed bg-[#000000] opacity-70 w-[100%] h-[100vh]"></div> -->
     </div>
     <div id="login-modal" class="hidden justify-center">
         <div class="z-[999] fixed w-[360px] top-[30%] bg-[#ffffff] px-[30px] py-[50px] pt-[65px] rounded-xl">
-            <div onclick="onModal('login-modal')" class="absolute top-[5px] right-[5px] bg-[#ffffff] rounded-full p-[10px]">
+            <div onclick="onModal('login-modal')" class="absolute cursor-pointer top-[5px] right-[5px] bg-[#ffffff] rounded-full p-[10px]">
                 <svg width="20" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 2L2 17M2 2L17 17" stroke="#7C7C7C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -93,7 +111,7 @@
                 </div>
             <?php }           
             ?>
-            <div class="flex gap-[20px] items-center">
+            <div class="flex gap-[20px] items-start">
                 <div class="justify-between gap-[20px] hidden lg:flex">
                     <?php
                         wp_nav_menu(
@@ -107,7 +125,7 @@
                     ?>
                 </div>
                 <div class="flex gap-[10px]">
-                    <div onclick="onModal('search-modal')" class="flex justify-center items-center text-[#7C7C7C] rounded-full bg-[#F3BD1C] p-[10px] min-w-[35px] h-[35px]">
+                    <div onclick="onModal('search-modal', 'open')" class="flex justify-center items-center text-[#7C7C7C] rounded-full bg-[#F3BD1C] p-[10px] min-w-[35px] h-[35px]">
                         <svg width="17" height="17" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7.91189 0C3.55164 0 0 3.55164 0 7.91189C0 12.2721 3.55164 15.8238 7.91189 15.8238C9.80798 15.8238 11.5493 15.1505 12.914 14.0328L17.6379 18.7567C17.7109 18.8327 17.7982 18.8933 17.8948 18.9351C17.9914 18.9768 18.0954 18.9989 18.2007 19C18.3059 19.001 18.4104 18.9811 18.5078 18.9413C18.6053 18.9015 18.6938 18.8427 18.7682 18.7682C18.8427 18.6938 18.9015 18.6053 18.9413 18.5078C18.9811 18.4104 19.001 18.3059 19 18.2007C18.9989 18.0954 18.9768 17.9914 18.9351 17.8948C18.8933 17.7982 18.8327 17.7109 18.7567 17.6379L14.0328 12.914C15.1505 11.5493 15.8238 9.80798 15.8238 7.91189C15.8238 3.55164 12.2721 0 7.91189 0ZM7.91189 1.58238C11.417 1.58238 14.2414 4.40683 14.2414 7.91189C14.2414 11.417 11.417 14.2414 7.91189 14.2414C4.40683 14.2414 1.58238 11.417 1.58238 7.91189C1.58238 4.40683 4.40683 1.58238 7.91189 1.58238Z" fill="#000000"/>
                         </svg>
@@ -178,7 +196,7 @@
                                     </div>
                                     <div>
                                         <!-- <p onclick="onModal('signup-modal')" class="cursor-pointer">Signup</p>   -->
-                                        <a href="<?php echo esc_url(get_permalink(559)) ?>">Signup</a>
+                                        <a href="<?php echo esc_url(get_permalink(341)) ?>">Signup</a>
                                     </div class="py-[5px]">
                                 </div>
                         <?php 

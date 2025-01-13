@@ -13,16 +13,13 @@ get_header();
             <div>
                 <?php 
                     if ( function_exists( 'the_custom_logo' ) ) { ?>
-                    <div class="flex justify-center pr-[20px] cursor-pointer">
+                    <div class="flex justify-center pr-[20px] pb-[50px] pl-[60px] lg:pl-[0px] cursor-pointer">
                         <?php the_custom_logo(); ?>
                     </div>
                 <?php }?>
-                <form id="loginform" action="" method="post">
-                    <div class="py-[10px] w-[100%] flex justify-center items-center text-[18px]">
-                        <h6>Login</h6>
-                    </div>
-                    <div class="w-[100%] flex justify-center pb-[20px]">
-                        <span class="login-validation text-red-600 text-[12px] font-[600] hidden">Incorrect Username or Password</span>
+                <form id="loginform" action="<?php echo esc_url(site_url('wp_login.ph', 'login_post')); ?>" method="post">
+                    <div class="pb-[20px] w-[100%] flex justify-center items-center text-[18px]">
+                        <h6>Please Login</h6>
                     </div>
                     <div class="pb-[20px]">
                         <input class="p-[10px] border-[1px] rounded-lg w-[100%]" id="username" name="username" type="username" placeholder="Enter your email or username" required>

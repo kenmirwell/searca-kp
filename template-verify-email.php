@@ -19,7 +19,7 @@ get_header();
                 <?php }?>
                 <form method="post" action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>">
                     <div class="pb-[20px] w-[100%] flex justify-center items-center text-[18px]">
-                        <h6>Verify email</h6>
+                        <h6>Register for free</h6>
                     </div>
                     <div class="pb-[20px]">
                         <input class="p-[10px] border-[1px] rounded-lg w-[100%]" id="email_data" name="email_data" type="email_data" placeholder="Enter your email">

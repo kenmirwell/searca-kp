@@ -17,4 +17,5 @@
   "dependencies": {
     "@wordpress/scripts": "^29.0.0"
   }
+  
 }
