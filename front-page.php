@@ -240,10 +240,10 @@
                         <div class="">
                             <h6 class="text-[12px] lg:text-[14px] font-[600]">Search by topic</h6>
                             <div class="flex mt-[10px] gap-[10px] justify-between bg-[#458753] px-[10px] py-[15px] items-center rounded-md overflow-hidden w-[100%]">
-                                <input class="w-[100%] font-[300] text-[14px] text-[#458753] placeholder-[#458753] py-[2px] px-[5px] bg-[#ffffff] rounded-md" type="text" placeholder="Type a topic here...">
+                                <input id="search-resources" class="w-[100%] font-[300] text-[14px] text-[#458753] placeholder-[#458753] py-[2px] px-[5px] bg-[#ffffff] rounded-md" type="text" placeholder="Type a topic here...">
                             </div>
                         </div>
-                        <div class="hidden lg:block mt-[20px]">
+                        <div class="hidden md:block mt-[20px]">
                             <h6 class="font-[600]">Search by type</h6>
                             <div class="flex gap-[5px]">
                                 <ul class="w-[50%] flex flex-col text-[14px] font-[300] mt-[10px]">
@@ -260,7 +260,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="block lg:hidden mt-[20px]">
+                        <div class="block md:hidden mt-[20px]">
                             <h6 class="text-[12px] lg:text-[16px] font-[600]">Search by type</h6>
                             <div class="flex gap-[5px] pb-[20px]">
                                 <ul class="w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
@@ -280,107 +280,116 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="w-[100%] text-center font-[600]">
-                            <p>Featured Resources</p>
+                    <div class="w-[100%] lg:w-[80%]">
+                        <div id="home-search-container" class="home-search-container hidden">
+                            <div id="search-result-title" class="hidden pb-[20px]">
+                                <h6 class="font-[600]">Search Result</h6>
+                            </div>
+                            <div id="home-search-result" class="flex flex-col gap-[10px]">
+                            </div>
                         </div>
-                        <?php
-                            $knowledge_management = new WP_Query(array(
-                                "post_type" => "knowledge-management",
-                                "tax_query" => array(
-                                    array(
-                                        "taxonomy" => "km_category",
-                                        "field"    => "slug",
-                                        "terms"    => "Featured",
+                        <div id="home-featured-resources" class="">
+                            <div class="w-[100%] text-center font-[600]">
+                                <p>Featured Resources</p>
+                            </div>
+                            <?php
+                                $knowledge_management = new WP_Query(array(
+                                    "post_type" => "knowledge-management",
+                                    "tax_query" => array(
+                                        array(
+                                            "taxonomy" => "km_category",
+                                            "field"    => "slug",
+                                            "terms"    => "Featured",
+                                        ),
                                     ),
-                                ),
-                            ));
-                        ?>
-                        <div class="hidden md:flex justify-center gap-[30px] relative py-[10px] h-[345px]">
-                            <?php 
-                                if ($knowledge_management->have_posts()) {
-                                    while ($knowledge_management->have_posts()){
-                                        $knowledge_management->the_post();
+                                ));
+                            ?>
+                            <div class="hidden md:flex justify-center gap-[30px] relative py-[10px] h-[345px]">
+                                <?php 
+                                    if ($knowledge_management->have_posts()) {
+                                        while ($knowledge_management->have_posts()){
+                                            $knowledge_management->the_post();
 
-                                        $learning_materials_id = get_the_ID();
-                            ?>
-                                <div class="flex justify-start gap-[20px] w-[220px]">
-                                    <div class="flex flex-col rounded-[15px] overflow-hidden group hover:shadow-md transition-all duration-200 ease cursor-pointer">
-                                        <div class="h-[150px] relative bg-[#ffffff]">
-                                            <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
-                                            <div class="w-[100%] h-[100%] absolute top-0 left-0">
-                                                    <?php
-                                                        if ( has_post_thumbnail() ) {
-                                                            $thumbnail_url = get_the_post_thumbnail_url();
-                                                    ?>
-                                                        <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
-                                                    <?php
-                                                        }
-                                                    ?>
+                                            $learning_materials_id = get_the_ID();
+                                ?>
+                                    <div class="flex justify-start gap-[20px] w-[220px]">
+                                        <div class="flex flex-col rounded-[15px] overflow-hidden group hover:shadow-md transition-all duration-200 ease cursor-pointer">
+                                            <div class="h-[150px] relative bg-[#ffffff]">
+                                                <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
+                                                <div class="w-[100%] h-[100%] absolute top-0 left-0">
+                                                        <?php
+                                                            if ( has_post_thumbnail() ) {
+                                                                $thumbnail_url = get_the_post_thumbnail_url();
+                                                        ?>
+                                                            <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                </div>
                                             </div>
-                                        </div>
-                                    <div class="flex flex-col justify-between h-[100%] bg-[#EAE9E5] group-hover:bg-[#FFF7E0] transition-all duration-200 ease pb-[20px]">
-                                        <div class="px-[20px] py-[10px]">
-                                            <div class="text-[14px] font-bold h-[40px]">
-                                                <h4><?php the_title()?></h4>
-                                            </div>
-                                            <div class="pt-[10px] font-extralight text-[12px] h-[100px] overflow-hidden">
-                                                <p><?php the_content()?></p>
-                                            </div>
-                                        </div>
-                                        <div class="flex justify-center items-center text-[12px] w-[100%]">
-                                            <a href="<?php echo get_permalink($learning_materials_id) ?>" class="text-[#196129] px-[8px] py-[5px] text-[14px]">View Now</a>  
-                                            <?php $learning_materials_id ?>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            <?php   }
-                                }
-                            ?>
-                        </div>
-                        <div class="flex flex-col md:hidden justify-center gap-[30px] relative py-[10px]">
-                            <?php 
-                                if ($knowledge_management->have_posts()) {
-                                    while ($knowledge_management->have_posts()){
-                                        $knowledge_management->the_post();
-
-                                        $learning_materials_id = get_the_ID();
-                            ?>
-                                <div class="flex justify-start gap-[20px] w-[100%]">
-                                    <div class="flex flex-row rounded-[15px] overflow-hidden group hover:shadow-md transition-all duration-200 ease cursor-pointer">
-                                        <div class="w-[30%] relative bg-[#ffffff]">
-                                            <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
-                                            <div class="w-[100%] h-[100%] absolute top-0 left-0">
-                                                    <?php
-                                                        if ( has_post_thumbnail() ) {
-                                                            $thumbnail_url = get_the_post_thumbnail_url();
-                                                    ?>
-                                                        <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
-                                                    <?php
-                                                        }
-                                                    ?>
-                                            </div>
-                                        </div>
-                                        <div class="w-[80%] flex flex-col justify-between h-[100%] bg-[#EAE9E5] group-hover:bg-[#FFF7E0] transition-all duration-200 ease pb-[20px]">
+                                        <div class="flex flex-col justify-between h-[100%] bg-[#EAE9E5] group-hover:bg-[#FFF7E0] transition-all duration-200 ease pb-[20px]">
                                             <div class="px-[20px] py-[10px]">
-                                                <div class="text-[12px] font-bold">
+                                                <div class="text-[14px] font-bold h-[40px]">
                                                     <h4><?php the_title()?></h4>
                                                 </div>
-                                                <div class="pt-[10px] font-extralight text-[12px] h-[50px] overflow-hidden">
+                                                <div class="pt-[10px] font-extralight text-[12px] h-[100px] overflow-hidden">
                                                     <p><?php the_content()?></p>
                                                 </div>
                                             </div>
                                             <div class="flex justify-center items-center text-[12px] w-[100%]">
-                                                <a href="<?php echo get_permalink($learning_materials_id) ?>" class="text-[#196129] px-[8px] py-[5px] text-[12px]">View Now</a>  
+                                                <a href="<?php echo get_permalink($learning_materials_id) ?>" class="text-[#196129] px-[8px] py-[5px] text-[14px]">View Now</a>  
                                                 <?php $learning_materials_id ?>
                                             </div>
                                         </div>
+                                        </div>
                                     </div>
-                                </div>
-                            <?php   }
-                                }
-                            ?>
+                                <?php   }
+                                    }
+                                ?>
+                            </div>
+                            <div class="flex flex-col md:hidden justify-center gap-[30px] relative py-[10px]">
+                                <?php 
+                                    if ($knowledge_management->have_posts()) {
+                                        while ($knowledge_management->have_posts()){
+                                            $knowledge_management->the_post();
+
+                                            $learning_materials_id = get_the_ID();
+                                ?>
+                                    <div class="flex justify-start gap-[20px] w-[100%]">
+                                        <div class="flex flex-row rounded-[15px] overflow-hidden group hover:shadow-md transition-all duration-200 ease cursor-pointer">
+                                            <div class="w-[30%] relative bg-[#ffffff]">
+                                                <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
+                                                <div class="w-[100%] h-[100%] absolute top-0 left-0">
+                                                        <?php
+                                                            if ( has_post_thumbnail() ) {
+                                                                $thumbnail_url = get_the_post_thumbnail_url();
+                                                        ?>
+                                                            <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                </div>
+                                            </div>
+                                            <div class="w-[80%] flex flex-col justify-between h-[100%] bg-[#EAE9E5] group-hover:bg-[#FFF7E0] transition-all duration-200 ease pb-[20px]">
+                                                <div class="px-[20px] py-[10px]">
+                                                    <div class="text-[12px] font-bold">
+                                                        <h4><?php the_title()?></h4>
+                                                    </div>
+                                                    <div class="pt-[10px] font-extralight text-[12px] h-[50px] overflow-hidden">
+                                                        <p><?php the_content()?></p>
+                                                    </div>
+                                                </div>
+                                                <div class="flex justify-center items-center text-[12px] w-[100%]">
+                                                    <a href="<?php echo get_permalink($learning_materials_id) ?>" class="text-[#196129] px-[8px] py-[5px] text-[12px]">View Now</a>  
+                                                    <?php $learning_materials_id ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php   }
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>

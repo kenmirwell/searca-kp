@@ -1,6 +1,8 @@
 import ModalManager from "../modules/ModalManager";
+import HomeResourceSearch from "../modules/HomeResourceSearch";
 
 const modalManager = new ModalManager();
+const homeResourceSearch = new HomeResourceSearch();
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -108,6 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //         modalStatus = true;
     //     }   
     // }
+
+    homeResourceSearch.handleSearch();
 
     window.onModal = function(id, action) {
         modalManager.toggleModal(id);

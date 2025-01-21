@@ -2,6 +2,77 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./modules/HomeResourceSearch.js":
+/*!***************************************!*\
+  !*** ./modules/HomeResourceSearch.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class HomeResourcesSearch {
+  constructor() {
+    this.isSpinnerVisible = false;
+    this.response = [];
+    this.typingTimer;
+  }
+  toggleSearch(e) {
+    const featured = document.getElementById("home-featured-resources");
+    const searched = document.getElementById("home-search-result");
+    const searchedTitle = document.getElementById("search-result-title");
+    const searchContainer = document.getElementById("home-search-container");
+    const searchQuery = e.target.value.trim();
+    clearTimeout(this.typingTimer);
+    if (e.target.value) {
+      featured.style.display = "none";
+      searched.style.display = "flex";
+      searchContainer.style.display = "block";
+      searchedTitle.style.display = "block";
+      if (!this.isSpinnerVisible) {
+        searched.innerHTML = '<div class="loader-container"><div class="loader"></div></div>';
+        this.isSpinnerVisible = true;
+      }
+      this.typingTimer = setTimeout(() => {
+        const getData = async () => {
+          try {
+            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${searchQuery}&per_page=5`);
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const data = await response.json();
+            if (data.length > 0) {
+              searched.innerHTML = "";
+              data.forEach(item => {
+                searched.innerHTML += `<div class="home-search-item"><a href="${item.link}"><p class="text-[14px]">${item.title.rendered}</p></a></div>`;
+              });
+              this.isSpinnerVisible = false;
+            } else {
+              searched.innerHTML = `<div class="loader-container"><p>No results for ${e.target.value}</p></div>`;
+              this.isSpinnerVisible = true;
+            }
+          } catch (err) {
+            console.error("Error fetching data:", err);
+          }
+        };
+        getData();
+      });
+    } else {
+      featured.style.display = "block";
+      searched.style.display = "none";
+      searchedTitle.style.display = "none";
+    }
+  }
+  handleSearch() {
+    const inputField = document.getElementById("search-resources");
+    inputField.addEventListener("input", e => this.toggleSearch(e, this.isSpinnerVisible));
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeResourcesSearch);
+
+/***/ }),
+
 /***/ "./modules/ModalManager.js":
 /*!*********************************!*\
   !*** ./modules/ModalManager.js ***!
@@ -282,8 +353,11 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/ModalManager */ "./modules/ModalManager.js");
+/* harmony import */ var _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/HomeResourceSearch */ "./modules/HomeResourceSearch.js");
+
 
 const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
+const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.search.includes('error_registration=true')) {
     const emailValidation = document.getElementsByClassName("email-validation");
@@ -378,6 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //     }   
   // }
 
+  homeResourceSearch.handleSearch();
   window.onModal = function (id, action) {
     modalManager.toggleModal(id);
     modalManager.handleSearch();
