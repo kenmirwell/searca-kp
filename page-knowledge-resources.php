@@ -8,7 +8,8 @@
 
         $expected_output = get_field("expected_output");
 
-        $country = get_field("country");
+        $countryField = get_field("km_country", 463);
+        
 ?>
     <div>
         <div class="bg-[#196129]">
@@ -39,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="pb-[50px]">
             <div class="pt-[100px]">
                 <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] pb-[40px] mx-auto">
                     <div class="text-[32px] w-[100%] text-center">
@@ -60,6 +61,7 @@
 
                     $selected_categories = isset($_GET['type']) ? array_map('absint', $_GET['type']) : array();
                     $selected_author = isset($_GET['research_author']) ? absint($_GET['research_author']) : null;
+                    $selected_country = isset($_GET['country']) ? absint($_GET['country']) : null;
                     
                     $args = array(
                         'post_type' => 'knowledge-management',
@@ -89,13 +91,24 @@
                         );
                     }
 
-                    if (!empty($_GET['country'])) {
-                        $args['meta_query'][] = array(
-                            'key'     => 'country', 
-                            'value'   => sanitize_text_field($_GET['country']),
-                            'compare' => '=',
+                    if (!empty($selected_country)) {
+                        $args['tax_query'] = array(
+                            array(
+                                'taxonomy' => 'km_category',
+                                'field'    => 'country',
+                                'terms'    => $selected_country,
+                                'operator' => 'IN',
+                            ),
                         );
                     }
+
+                    // if (!empty($_GET['country'])) {
+                    //     $args['meta_query'][] = array(
+                    //         'key'     => 'country', 
+                    //         'value'   => sanitize_text_field($_GET['country']),
+                    //         'compare' => '=',
+                    //     );
+                    // }
                     
                     $knowledge_management = new WP_Query($args);
                 ?>
@@ -148,36 +161,45 @@
                                     <p>Country</p>
                                 </div>
                                 <div>
-                                    <select name="country" id="country">
-                                        <option value="">Select Country</option>
+                                    <!-- <select class="w-[100%]" name="country" id="country">
+                                        <option value="">Select Country</option> -->
                                         <?php
-                                        // Fetch unique country values from posts
-                                        $posts = get_posts(array(
-                                            'post_type'      => 'knowledge-management', // Replace with your post type
-                                            'posts_per_page' => -1,
-                                            'fields'         => 'ids', // Only retrieve IDs for performance
-                                        ));
+                                        // $posts = get_posts(array(
+                                        //     'post_type'      => 'knowledge-management', 
+                                        //     'posts_per_page' => -1,
+                                        //     'fields'         => 'ids', 
+                                        // ));
 
-                                        $countries = array();
+                                        // $countries = array();
 
-                                        foreach ($posts as $post_id) {
-                                            $country = get_field('country', $post_id); // Replace 'country' with your ACF field name
-                                            if ($country && !in_array($country, $countries)) {
-                                                $countries[] = $country;
-                                            }
-                                        }
+                                        // foreach ($posts as $post_id) {
+                                        //     $country = get_field('country', $post_id); 
+                                        //     if ($country && !in_array($country, $countries)) {
+                                        //         $countries[] = $country;
+                                        //     }
+                                        // }
 
-                                        // Sort countries alphabetically
-                                        sort($countries);
+                                        // sort($countries);
                                         
-                                        // Populate the dropdown
-                                        foreach ($countries as $country) {
-                                            // Assuming $country['value'] is what you want as the option value
-                                            $selected = isset($_GET['country']) && $_GET['country'] === $country['value'] ? 'selected' : '';
-                                            echo '<option value="' . esc_attr($country['value']) . '" ' . $selected . '>' . esc_html($country['label']) . '</option>';
-                                        }
+                                        // foreach ($countries as $country) {
+                                        //     var_dump($country['value']);
+                                        //     if($country['value'] !== 'Unassigned'){
+                                        //         $selected = isset($_GET['country']) && $_GET['country'] === $country['value'] ? 'selected' : '';
+                                        //         echo '<option value="' . esc_attr($country['value']) . '" ' . $selected . '>' . esc_html($country['label']) . '</option>';
+                                        //     }
+                                        // }
                                         ?>
-                                    </select>
+                                    <!-- </select> -->
+                                    <?php
+                                        wp_dropdown_categories(array(
+                                            'taxonomy'     => 'country',  
+                                            'name'          => 'country',  
+                                            'orderby'       => 'name', 
+                                            'show_option_all' => 'Select Country',  
+                                            'selected'      => isset($_GET['country']) ? $_GET['country'] : '', 
+                                            'hide_empty'    => false,   
+                                        ));
+                                    ?>
                                 </div>
                             </div>
                             <div class="border-t-[1px] py-[20px]">

@@ -217,7 +217,7 @@
                         <a class="text-[12px] lg:text-[16px] text-[#458753]" href="">Learn More</a>
                     </div>
                     <div class="hidden lg:block w-[1px] h-[250px] bg-[#458753]"></div>
-                    <div class="hidden lg:block text-[12px] lg:text-[16px] w-[20%] flex flex-col items-end gap-[5px] font-[600] text-center">
+                    <div class="hidden lg:flex text-[12px] lg:text-[16px] w-[20%] flex flex-col items-end gap-[5px] font-[600] text-center">
                         <a class="rounded-lg bg-[#F3BD1C] px-[35px] py-[10px] w-[100%]" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
                         <div class="flex gap-[10px] justify-center w-[100%]">
                             <span>or</span>
@@ -246,36 +246,36 @@
                         <div class="hidden md:block mt-[20px]">
                             <h6 class="font-[600]">Search by type</h6>
                             <div class="flex gap-[5px]">
-                                <ul class="w-[50%] flex flex-col text-[14px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Books</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Briefs and Notes</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Discussion Papers</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Featured</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Monographs</li>
+                                <ul class="category-container w-[50%] flex flex-col text-[14px] font-[300] mt-[10px]">
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="books">Books</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="briefs-and-notes">Briefs and Notes</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="discussion-papers">Discussion Papers</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="featured">Featured</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="monographs">Monographs</li>
                                 </ul>
-                                <ul class="w-[50%] flex flex-col text-[14px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Proceedings and Workshop Reports</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Refereed Journal</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Videos</li>
+                                <ul class="category-container w-[50%] flex flex-col text-[14px] font-[300] mt-[10px]">
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="proceedings-and-workshop-reports">Proceedings and Workshop Reports</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="refereed-journal">Refereed Journal</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="videos">Videos</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="block md:hidden mt-[20px]">
                             <h6 class="text-[12px] lg:text-[16px] font-[600]">Search by type</h6>
                             <div class="flex gap-[5px] pb-[20px]">
-                                <ul class="w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Books</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Briefs and Notes</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Discussion Papers</li>
+                                <ul class="category-container w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="books">Books</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="briefs-and-notes">Briefs and Notes</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="discussion-papers">Discussion Papers</li>
                                 </ul>
-                                <ul class="w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Featured</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Monographs</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Proceedings and Workshop Reports</li>
+                                <ul class="category-container w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="featured">Featured</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="monographs">Monographs</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="proceedings-and-workshop-reports">Proceedings and Workshop Reports</li>
                                 </ul>
-                                <ul class="w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Refereed Journal</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer">Videos</li>
+                                <ul class="category-container w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="refereed-journal">Refereed Journal</li>
+                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="videos">Videos</li>
                                 </ul>
                             </div>
                         </div>

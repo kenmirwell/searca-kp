@@ -66,7 +66,16 @@ class HomeResourcesSearch {
   }
   handleSearch() {
     const inputField = document.getElementById("search-resources");
-    inputField.addEventListener("input", e => this.toggleSearch(e, this.isSpinnerVisible));
+    const listItems = document.querySelectorAll('.category-container li');
+    listItems.forEach(item => {
+      item.onclick = function () {
+        const value = this.getAttribute('data-value');
+        console.log('Assigned value:', value);
+      };
+    });
+    if (inputField) {
+      inputField.addEventListener("input", e => this.toggleSearch(e, this.isSpinnerVisible));
+    }
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeResourcesSearch);
@@ -121,24 +130,9 @@ class ModalManager {
   handleSearch() {
     const inputField = document.getElementById("global-search");
     const searchResults = document.getElementById("global-search-content");
-    // inputField.addEventListener("keydown", this.typingLogic(inputField));
-
     searchResults.innerHTML = `<div class="flex w-[100%] justify-center p-[20px]"><p>See your search results here</p></div>`;
     inputField.addEventListener("input", e => this.typingLogic(e, this.isSpinnerVisible));
   }
-
-  // typingLogic() {
-  //     const searchResults = document.getElementById("global-search-content");
-
-  //     clearTimeout(this.typingTimer);
-
-  //     searchResults.innerHTML = '<div class="loader-container"><div class="loader"></div></div>'
-
-  //     this.typingTimer = setTimeout(function() {
-  //         searchResults.innerHTML = '<h1>Results....</h1>>'
-  //     }, 1000) 
-  // }
-
   disableScrolling() {
     document.body.style.overflow = 'hidden';
   }

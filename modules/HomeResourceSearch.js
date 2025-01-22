@@ -67,8 +67,18 @@ class HomeResourcesSearch {
 
   handleSearch() {
     const inputField = document.getElementById("search-resources");
+    const listItems = document.querySelectorAll('.category-container li'); 
     
-    inputField.addEventListener("input", (e) => this.toggleSearch(e, this.isSpinnerVisible));
+    listItems.forEach(item => {
+      item.onclick = function () {
+          const value = this.getAttribute('data-value'); 
+          console.log('Assigned value:', value);
+      };
+  });
+    
+    if(inputField) {
+      inputField.addEventListener("input", (e) => this.toggleSearch(e, this.isSpinnerVisible));
+    }
   }
 }
 

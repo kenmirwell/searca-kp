@@ -43,24 +43,11 @@ class ModalManager {
     handleSearch() {
         const inputField = document.getElementById("global-search");
         const searchResults = document.getElementById("global-search-content");
-        // inputField.addEventListener("keydown", this.typingLogic(inputField));
 
         searchResults.innerHTML = `<div class="flex w-[100%] justify-center p-[20px]"><p>See your search results here</p></div>`
 
         inputField.addEventListener("input", (e) => this.typingLogic(e, this.isSpinnerVisible));
     }
-
-    // typingLogic() {
-    //     const searchResults = document.getElementById("global-search-content");
-
-    //     clearTimeout(this.typingTimer);
-
-    //     searchResults.innerHTML = '<div class="loader-container"><div class="loader"></div></div>'
-        
-    //     this.typingTimer = setTimeout(function() {
-    //         searchResults.innerHTML = '<h1>Results....</h1>>'
-    //     }, 1000) 
-    // }
 
     disableScrolling() {
         document.body.style.overflow = 'hidden';

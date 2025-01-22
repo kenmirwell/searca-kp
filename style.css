@@ -386,7 +386,8 @@ span .current {
 }
 
 .home-search-item {
-    border-bottom: 1px solid #000000;
+    border-bottom: .5px solid #d8d8d8;
+    padding-bottom: 5px;
 }
 
 @keyframes spin {
