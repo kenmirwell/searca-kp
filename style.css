@@ -353,9 +353,39 @@ span .current {
     animation: spin 2s linear infinite;
 }
 
-#research_author {
-    width: 100%;
+.postform {
+    border-radius: 7px;
+    font-size: 14px;
+    padding: 5px 25px 5px 5px;
 }
+
+/* Hide the default arrow */
+select {
+    appearance: none; /* Standard syntax */
+    -webkit-appearance: none; /* Safari and Chrome */
+    -moz-appearance: none; /* Firefox */
+    background-size: 12px; /* Adjust size of the arrow */
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 5px 25px 5px 5px;
+    cursor: pointer;
+  }
+
+  .select-wrapper::after {
+    content: ''; /* Create the arrow */
+    position: absolute;
+    top: 50%;
+    right: 12px; /* Position the arrow inside the select */
+    transform: translateY(-50%);
+    border: 5px solid transparent; /* Create a triangle arrow */
+    border-top-color: #333; /* Set the arrow color */
+    pointer-events: none; /* Ensure it doesn’t block clicks */
+  }
+  
+  /* Optional: Ensure consistent styling across browsers */
+  select::-ms-expand {
+    display: none; /* Hide the arrow for IE/Edge */
+  }
 
 .search-item-content {
     max-height: 85px;

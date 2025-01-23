@@ -68,7 +68,7 @@
             'vip',
             'VIP', 
             [
-                'read'           => true,
+                'read'=> true,
             ]
         );
     }
@@ -160,34 +160,244 @@
     // });
 
 
-    add_action('init', 'register_form');
+    // add_action('init', 'register_form');
 
-    function register_form() {
+    // function register_form() {
 
-        if (isset($_POST['register_form_submitted']) && isset($_POST['username_value']) && isset($_POST['email_value']) && isset($_POST['password_value']) && isset($_POST['firstname_value']) && isset($_POST['lastname_value']) ){
+    //     if (isset($_POST['register_form_submitted']) && isset($_POST['username_value']) && isset($_POST['email_value']) && isset($_POST['password_value']) && isset($_POST['firstname_value']) && isset($_POST['lastname_value']) ){
             
-            $firstname = sanitize_text_field($_POST['firstname_value']);
-            $lastname = sanitize_text_field($_POST['lastname_value']);
-            $email = sanitize_email($_POST['email_value']);
-            $username = sanitize_user($_POST['username_value']);
-            $password = $_POST['password_value'];
+    //         $firstname = sanitize_text_field($_POST['firstname_value']);
+    //         $lastname = sanitize_text_field($_POST['lastname_value']);
+    //         $email = sanitize_email($_POST['email_value']);
+    //         $username = sanitize_user($_POST['username_value']);
+    //         $password = $_POST['password_value'];
 
-            if(username_exists($username) || email_exists($email)) {
-                echo '<div>Username or Email already taken</div>';
-            } else {
-                $user_id = wp_create_user( $username, $password, $email );
+    //         if(username_exists($username) || email_exists($email)) {
+    //             echo '<div>Username or Email already taken</div>';
+    //         } else {
+    //             $user_id = wp_create_user( $username, $password, $email );
 
-                if (!is_wp_error($user_id)) {
-                    wp_redirect(home_url("/registration-success"));
-                    exit;
-                } else {
-                    echo '<div class="login-error">An error occurred while creating the user.</div>';
-                }   
-            }
+    //             if (!is_wp_error($user_id)) {
+    //                 wp_redirect(home_url("/registration-success"));
+    //                 exit;
+    //             } else {
+    //                 echo '<div class="login-error">An error occurred while creating the user.</div>';
+    //             }   
+    //         }
 
-            exit;
-        }
-    }
+    //         exit;
+    //     }
+    // }
+
+// Register Form and Pending Approval
+// add_action('init', 'register_form_with_pending_approval');
+
+// function register_form_with_pending_approval() {
+//     if (
+//         isset($_POST['register_form_submitted']) && 
+//         isset($_POST['username_value']) && 
+//         isset($_POST['email_value']) && 
+//         isset($_POST['password_value']) && 
+//         isset($_POST['firstname_value']) && 
+//         isset($_POST['lastname_value'])
+//     ) {
+//         global $wpdb;
+
+//         // Sanitize user inputs
+//         $firstname = sanitize_text_field($_POST['firstname_value']);
+//         $lastname = sanitize_text_field($_POST['lastname_value']);
+//         $email = sanitize_email($_POST['email_value']);
+//         $username = sanitize_user($_POST['username_value']);
+//         $password = $_POST['password_value']; // Password should be hashed later
+
+//         // Check if username or email already exists
+//         if (username_exists($username) || email_exists($email)) {
+//             wp_redirect(home_url("/registration?error=exists"));
+//             exit;
+//         }
+
+//         // Save pending registration in custom table
+//         $table_name = $wpdb->prefix . 'pending_registrations';
+//         $result = $wpdb->insert(
+//             $table_name,
+//             [
+//                 'firstname' => $firstname,
+//                 'lastname' => $lastname,
+//                 'username' => $username,
+//                 'email' => $email,
+//                 'password' => wp_hash_password($password), // Hash password for security
+//                 'status' => 'pending',
+//                 'submitted_at' => current_time('mysql')
+//             ]
+//         );
+
+//         // Log the result of the insertion
+//         error_log('Pending registration insert result: ' . print_r($result, true));
+
+//         // Notify admin about the pending registration
+//         $admin_email = get_option('admin_email');
+//         $subject = "New Registration Request";
+//         $message = "A new user has requested registration.\n\nName: $firstname $lastname\nUsername: $username\nEmail: $email\n\nPlease log in to your admin panel to approve or reject this request.";
+//         wp_mail($admin_email, $subject, $message);
+
+//         // Redirect user to a thank-you page
+//         wp_redirect(home_url("/registration-success"));
+//         exit;
+//     }
+// }
+
+// // Create the Pending Registrations Table
+// function create_pending_registrations_table() {
+//     global $wpdb;
+
+//     $table_name = $wpdb->prefix . 'pending_registrations'; // Set the table name with WordPress prefix
+
+//     // Log the table creation attempt for debugging
+//     error_log('Attempting to create the pending_registrations table.');
+
+//     // SQL query to create the table if it doesn't exist
+//     $charset_collate = $wpdb->get_charset_collate();
+
+//     $sql = "
+//     CREATE TABLE IF NOT EXISTS $table_name (
+//         id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+//         firstname VARCHAR(100) NOT NULL,
+//         lastname VARCHAR(100) NOT NULL,
+//         username VARCHAR(60) NOT NULL,
+//         email VARCHAR(100) NOT NULL,
+//         password VARCHAR(255) NOT NULL,
+//         status VARCHAR(20) DEFAULT 'pending',
+//         submitted_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+//         PRIMARY KEY (id),
+//         UNIQUE KEY email (email),
+//         UNIQUE KEY username (username)
+//     ) $charset_collate;
+//     ";
+
+//     require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+//     dbDelta($sql);
+// }
+// add_action('after_switch_theme', 'create_pending_registrations_table');
+
+// // Add Pending Registrations menu in WordPress admin
+// add_action('admin_menu', 'add_pending_registration_menu');
+
+// function add_pending_registration_menu() {
+//     add_menu_page(
+//         'Pending Registrations',
+//         'Pending Registrations',
+//         'manage_options',
+//         'pending-registrations',
+//         'pending_registration_admin_page',
+//         'dashicons-admin-users',
+//         20
+//     );
+// }
+
+// function pending_registration_admin_page() {
+//     global $wpdb;
+//     $table_name = $wpdb->prefix . 'pending_registrations';
+
+//     if (isset($_POST['approve_user'])) {
+//         $id = intval($_POST['user_id']);
+//         $user_data = $wpdb->get_row("SELECT * FROM $table_name WHERE id = $id");
+
+//         // Approve user and create WordPress account
+//         $user_id = wp_create_user($user_data->username, $user_data->password, $user_data->email);
+//         if (is_wp_error($user_id)) {
+//             $error_message = $user_id->get_error_message();
+//             error_log("Error creating user: $error_message");
+//             echo "<div class='error'><p>Error: $error_message</p></div>";
+//         } else {
+//             wp_update_user([
+//                 'ID' => $user_id,
+//                 'first_name' => $user_data->firstname,
+//                 'last_name' => $user_data->lastname,
+//             ]);
+
+//             // Remove from pending table
+//             $wpdb->delete($table_name, ['id' => $id]);
+//             echo "<div class='updated'><p>User approved and registered successfully.</p></div>";
+//         }
+//     }
+
+//     if (isset($_POST['reject_user'])) {
+//         $id = intval($_POST['user_id']);
+//         $wpdb->delete($table_name, ['id' => $id]);
+//         echo "<div class='updated'><p>User rejected successfully.</p></div>";
+//     }
+
+//     $pending_users = $wpdb->get_results("SELECT * FROM $table_name WHERE status = 'pending'");
+
+//     error_log('Pending users: ' . print_r($pending_users, true));
+
+//     echo "<h1>Pending Registrations</h1>";
+//     if ($pending_users) {
+//         echo "<table class='widefat'>
+//             <thead>
+//                 <tr>
+//                     <th>ID</th>
+//                     <th>Name</th>
+//                     <th>Username</th>
+//                     <th>Email</th>
+//                     <th>Action</th>
+//                 </tr>
+//             </thead>
+//             <tbody>";
+//         foreach ($pending_users as $user) {
+//             echo "<tr>
+//                 <td>{$user->id}</td>
+//                 <td>{$user->firstname} {$user->lastname}</td>
+//                 <td>{$user->username}</td>
+//                 <td>{$user->email}</td>
+//                 <td>
+//                     <form method='post'>
+//                         <input type='hidden' name='user_id' value='{$user->id}'>
+//                         <button type='submit' name='approve_user' class='button button-primary'>Approve</button>
+//                         <button type='submit' name='reject_user' class='button button-secondary'>Reject</button>
+//                     </form>
+//                 </td>
+//             </tr>";
+//         }
+//         echo "</tbody></table>";
+//     } else {
+//         echo "<p>No pending registrations.</p>";
+//     }
+// }
+
+
+// Function to create the custom table
+function create_user_table_on_activation() {
+    global $wpdb;
+
+    // Table name with WordPress prefix (update if necessary)
+    $table_name = $wpdb->prefix . 'user_data';  // 'dIV_user_data' based on your list
+
+    // SQL to create the table
+    $charset_collate = $wpdb->get_charset_collate();
+    $sql = "
+    CREATE TABLE IF NOT EXISTS $table_name (
+        id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+        user_id BIGINT(20) UNSIGNED NOT NULL,
+        first_name VARCHAR(100) NOT NULL,
+        last_name VARCHAR(100) NOT NULL,
+        email VARCHAR(100) NOT NULL,
+        PRIMARY KEY (id),
+        UNIQUE KEY user_id (user_id)
+    ) $charset_collate;
+    ";
+
+    // Include WordPress upgrade functions to create the table
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+
+    // Execute the query using dbDelta
+    dbDelta($sql);
+}
+
+// Register the function to run on theme activation
+register_activation_hook(__FILE__, 'create_user_table_on_activation');
+
+
 
     
 

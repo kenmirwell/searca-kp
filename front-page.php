@@ -243,41 +243,22 @@
                                 <input id="search-resources" class="w-[100%] font-[300] text-[14px] text-[#458753] placeholder-[#458753] py-[2px] px-[5px] bg-[#ffffff] rounded-md" type="text" placeholder="Type a topic here...">
                             </div>
                         </div>
-                        <div class="hidden md:block mt-[20px]">
-                            <h6 class="font-[600]">Search by type</h6>
-                            <div class="flex gap-[5px]">
-                                <ul class="category-container w-[50%] flex flex-col text-[14px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="books">Books</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="briefs-and-notes">Briefs and Notes</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="discussion-papers">Discussion Papers</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="featured">Featured</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="monographs">Monographs</li>
-                                </ul>
-                                <ul class="category-container w-[50%] flex flex-col text-[14px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="proceedings-and-workshop-reports">Proceedings and Workshop Reports</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="refereed-journal">Refereed Journal</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="videos">Videos</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="block md:hidden mt-[20px]">
-                            <h6 class="text-[12px] lg:text-[16px] font-[600]">Search by type</h6>
-                            <div class="flex gap-[5px] pb-[20px]">
-                                <ul class="category-container w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="books">Books</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="briefs-and-notes">Briefs and Notes</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="discussion-papers">Discussion Papers</li>
-                                </ul>
-                                <ul class="category-container w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="featured">Featured</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="monographs">Monographs</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="proceedings-and-workshop-reports">Proceedings and Workshop Reports</li>
-                                </ul>
-                                <ul class="category-container w-[100%] flex flex-col text-[12px] font-[300] mt-[10px]">
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="refereed-journal">Refereed Journal</li>
-                                    <li class="text-[#196129] p-[5px] cursor-pointer" data-value="videos">Videos</li>
-                                </ul>
-                            </div>
+                        <div>
+                            <?php
+                                $terms = get_terms(array(
+                                    'taxonomy' => 'km_category', // Replace with your taxonomy name
+                                    'hide_empty' => false,       // Set to true if you only want terms with posts
+                                ));
+                            ?>
+                            <ul class="category-container w-[100%] flex flex-col sm:flex-row lg:flex-col flex-nowrap sm:flex-wrap lg:flex-nowrap gap-[0px] sm:flex-row sm:gap-[20px] lg:gap-[0px] text-[12px] justify-center text-[center] font-[300] my-[10px] lg:text-[14px] lg:text-[left] lg:justify-start">
+                                <?php    
+                                if (!is_wp_error($terms)) {
+                                    foreach ($terms as $term) {
+                                        echo '<li class="text-[#196129] p-[5px] cursor-pointer hover:font-[600]" data-name="' . $term->name . '" data-value="' . esc_attr($term->term_id) . '">' . esc_html($term->name) . '</li>';
+                                    }
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
                     <div class="w-[100%] lg:w-[80%]">

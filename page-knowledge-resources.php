@@ -61,8 +61,8 @@
 
                     $selected_categories = isset($_GET['type']) ? array_map('absint', $_GET['type']) : array();
                     $selected_author = isset($_GET['research_author']) ? absint($_GET['research_author']) : null;
-                    $selected_country = isset($_GET['country']) ? absint($_GET['country']) : null;
-                    
+                    $selected_country = isset($_GET['country']) ? sanitize_text_field($_GET['country']) : null;
+
                     $args = array(
                         'post_type' => 'knowledge-management',
                         "post_per_page" => 5,
@@ -94,10 +94,9 @@
                     if (!empty($selected_country)) {
                         $args['tax_query'] = array(
                             array(
-                                'taxonomy' => 'km_category',
-                                'field'    => 'country',
-                                'terms'    => $selected_country,
-                                'operator' => 'IN',
+                                'taxonomy' => 'country', 
+                                'field'    => 'slug',   
+                                'terms'    => $selected_country, 
                             ),
                         );
                     }
@@ -115,13 +114,17 @@
                 <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] relative mx-auto flex justify-between gap-[40px]">
                     <div class="w-[20%] z-[9] bg-[#ffffff] sticky top-[50px] h-[600px]">
                         <form method="get" action="">
-                            <div class="w-[100%]">
-                                <button class="py-[10px] px-[10px] bg-[#196129] hover:bg-[#00b127] text-[#ffffff] w-[100%] text-left rounded-md" type="submit">Filter by:</button>
+                            <div class="flex gap-[20px] w-[100%] pb-[20px]">
+                                <button class="flex justify-center text-[14px] py-[10px] px-[10px] bg-[#196129] hover:bg-[#00b127] text-[#ffffff] w-[100%] text-left rounded-md" type="submit">Apply Filter</button>
+                                <button class="flex justify-center text-[14px] py-[10px] px-[10px] bg-[#196129] hover:bg-[#00b127] text-[#ffffff] w-[100%] text-left rounded-md" type="submit">Clear Filter</button>
+                            </div>
+                            <div>
+                                <p>Filter by:</p>
                             </div>
                             <div class="border-t-[1px] py-[20px]">
-                                <div class="flex justify-between pb-[20px]">
+                                <div class="flex justify-between pb-[10px]">
                                     <div>
-                                        <p>Type</p>
+                                        <p class="text-[14px]">Type</p>
                                     </div>
                                 </div>
 
@@ -136,14 +139,14 @@
                                     ?>
                                             <div class="flex gap-[10px] items-baseline">
                                                 <input type="checkbox" name="type[]" value="<?php echo $category->term_id; ?>" <?php echo $checked; ?>>
-                                                <p><?php echo $category->name; ?></p>
+                                                <p class="text-[14px]"><?php echo $category->name; ?></p>
                                             </div>
                                     <?php } ?>
                                 </div>
                             </div>
                             <div class="border-t-[1px] py-[20px]">
                                 <div>
-                                    <p>Author</p>
+                                    <p class="text-[14px]">Author</p>
                                 </div>
                                     <?php
                                         wp_dropdown_categories(array(
@@ -158,7 +161,7 @@
                             </div>
                             <div class="border-t-[1px] py-[20px]">
                                 <div>
-                                    <p>Country</p>
+                                    <p class="text-[14px]">Country</p>
                                 </div>
                                 <div>
                                     <!-- <select class="w-[100%]" name="country" id="country">
@@ -192,22 +195,23 @@
                                     <!-- </select> -->
                                     <?php
                                         wp_dropdown_categories(array(
-                                            'taxonomy'     => 'country',  
-                                            'name'          => 'country',  
-                                            'orderby'       => 'name', 
-                                            'show_option_all' => 'Select Country',  
-                                            'selected'      => isset($_GET['country']) ? $_GET['country'] : '', 
-                                            'hide_empty'    => false,   
+                                            'taxonomy'         => 'country', 
+                                            'name'             => 'country', 
+                                            'orderby'          => 'name',
+                                            'show_option_all'  => 'Select Country',
+                                            'selected'         => $selected_country, 
+                                            'hide_empty'       => false, 
+                                            'value_field'      => 'slug',  
                                         ));
                                     ?>
                                 </div>
                             </div>
                             <div class="border-t-[1px] py-[20px]">
                                 <div class="flex gap-[10px]">
-                                    <p>Published Date</p>
+                                    <p class="text-[14px]">Published Date</p>
                                 </div>
                                 <div class="flex gap-[10px] justify-between items-center rounded-sm">
-                                    <input class="w-[100%] py-[5px] px-[5px] border-[1px] border-[#000000] rounded-md" type="date" id="published-date" />
+                                    <input class="text-[14px] w-[100%] py-[5px] px-[5px] border-[1px] border-[#000000] rounded-md" type="date" id="published-date" />
                                 </div>
                             </div>
                         </form>

@@ -17,15 +17,20 @@ class HomeResourcesSearch {
     this.isSpinnerVisible = false;
     this.response = [];
     this.typingTimer;
+    this.selectedTypeValue = null;
+    this.selectedTypeName = null;
+    this.searchQuery = '';
   }
   toggleSearch(e) {
     const featured = document.getElementById("home-featured-resources");
     const searched = document.getElementById("home-search-result");
     const searchedTitle = document.getElementById("search-result-title");
     const searchContainer = document.getElementById("home-search-container");
-    const searchQuery = e.target.value.trim();
+    if (e.target && e.target.id === 'search-resources') {
+      this.searchQuery = e.target.value.trim();
+    }
     clearTimeout(this.typingTimer);
-    if (e.target.value) {
+    if (this.searchQuery || this.selectedTypeValue) {
       featured.style.display = "none";
       searched.style.display = "flex";
       searchContainer.style.display = "block";
@@ -37,7 +42,10 @@ class HomeResourcesSearch {
       this.typingTimer = setTimeout(() => {
         const getData = async () => {
           try {
-            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${searchQuery}&per_page=5`);
+            const categoryQuery = this.selectedTypeValue ? `&km_category=${this.selectedTypeValue}` : "";
+            console.log("search query", this.searchQuery);
+            console.log("category query", categoryQuery);
+            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -49,7 +57,7 @@ class HomeResourcesSearch {
               });
               this.isSpinnerVisible = false;
             } else {
-              searched.innerHTML = `<div class="loader-container"><p>No results for ${e.target.value}</p></div>`;
+              searched.innerHTML = `<div class="loader-container"><p>No results for "${this.searchQuery}", "${this.selectedTypeName}"</p></div>`;
               this.isSpinnerVisible = true;
             }
           } catch (err) {
@@ -68,13 +76,17 @@ class HomeResourcesSearch {
     const inputField = document.getElementById("search-resources");
     const listItems = document.querySelectorAll('.category-container li');
     listItems.forEach(item => {
-      item.onclick = function () {
-        const value = this.getAttribute('data-value');
-        console.log('Assigned value:', value);
+      item.onclick = e => {
+        this.selectedTypeValue = item.getAttribute('data-value');
+        this.selectedTypeName = item.getAttribute('data-name');
+        console.log("this.selectedTypeName", this.selectedTypeName);
+        this.toggleSearch(e);
       };
     });
     if (inputField) {
-      inputField.addEventListener("input", e => this.toggleSearch(e, this.isSpinnerVisible));
+      inputField.addEventListener("input", e => {
+        this.toggleSearch(e);
+      });
     }
   }
 }

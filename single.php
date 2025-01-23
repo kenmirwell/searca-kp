@@ -10,8 +10,10 @@
         $author = get_field("custom_author");
         $published_date = get_field("published_date");
 
+        $current_user = wp_get_current_user();
 
-        $permission = get_field("permission");
+
+       $permission = get_field("permission");
 ?>
     <div>
         <!-- <div class="w-[1100px] mx-auto">
@@ -44,24 +46,23 @@
                                 }
                             ?>
                         </div>
-                        <?php if ( ! is_user_logged_in()) { ?>
-                            <div class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease " onclick="onModal('login-modal')" >
-                                <span>Download</span>
-                            </div>
-                        <?php } else if($permission[0]) {?>
-                            <div class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease ">
-                                <span>You don't have access for this content</span>
-                            </div>
-                        <?php } else { ?>
-                            <?php if($downloadable) { ?>
-                                <a class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease " href="<?php echo $downloadable ?>">
-                                    <span>Download</span>
-                                </a> 
-                            <?php } else { ?>
+                        <?php if($permission[0]) { ?>
+                            <?php if( ! is_user_logged_in() ) { ?>
+                                <div class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease " onclick="onModal('login-modal')" >
+                                    <span>Premium access please login</span>
+                                </div>
+                            <?php } else { ?> 
                                 <a class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease " href="<?php echo $external_source ?>">
-                                    <span>Download</span>
+                                    <span>Premium access</span>
                                 </a> 
-                        <?php } } ?>
+                            <?php } ?> 
+                        <?php } else {?>
+                            <a class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease " href="<?php echo $external_source ?>">
+                                <span>Download</span>
+                            </a> 
+                        <?php }?>
+
+                        
                     </div>
                 </div>
                 <div class="w-[70%]">
