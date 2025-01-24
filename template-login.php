@@ -38,6 +38,12 @@ get_header();
                         <button type="submit" class="w-[100%] rounded-lg bg-[#F3BD1C] px-[35px] py-[10px]">Login</button>
                     </div>
                     <div class="mt-[10px] text-[#196129] text-[14px]">
+                        <div class="flex gap-[5px]">
+                            <p>Don't have an account yet?</p>
+                            <a class="" href="/">Register</a>
+                        </div>
+                    </div>
+                    <div class="mt-[10px] text-[#196129] text-[14px]">
                         <a href="/">Back to homepage</a>
                     </div>
                 </form>

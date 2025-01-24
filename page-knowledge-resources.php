@@ -62,7 +62,8 @@
                     $selected_categories = isset($_GET['type']) ? array_map('absint', $_GET['type']) : array();
                     $selected_author = isset($_GET['research_author']) ? absint($_GET['research_author']) : null;
                     $selected_country = isset($_GET['country']) ? sanitize_text_field($_GET['country']) : null;
-
+                    $published_date = isset($_GET['published_date']) ? sanitize_text_field($_GET['published_date']) : null;
+                    
                     $args = array(
                         'post_type' => 'knowledge-management',
                         "post_per_page" => 5,
@@ -101,15 +102,18 @@
                         );
                     }
 
-                    // if (!empty($_GET['country'])) {
-                    //     $args['meta_query'][] = array(
-                    //         'key'     => 'country', 
-                    //         'value'   => sanitize_text_field($_GET['country']),
-                    //         'compare' => '=',
-                    //     );
-                    // }
+                    if (!empty($published_date)) {
+                        $args['meta_query'] = array(
+                            array(
+                                'key'     => 'published_date', 
+                                'value'   => $published_date,  
+                                'compare' => '=',              
+                            ),
+                        );
+                    }
                     
                     $knowledge_management = new WP_Query($args);
+
                 ?>
                 <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] relative mx-auto flex justify-between gap-[40px]">
                     <div class="w-[20%] z-[9] bg-[#ffffff] sticky top-[50px] h-[600px]">
@@ -211,7 +215,13 @@
                                     <p class="text-[14px]">Published Date</p>
                                 </div>
                                 <div class="flex gap-[10px] justify-between items-center rounded-sm">
-                                    <input class="text-[14px] w-[100%] py-[5px] px-[5px] border-[1px] border-[#000000] rounded-md" type="date" id="published-date" />
+                                    <input
+                                        class="text-[14px] w-[100%] py-[5px] px-[5px] border-[1px] border-[#000000] rounded-md"
+                                        type="date"
+                                        id="published-date"
+                                        name="published_date"
+                                        value="<?php echo isset($_GET['published_date']) ? esc_attr($_GET['published_date']) : ''; ?>"
+                                    />
                                 </div>
                             </div>
                         </form>

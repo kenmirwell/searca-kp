@@ -230,7 +230,7 @@
         <div class="bg-[#FFFbf1] pt-[50px] pb-[150px]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <div class="w-[100%] flex justify-center items-center">
-                    <h6 class="text-[16px] lg:text-[24px] font-[600]">Knowledge Management</h6>
+                    <h6 class="text-[16px] lg:text-[24px] font-[600]">Knowledge Resources</h6>
                 </div>
                 <div class="text-[12px] lg:text-[16px] lg:w-[70%] mx-auto flex justify-center text-center pt-[20px] font-[300]">
                     <p>Increased awareness and knowledge of its members, partners, and stakeholders on the most pressing issues and challenges faced by the agriculture sector.</p>

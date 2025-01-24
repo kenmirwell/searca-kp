@@ -17,7 +17,6 @@ get_header();
                    <div class="flex justify-center pr-[20px] pb-[50px] pl-[60px] lg:pl-[0px] cursor-pointer">
                         <?php the_custom_logo(); ?>
                     </div>
-                    
                 <?php } 
                 ?>
                 <form method="post" action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>">

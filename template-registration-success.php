@@ -16,8 +16,8 @@ get_header();
                 </div>
             <?php }?>
             <div class="flex flex-col justify-center text-center gap-[10px]">
-                <h6 class="text-[16px]">Registration Successful</h6>
-                <h6 class="text-[24px]">Welcome SEARCA CADRE</h6>
+                <h6>Thank you for registering!</h6>
+                <h6 class="text-[16px]">Your account is under review, and you’ll be notified via email once approved.</h6>
             </div>
             <div class="mt-[50px] text-[#196129] text-[14px] flex justify-center">
                 <a href="/">Back to homepage</a>
