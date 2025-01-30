@@ -34,6 +34,7 @@
             <img class="w-[100%] absolute opacity-[.09] top-[0]" src="https://bcsdevelopmentgator.site/wp-content/uploads/2024/10/20231125123019_mm_aung_chan_thar-766aa0f6.webp" alt="">
         </div>
         <?php
+        
         return ob_get_clean();
     }
 ?>
