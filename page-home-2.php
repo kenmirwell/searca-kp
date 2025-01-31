@@ -12,8 +12,7 @@
     <?php the_content(); ?>
 </div>
 
-<?php  
-       // Custom Query for "your_custom_post_type"
+    <?php  
        $thematic_areas = new WP_Query(array(
         "post_type" => "thematic-area",
         "post_per_page" => 10
@@ -33,8 +32,8 @@
         
         ?>
         <div>
-            <h4><?php the_title()?></h4>
+            <h4><?php the_title();?></h4>
         </div>
     <?php } } ?>
 
-<?php get_footer(); ?>
+<?php } get_footer(); ?>
