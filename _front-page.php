@@ -183,7 +183,7 @@
         <div class="bg-[#196129] pt-[80px] mt-[80px] relative overflow-hidden">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <div class="flex justify-center gap-[60px] items-start">
-                    <div class="w-[40%] pt-[50px] flex flex-col gap-[10px] text-left items-center mx-auto pb-[20px] md:pb-[40px]">
+                    <div class="w-[50%] pt-[50px] flex flex-col gap-[10px] text-left items-center mx-auto pb-[20px] md:pb-[40px]">
                         <div class="text-[#ffffff] w-[100%] text-[22px] lg:text-[32px] font-[600]">
                             <h2>AgPractices & Domains Platform</h2>
                         </div>

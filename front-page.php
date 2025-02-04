@@ -18,7 +18,7 @@
     <?php
         $home_banner = new WP_Query(array(
             "post_type" => "home-banner",
-            "post_per_page" => 10
+            "posts_per_page" => 10
         ));
     ?>
     <div>
@@ -75,7 +75,8 @@
                     <?php 
                         $thematic_areas = new WP_Query(array(
                             "post_type" => "thematic-area",
-                            "post_per_page" => 10
+                            "posts_per_page" => 10,
+                            'order' => 'DESC',     
                         ));
 
                         if ($thematic_areas->have_posts()) {
@@ -212,7 +213,7 @@
             </div>
         </div>
         <div class="flex w-[100%] h-[720px] relative">
-            <div class="flex w-[40%] mx-auto justify-between items-center relative z-[9]">
+            <div class="flex w-[60%] mx-auto gap-[100px] items-center relative z-[9]">
                 <h2 class="text-[#ffffff] text-[48px]">See CADRE in Action</br> Driving Agricultural</br> Innovation</h2>
                 <div class="flex flex-col items-center justify-center gap-[20px]">
                     <div class="flex relative justify-center items-center">
@@ -358,29 +359,59 @@
                 </div>
             </div>
         </div>
-        <div class="bg-[#FFFbf1] pt-[50px] pb-[150px]">
+        <div class="bg-[#196129] pt-[100px] pb-[150px]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div class="flex">
-                    <div>
-                        <h2>Frequently asked questions</h2>
-                        <p>Find answers to common questions about CADRE, our platform, and how we support sustainable agriculture in Southeast Asia.</p>
-                        <a class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] rounded-full" href="<?php echo esc_url(get_permalink(341)) ?>">
-                            <button class="text-[#ffffff]">Explore resources</button>
-                            <div class="bg-[#ceab23] rounded-full p-[10px]">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </a>
+                <div class="flex gap-[80px]">
+                    <div class="flex flex-col gap-[20px] w-[50%]">
+                        <h2 class="text-[48px] text-[#ffffff] font-[600]">Frequently Asked Questions</h2>
+                        <p  class="text-[#ffffff]">Find answers to common questions about CADRE, our platform, and how we support sustainable agriculture in Southeast Asia.</p>
+                        <div class="flex">
+                            <a class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] rounded-full" href="<?php echo esc_url(get_permalink(341)) ?>">
+                                <button class="text-[#ffffff]">View FAQs</button>
+                                <div class="bg-[#ceab23] rounded-full p-[10px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                    <?php 
-                        if ($faq_list) {
-                            $question = $faq_list['question'];
+                    <div class="flex flex-col gap-[20px] w-[50%] pt-[30px]">
+                        <?php 
+                            $faq = new WP_Query(array(
+                                "post_type" => "freq-ask-question",
+                                "posts_per_page" => 10,
+                                'order' => 'ASC',     
+                            ));
 
-                            echo '<h2>' . esc_html($question) . '</h2>';
-                        }
+                            if ($faq->have_posts()) {
+                                while ($faq->have_posts()){
+                                    $faq->the_post();
+                                    $faq_index = (int) $faq->current_post;
+                                    
                         ?>
+                            <div id="faq-group-<?php echo $faq_index ?>" class="flex flex-col p-[20px] rounded-xl gap-[20px]">
+                                <div 
+                                    id="faq-head-<?php echo $faq_index; ?>"
+                                    onclick="handleFaqAccordion('answer-<?php echo $faq_index; ?>', parseInt('<?php echo $faq_index; ?>', 10))"   
+                                    class="flex justify-between items-center cursor-pointer transition-all duration-300 ease"
+                                >
+                                    <h6 class="text-[18px] text-[#ffffff] font-[600]"><?php the_title(); ?></h6>
+                                    <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16 2V30M2 16H30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div
+                                    style="height: 0;" 
+                                    id="answer-container-<?php echo $faq_index ?>" 
+                                    class="answer-container h-[100%] overflow-hidden transition-all duration-300 ease"
+                                >
+                                    <div id="answer-<?php echo $faq_index; ?>" class="answer text-[#ffffff]">
+                                        <?php the_content(); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } } ?>
                     </div>
                 </div>
             </div>

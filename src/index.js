@@ -1,8 +1,10 @@
 import ModalManager from "../modules/ModalManager";
 import HomeResourceSearch from "../modules/HomeResourceSearch";
+import FaqAcc from "../modules/FaqAcc";
 
 const modalManager = new ModalManager();
 const homeResourceSearch = new HomeResourceSearch();
+const faqAcc = new FaqAcc();
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -60,24 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(accContainer, accElement, height)
     }
     
-    // window.hideShow = function(tabIndex) {
-    //     tab = tabIndex
-    //     if (tab == 0) {
-    //     overview.style.display = "block"
-    //     content.style.display = "none"
-    //     testimonials.style.display = "none"
-    //     }
-    //     else if (tab == 1) { 
-    //     overview.style.display = "none"
-    //     content.style.display = "block"
-    //     testimonials.style.display = "none"
-    //     }
-    //     else if (tab == 2) { 
-    //     overview.style.display = "none"
-    //     content.style.display = "none"
-    //     testimonials.style.display = "block"
-    //     }
-    // }
 
     window.dropDown = function() {
         if(isShown) {
@@ -89,29 +73,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // window.onSearch = function() {
-    //     if(onSearch) {
-    //         searchModal.style.display = "none"
-    //         onSearch = false;
-    //     } else {
-    //         searchModal.style.display = "flex"
-    //         onSearch = true;
-    //     }
-    // }
-
-    // window.onModal = function(id) {
-    //     const modal = document.getElementById(id)
-
-    //     if(modalStatus) {
-    //         modal.style.display = "none"
-    //         modalStatus = false;
-    //     } else {
-    //         modal.style.display = "flex"
-    //         modalStatus = true;
-    //     }   
-    // }
-
     homeResourceSearch.handleSearch();
+
+    window.onload = function() {
+        
+        const accElement = document.getElementById("answer-0");
+        const accContainer = document.getElementById("answer-container-0");
+        const accHead = document.getElementById("faq-head-0");
+        const accGroup = document.getElementById("faq-group-0");
+
+        const height = accElement.offsetHeight;
+        
+        accGroup.classList.add("active-faq");
+        accContainer.style.height = height+"px";
+    }
+
+    window.handleFaqAccordion = function(elementId, containerId, headId, index) {
+        faqAcc.handleFaqAcc(elementId, containerId, headId, index);
+    }
 
     window.onModal = function(id, action) {
         modalManager.toggleModal(id);
@@ -140,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    //Close the popup when clicking anywhere outside the popup
     function handleOutsideClick(event) {
         const popup = document.getElementById('auth');
         
@@ -154,16 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.selectedAuthor = function(author) {
         const selectedAuthor = document.getElementById("material__author").value
     }
-    
-    // const myButton = document.getElementById("ajax-request");
-    // myButton.addEventListener('click', e => {
-    //    console.log("ajax request triggered")
-    // });
-
-    // window.myButton = function(author) {
-    //     const sample = document.getElementById("ajax-request");
-    //     console.log("sample", sample)
-    // }
 
     jQuery(document).ready(function($) {
         $('.banner-slider').slick({

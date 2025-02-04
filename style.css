@@ -422,6 +422,25 @@ select {
     padding-bottom: 5px;
 }
 
+.answer {
+    font-size: 18px;
+}
+
+.active-faq {
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.active-faq > .flex > h6 {
+    color: #000000;
+    transition: all 0.3s ease;
+}
+
+.active-faq .answer {
+    color: #999999;
+    transition: all 0.3s ease;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

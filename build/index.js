@@ -2,6 +2,46 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./modules/FaqAcc.js":
+/*!***************************!*\
+  !*** ./modules/FaqAcc.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class FaqAcc {
+  constructor() {}
+  handleFaqAcc(elementId, index) {
+    const accElement = document.getElementById(elementId);
+    const height = accElement.offsetHeight;
+    for (let i = 0; i < 6; i++) {
+      if (index !== i) {
+        document.getElementById(`answer-container-${i}`).style.height = 0;
+        document.getElementById(`faq-group-${i}`).classList.remove("active-faq");
+      } else {
+        document.getElementById(`answer-container-${i}`).style.height = height + "px";
+        document.getElementById(`faq-group-${i}`).classList.add("active-faq");
+      }
+    }
+
+    // if( accContainer.classList.contains("active") ) {
+    //     accContainer.style.height = 0
+    //     accContainer.classList.remove("active")
+    //     accHead.style.paddingBottom = 0
+    // } else {
+    //     accContainer.style.height = height+"px"
+    //     accContainer.classList.add("active")
+    //     accHead.style.paddingBottom = "10px"
+    // }
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FaqAcc);
+
+/***/ }),
+
 /***/ "./modules/HomeResourceSearch.js":
 /*!***************************************!*\
   !*** ./modules/HomeResourceSearch.js ***!
@@ -360,10 +400,13 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/ModalManager */ "./modules/ModalManager.js");
 /* harmony import */ var _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/HomeResourceSearch */ "./modules/HomeResourceSearch.js");
+/* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
+
 
 
 const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
 const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
+const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.search.includes('error_registration=true')) {
     const emailValidation = document.getElementsByClassName("email-validation");
@@ -406,26 +449,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     console.log(accContainer, accElement, height);
   };
-
-  // window.hideShow = function(tabIndex) {
-  //     tab = tabIndex
-  //     if (tab == 0) {
-  //     overview.style.display = "block"
-  //     content.style.display = "none"
-  //     testimonials.style.display = "none"
-  //     }
-  //     else if (tab == 1) { 
-  //     overview.style.display = "none"
-  //     content.style.display = "block"
-  //     testimonials.style.display = "none"
-  //     }
-  //     else if (tab == 2) { 
-  //     overview.style.display = "none"
-  //     content.style.display = "none"
-  //     testimonials.style.display = "block"
-  //     }
-  // }
-
   window.dropDown = function () {
     if (isShown) {
       authorsDropdown.style.display = "none";
@@ -435,30 +458,19 @@ document.addEventListener("DOMContentLoaded", function () {
       isShown = true;
     }
   };
-
-  // window.onSearch = function() {
-  //     if(onSearch) {
-  //         searchModal.style.display = "none"
-  //         onSearch = false;
-  //     } else {
-  //         searchModal.style.display = "flex"
-  //         onSearch = true;
-  //     }
-  // }
-
-  // window.onModal = function(id) {
-  //     const modal = document.getElementById(id)
-
-  //     if(modalStatus) {
-  //         modal.style.display = "none"
-  //         modalStatus = false;
-  //     } else {
-  //         modal.style.display = "flex"
-  //         modalStatus = true;
-  //     }   
-  // }
-
   homeResourceSearch.handleSearch();
+  window.onload = function () {
+    const accElement = document.getElementById("answer-0");
+    const accContainer = document.getElementById("answer-container-0");
+    const accHead = document.getElementById("faq-head-0");
+    const accGroup = document.getElementById("faq-group-0");
+    const height = accElement.offsetHeight;
+    accGroup.classList.add("active-faq");
+    accContainer.style.height = height + "px";
+  };
+  window.handleFaqAccordion = function (elementId, containerId, headId, index) {
+    faqAcc.handleFaqAcc(elementId, containerId, headId, index);
+  };
   window.onModal = function (id, action) {
     modalManager.toggleModal(id);
     modalManager.handleSearch();
@@ -481,8 +493,6 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => document.addEventListener('click', handleOutsideClick));
     }
   };
-
-  //Close the popup when clicking anywhere outside the popup
   function handleOutsideClick(event) {
     const popup = document.getElementById('auth');
     if (!popup.contains(event.target)) {
@@ -494,17 +504,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.selectedAuthor = function (author) {
     const selectedAuthor = document.getElementById("material__author").value;
   };
-
-  // const myButton = document.getElementById("ajax-request");
-  // myButton.addEventListener('click', e => {
-  //    console.log("ajax request triggered")
-  // });
-
-  // window.myButton = function(author) {
-  //     const sample = document.getElementById("ajax-request");
-  //     console.log("sample", sample)
-  // }
-
   jQuery(document).ready(function ($) {
     $('.banner-slider').slick({
       slidesToShow: 1,
