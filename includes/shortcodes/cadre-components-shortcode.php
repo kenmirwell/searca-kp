@@ -16,17 +16,17 @@
                 </div>
                 <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-center items-start gap-[20px]">
                     <?php 
-                    $thematic_areas = new WP_Query(array(
-                        'post_type' => 'thematic-area',
+                    $components = new WP_Query(array(
+                        'post_type' => 'component',
                         'posts_per_page' => 10,
                     ));
 
-                    if ($thematic_areas->have_posts()) {
-                        while ($thematic_areas->have_posts()) {
-                            $thematic_areas->the_post();
+                    if ($components->have_posts()) {
+                        while ($components->have_posts()) {
+                            $components->the_post();
 
-                            $logo_url = get_field('thematic_logo');
-                            $card_color = get_field('thematic_color');
+                            $logo_url = get_field('component_logo');
+                            $card_color = get_field('component_color');
                             $aspiring_outcome = get_field('aspirational_outcome');
                     ?>
                     <!-- Card HTML -->

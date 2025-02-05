@@ -4,7 +4,7 @@
     while (have_posts()) {
         the_post();
 
-        $thematic_area = get_field("thematic_area");
+        $component = get_field("component");
         $downloadable = get_field("downloadable");
         $external_source = get_field("external_source");
         $author = get_field("custom_author");
@@ -19,7 +19,7 @@
         <!-- <div class="w-[1100px] mx-auto">
             <div class="pt-[20px] pb-[60px] text-[14px] font-extralight flex gap-[5px]">
                 <p class="cursor-pointer"><a href="/">Home |</a></p>
-                <p class="cursor-pointer"><a href="<?php echo get_the_permalink( $thematic_area); ?>"><?php echo get_the_title( $thematic_area ); ?></a> |</p>
+                <p class="cursor-pointer"><a href="<?php echo get_the_permalink( $component); ?>"><?php echo get_the_title( $component ); ?></a> |</p>
                 <p class="cursor-pointer"><?php the_title(); ?></p>
             </div>
         </div> -->

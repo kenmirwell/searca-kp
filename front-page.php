@@ -73,27 +73,29 @@
                 </div>
                 <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-center items-start gap-[20px]">
                     <?php 
-                        $thematic_areas = new WP_Query(array(
-                            "post_type" => "thematic-area",
+                        $components = new WP_Query(array(
+                            "post_type" => "component",
                             "posts_per_page" => 10,
                             'order' => 'DESC',     
                         ));
 
-                        if ($thematic_areas->have_posts()) {
-                            while ($thematic_areas->have_posts()){
+                        if ($components->have_posts()) {
+                            while ($components->have_posts()){
                         
-                                    $thematic_areas->the_post();
-                                    $logo_url = get_field("thematic_logo");
-                                    $card_color = get_field("thematic_color");
+                                    $components->the_post();
+                                    $logo_url = get_field("component_logo");
+                                    $card_color = get_field("component_color");
                                     $aspiring_outcome = get_field("aspirational_outcome");
                                     $expected_output = get_field("expected_output");
                                     $thumbnail_url = get_the_post_thumbnail_url();
+                                    $page_link = get_field("component_page_link");
 
                                     set_query_var('logo_url', $logo_url);
                                     set_query_var('card_color', $card_color);
                                     set_query_var('aspiring_outcome', $aspiring_outcome);
                                     set_query_var('expected_output', $expected_output);
                                     set_query_var('thumbnail_url', $thumbnail_url);
+                                    set_query_var('page_link', $page_link);
 
                             get_template_part("includes/components/component", "desktop");
 
@@ -108,7 +110,7 @@
                 <div class="flex justify-center gap-[60px] items-end">
                     <div class="w-[40%] pt-[50px] flex flex-col gap-[10px] text-left items-center mx-auto pb-[20px] md:pb-[40px]">
                         <div class="text-[#ffffff] w-[100%] text-[22px] lg:text-[32px] font-[600]">
-                            <h2>Agpractices and Domains: transforming agriculture through data and innovation</h2>
+                            <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
                         </div>
                         <div class="flex flex-col gap-[20px]">
                             <div class="text-[#ffffff] w-[100%] font-light md:font-normal text-[12px] lg:text-[16px]">

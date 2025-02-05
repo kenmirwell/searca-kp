@@ -57,7 +57,7 @@
             'page',
             'home-banner',
             'material-author',
-            "thematic-area",
+            "component",
             'knowledge-management',
         ));
 

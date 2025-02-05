@@ -68,29 +68,31 @@
                     <p class="text-[16px] mb-[10px] font-[600]">CADRE will have the following components:</p>
                     <div class="pb-[20px] relative">
                         <?php 
-                            $thematic_areas = new WP_Query(array(
-                                "post_type" => "thematic-area",
+                            $component = new WP_Query(array(
+                                "post_type" => "component",
                                 "post_per_page" => 10
                             ));
         
-                            if ($thematic_areas->have_posts()) { 
-                                while ($thematic_areas->have_posts()){
-                                    $thematic_areas->the_post();
+                            if ($component->have_posts()) { 
+                                while ($component->have_posts()){
+                                    $component->the_post();
 
-                                    $logo_url = get_field("thematic_logo");
+                                    $logo_url = get_field("component_logo");
         
-                                    $card_color = get_field("thematic_color");
+                                    $card_color = get_field("component_color");
         
                                     $aspiring_outcome = get_field("aspirational_outcome");
         
                                     $expected_output = get_field("expected_output");
+
+                                    $page_link = get_field("component_page_link");
                         ?>
                             <div class="my-[5px] abosolute">
                                 <div 
                                     id="acc-head-<?php echo get_the_ID(); ?>" 
                                     onclick="handleAccordion('component-acc-<?php echo get_the_ID(); ?>', 'container-acc-<?php echo get_the_ID(); ?>', 'acc-head-<?php echo get_the_ID(); ?>')" 
                                     style="background-color: <?php echo esc_attr($card_color); ?>;" 
-                                    class="rounded-t-lg transition-all duration-300 ease"
+                                    class="rounded-t-lg transition-all duration-300 ease cursor-pointer"
                                 >
                                     <div class="text-[16px] text-[#ffffff] px-[20px] pt-[10px]">
                                         <h4><?php the_title()?></h4>
@@ -103,6 +105,7 @@
                                 >
                                     <div id="component-acc-<?php echo get_the_ID(); ?>" class="p-[20px]">
                                         <?php the_content(); ?>
+                                        <a href="<?php echo esc_url($page_link)?>" class="text-[#196129] pt-[20px]">Learn More</a>
                                     </div>
                                 </div>
                             </div>

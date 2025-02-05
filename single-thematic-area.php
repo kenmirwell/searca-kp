@@ -52,7 +52,7 @@
                 "category_name" => "featured",
                 "meta_query" => array(
                     array(
-                        "key" => "thematic_area",   
+                        "key" => "component",   
                         "value" => $current_post_id,
                         "compare" => "="             
                     )
@@ -313,7 +313,7 @@
                             "meta_query" => array(
                                 'relation' => 'AND',
                                 array(
-                                    "key" => "thematic_area",  
+                                    "key" => "component",  
                                     "value" => $current_post_id, 
                                     "compare" => "="             
                                 ),

@@ -7,6 +7,17 @@
         $aspiring_outcome = get_field("aspiring_outcome");
 
         $expected_output = get_field("expected_output");
+
+        $rrp_group = get_field('regional_research_program');
+        $srf_group = get_field('strategic_response_fund');
+
+
+        $rrp_title = $rrp_group['rrp_title'];
+        $rrp_text = $rrp_group['rrp_text'];
+        $rrp_image = $rrp_group['rrp_image'];
+        $srf_title = $srf_group['srf_title'];
+        $srf_text = $srf_group['srf_text'];
+        $srf_image = $srf_group['srf_image'];
 ?>
     <div>
         <div class="bg-[#196129]">
@@ -35,113 +46,36 @@
                 </div>
             </div>
         </div>
-        <div class="sm:w-[640px] md:w-[768px] lg:w-[980px] mx-auto py-[50px]">
-            <div>
-                <div class="flex justify-center">
-                    <h1 class="text-[32px]">SFRT: Seed Fund for Research and Training</h1>
-                </div>
-                <div class="pt-[10px]">
-                    <p>The Southeast Asian (SEA) region has a number of promising researchers and scientists whose desire to contribute to the region's development through research and knowledge dissemination initiatives is hindered by lack of funds. This situation serves as a barrier to translating promising research and training into scientific outputs that could be applied to promote development. To address this concern and in line with the Center's thrust of promoting, undertaking, and coordinating research programs relevant to accelerating transformation through agricultural innovation of the region, SEARCA will dedicate funds to be known as the SEARCA Seed Fund for Research and Training (SFRT). The SFRT is envisaged to provide chosen research and training project proposals with limited start-up funds intended to enhance chances of securing long-term support from donor agencies. A grant of up to USD 15,000 shall be awarded as seed fund for research/training.</p>
-                </div>
-            </div>
-            <div class="pt-[20px]">
-                <div>
-                    <h6 class="text-[24px]">Objectives</h6>
-                </div>
-                <ul class="pt-[10px] check-list font-[300]">
-                    <li>SFRT aims to provide start-up funds to researchers and scientists who can make significant contributions to the development of the region but lack the funds to carry out their projects.</li>
-                    <li>It intends to build capacities of researchers to develop research proposals and conduct the research, mindful of inherent technical, financial, and administrative responsibilities of such an undertaking.</li>
-                    <li>It seeks to expand SEARCA's reach in terms of research, capacity building, and contribution to the body of knowledge on ATTAIN in the region.</li>
-                </ul>
-            </div>
-            <div class="pt-[20px]">
-                <div>
-                    <h6 class="text-[24px]">Proponent Qualifications</h6>
-                </div>
-                <div class="pt-[10px] font-[300]">
-                    <div class="pt-[10px]">
-                        <p>The proponent should be a Southeast Asian national who is a graduate of at least a four-year degree course, with limited research/training start-up funds.</p>
+        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
+            <div class="flex flex-col w-[95%] mx-auto gap-[40px]">
+                <div class="flex gap-[40px] items-center">
+                    <div class="flex flex-col gap-[20px] w-[100%]">
+                            <h6 class="text-[18px] font-[600]"><?php echo $rrp_title ?></h6>
+                            <p><?php echo $rrp_text ?></p>
                     </div>
-                    <div class="pt-[10px]">
-                        <p><strong>Priority 1.</strong> Southeast Asian nationals who are alumni of SEARCA Graduate Scholarship, faculty, and staff in any of the member universities under the Southeast Asian University Consortium for Graduate Education in Agriculture and Natural Resources (UC), and SEARCA's Institutional Development Assistance (IDA).</p>
+                    <div class="h-[100%] w-[500px] rounded-lg">
+                        <img class="w-full h-full object-cover rounded-xl overflow-hidden" src="<?php echo esc_url($rrp_image) ?>">
                     </div>
-                    <div class="pt-[10px]">
-                        <p><strong>Priority 2.</strong> Southeast Asian nationals who are regular staff members of government agencies or non-profit development-oriented institutions, and/or faculty and staff of agricultural universities outside of UC.</p>
+                </div>    
+                <div class="flex flex-row-reverse gap-[40px] items-center">
+                    <div class="flex flex-col gap-[20px] w-[100%]">
+                            <h6 class="text-[18px] font-[600]"><?php echo $srf_title ?></h6>
+                            <p><?php echo $srf_text ?></p>
                     </div>
-                </div>
-            </div>
-            <div class="pt-[20px]">
-                <div class="text-[24px]">
-                    <h6>Project Eligibility</h6>
-                </div>
-                <div class="pt-[10px] font-[300]">
-                    <p>The topic of the project proposal must be aligned with SEARCA's overarching theme of Accelerating Transformation Through Agricultural Innovation (ATTAIN). Moreover, priority research topics must fall within the ATTAIN priority areas:</p>
-                </div>
-                <ul class="pt-[10px] arrowed-list font-[300]">
-                    <li>Agri-Business Models for Increased Productivity and Income</li>
-                    <li>Sustainable Farming Systems and Natural Resource Management</li>
-                    <li>Food and Nutrition Security</li>
-                    <li>Transformational Leadership for Agricultural and Rural Development (ARD)</li>
-                    <li>Gender and Youth Engagement in ARD</li>
-                    <li>Enhanced ARD towards Climate Resilience</li>
-                    <li>EcoHealth/One Health Applications to ARD</li>
+                    <div class="h-[100%] w-[500px]">
+                        <img class="w-full h-full object-cover rounded-xl overflow-hidden" src="<?php echo esc_url($srf_image) ?>">
+                    </div>
+                </div>    
+            </div>  
+
+            <div class="w-[95%] gap-[20px] mx-auto py-[50px]">
+                <h6>Aside from these research programs, Working Groups will be established under this component based on priority research areas once there is a significant number of members and partners. To kick-start this initiative, CADRE will partner with CIRAD’s platforms in partnership for research and training (dPs) in Asia and will serve as the initial Working Groups of CADRE. These include:</h6>
+                <ul class="colab-list flex flex-col gap-[10px] pt-[20px]">
+                    <li>Agro-ecology for Southeast Asia (ASEA)</li>
+                    <li>Emerging Diseases in Southeast Asia (GREASE)</li>
+                    <li>Sustainable Food Systems for Cities in Asia (MALICA)</li>
+                    <li>Sustainable Agricultural Landscape in Southeast Asia (SALSA) </li>
                 </ul>
-            </div>
-            <div class="pt-[20px]">
-                <div>
-                    <h6 class="text-[24px]">Features</h6>
-                </div>
-                <div class="pt-[10px] font-[300]">
-                    <p>The proposed project should satisfy all of the following:</p>
-                </div>
-                <ul class="pt-[10px] check-list font-[300]">
-                    <li>Innovative and is accompanied by an appropriate plan for developing it into a potentially large-scale research/training program greatly relevant to the agricultural and rural development needs of the region;</li>
-                    <li>Has strong potential for generating significant long-term funding support;</li>
-                    <li>Can be completed within a period not exceeding one year;</li>
-                    <li>With detailed plans for generating future funding support; and</li>
-                    <li>Specifies a plan for dissemination of results, including policy recommendations, to various stakeholders in modes deemed appropriate.</li>
-                </ul>
-            </div>
-            <div class="pt-[20px]">
-                <h6 class="text-[24px]">Output</h6>
-                <div class="pt-[10px] font-[300]">
-                    <p>The proposed project should be able to generate:</p>
-                </div>
-                <ul class="pt-[10px] arrowed-list font-[300]">
-                    <li>At least one policy brief (following the prescribed format)</li>
-                    <li>A final research report which can be published as a technical paper, as determined by the technical reviewer</li>
-                    <li>When possible, presentation of research results in at least one scientific forum/conference</li>
-                </ul>
-            </div>
-            <div class="pt-[20px]">
-                <h6 class="text-[24px]">Re-Applying Grantees</h6>
-                <div class="pt-[10px] font-[300]">
-                    <p>Previous grantees may re-apply provided that their last SFRT grant has been completed and not within the preceding two years.</p>
-                </div>
-            </div>
-            <div class="pt-[20px]">
-                <div>
-                    <h6 class="text-[24px]">Proposal Submission</h6>
-                </div>
-                <div class="pt-[10px] font-[300]">
-                    <p>New applicants must register through the Grants Information System to create an account. Once registered, fill out the online form and upload a copy of all required documents.</p>
-                </div>
-                <div class="pt-[10px] font-[300]">
-                    <p>The required documents to be submitted should be in English:</p>
-                </div>
-                <ul class="pt-[10px] numbered-list font-[300]">
-                    <li>Letter of request which should be addressed to the SEARCA Director;</li>
-                    <li>Official endorsement from the employer (if employed);</li>
-                    <li>Budgetary requirement for the entire project proposal;</li>
-                    <li>Letter from the applicant certifying that he/she is not receiving any other research grant from any other institution. If partial funding has been obtained from other sources, the applicant must submit a certification from the funding agency indicating the grant amount and items covered by the grant, as well as proof that there will be no conflict with the funding agency when applying for another funding; and</li>
-                    <li>Research timetable indicating the activities involved in the research and the expected date of completion which should not exceed one year.</li>
-                </ul>
-                <div class="pt-[10px] font-[300]">
-                    <p>You may download the guidelines on proposal format and required documents (PDF) here.</p>
-                </div>
-                <div class="pt-[10px] font-[300]">
-                    <p>In the event that a problem is encountered in uploading the proposal, please notify the SFRT secretariat through the sfrt@searca.org. Only proposals with complete requirements and successfully submitted through the Grants Information System, will be accepted for evaluation.</p>
-                </div>
             </div>
         </div>
     </div>

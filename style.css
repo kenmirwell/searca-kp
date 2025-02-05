@@ -441,6 +441,13 @@ select {
     transition: all 0.3s ease;
 }
 
+.colab-list li::before {
+    content: "\2713";
+    padding-right: 5px;
+    background-repeat: no-repeat;
+    color: #196129;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

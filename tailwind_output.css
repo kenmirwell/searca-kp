@@ -884,6 +884,18 @@ video {
   height: 100%;
 }
 
+.h-\[0px\] {
+  height: 0px;
+}
+
+.h-0 {
+  height: 0px;
+}
+
+.max-h-0 {
+  max-height: 0px;
+}
+
 .w-\[100\%\] {
   width: 100%;
 }
@@ -1012,8 +1024,22 @@ video {
   width: 100%;
 }
 
+.w-\[500px\] {
+  width: 500px;
+}
+
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .min-w-\[35px\] {
   min-width: 35px;
+}
+
+.scale-\[1\] {
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .transform {
@@ -1088,6 +1114,10 @@ video {
   gap: 0px;
 }
 
+.gap-\[100px\] {
+  gap: 100px;
+}
+
 .gap-\[10px\] {
   gap: 10px;
 }
@@ -1142,10 +1172,6 @@ video {
 
 .gap-\[80px\] {
   gap: 80px;
-}
-
-.gap-\[100px\] {
-  gap: 100px;
 }
 
 .overflow-hidden {
@@ -1248,6 +1274,10 @@ video {
   border-width: 3px;
 }
 
+.border-\[2px\] {
+  border-width: 2px;
+}
+
 .border-b-\[1px\] {
   border-bottom-width: 1px;
 }
@@ -1258,6 +1288,10 @@ video {
 
 .border-t-\[1px\] {
   border-top-width: 1px;
+}
+
+.border-b-\[2px\] {
+  border-bottom-width: 2px;
 }
 
 .border-\[\#000000\] {
@@ -1293,6 +1327,16 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-\[\#196129\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(25 97 41 / var(--tw-border-opacity));
+}
+
+.border-b-\[\#196129\] {
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(25 97 41 / var(--tw-border-opacity));
 }
 
 .bg-\[\#000000\] {
@@ -1566,11 +1610,6 @@ video {
   padding-bottom: 8px;
 }
 
-.py-\[150px\] {
-  padding-top: 150px;
-  padding-bottom: 150px;
-}
-
 .pb-\[10px\] {
   padding-bottom: 10px;
 }
@@ -1669,6 +1708,10 @@ video {
 
 .pt-\[80px\] {
   padding-top: 80px;
+}
+
+.pb-\[5px\] {
+  padding-bottom: 5px;
 }
 
 .text-left {
@@ -1892,12 +1935,44 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-\[max-height\] {
+  transition-property: max-height;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
 }
 
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.duration-700 {
+  transition-duration: 700ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.duration-\[1500\] {
+  transition-duration: 1500;
+}
+
+.duration-\[1500ms\] {
+  transition-duration: 1500ms;
+}
+
+.ease-linear {
+  transition-timing-function: linear;
+}
+
+.hover\:scale-\[1\.5\]:hover {
+  --tw-scale-x: 1.5;
+  --tw-scale-y: 1.5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:bg-\[\#00b127\]:hover {
@@ -1923,6 +1998,38 @@ video {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.group:hover .group-hover\:block {
+  display: block;
+}
+
+.group:hover .group-hover\:h-auto {
+  height: auto;
+}
+
+.group:hover .group-hover\:h-\[100px\] {
+  height: 100px;
+}
+
+.group:hover .group-hover\:max-h-\[500px\] {
+  max-height: 500px;
+}
+
+.group:hover .group-hover\:max-h-\[1000px\] {
+  max-height: 1000px;
+}
+
+.group:hover .group-hover\:scale-\[1\.5\] {
+  --tw-scale-x: 1.5;
+  --tw-scale-y: 1.5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:scale-\[1\.1\] {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:bg-\[\#FFF7E0\] {
