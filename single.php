@@ -60,9 +60,7 @@
                             <a class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease " href="<?php echo $external_source ?>">
                                 <span>Download</span>
                             </a> 
-                        <?php }?>
-
-                        
+                        <?php }?>                            
                     </div>
                 </div>
                 <div class="w-[70%]">

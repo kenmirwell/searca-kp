@@ -35,9 +35,7 @@ class HomeResourcesSearch {
         const getData = async () => {
           try {
             const categoryQuery = this.selectedTypeValue ? `&km_category=${this.selectedTypeValue}` : "";
-            
-            console.log("search query", this.searchQuery);
-            console.log("category query", categoryQuery);
+
             const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
 
             if (!response.ok) {

@@ -111,7 +111,7 @@
                 </div>
             <?php }           
             ?>
-            <div class="flex gap-[20px] items-start">
+            <div class="flex gap-[20px] justify-between items-center">
                 <div class="justify-between gap-[20px] hidden lg:flex">
                     <?php
                         wp_nav_menu(

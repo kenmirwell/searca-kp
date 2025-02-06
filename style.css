@@ -448,6 +448,55 @@ select {
     color: #196129;
 }
 
+#country-Philippines {
+    right: 25%;
+    top: 28%;
+}
+
+#country-Laos {
+    right: 64%;
+    top: 10%;
+}
+
+#country-Myanmar {
+}
+
+#country-Vietnam {
+    right: 54%;
+    top: 19%;
+}
+
+#country-Brunei {
+    right: 64%;
+    top: 47%;
+}
+
+#country-Singapore {
+    right: 99%;
+    top: 61%;
+}
+
+#country-Malaysia {
+    right: 93%;
+    top: 50%;
+}
+
+#country-Cambodia {
+    right: 57%;
+    top: 34%;
+}
+
+#country-Thailand {
+    right: 99%;
+    top: 10%;
+}
+
+#country-Indonesia {
+    right: 13%;
+    top: 65%;
+}
+
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

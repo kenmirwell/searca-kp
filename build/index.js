@@ -83,8 +83,6 @@ class HomeResourcesSearch {
         const getData = async () => {
           try {
             const categoryQuery = this.selectedTypeValue ? `&km_category=${this.selectedTypeValue}` : "";
-            console.log("search query", this.searchQuery);
-            console.log("category query", categoryQuery);
             const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
@@ -131,6 +129,27 @@ class HomeResourcesSearch {
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeResourcesSearch);
+
+/***/ }),
+
+/***/ "./modules/MapFunc.js":
+/*!****************************!*\
+  !*** ./modules/MapFunc.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class MapFunc {
+  constructor() {}
+  onClickMap(elementId, index) {
+    const accElement = document.getElementById(elementId);
+    console.log("element-id", elementId);
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MapFunc);
 
 /***/ }),
 
@@ -401,12 +420,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/ModalManager */ "./modules/ModalManager.js");
 /* harmony import */ var _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/HomeResourceSearch */ "./modules/HomeResourceSearch.js");
 /* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
+/* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
+
 
 
 
 const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
 const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
 const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
+const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.search.includes('error_registration=true')) {
     const emailValidation = document.getElementsByClassName("email-validation");
@@ -433,6 +455,9 @@ document.addEventListener("DOMContentLoaded", function () {
       testimonials.style.display = "none";
     }
   }
+  window.handleMapFunction = function (elementId) {
+    mapFunc.onClickMap(elementId);
+  };
   window.handleAccordion = function (elementId, containerId, headId) {
     const accElement = document.getElementById(elementId);
     const accContainer = document.getElementById(containerId);
@@ -464,9 +489,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const accContainer = document.getElementById("answer-container-0");
     const accHead = document.getElementById("faq-head-0");
     const accGroup = document.getElementById("faq-group-0");
-    const height = accElement.offsetHeight;
-    accGroup.classList.add("active-faq");
-    accContainer.style.height = height + "px";
+    const map = document.getElementById("map-container");
+    const phil = document.getElementById("country-Philippines");
+    const laos = document.getElementById("country-Laos");
+    const indo = document.getElementById("country-Indonesia");
+    const camb = document.getElementById("country-Cambodia");
+    const myan = document.getElementById("country-Myanmar");
+    const brun = document.getElementById("country-Brunei");
+
+    //initial setup for accordion in FAQ in homepage
+    if (accElement) {
+      const height = accElement.offsetHeight;
+      accGroup.classList.add("active-faq");
+      accContainer.style.height = height + "px";
+    }
+
+    //Initial setup for map
+    if (map) {
+      const rect = map.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      console.log("x-coordinates", x);
+      console.log("y-coordinates", y);
+    }
   };
   window.handleFaqAccordion = function (elementId, containerId, headId, index) {
     faqAcc.handleFaqAcc(elementId, containerId, headId, index);

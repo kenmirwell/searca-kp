@@ -1,10 +1,12 @@
 import ModalManager from "../modules/ModalManager";
 import HomeResourceSearch from "../modules/HomeResourceSearch";
 import FaqAcc from "../modules/FaqAcc";
+import MapFunc from "../modules/MapFunc";
 
 const modalManager = new ModalManager();
 const homeResourceSearch = new HomeResourceSearch();
 const faqAcc = new FaqAcc();
+const mapFunc = new MapFunc();
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -42,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    window.handleMapFunction = function(elementId) {
+        mapFunc.onClickMap(elementId);
+    }
+
     window.handleAccordion = function(elementId, containerId, headId) {
         const accElement = document.getElementById(elementId)
         const accContainer = document.getElementById(containerId)
@@ -76,16 +82,39 @@ document.addEventListener("DOMContentLoaded", function () {
     homeResourceSearch.handleSearch();
 
     window.onload = function() {
-        
         const accElement = document.getElementById("answer-0");
         const accContainer = document.getElementById("answer-container-0");
         const accHead = document.getElementById("faq-head-0");
         const accGroup = document.getElementById("faq-group-0");
 
-        const height = accElement.offsetHeight;
-        
-        accGroup.classList.add("active-faq");
-        accContainer.style.height = height+"px";
+        const map = document.getElementById("map-container");
+        const phil = document.getElementById("country-Philippines");
+        const laos = document.getElementById("country-Laos");
+        const indo = document.getElementById("country-Indonesia");
+        const camb = document.getElementById("country-Cambodia");
+        const myan = document.getElementById("country-Myanmar");
+        const brun = document.getElementById("country-Brunei");
+
+        //initial setup for accordion in FAQ in homepage
+        if(accElement) {    
+            const height = accElement.offsetHeight;
+            
+            accGroup.classList.add("active-faq");
+            accContainer.style.height = height+"px";
+        }
+
+        //Initial setup for map
+        if(map) {
+
+            const rect = map.getBoundingClientRect();
+
+           
+            const x = event.clientX - rect.left; 
+            const y = event.clientY - rect.top;
+
+            console.log("x-coordinates", x)
+            console.log("y-coordinates", y)
+        }
     }
 
     window.handleFaqAccordion = function(elementId, containerId, headId, index) {
