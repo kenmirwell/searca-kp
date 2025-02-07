@@ -198,7 +198,7 @@ body {
     border-color: #196129; 
 }
 
-.featured-material-slider .slick-track {
+.featured-material-slider .slick-track{
     display: flex !important; 
     gap: 20px !important;
 }
@@ -218,6 +218,12 @@ body {
 
 .featured-material-slider .slick-dots li.slick-active button:before {
     color: #000000 !important;
+}
+
+#home-featured-resources .slick-track {
+    display: flex !important; 
+    gap: 20px !important;
+    width: 100%
 }
 
 .custom-logo-link img {
@@ -432,7 +438,7 @@ select {
 }
 
 .active-faq > .flex > h6 {
-    color: #000000;
+    color: #ceab23;
     transition: all 0.3s ease;
 }
 
@@ -494,6 +500,10 @@ select {
 #country-Indonesia {
     right: 13%;
     top: 65%;
+}
+
+.hide-header {
+    transform: translateY(-100%);
 }
 
 

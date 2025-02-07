@@ -30,13 +30,15 @@
     include(get_stylesheet_directory() . '/includes/shortcodes/hero-banner-shortcode.php');
     include(get_stylesheet_directory() . '/includes/shortcodes/knowledge-management.php');
 
+    //custom enpoint
+    include(get_stylesheet_directory() . '/includes/custom-enpoints/home-search-endpoint.php');
+
 
     add_action('login_enqueue_scripts', 'loginStyle');
 
     function loginStyle() {
         wp_enqueue_style("main_style", get_stylesheet_uri()); 
         wp_enqueue_style("inter", "//fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
     }
 
     add_action("after_setup_theme", "searca_features");
@@ -84,7 +86,14 @@
         );
     }
     
+    add_filter('show_admin_bar', function($show) {
+        if (!current_user_can('administrator')) {
+            return false; 
+        }
+        return $show;
+    });
     
+
 
 
 

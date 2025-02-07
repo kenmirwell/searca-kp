@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     window.handlePopup = function(id) {
-        const popup = document.getElementById('auth')
+        const popup = document.getElementById(id)
 
         if(popupStatus) {
             popup.style.display = "none"
@@ -161,6 +161,25 @@ document.addEventListener("DOMContentLoaded", function () {
     window.selectedAuthor = function(author) {
         const selectedAuthor = document.getElementById("material__author").value
     }
+  
+    let lastScrollTop = 0;
+    const header = document.getElementById('header');
+    const triggerHeight = 300;
+    
+    window.addEventListener('scroll', () => {
+       
+        const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (currentScrollTop > triggerHeight) {
+            if (currentScrollTop > lastScrollTop) {
+                header.classList.add('hide-header');
+            } else {
+                header.classList.remove('hide-header');
+            }
+        }
+
+        lastScrollTop = Math.max(0, currentScrollTop); // Prevent negative values
+    });
 
     jQuery(document).ready(function($) {
         $('.banner-slider').slick({
@@ -176,6 +195,17 @@ document.addEventListener("DOMContentLoaded", function () {
     jQuery(document).ready(function($) {
         $('.featured-material-slider').slick({
             slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            dots: true,
+            arrows: false,
+        });
+    });
+
+    jQuery(document).ready(function($) {
+        $('#home-featured-resources').slick({
+            slidesToShow: 3,
             slidesToScroll: 1,
             autoplay: false,
             autoplaySpeed: 3000,

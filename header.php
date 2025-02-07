@@ -7,7 +7,7 @@
     <title><?php wp_title(); ?></title>
 </head>
 <body <?php body_class() ?>>
-    <div id="search-modal" class="hidden justify-center">
+    <div id="search-modal" class="hidden justify-center z-[999]">
         <!-- <div class="search-modal z-[999] absolute w-[90%] h-[95%] top-[5%] bg-[#ffffff] px-[50px] py-[20px]"> -->
         <div id="search-modal-content" class="search-modal z-[999] fixed bg-[#ffffff] w-[100%] opacity-95 h-[100vh] overflow-y-scroll">
             <div class="w-[100%]">
@@ -97,7 +97,7 @@
         </div>
         <div class="z-[99] fixed bg-[#000000] opacity-70 w-[100%] h-[100vh]"></div>
     </div>
-    <div class="bg-[#F2F2F2]">
+    <div id="header" class="bg-[#F2F2F2] top-0 z-[99] fixed w-[100%] transition-all duration-200 ease">
         <div class="flex justify-between items-center w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] m-auto py-[10px] lg:py-[20px] font-light">
             <div class="block lg:hidden">
                 <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +131,7 @@
                         </svg>
                     </div>
                     <div class="relative">
-                        <div onclick="handlePopup()" class="flex gap-[10px] justify-center items-center text-[14px] min-w-[35px] h-[35px] rounded-full bg-[#C5192D]">
+                        <div onclick="handlePopup('auth')" class="flex gap-[10px] justify-center items-center text-[14px] min-w-[35px] h-[35px] rounded-full bg-[#C5192D]">
                             <svg width="19" height="19" viewBox="0 0 241 221" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="121" cy="59" r="59" fill="white"/>
                                 <g clip-path="url(#clip0_1639_52)">

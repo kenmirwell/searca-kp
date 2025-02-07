@@ -233,54 +233,46 @@
         <div class="bg-[#FFFbf1] pt-[50px] pb-[150px]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <div class="flex justify-between items-end pb-[50px]">
-                    <div>
+                    <div class="">
                         <h2 class="text-[32px]">Knowledge resources</br> empowering informed decisions</h2>
                     </div>
-                    <div class="flex gap-[20px]">
-                        <div class="flex gap-[20px] items-center text-[#458753] text-[16px] font-[600] border-b-[1px] border-[#458753] py-[10px]">
-                            <button>Type</button>
-                            <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M30 2L16 16L2 2" stroke="#458753" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <?php
-                                $terms = get_terms(array(
-                                    'taxonomy' => 'km_category', // Replace with your taxonomy name
-                                    'hide_empty' => false,       // Set to true if you only want terms with posts
-                                ));
-                            ?>
-                            <ul class="category-container w-[100%] flex flex-col sm:flex-row lg:flex-col flex-nowrap sm:flex-wrap lg:flex-nowrap gap-[0px] sm:flex-row sm:gap-[20px] lg:gap-[0px] text-[12px] justify-center text-[center] font-[300] my-[10px] lg:text-[14px] lg:text-[left] lg:justify-start">
-                                <?php    
-                                if (!is_wp_error($terms)) {
-                                    foreach ($terms as $term) {
-                                        // echo '<li class="text-[#196129] p-[5px] cursor-pointer hover:font-[600]" data-name="' . $term->name . '" data-value="' . esc_attr($term->term_id) . '">' . esc_html($term->name) . '</li>';
-                                        ?>
-                                            <div>
-
-                                            </div>
-                                        <?php
-                                    }
-                                }
+                    <div class="flex gap-[20px] items-center">
+                        <div class="relative">
+                            <div onclick="handlePopup('filter-type')" class="flex gap-[20px] justify-between items-center text-[#458753] text-[16px] font-[600] border-b-[1px] border-[#458753] py-[10px] cursor-pointer">
+                                <p>Select Type</p>
+                                <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M30 2L16 16L2 2" stroke="#458753" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div id="filter-type" class="hidden absolute rounded-lg overflow-hidden">
+                                <?php
+                                    $terms = get_terms(array(
+                                        'taxonomy' => 'km_category', 
+                                        'hide_empty' => false,       
+                                    ));
                                 ?>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="flex h-[100%]">
-                                <input id="search-resources" class="w-[250px] font-[600] h-[100%] border-b-[1px] bg-transparent border-[#458753] text-[16px] text-[#458753] placeholder-[#458753] py-[10px] px-[10px]" type="text" placeholder="Topic">
+                                <ul class="category-container relative bg-[#ffffff] py-[20px] z-[99] w-[100%] flex flex-col">
+                                    <?php    
+                                    if (!is_wp_error($terms)) {
+                                        foreach ($terms as $term) {
+                                    ?>
+                                        <li class="w-[200px] font-[200] hover:font-[600] text-[#196129] text-[14px] px-[10px] py-[5px] cursor-pointer" data-name="<? echo $term->name ?>" data-value="<? echo esc_attr($term->term_id) ?>"><?php echo esc_html($term->name) ?></li>
+                                    <?php } } ?>
+                                </ul>
                             </div>
                         </div>
-                        <div class="flex w-[100%]">
-                            <div>
-                                <a class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] rounded-full" href="<?php echo esc_url(get_permalink(341)) ?>">
-                                    <button class="text-[#ffffff]">Explore resources</button>
-                                    <div class="bg-[#ceab23] rounded-full p-[10px]">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
+                        <div class="flex h-[100%]">
+                            <input id="search-resources" class="w-[250px] font-[600] h-[100%] border-b-[1px] bg-transparent border-[#458753] text-[18px] text-[#458753] placeholder-[#458753] py-[10px] px-[10px]" type="text" placeholder="Enter Topic">
+                        </div>
+                        <div class="flex">
+                            <a class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] rounded-full" href="<?php echo esc_url(get_permalink(341)) ?>">
+                                <button class="text-[#ffffff]">Explore resources</button>
+                                <div class="bg-[#ceab23] rounded-full p-[10px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -304,15 +296,14 @@
                                     ),
                                 ),
                             ));
-                        ?>
-                        <a href="<?php echo get_permalink($learning_materials_id) ?>" class="hidden md:flex justify-center gap-[30px] relative py-[10px] h-[500px] h-auto">
-                            <?php 
-                                if ($knowledge_management->have_posts()) {
-                                    while ($knowledge_management->have_posts()){
-                                        $knowledge_management->the_post();
 
-                                        $learning_materials_id = get_the_ID();
-                            ?>
+                            if ($knowledge_management->have_posts()) {
+                                while ($knowledge_management->have_posts()){
+                                    $knowledge_management->the_post();
+
+                                    $learning_materials_id = get_the_ID();
+                        ?>
+                            <a href="<?php echo get_permalink($learning_materials_id) ?>" class="hidden md:flex justify-center gap-[30px] relative py-[10px] h-[500px] h-auto">
                                 <div class="flex h-auto justify-start gap-[20px] w-[100%]">
                                     <div class="flex flex-col h-auto rounded-[15px] overflow-hidden cursor-pointer">
                                         <div class="flex h-[400px] relative bg-[#ffffff] rounded-[15px] overflow-hidden">
@@ -353,10 +344,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            <?php   }
-                                }
-                            ?>
-                        </a>
+                            </a>
+                        <?php   }
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -396,9 +387,9 @@
                                 <div 
                                     id="faq-head-<?php echo $faq_index; ?>"
                                     onclick="handleFaqAccordion('answer-<?php echo $faq_index; ?>', parseInt('<?php echo $faq_index; ?>', 10))"   
-                                    class="flex justify-between items-center cursor-pointer transition-all duration-300 ease"
+                                    class="flex justify-between items-center cursor-pointer transition-all duration-300 ease group"
                                 >
-                                    <h6 class="text-[18px] text-[#ffffff] font-[600]"><?php the_title(); ?></h6>
+                                    <h6 class="text-[18px] text-[#ffffff] font-[600] group-hover:text-[#ceab23] transition-all duration-300 ease"><?php the_title(); ?></h6>
                                     <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16 2V30M2 16H30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>

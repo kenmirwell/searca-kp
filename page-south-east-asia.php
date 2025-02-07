@@ -35,9 +35,9 @@ while (have_posts()) {
                         while ($countries->have_posts()) {
                             $countries->the_post();
                     ?>
-                        <div class="absolute text-[#ffffff] font-[200]" onclick="handleMapFunction('country-<?php the_title(); ?>')" id="country-<?php the_title(); ?>">
+                        <a href="<?php echo get_permalink() ?>" class="absolute text-[#ffffff] font-[200] py-[10px] px-[20px] bg-[#000000]" onclick="handleMapFunction('country-<?php the_title(); ?>')" id="country-<?php the_title(); ?>">
                             <p><?php the_title(); ?></p>
-                        </div>
+                        </a>
                     <?php 
                         } 
                     } 

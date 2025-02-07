@@ -83,7 +83,11 @@ class HomeResourcesSearch {
         const getData = async () => {
           try {
             const categoryQuery = this.selectedTypeValue ? `&km_category=${this.selectedTypeValue}` : "";
-            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
+            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/custom/v1/search?search=${this.searchQuery}${categoryQuery}&per_page=5`);
+            // const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
+
+            // console.log(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`)
+
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -527,7 +531,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
   window.handlePopup = function (id) {
-    const popup = document.getElementById('auth');
+    const popup = document.getElementById(id);
     if (popupStatus) {
       popup.style.display = "none";
       popupStatus = false;
@@ -549,6 +553,20 @@ document.addEventListener("DOMContentLoaded", function () {
   window.selectedAuthor = function (author) {
     const selectedAuthor = document.getElementById("material__author").value;
   };
+  let lastScrollTop = 0;
+  const header = document.getElementById('header');
+  const triggerHeight = 300;
+  window.addEventListener('scroll', () => {
+    const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentScrollTop > triggerHeight) {
+      if (currentScrollTop > lastScrollTop) {
+        header.classList.add('hide-header');
+      } else {
+        header.classList.remove('hide-header');
+      }
+    }
+    lastScrollTop = Math.max(0, currentScrollTop); // Prevent negative values
+  });
   jQuery(document).ready(function ($) {
     $('.banner-slider').slick({
       slidesToShow: 1,
@@ -562,6 +580,16 @@ document.addEventListener("DOMContentLoaded", function () {
   jQuery(document).ready(function ($) {
     $('.featured-material-slider').slick({
       slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      dots: true,
+      arrows: false
+    });
+  });
+  jQuery(document).ready(function ($) {
+    $('#home-featured-resources').slick({
+      slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: false,
       autoplaySpeed: 3000,
