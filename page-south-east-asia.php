@@ -35,8 +35,9 @@ while (have_posts()) {
                         while ($countries->have_posts()) {
                             $countries->the_post();
                     ?>
-                        <a href="<?php echo get_permalink() ?>" class="absolute text-[#ffffff] font-[200] py-[10px] px-[20px] bg-[#000000]" onclick="handleMapFunction('country-<?php the_title(); ?>')" id="country-<?php the_title(); ?>">
-                            <p><?php the_title(); ?></p>
+                        <a href="<?php echo get_permalink() ?>" class="flex items-center absolute font-[200] group transition-all duration-200 ease" onclick="handleMapFunction('country-<?php the_title(); ?>')" id="country-<?php the_title(); ?>">
+                            <div class="p-[20px] bg-[#dedede] rounded-full h-[20px] w-[20px] z-[2]"></div>
+                            <p class="absolute flex justify-start items-center py-[10px] pr-[0] pl-[50px] w-[0] group-hover:w-auto group-hover:pr-[20px] bg-[#b6b6b6] rounded-full overflow-hidden transition-all duration-300 ease-in-out"><?php the_title(); ?></p>
                         </a>
                     <?php 
                         } 
