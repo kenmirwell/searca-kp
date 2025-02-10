@@ -147,10 +147,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 class MapFunc {
-  constructor() {}
-  onClickMap(elementId, index) {
-    const accElement = document.getElementById(elementId);
-    console.log("element-id", elementId);
+  constructor() {
+    this.onMouseHoverMap();
+  }
+  onMouseHoverMap() {
+    for (let i = 0; i < 10; i++) {
+      const elements = document.getElementsByClassName(`country-${i}`);
+      const maps = document.getElementsByClassName(`map-${i}`);
+      Array.from(elements).forEach(element => {
+        document.getElementById(`country-Philippines`)?.classList.add("active-icon");
+        document.getElementById(`map-Philippines`)?.classList.add("active-map");
+        for (let j = 0; j < 10; j++) {
+          if (j !== 4) {
+            const otherElements = document.getElementsByClassName(`country-${j}`);
+            const otherMaps = document.getElementsByClassName(`map-${j}`);
+            Array.from(otherElements).forEach(otherElement => {
+              otherElement.classList.remove("active-icon");
+              otherElement.classList.add("inactive-icon");
+            });
+            Array.from(otherMaps).forEach(otherMap => {
+              otherMap.classList.remove("active-map");
+              otherMap.classList.add("inactive-map");
+            });
+          }
+        }
+        element.addEventListener("mouseover", () => {
+          element.classList.add("active-icon");
+          element.classList.remove("inactive-icon");
+          Array.from(maps).forEach(map => {
+            map.classList.add("active-map");
+            map.classList.remove("inactive-map");
+          });
+          for (let j = 0; j < 10; j++) {
+            if (j !== i) {
+              const otherElements = document.getElementsByClassName(`country-${j}`);
+              const otherMaps = document.getElementsByClassName(`map-${j}`);
+              Array.from(otherElements).forEach(otherElement => {
+                otherElement.classList.remove("active-icon");
+                otherElement.classList.add("inactive-icon");
+              });
+              Array.from(otherMaps).forEach(otherMap => {
+                otherMap.classList.remove("active-map");
+                otherMap.classList.add("inactive-map");
+              });
+            }
+          }
+        });
+      });
+    }
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MapFunc);
@@ -429,11 +473,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
-const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
-const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
-const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
 document.addEventListener("DOMContentLoaded", function () {
+  const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
+  const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
+  const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
   if (window.location.search.includes('error_registration=true')) {
     const emailValidation = document.getElementsByClassName("email-validation");
     emailValidation[0].style.display = "block";
@@ -459,8 +503,8 @@ document.addEventListener("DOMContentLoaded", function () {
       testimonials.style.display = "none";
     }
   }
-  window.handleMapFunction = function (elementId) {
-    mapFunc.onClickMap(elementId);
+  window.handleMapFunction = function (index) {
+    mapFunc.onMouseHoverMap(index);
   };
   window.handleAccordion = function (elementId, containerId, headId) {
     const accElement = document.getElementById(elementId);

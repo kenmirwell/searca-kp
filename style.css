@@ -455,20 +455,20 @@ select {
 }
 
 #country-Philippines {
-    right: 25%;
+    right: 35%;
     top: 28%;
 }
 
 #country-Laos {
-    right: 64%;
-    top: 10%;
+    right: 77%;
+    top: 9%;
 }
 
 #country-Myanmar {
 }
 
 #country-Vietnam {
-    right: 54%;
+    right: 66%;
     top: 19%;
 }
 
@@ -478,13 +478,13 @@ select {
 }
 
 #country-Singapore {
-    right: 99%;
-    top: 61%;
+    left: 164px;
+    top: 58%;
 }
 
 #country-Malaysia {
-    right: 93%;
-    top: 50%;
+    right: 57%;
+    top: 58%;
 }
 
 #country-Cambodia {
@@ -493,8 +493,8 @@ select {
 }
 
 #country-Thailand {
-    right: 99%;
-    top: 10%;
+    left: 114px;
+    top: 23%;
 }
 
 #country-Indonesia {
@@ -515,7 +515,7 @@ select {
     transform: translateY(-50%); /* Slightly move it up */
   }
   
-  .map-pointer::after {
+.map-pointer::after {
     content: '';
     position: absolute;
     bottom: -10px; /* Positioning below the circle */
@@ -525,8 +525,39 @@ select {
     height: 14px;
     background-color: red; /* Same as the circle */
     clip-path: polygon(50% 0, 100% 100%, 0 100%); /* Triangle shape */
-  }
+}
 
+.inactive-icon p{
+    max-height: 0px;
+    max-width: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.active-icon p{
+    max-height: 100px;
+    max-width: 500px;
+    padding-right: 20px;
+    padding-left: 30px;
+}
+
+.inactive-icon img{
+    width: 35px
+}
+
+.active-icon img{
+    width: 50px
+}
+
+.inactive-map{
+    /* display: none; */
+    opacity: 0;
+}
+
+.active-map{
+    display: block;
+    opacity: 1;
+}
 
 @keyframes spin {
     0% { transform: rotate(0deg); }

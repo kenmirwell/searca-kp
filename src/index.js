@@ -3,12 +3,13 @@ import HomeResourceSearch from "../modules/HomeResourceSearch";
 import FaqAcc from "../modules/FaqAcc";
 import MapFunc from "../modules/MapFunc";
 
-const modalManager = new ModalManager();
-const homeResourceSearch = new HomeResourceSearch();
-const faqAcc = new FaqAcc();
-const mapFunc = new MapFunc();
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    const modalManager = new ModalManager();
+    const homeResourceSearch = new HomeResourceSearch();
+    const faqAcc = new FaqAcc();
+    const mapFunc = new MapFunc();
 
 
     if(window.location.search.includes('error_registration=true')) {
@@ -44,8 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    window.handleMapFunction = function(elementId) {
-        mapFunc.onClickMap(elementId);
+    window.handleMapFunction = function(index) {
+        mapFunc.onMouseHoverMap(index);
     }
 
     window.handleAccordion = function(elementId, containerId, headId) {
