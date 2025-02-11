@@ -20,7 +20,7 @@
         $srf_image = $srf_group['srf_image'];
 ?>
     <div>
-        <div class="bg-[#196129]">
+        <div class="bg-[#196129] pt-[70px]">
             <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px] font-light">
                 <div>
                     <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight">

@@ -455,13 +455,13 @@ select {
 }
 
 #country-Philippines {
-    right: 45%;
+    right: 37%;
     top: 19%;
 }
 
 #country-Laos {
-    right: 80%;
-    top: 3%;
+    right: 68%;
+    top: 22%;
 }
 
 #country-Myanmar {
@@ -470,37 +470,37 @@ select {
 
 #country-Vietnam {
     right: 71%;
-    top: 15%;
+    top: 6%;
 }
 
 #country-Brunei {
-    right: 61%;
-    top: 39%;
+    right: 51%;
+    top: 54%;
 }
 
 #country-Singapore {
-    left: 124px;
-    top: 45%;
+    left: 174px;
+    top: 64%;
 }
 
 #country-Malaysia {
-    right: 82%;
-    top: 36%;
+    right: 80%;
+    top: 49%;
 }
 
 #country-Cambodia {
-    right: 76%;
-    top: 21%;
+    right: 73%;
+    top: 29%;
 }
 
 #country-Thailand {
-    left: 53px;
-    top: 10%;
+    left: 76px;
+    top: 16%;
 }
 
 #country-Indonesia {
     right: 50%;
-    top: 46%;
+    top: 76%;
 }
 
 .hide-header {

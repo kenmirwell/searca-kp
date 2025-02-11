@@ -88,22 +88,58 @@
             </div>
         </div>
         <div>
-            <div class="w-[65%] sm:w-[640px] md:w-[768px] mx-auto py-[50px] font-light">
+            <div class="w-[65%] sm:w-[640px] md:w-[768px] mx-auto py-[70px] font-light">
                 <div>
                     <div>
-                        <h2 class="text-[24px] font-[600]">Geographic Profile </h2>
-                        <div>
-                            <div>
+                        <h2 class="text-[24px] font-[600] text-[#f7d671]">Geographic Profile</h2>
+                        <div class="">
+                            <div class="pt-[15px]">
                                 <h3 class="text-[16px] font-[600]">Area</h3>
-                                <p>The Southeast Asia region lies between the tropics, which means that the climate, plants grown, and animal life in the countries throughout the region are relatively similar to each other.[3] It covers over 4,500,000 square kilometers of land area  with Indonesia being the largest country in the region.</p>
+                                <p class="pt-[10px]">The Southeast Asia region lies between the tropics, which means that the climate, plants grown, and animal life in the countries throughout the region are relatively similar to each other.[3] It covers over 4,500,000 square kilometers of land area  with Indonesia being the largest country in the region.</p>
                             </div>
-                            <div>
+                            <div class="pt-[15px]">
                                 <h3 class="text-[16px] font-[600]">Temperature and Climate</h3>
-                                <p>The climate of Southeast Asia can be described as tropical,[4] which means that the region is generally pretty warm in temperature and humidity is high all year round. [5]. The climate in some of the countries in this region are governed by a monsoon system of winds, while some other countries, particularly countries in the insular region, experience uniformly humid equatorial climates.</p>
+                                <p class="pt-[10px]">The climate of Southeast Asia can be described as tropical,[4] which means that the region is generally pretty warm in temperature and humidity is high all year round. [5]. The climate in some of the countries in this region are governed by a monsoon system of winds, while some other countries, particularly countries in the insular region, experience uniformly humid equatorial climates.</p>
                             </div>
-                            <div>
+                            <div class="pt-[15px]">
                                 <h3 class="text-[16px] font-[600]">Agricultural Land Area</h3>
-                                <p>Around 140 million hectares or about 30% of the total land area in Southeast Asia are estimated to be agricultural land according to the combined data from the World Bank of the total land area and agricultural land area of each country in the region. According to the International Rice Research Institute (IRRI), about 48 million hectares are dedicated for rice cultivation in Southeast Asia, which is estimated to render almost 30% of the world rice harvest.</p>
+                                <p class="pt-[10px]">Around 140 million hectares or about 30% of the total land area in Southeast Asia are estimated to be agricultural land according to the combined data from the World Bank of the total land area and agricultural land area of each country in the region. According to the International Rice Research Institute (IRRI), about 48 million hectares are dedicated for rice cultivation in Southeast Asia, which is estimated to render almost 30% of the world rice harvest.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-[50px]">
+                        <h2 class="text-[24px] font-[600] text-[#f7d671]">Demographic Profile</h2>
+                        <div class="">
+                            <div class="pt-[15px]">
+                                <h3 class="text-[16px] font-[600]">Race and Ethnicity</h3>
+                                <p class="pt-[10px]">Southeast Asia is truly ethnically and culturally diverse with over 1,200 languages spoken by different ethnic groups across the region. Each country is dominated by major ethnic groups which adds to their national identity. Moreover, there are over 350 ethnic minorities recognized in the countries of Southeast Asia which often live in remote mountainous areas.</p>
+                            </div>
+                            <div class="pt-[15px]">
+                                <h3 class="text-[16px] font-[600]">Religion</h3>
+                                <p class="pt-[10px]">Aside from southeast asia&apos;s geographical division, it is also religiously split between the mainland and maritime region. The former is largely dominated by Buddhism, while the latter is dominated by Islam. About 40% of the Southeast Asian population are estimated to be Muslims that particularly follow Sunni Islam, followed by Theravada Buddhism and Christianity.</p>
+                            </div>
+                            <div class="pt-[15px]">
+                                <h3 class="text-[16px] font-[600]">Population </h3>
+                                <p class="pt-[10px]">Data obtained from the World Bank shows that in 2022, the Southeast Asia region’s total population reached 680,759,398, with Indonesia housing over 40% of this. Though it is forecasted to continue to increase in total, data from Worldometers show that the population growth rate is slowly declining annually.It is mainly driven by the decline in fertility in the region with the adoption of family planning programmes, rapid urbanization and migration, and other socioeconomic and biological factors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-[50px]">
+                        <h2 class="text-[24px] font-[600] text-[#f7d671]">Economic Profile</h2>
+                        <p class="pt-[10px]">The Association of Southeast Asian Nations region was recognized as one of the fastest growing regions of the world in 2022 with Malaysia’s economy having the quickest growth in the same year. </p>
+                        <div class="pt-[20px]">
+                            <div>
+                                <h3 class="text-[16px] font-[600]">Gross Domestic Product (GDP)</h3>
+                                <p class="pt-[10px]">In 2022, the total GDP of countries in Southeast Asia was estimated to reach about U$3.25 trillion according to the data obtained from the World Bank. US$ 1.32 trillion of this was contributed by Indonesia, which was mainly driven by the country’s palm oil production and export.</p>
+                            </div>
+                            <div class="pt-[10px]">
+                                <h3 class="text-[16px] font-[600]">Employment</h3>
+                                <p class="pt-[10px]">In the ASEAN Statistical Brief Volume VII released in April 2024, it was estimated that there were 337.9 million employees in ASEAN in 2022, and about 27.6% of this is from the Agriculture, Forestry, and Fishing (AFF) Industry.</p>
+                                <div class="pl-[20px] pt-[20px]">
+                                    <h3 class="text-[16px] font-[600]">Agriculture Labor Force</h3>
+                                    <p class="pt-[10px]">According to the Food and Agriculture Organization (FAO), only about 30% of the population in Southeast Asia were employed in agriculture in 2020. This manifested a decline and is continuously declining that is driven by various factors such as shifting to non-agriculture work.</p>
+                                    <p class="pt-[10px]">Among the eleven Southeast Asian countries, data from the World Bank shows that Lao PDR and Malaysia had the highest estimated proportion of agricultural employment relative to their country’s total labor force in 2022. </p>
+                                </div>
                             </div>
                         </div>
                     </div>
