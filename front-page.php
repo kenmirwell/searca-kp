@@ -21,7 +21,7 @@
             "posts_per_page" => 10
         ));
     ?>
-    <div>
+    <div class="pt-[70px]">
         <div class="bg-[#196129] h-[780px]">
             <?php
                 // $home_banner = new WP_Query(array(

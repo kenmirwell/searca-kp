@@ -293,7 +293,7 @@ body {
     content: "";
     position: absolute;
     background-repeat: no-repeat;
-    background-color: #000000;
+    background-color: #F7D671;
     left: 0px;
     margin-top: 7px;
     width: 10px;
@@ -455,51 +455,52 @@ select {
 }
 
 #country-Philippines {
-    right: 35%;
-    top: 28%;
-}
-
-#country-Laos {
-    right: 77%;
-    top: 9%;
-}
-
-#country-Myanmar {
-}
-
-#country-Vietnam {
-    right: 66%;
+    right: 45%;
     top: 19%;
 }
 
+#country-Laos {
+    right: 80%;
+    top: 3%;
+}
+
+#country-Myanmar {
+    top: -33px;
+}
+
+#country-Vietnam {
+    right: 71%;
+    top: 15%;
+}
+
 #country-Brunei {
-    right: 64%;
-    top: 47%;
+    right: 61%;
+    top: 39%;
 }
 
 #country-Singapore {
-    left: 164px;
-    top: 58%;
+    left: 124px;
+    top: 45%;
 }
 
 #country-Malaysia {
-    right: 57%;
-    top: 58%;
+    right: 82%;
+    top: 36%;
 }
 
 #country-Cambodia {
-    right: 57%;
-    top: 34%;
+    right: 76%;
+    top: 21%;
 }
 
 #country-Thailand {
-    left: 114px;
-    top: 23%;
+    left: 53px;
+    top: 10%;
 }
 
 #country-Indonesia {
-    right: 13%;
-    top: 65%;
+    right: 50%;
+    top: 46%;
 }
 
 .hide-header {
@@ -539,14 +540,20 @@ select {
     max-width: 500px;
     padding-right: 20px;
     padding-left: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .inactive-icon img{
-    width: 35px
+    transform: scale(0.5);
+}
+
+.active-icon {
+    z-index: 99;
 }
 
 .active-icon img{
-    width: 50px
+    transform: scale(1);
+
 }
 
 .inactive-map{

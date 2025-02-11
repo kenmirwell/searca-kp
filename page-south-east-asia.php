@@ -41,7 +41,7 @@ while (have_posts()) {
                             <img id="map-<?php the_title(); ?>" class="map-<?php echo $country_index; ?> absolute top-0 left-0 w-[100%] transition-all duration-300 ease-in-out" src="<?php echo esc_url($image_url); ?>" alt="">
                     <?php } }?>
                 </div>
-                <div id="map-container" class="absolute top-0 w-[100%] h-[100%]">
+                <div id="map-container" class="absolute top-0 w-[600px] h-[600px]">
                     <?php 
                     $countries = new WP_Query(array(
                         "post_type" => "country-post-type",
@@ -57,8 +57,8 @@ while (have_posts()) {
                             $flag_url = get_field('flag');
                     ?>
                         <a href="<?php echo get_permalink(); ?>" data-index="<?php echo intval($country_index); ?>" class="country-<?php echo $country_index; ?> flex items-center absolute font-[200] transition-all duration-200 ease" id="country-<?php the_title(); ?>">
-                            <img class="z-[2] transition-all duration-300 ease-in-out" src="<?php echo esc_url($flag_url); ?>" alt="">
-                            <p class="absolute flex justify-start items-center py-[7px] ml-[30px] rounded-br-full rounded-tr-full  bg-[#b6b6b6] overflow-hidden transition-all duration-300 ease-in-out"><?php the_title(); ?></p>
+                            <img class="w-[50px] z-[2] transition-all duration-300 ease-in-out" src="<?php echo esc_url($flag_url); ?>" alt="">
+                            <p class="absolute text-[14px] font-[500] flex justify-start items-center py-[7px] ml-[30px] rounded-br-full rounded-tr-full  bg-[#ffffff] overflow-hidden transition-all duration-300 ease-in-out"><?php the_title(); ?></p>
                         </a>
                     <?php 
                         } 
