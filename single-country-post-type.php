@@ -39,7 +39,13 @@ while (have_posts()) {
             </div>
             <div class="flex flex-col w-[50%]">
                 <div class="relative h-[600px] w-[100%]">
-                    <img class="absolute w-full h-full object-cover rounded-xl z-[2]" src="<?php echo esc_url($map); ?>" alt="<?php the_title(); ?>">
+                    <!-- <img class="absolute w-full h-full object-cover rounded-xl z-[2]" src="<?php //echo esc_url($map); ?>" alt="<?php //the_title(); ?>"> -->
+                    <?php
+                        if ( has_post_thumbnail() && $banner_alignment !== "center-align" ) {
+                            $thumbnail_url = get_the_post_thumbnail_url();
+                    ?>
+                      <img class="absolute w-full h-full object-cover rounded-xl z-[2]" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
+                    <?php } ?>
                     <div class="bg-[#ffffff] opacity-25 w-[100%] h-[100%] absolute top-0 left-0 z-[1] rounded-xl"></div>
                 </div>
                 <!-- <div class="flex flex-col gap-[2px] pt-[20px]">
