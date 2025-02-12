@@ -22,7 +22,7 @@
     //includes
     include(get_stylesheet_directory() . '/includes/functions/registration-approval.php');
     include(get_stylesheet_directory() . '/includes/functions/handle-login.php');
-    include(get_stylesheet_directory() . '/includes/functions/button-template-func.php');
+    include get_template_directory() . '/includes/functions/button-template-func.php'; //this is the same with get_stylesheet_directory
 
     //shortcode
     include(get_stylesheet_directory() . '/includes/shortcodes/agpractices-shortcode.php');
