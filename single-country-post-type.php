@@ -16,24 +16,39 @@ while (have_posts()) {
 
 ?>
     <div class="bg-[#196129] pt-[70px]">
-        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px] font-light">
-            <div>
+        <div class="flex w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pt-[50px] pb-[10px] font-light">
+            <div class="w-[50%]">
                 <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight">
-                    <p class="cursor-pointer"><a href="/">Home |</a></p>
+                    <p class="cursor-pointer"><a href="/">Home | Agricultural Statistics Data |</a></p>
                     <p class="cursor-pointer"><?php the_title()?></p>
                 </div>
             </div>
-            <div class="border-b-[1px] border-[#F7D671] text-[#F7D671] text-[45px] pb-[20px] my-[20px]">
-                <h1 class="cursor-pointer"><?php the_title() ?></h1>
-            </div>
-            <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto font-light">
-              <div class="flex flex-col gap-[5px]">
+        </div>
+    </div>
+    <div class="bg-[#196129]">
+        <div class="flex w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pb-[50px] font-light">
+            <div class="text-[#F7D671] w-[50%] pb-[20px] my-[20px]">
+                <h1 class="cursor-pointer text-[45px] font-[500]"><?php the_title() ?></h1>
+                <div class="flex flex-col gap-[2px] pt-[20px]">
                     <?php for ($i = 1; $i <= 4; $i++): ?>
                         <div class="">
-                            <p class="pb-[10px] text-[#ffffff]"><?php echo $quick_facts_item[$i]; ?></p>
+                            <p class="text-[#ffffff]"><?php echo $quick_facts_item[$i]; ?></p>
                         </div>
                     <?php endfor; ?>
                 </div>
+            </div>
+            <div class="flex flex-col w-[50%]">
+                <div class="relative h-[600px] w-[100%]">
+                    <img class="absolute w-full h-full object-cover rounded-xl z-[2]" src="<?php echo esc_url($map); ?>" alt="<?php the_title(); ?>">
+                    <div class="bg-[#ffffff] opacity-25 w-[100%] h-[100%] absolute top-0 left-0 z-[1] rounded-xl"></div>
+                </div>
+                <!-- <div class="flex flex-col gap-[2px] pt-[20px]">
+                    <?php //for ($i = 1; $i <= 4; $i++): ?>
+                        <div class="">
+                            <p class="text-[#ffffff]"><?php //echo $quick_facts_item[$i]; ?></p>
+                        </div>
+                    <?php //endfor; ?>
+                </div> -->
             </div>
         </div>
     </div>

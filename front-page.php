@@ -22,7 +22,7 @@
         ));
     ?>
     <div class="pt-[70px]">
-        <div class="bg-[#196129] h-[780px]">
+        <div class="bg-[#196129] h-[650px]">
             <?php
                 // $home_banner = new WP_Query(array(
                 //     "post_type" => "home-banner",
@@ -66,7 +66,7 @@
         </div>
         <div class="py-[100px] bg-[#fffeeb]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div class="flex flex-col gap-[5px] items-center text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
+                <div class="flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
                     <div class="text-[22px] lg:text-[32px] font-[600]">
                         <h2>Key pillars of our work</h2>
                     </div>
@@ -82,20 +82,22 @@
                         if ($components->have_posts()) {
                             while ($components->have_posts()){
                         
-                                    $components->the_post();
-                                    $logo_url = get_field("component_logo");
-                                    $card_color = get_field("component_color");
-                                    $aspiring_outcome = get_field("aspirational_outcome");
-                                    $expected_output = get_field("expected_output");
-                                    $thumbnail_url = get_the_post_thumbnail_url();
-                                    $page_link = get_field("component_page_link");
+                                $components->the_post();
+                                $logo_url = get_field("component_logo");
+                                $card_color = get_field("component_color");
+                                $aspiring_outcome = get_field("aspirational_outcome");
+                                $expected_output = get_field("expected_output");
+                                $thumbnail_url = get_the_post_thumbnail_url();
+                                $page_link = get_field("component_page_link");
+                                $components_index = (int) $components->current_post;
 
-                                    set_query_var('logo_url', $logo_url);
-                                    set_query_var('card_color', $card_color);
-                                    set_query_var('aspiring_outcome', $aspiring_outcome);
-                                    set_query_var('expected_output', $expected_output);
-                                    set_query_var('thumbnail_url', $thumbnail_url);
-                                    set_query_var('page_link', $page_link);
+                                set_query_var('component_index', $components_index);
+                                set_query_var('logo_url', $logo_url);
+                                set_query_var('card_color', $card_color);
+                                set_query_var('aspiring_outcome', $aspiring_outcome);
+                                set_query_var('expected_output', $expected_output);
+                                set_query_var('thumbnail_url', $thumbnail_url);
+                                set_query_var('page_link', $page_link);
 
                             get_template_part("includes/components/component", "desktop");
 
@@ -137,16 +139,14 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="flex w-[100%]">
-                            <div class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#ceab23] rounded-full">
-                                <button>Explore the platform</button>
-                                <div class="bg-[#2a7f3d] rounded-full p-[10px]">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                       <?php
+                            get_button_data('button-template', array(
+                                'title' => 'Explore the platform',
+                                'ar_bg' => '#2a7f3d',
+                                'button_bg' => '#ceab23',
+                                'link' => '#'
+                            ));
+                       ?>
                     </div>
                     <div class="w-[60%] overflow-hidden rounded-t-xl">
                         <div class="flex justify-center p-[20px] bg-[#2a7f3d]">

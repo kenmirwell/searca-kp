@@ -83,11 +83,9 @@ class HomeResourcesSearch {
         const getData = async () => {
           try {
             const categoryQuery = this.selectedTypeValue ? `&km_category=${this.selectedTypeValue}` : "";
-            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/custom/v1/search?search=${this.searchQuery}${categoryQuery}&per_page=5`);
-            // const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
 
-            // console.log(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`)
-
+            // const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/custom/v1/search?search=${this.searchQuery}${categoryQuery}&per_page=5`);
+            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -402,6 +400,45 @@ class ModalManager {
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ModalManager);
 
+/***/ }),
+
+/***/ "./modules/MouseOverFunc.js":
+/*!**********************************!*\
+  !*** ./modules/MouseOverFunc.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class MouseOverFunc {
+  constructor() {
+    this.onMouseHover();
+  }
+  onMouseHover() {
+    for (let i = 0; i < 6; i++) {
+      const elements = document.getElementsByClassName(`component-${i}`);
+      Array.from(elements).forEach(elem => {
+        elem.addEventListener("mouseover", () => {
+          elem.classList.add("active-component");
+          elem.classList.remove("inactive-component");
+          for (let j = 0; j < 6; j++) {
+            if (j !== i) {
+              const otherElements = document.getElementsByClassName(`component-${j}`);
+              Array.from(otherElements).forEach(otherElement => {
+                otherElement.classList.remove("active-component");
+                otherElement.classList.add("inactive-component");
+              });
+            }
+          }
+        });
+      });
+    }
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MouseOverFunc);
+
 /***/ })
 
 /******/ 	});
@@ -469,6 +506,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/HomeResourceSearch */ "./modules/HomeResourceSearch.js");
 /* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
 /* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
+/* harmony import */ var _modules_MouseOverFunc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/MouseOverFunc */ "./modules/MouseOverFunc.js");
+
 
 
 
@@ -478,6 +517,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
   const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
   const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  const mousehover = new _modules_MouseOverFunc__WEBPACK_IMPORTED_MODULE_4__["default"]();
   if (window.location.search.includes('error_registration=true')) {
     const emailValidation = document.getElementsByClassName("email-validation");
     emailValidation[0].style.display = "block";
@@ -505,6 +545,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.handleMapFunction = function (index) {
     mapFunc.onMouseHoverMap(index);
+  };
+  window.mouseOverFunction = function (index) {
+    mousehover.onMouseHover();
   };
   window.handleAccordion = function (elementId, containerId, headId) {
     const accElement = document.getElementById(elementId);

@@ -2,6 +2,7 @@ import ModalManager from "../modules/ModalManager";
 import HomeResourceSearch from "../modules/HomeResourceSearch";
 import FaqAcc from "../modules/FaqAcc";
 import MapFunc from "../modules/MapFunc";
+import MouseOverFunc from "../modules/MouseOverFunc";
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const homeResourceSearch = new HomeResourceSearch();
     const faqAcc = new FaqAcc();
     const mapFunc = new MapFunc();
+    const mousehover = new MouseOverFunc();
 
 
     if(window.location.search.includes('error_registration=true')) {
@@ -47,6 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.handleMapFunction = function(index) {
         mapFunc.onMouseHoverMap(index);
+    }
+
+    window.mouseOverFunction = function(index) {
+       mousehover.onMouseHover();
     }
 
     window.handleAccordion = function(elementId, containerId, headId) {

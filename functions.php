@@ -22,6 +22,7 @@
     //includes
     include(get_stylesheet_directory() . '/includes/functions/registration-approval.php');
     include(get_stylesheet_directory() . '/includes/functions/handle-login.php');
+    include(get_stylesheet_directory() . '/includes/functions/button-template-func.php');
 
     //shortcode
     include(get_stylesheet_directory() . '/includes/shortcodes/agpractices-shortcode.php');
@@ -32,6 +33,7 @@
 
     //custom enpoint
     include(get_stylesheet_directory() . '/includes/custom-enpoints/home-search-endpoint.php');
+    
 
 
     add_action('login_enqueue_scripts', 'loginStyle');
@@ -61,6 +63,7 @@
             'material-author',
             "component",
             'knowledge-management',
+            'country-post-type',
         ));
 
         add_theme_support('custom-logo', array(
