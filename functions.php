@@ -35,6 +35,18 @@
     include(get_stylesheet_directory() . '/includes/custom-enpoints/home-search-endpoint.php');
     
 
+    add_action('init', 'theme_set_options');
+
+    function theme_set_options() {
+        if( get_option('root_url') === false ) {
+            update_option('root_url', 'https://bcsdevelopmentgator.site/wp-json/');
+        }
+    
+        if( get_option('some_key') === false ) {
+            update_option('some_key', 'your_key_here');
+        }
+    }
+
 
     add_action('login_enqueue_scripts', 'loginStyle');
 

@@ -14,6 +14,8 @@
         $cop_link = get_field("cop_link");
         $cadre_in_action_banner = get_field("cadre_in_action_banner");
         $faq_list = get_field('faq_list');
+
+        $root_url = get_option('root_url');
 ?>
     <?php
         $home_banner = new WP_Query(array(
@@ -144,7 +146,7 @@
                                 'title' => 'Explore the platform',
                                 'ar_bg' => '#2a7f3d',
                                 'button_bg' => '#ceab23',
-                                'link' => '#'
+                                'root_url' => "$root_url/agricultural-data-tools/"
                             ));
                        ?>
                     </div>
