@@ -87,13 +87,13 @@ class ModalManager {
                 if (searchQuery) {
                     try {
                         const [pagesResponse, postsResponse, customPostsResponse] = await Promise.all([
-                            fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/pages?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then((res) =>
+                            fetch(`${ENV_VARS.API_URL}pages?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then((res) =>
                                 res.status === 400 ? null : res
                             ),
-                            fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/posts?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then((res) =>
+                            fetch(`${ENV_VARS.API_URL}posts?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then((res) =>
                                 res.status === 400 ? null : res
                             ),
-                            fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then((res) =>
+                            fetch(`${ENV_VARS.API_URL}knowledge-management?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then((res) =>
                                 res.status === 400 ? null : res
                             ),
                         ]);

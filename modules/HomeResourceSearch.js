@@ -16,8 +16,6 @@ class HomeResourcesSearch {
     const searchedTitle = document.getElementById("search-result-title");
     const searchContainer = document.getElementById("home-search-container");
 
-    console.log("ENV", ENV_VARS)
-
     if (e.target && e.target.id === 'search-resources') {
       this.searchQuery = e.target.value.trim();
     } 

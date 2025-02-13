@@ -68,7 +68,6 @@ class HomeResourcesSearch {
     const searched = document.getElementById("home-search-result");
     const searchedTitle = document.getElementById("search-result-title");
     const searchContainer = document.getElementById("home-search-container");
-    console.log("ENV", _src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     if (e.target && e.target.id === 'search-resources') {
       this.searchQuery = e.target.value.trim();
     }
@@ -282,7 +281,7 @@ class ModalManager {
         console.log("page", page);
         if (searchQuery) {
           try {
-            const [pagesResponse, postsResponse, customPostsResponse] = await Promise.all([fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/pages?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then(res => res.status === 400 ? null : res), fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/posts?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then(res => res.status === 400 ? null : res), fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then(res => res.status === 400 ? null : res)]);
+            const [pagesResponse, postsResponse, customPostsResponse] = await Promise.all([fetch(`${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}pages?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then(res => res.status === 400 ? null : res), fetch(`${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}posts?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then(res => res.status === 400 ? null : res), fetch(`${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?search=${searchQuery}&per_page=${itemsPerPage}&page=${page}`).then(res => res.status === 400 ? null : res)]);
             const pages = !pagesResponse ? [] : await pagesResponse.json();
             const posts = !postsResponse ? [] : await postsResponse.json();
             const customPosts = !customPostsResponse ? [] : await customPostsResponse.json();
