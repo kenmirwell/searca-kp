@@ -1,3 +1,5 @@
+import ENV_VARS from "../src/config.js"
+
 class ModalManager {
     constructor() {
         this.modalStatus = false; 
@@ -23,6 +25,8 @@ class ModalManager {
             }
             this.openModal(modal);
         }
+
+        console.log("ENV", ENV_VARS)
     }
 
     openModal(modal) {

@@ -1,3 +1,5 @@
+import ENV_VARS from "../src/config.js"
+
 class HomeResourcesSearch {
   constructor() {
     this.isSpinnerVisible = false;
@@ -13,6 +15,8 @@ class HomeResourcesSearch {
     const searched = document.getElementById("home-search-result");
     const searchedTitle = document.getElementById("search-result-title");
     const searchContainer = document.getElementById("home-search-container");
+
+    console.log("ENV", ENV_VARS)
 
     if (e.target && e.target.id === 'search-resources') {
       this.searchQuery = e.target.value.trim();
@@ -38,7 +42,7 @@ class HomeResourcesSearch {
             const categoryQuery = this.selectedTypeValue ? `&km_category=${this.selectedTypeValue}` : "";
 
             // const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/custom/v1/search?search=${this.searchQuery}${categoryQuery}&per_page=5`);
-            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
+            const response = await fetch(`${ENV_VARS.API_URL}knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
 
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);

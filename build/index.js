@@ -52,6 +52,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _src_config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/config.js */ "./src/config.js");
+
 class HomeResourcesSearch {
   constructor() {
     this.isSpinnerVisible = false;
@@ -66,6 +68,7 @@ class HomeResourcesSearch {
     const searched = document.getElementById("home-search-result");
     const searchedTitle = document.getElementById("search-result-title");
     const searchContainer = document.getElementById("home-search-container");
+    console.log("ENV", _src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     if (e.target && e.target.id === 'search-resources') {
       this.searchQuery = e.target.value.trim();
     }
@@ -85,7 +88,7 @@ class HomeResourcesSearch {
             const categoryQuery = this.selectedTypeValue ? `&km_category=${this.selectedTypeValue}` : "";
 
             // const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/custom/v1/search?search=${this.searchQuery}${categoryQuery}&per_page=5`);
-            const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/wp/v2/knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
+            const response = await fetch(`${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
             }
@@ -209,6 +212,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _src_config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/config.js */ "./src/config.js");
+
 class ModalManager {
   constructor() {
     this.modalStatus = false;
@@ -231,6 +236,7 @@ class ModalManager {
       }
       this.openModal(modal);
     }
+    console.log("ENV", _src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
   }
   openModal(modal) {
     modal.style.display = "flex";
@@ -438,6 +444,24 @@ class MouseOverFunc {
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MouseOverFunc);
+
+/***/ }),
+
+/***/ "./src/config.js":
+/*!***********************!*\
+  !*** ./src/config.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const ENV_VARS = {
+  ROOT_URL: "https://bcsdevelopmentgator.site/wp-json/",
+  API_URL: "https://bcsdevelopmentgator.site/wp-json/wp/v2/"
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ENV_VARS);
 
 /***/ })
 
