@@ -6,7 +6,8 @@
 */
 
 body {
-    font-family: 'inter';
+    /* font-family: 'inter'; */
+    font-family: "Plus Jakarta Sans", sans-serif;
     line-height: 1.675;
 }
 
@@ -572,6 +573,30 @@ select {
 
 .inactive-component .component-text {
     max-height: 0;
+}
+
+.button-gold {
+    background-color: #ceab23;
+}
+
+.button-gold .arrow-bg {
+    background-color: #2a7f3d;
+}
+
+.button-gold:hover {
+    background-color: #ffcb00;
+}
+
+.button-green {
+    background-color: #2a7f3d;
+}
+
+.button-green .arrow-bg {
+    background-color: #ceab23;
+}
+
+.button-green:hover .arrow-bg {
+    background-color: #ffcb00;
 }
 
 @keyframes spin {

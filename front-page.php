@@ -69,7 +69,7 @@
         <div class="py-[100px] bg-[#fffeeb]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <div class="flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
-                    <div class="text-[22px] lg:text-[32px] font-[600]">
+                    <div class="text-[22px] lg:text-[36px] font-[600]">
                         <h2>Key pillars of our work</h2>
                     </div>
                 </div>
@@ -111,15 +111,15 @@
             </div>
         <div class="bg-[#196129] pt-[80px] relative overflow-hidden">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div class="flex justify-center gap-[60px] items-end">
-                    <div class="w-[40%] pt-[50px] flex flex-col gap-[10px] text-left items-center mx-auto pb-[20px] md:pb-[40px]">
-                        <div class="text-[#ffffff] w-[100%] text-[22px] lg:text-[32px] font-[600]">
+                <div class="flex justify-center gap-[60px] items-start">
+                    <div class="w-[40%] pt-[50px] flex flex-col gap-[20px] text-left items-center mx-auto pb-[20px] md:pb-[40px]">
+                        <div class="text-[#ffffff] w-[100%] text-[22px] lg:text-[36px] font-[600]">
                             <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
                         </div>
                         <div class="flex flex-col gap-[20px]">
                             <div class="text-[#ffffff] w-[100%] font-light md:font-normal text-[12px] lg:text-[16px]">
                                 <p class="font-[300]"><?php echo $agpractices_brief_description ?></p>
-                                <ul class="flex flex-col gap-[10px] py-[20px] agpractices-list">
+                                <ul class="flex flex-col gap-[20px] py-[50px] agpractices-list">
                                     <li class="flex gap-[10px] items-center">
                                         <svg width="21" height="11" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M34 2L12 24L2 14" stroke="#CEAB23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -144,16 +144,18 @@
                        <?php
                             get_button_data('button-template', array(
                                 'title' => 'Explore the platform',
-                                'ar_bg' => '#2a7f3d',
+                                'button_class' => 'button-gold',
+                                'ar_bg' => 'bg-[#2a7f3d]',
                                 'button_bg' => '#ceab23',
                                 'root_url' => "$root_url/agricultural-data-tools/"
                             ));
                        ?>
                     </div>
-                    <div class="w-[60%] overflow-hidden rounded-t-xl">
-                        <div class="flex justify-center p-[20px] bg-[#2a7f3d]">
+                    <div class="w-[60%]">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.png" alt="Leaf Image">
+                        <a href="/agricultural-data-tools/" class="flex justify-center p-[20px] bg-[#2a7f3d] overflow-hidden rounded-t-xl">
                             <img class="w-full h-full object-cover" src="<?php echo esc_url($agpractices_image) ?>" alt="">
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -184,25 +186,22 @@
         <div class="py-[20px] lg:py-[100px]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <div>
-                    <h2 class="text-[32px]">Sprouting Knowledge.</br> Cultivating Conversations.</h2>
+                    <h2 class="text-[36px] font-[600]">Sprouting Knowledge.</br> Cultivating Conversations.</h2>
                     <div class="flex justify-between pt-[20px] pb-[40px]">
                         <div class=" w-[70%]">
                             <p>Become part of discussions and build our community. Join a vibrant network of agricultural professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
                         </div>
                         <div class="flex items-center gap-[20px]">
-                            <div class="flex">
-                                <a class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] rounded-full" href="<?php echo esc_url(get_permalink(341)) ?>">
-                                    <button class="text-[#ffffff]">Register for free</button>
-                                    <div class="bg-[#ceab23] rounded-full p-[10px]">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
-                            <div>
-                                <a class="" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
-                            </div>
+                            <?php
+                                get_button_data('button-template', array(
+                                    'title' => 'Register for free',
+                                    'button_class' => 'button-green',
+                                    'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
+                                    'button_bg' => '#2a7f3d',
+                                    'root_url' => "$root_url/partnerships/"
+                                ));
+                            ?>
+                            <a class="" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
                         </div>
                     </div>
                     <div class="flex gap-[20px] h-[450px]">
@@ -218,7 +217,7 @@
         </div>
         <div class="flex w-[100%] h-[720px] relative">
             <div class="flex w-[60%] mx-auto gap-[100px] items-center relative z-[9]">
-                <h2 class="text-[#ffffff] text-[48px]">See CADRE in Action</br> Driving Agricultural</br> Innovation</h2>
+                <h2 class="text-[#ffffff] text-[36px] font-[600]">See CADRE in Action</br> Driving Agricultural</br> Innovation</h2>
                 <div class="flex flex-col items-center justify-center gap-[20px]">
                     <div class="flex relative justify-center items-center">
                         <div class="bg-[#ffffff] p-[50px] rounded-full"></div>
@@ -236,11 +235,11 @@
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <div class="flex justify-between items-end pb-[50px]">
                     <div class="">
-                        <h2 class="text-[32px]">Knowledge resources</br> empowering informed decisions</h2>
+                        <h2 class="text-[36px] font-[600]">Knowledge resources</br> empowering informed decisions</h2>
                     </div>
                     <div class="flex gap-[20px] items-center">
                         <div class="relative">
-                            <div onclick="handlePopup('filter-type')" class="flex gap-[20px] justify-between items-center text-[#458753] text-[16px] font-[600] border-b-[1px] border-[#458753] py-[10px] cursor-pointer">
+                            <div onclick="handlePopup('filter-type', event)" class="flex gap-[20px] justify-between items-center text-[#458753] text-[16px] font-[600] border-b-[1px] border-[#458753] py-[10px] cursor-pointer">
                                 <p>Select Type</p>
                                 <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M30 2L16 16L2 2" stroke="#458753" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -267,14 +266,15 @@
                             <input id="search-resources" class="w-[250px] font-[600] h-[100%] border-b-[1px] bg-transparent border-[#458753] text-[18px] text-[#458753] placeholder-[#458753] py-[10px] px-[10px]" type="text" placeholder="Enter Topic">
                         </div>
                         <div class="flex">
-                            <a class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] rounded-full" href="<?php echo esc_url(get_permalink(341)) ?>">
-                                <button class="text-[#ffffff]">Explore resources</button>
-                                <div class="bg-[#ceab23] rounded-full p-[10px]">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </a>
+                            <?php
+                                get_button_data('button-template', array(
+                                    'title' => 'Explore resources',
+                                    'button_class' => 'button-green',
+                                    'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
+                                    'button_bg' => '#2a7f3d',
+                                    'root_url' => "$root_url/partnerships/"
+                                ));
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -310,7 +310,7 @@
                                     <div class="flex flex-col h-auto rounded-[15px] overflow-hidden cursor-pointer">
                                         <div class="flex h-[400px] relative bg-[#ffffff] rounded-[15px] overflow-hidden">
                                             <div class="absolute top-[15px] left-[15px] z-[11]">
-                                                 <?php 
+                                                <?php 
                                                     $terms = get_the_terms(get_the_ID(), 'km_category'); 
                                                     if ($terms && !is_wp_error($terms)) {
                                                         foreach ($terms as $term) {
@@ -319,7 +319,7 @@
                                                             }
                                                         }
                                                     }
-                                                 ?>
+                                                ?>
                                             </div>
                                             <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
                                             <?php

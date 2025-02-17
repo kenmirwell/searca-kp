@@ -7,9 +7,9 @@
     <title><?php wp_title(); ?></title>
 </head>
 <body <?php body_class() ?>>
-    <div id="search-modal" class="hidden justify-center z-[999]">
+    <div id="search-modal" class="hidden justify-center z-[99999]">
         <!-- <div class="search-modal z-[999] absolute w-[90%] h-[95%] top-[5%] bg-[#ffffff] px-[50px] py-[20px]"> -->
-        <div id="search-modal-content" class="search-modal z-[999] fixed bg-[#ffffff] w-[100%] opacity-95 h-[100vh] overflow-y-scroll">
+        <div id="search-modal-content" class="search-modal z-[99999] fixed bg-[#ffffff] w-[100%] opacity-95 h-[100vh] overflow-y-scroll">
             <div class="w-[100%]">
                 <div class="w-[80%] py-[20px] mx-auto">
                     <div class="flex items-center relative">
@@ -37,8 +37,8 @@
         <!-- <div class="search-modal z-[99] fixed bg-[#000000] opacity-70 w-[100%] h-[100vh]"></div> -->
     </div>
     <div id="login-modal" class="hidden justify-center">
-        <div class="z-[999] fixed w-[360px] top-[30%] bg-[#ffffff] px-[30px] py-[50px] pt-[65px] rounded-xl">
-            <div onclick="onModal('login-modal')" class="absolute cursor-pointer top-[5px] right-[5px] bg-[#ffffff] rounded-full p-[10px]">
+        <div class="z-[9999] fixed w-[360px] top-[30%] bg-[#ffffff] px-[30px] py-[50px] pt-[65px] rounded-xl">
+            <div onclick="onModal('login-modal', event)" class="absolute cursor-pointer top-[5px] right-[5px] bg-[#ffffff] rounded-full p-[10px]">
                 <svg width="20" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 2L2 17M2 2L17 17" stroke="#7C7C7C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -67,8 +67,8 @@
         <div class="z-[99] fixed bg-[#000000] opacity-70 w-[100%] h-[100vh]"></div>
     </div>
     <div id="signup-modal" class="hidden justify-center">
-        <div class="z-[999] fixed w-[360px] top-[30%] bg-[#ffffff] px-[30px] py-[50px] pt-[65px] rounded-xl">
-            <div onclick="onModal('signup-modal')" class="absolute top-[5px] right-[5px] bg-[#ffffff] rounded-full p-[10px]">
+        <div class="z-[9999] fixed w-[360px] top-[30%] bg-[#ffffff] px-[30px] py-[50px] pt-[65px] rounded-xl">
+            <div onclick="onModal('signup-modal', event)" class="absolute top-[5px] right-[5px] bg-[#ffffff] rounded-full p-[10px]">
                 <svg width="20" height="20" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M17 2L2 17M2 2L17 17" stroke="#7C7C7C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -97,7 +97,7 @@
         </div>
         <div class="z-[99] fixed bg-[#000000] opacity-70 w-[100%] h-[100vh]"></div>
     </div>
-    <div id="header" class="bg-[#F2F2F2] top-0 z-[99] fixed w-[100%] transition-all duration-200 ease">
+    <div id="header" class="bg-[#F2F2F2] top-0 z-[999] fixed w-[100%] transition-all duration-200 ease">
         <div class="flex justify-between items-center w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] m-auto py-[10px] lg:py-[20px] font-light">
             <div class="block lg:hidden">
                 <svg width="13" height="11" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +131,7 @@
                         </svg>
                     </div>
                     <div class="relative">
-                        <div onclick="handlePopup('auth')" class="flex gap-[10px] justify-center items-center text-[14px] min-w-[35px] h-[35px] rounded-full bg-[#C5192D]">
+                        <div onclick="handlePopup('auth', event)" class="flex gap-[10px] justify-center items-center text-[14px] min-w-[35px] h-[35px] rounded-full bg-[#C5192D]">
                             <svg width="19" height="19" viewBox="0 0 241 221" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="121" cy="59" r="59" fill="white"/>
                                 <g clip-path="url(#clip0_1639_52)">

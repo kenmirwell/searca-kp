@@ -7,6 +7,7 @@ class MouseOverFunc {
         for (let i = 0; i < 6; i++) {
             const elements = document.getElementsByClassName(`component-${i}`);
 
+            
             Array.from(elements).forEach((elem) => {
                 elem.addEventListener("mouseover", () => {
                     elem.classList.add("active-component");

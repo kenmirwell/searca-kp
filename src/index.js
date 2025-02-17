@@ -2,7 +2,7 @@ import ModalManager from "../modules/ModalManager";
 import HomeResourceSearch from "../modules/HomeResourceSearch";
 import FaqAcc from "../modules/FaqAcc";
 import MapFunc from "../modules/MapFunc";
-import MouseOverFunc from "../modules/MouseOverFunc";
+// import MouseOverFunc from "../modules/MouseOverFunc";
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const homeResourceSearch = new HomeResourceSearch();
     const faqAcc = new FaqAcc();
     const mapFunc = new MapFunc();
-    const mousehover = new MouseOverFunc();
+    // const mousehover = new MouseOverFunc();
 
 
     if(window.location.search.includes('error_registration=true')) {
@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let onSearch = false;
     let modalStatus = false;
     let popupStatus = false;
+    let activePopupId = null;
+    let activePopupIds = [];
     const overview = document.getElementById("material-overview")
     const content = document.getElementById("material-content")
     const testimonials = document.getElementById("material-testimonials")
@@ -51,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
         mapFunc.onMouseHoverMap(index);
     }
 
-    window.mouseOverFunction = function(index) {
-       mousehover.onMouseHover();
-    }
+    // window.mouseOverFunction = function(index) {
+    //    mousehover.onMouseHover();
+    // }
 
     window.handleAccordion = function(elementId, containerId, headId) {
         const accElement = document.getElementById(elementId)
@@ -141,39 +143,59 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    window.handlePopup = function(id) {
-        const popup = document.getElementById(id)
-
-        if(popupStatus) {
-            popup.style.display = "none"
-            popupStatus = false;
-            document.removeEventListener('click', handleOutsideClick);
-        } else {
-            popup.style.display = "flex"
-            popupStatus = true;
-            setTimeout(() => document.addEventListener('click', handleOutsideClick));
-        }
-    }
-
-    function handleOutsideClick(event) {
-        const popup = document.getElementById('auth');
-        
-        if (!popup.contains(event.target)) { 
-            popup.style.display = "none";
-            popupStatus = false;
-            document.removeEventListener('click', handleOutsideClick);
-        }
-    }
-
     window.selectedAuthor = function(author) {
         const selectedAuthor = document.getElementById("material__author").value
     }
-  
+
+
+    let listenerStatus = {}; // Object to track the display status for each popup
+
+    window.handlePopup = function(id, event) {
+        event.stopPropagation(); // Prevents the click from being detected as an outside click
+    
+        const popup = document.getElementById(id);
+    
+        // Close all other popups
+        for (let otherId in listenerStatus) {
+            if (otherId !== id && listenerStatus[otherId].isOpen) {
+                const otherPopup = document.getElementById(otherId);
+                if (otherPopup) {
+                    otherPopup.style.display = "none"; // Close other popups
+                    listenerStatus[otherId].isOpen = false; // Update status
+                }
+            }
+        }
+    
+        // Toggle the selected popup
+        if (listenerStatus[id] && listenerStatus[id].isOpen === true) {
+            popup.style.display = "none"; // Close it
+            listenerStatus[id].isOpen = false;
+        } else {
+            popup.style.display = "flex"; // Open it
+            listenerStatus[id] = { isOpen: true };
+        }
+    };
+    
+    // Close all modals when clicking outside
+    document.addEventListener('click', function(event) {
+        for (let id in listenerStatus) {
+            const popup = document.getElementById(id);
+            
+            if (listenerStatus[id].isOpen && popup && !popup.contains(event.target)) {
+                popup.style.display = "none"; // Close it
+                listenerStatus[id].isOpen = false;
+            }
+        }
+    });
+    
+
+    //for scrolling behavior of header
     let lastScrollTop = 0;
     const header = document.getElementById('header');
     const triggerHeight = 300;
     
-    window.addEventListener('scroll', () => {
+
+    window.addEventListener('scroll', (event) => {
        
         const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
@@ -186,6 +208,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         lastScrollTop = Math.max(0, currentScrollTop); // Prevent negative values
+
+        //This will close all open modal in the header
+        for (let id in listenerStatus) {
+            const popup = document.getElementById(id);
+            
+            if (listenerStatus[id].isOpen && popup && !popup.contains(event.target)) {
+                popup.style.display = "none"; // Close it
+                listenerStatus[id].isOpen = false;
+            }
+        }
     });
 
     jQuery(document).ready(function($) {
@@ -214,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
         $('#home-featured-resources').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 3000,
             dots: true,
             arrows: false,

@@ -94,12 +94,26 @@ class HomeResourcesSearch {
             const data = await response.json();
             if (data.length > 0) {
               searched.innerHTML = "";
+              if (!this.selectedTypeName) {
+                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.searchQuery}</span></h6>`;
+              } else if (!this.searchQuery) {
+                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName}</span></h6>`;
+              } else {
+                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName} with ${this.searchQuery}</span></h6>`;
+              }
               data.forEach(item => {
                 searched.innerHTML += `<div class="home-search-item"><a href="${item.link}"><p class="text-[14px]">${item.title.rendered}</p></a></div>`;
               });
               this.isSpinnerVisible = false;
             } else {
-              searched.innerHTML = `<div class="loader-container"><p>No results for "${this.searchQuery}", "${this.selectedTypeName}"</p></div>`;
+              if (!this.selectedTypeName) {
+                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.searchQuery}</span></h6>`;
+              } else if (!this.searchQuery) {
+                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName}</span></h6>`;
+              } else {
+                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName} with ${this.searchQuery}</span></h6>`;
+              }
+              searched.innerHTML = `<div class="loader-container"><p>No result</p></div>`;
               this.isSpinnerVisible = true;
             }
           } catch (err) {
@@ -407,45 +421,6 @@ class ModalManager {
 
 /***/ }),
 
-/***/ "./modules/MouseOverFunc.js":
-/*!**********************************!*\
-  !*** ./modules/MouseOverFunc.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-class MouseOverFunc {
-  constructor() {
-    this.onMouseHover();
-  }
-  onMouseHover() {
-    for (let i = 0; i < 6; i++) {
-      const elements = document.getElementsByClassName(`component-${i}`);
-      Array.from(elements).forEach(elem => {
-        elem.addEventListener("mouseover", () => {
-          elem.classList.add("active-component");
-          elem.classList.remove("inactive-component");
-          for (let j = 0; j < 6; j++) {
-            if (j !== i) {
-              const otherElements = document.getElementsByClassName(`component-${j}`);
-              Array.from(otherElements).forEach(otherElement => {
-                otherElement.classList.remove("active-component");
-                otherElement.classList.add("inactive-component");
-              });
-            }
-          }
-        });
-      });
-    }
-  }
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MouseOverFunc);
-
-/***/ }),
-
 /***/ "./src/config.js":
 /*!***********************!*\
   !*** ./src/config.js ***!
@@ -529,18 +504,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/HomeResourceSearch */ "./modules/HomeResourceSearch.js");
 /* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
 /* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
-/* harmony import */ var _modules_MouseOverFunc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/MouseOverFunc */ "./modules/MouseOverFunc.js");
 
 
 
 
+// import MouseOverFunc from "../modules/MouseOverFunc";
 
 document.addEventListener("DOMContentLoaded", function () {
   const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
   const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
   const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
   const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
-  const mousehover = new _modules_MouseOverFunc__WEBPACK_IMPORTED_MODULE_4__["default"]();
+  // const mousehover = new MouseOverFunc();
+
   if (window.location.search.includes('error_registration=true')) {
     const emailValidation = document.getElementsByClassName("email-validation");
     emailValidation[0].style.display = "block";
@@ -554,6 +530,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let onSearch = false;
   let modalStatus = false;
   let popupStatus = false;
+  let activePopupId = null;
+  let activePopupIds = [];
   const overview = document.getElementById("material-overview");
   const content = document.getElementById("material-content");
   const testimonials = document.getElementById("material-testimonials");
@@ -569,9 +547,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.handleMapFunction = function (index) {
     mapFunc.onMouseHoverMap(index);
   };
-  window.mouseOverFunction = function (index) {
-    mousehover.onMouseHover();
-  };
+
+  // window.mouseOverFunction = function(index) {
+  //    mousehover.onMouseHover();
+  // }
+
   window.handleAccordion = function (elementId, containerId, headId) {
     const accElement = document.getElementById(elementId);
     const accContainer = document.getElementById(containerId);
@@ -640,33 +620,55 @@ document.addEventListener("DOMContentLoaded", function () {
       modalManager.disableScrolling();
     }
   };
-  window.handlePopup = function (id) {
-    const popup = document.getElementById(id);
-    if (popupStatus) {
-      popup.style.display = "none";
-      popupStatus = false;
-      document.removeEventListener('click', handleOutsideClick);
-    } else {
-      popup.style.display = "flex";
-      popupStatus = true;
-      setTimeout(() => document.addEventListener('click', handleOutsideClick));
-    }
-  };
-  function handleOutsideClick(event) {
-    const popup = document.getElementById('auth');
-    if (!popup.contains(event.target)) {
-      popup.style.display = "none";
-      popupStatus = false;
-      document.removeEventListener('click', handleOutsideClick);
-    }
-  }
   window.selectedAuthor = function (author) {
     const selectedAuthor = document.getElementById("material__author").value;
   };
+  let listenerStatus = {}; // Object to track the display status for each popup
+
+  window.handlePopup = function (id, event) {
+    event.stopPropagation(); // Prevents the click from being detected as an outside click
+
+    const popup = document.getElementById(id);
+
+    // Close all other popups
+    for (let otherId in listenerStatus) {
+      if (otherId !== id && listenerStatus[otherId].isOpen) {
+        const otherPopup = document.getElementById(otherId);
+        if (otherPopup) {
+          otherPopup.style.display = "none"; // Close other popups
+          listenerStatus[otherId].isOpen = false; // Update status
+        }
+      }
+    }
+
+    // Toggle the selected popup
+    if (listenerStatus[id] && listenerStatus[id].isOpen === true) {
+      popup.style.display = "none"; // Close it
+      listenerStatus[id].isOpen = false;
+    } else {
+      popup.style.display = "flex"; // Open it
+      listenerStatus[id] = {
+        isOpen: true
+      };
+    }
+  };
+
+  // Close all modals when clicking outside
+  document.addEventListener('click', function (event) {
+    for (let id in listenerStatus) {
+      const popup = document.getElementById(id);
+      if (listenerStatus[id].isOpen && popup && !popup.contains(event.target)) {
+        popup.style.display = "none"; // Close it
+        listenerStatus[id].isOpen = false;
+      }
+    }
+  });
+
+  //for scrolling behavior of header
   let lastScrollTop = 0;
   const header = document.getElementById('header');
   const triggerHeight = 300;
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', event => {
     const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     if (currentScrollTop > triggerHeight) {
       if (currentScrollTop > lastScrollTop) {
@@ -676,6 +678,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
     lastScrollTop = Math.max(0, currentScrollTop); // Prevent negative values
+
+    //This will close all open modal in the header
+    for (let id in listenerStatus) {
+      const popup = document.getElementById(id);
+      if (listenerStatus[id].isOpen && popup && !popup.contains(event.target)) {
+        popup.style.display = "none"; // Close it
+        listenerStatus[id].isOpen = false;
+      }
+    }
   });
   jQuery(document).ready(function ($) {
     $('.banner-slider').slick({
@@ -701,7 +712,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $('#home-featured-resources').slick({
       slidesToShow: 3,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 3000,
       dots: true,
       arrows: false

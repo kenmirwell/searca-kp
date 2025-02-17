@@ -50,6 +50,14 @@ class HomeResourcesSearch {
 
             if (data.length > 0) {
               searched.innerHTML = "";
+              
+              if(!this.selectedTypeName) {
+                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.searchQuery}</span></h6>`;
+              } else if(!this.searchQuery) {
+                  searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName}</span></h6>`;
+              } else {
+                  searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName} with ${this.searchQuery}</span></h6>`;
+              }
 
               data.forEach(item => {
                 searched.innerHTML += `<div class="home-search-item"><a href="${item.link}"><p class="text-[14px]">${item.title.rendered}</p></a></div>`;
@@ -57,7 +65,15 @@ class HomeResourcesSearch {
 
               this.isSpinnerVisible = false;
             } else {
-              searched.innerHTML = `<div class="loader-container"><p>No results for "${this.searchQuery}", "${this.selectedTypeName}"</p></div>`;
+              if(!this.selectedTypeName) {
+                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.searchQuery}</span></h6>`;
+              } else if(!this.searchQuery) {
+                  searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName}</span></h6>`;
+              } else {
+                  searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName} with ${this.searchQuery}</span></h6>`;
+              }
+              
+              searched.innerHTML = `<div class="loader-container"><p>No result</p></div>`;
               this.isSpinnerVisible = true;
             }
           } catch (err) {

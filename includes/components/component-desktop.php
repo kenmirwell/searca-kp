@@ -9,12 +9,12 @@
 ?>
 
 <div class="hidden lg:block h-[370px] xl:h-[435px] rounded-[20px] group component-<?php echo $components_index; ?>">
-    <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] w-[250px] rounded-3xl overflow-hidden">
+    <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] xl:w-[250px] rounded-3xl overflow-hidden">
          <div class="p-[20px] z-[2]">
             <div class="text-[12px] xl:text-[18px] font-bold pt-[10px] text-[#ffffff]">
                 <h4><?php the_title()?></h4>
             </div>
-            <div id="comp-contianer-<?php echo get_the_ID(); ?>" class="component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff] overflow-hidden transition-all duration-200 ease">
+            <div id="comp-contianer-<?php echo get_the_ID(); ?>" class="component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff] max-h-0 group-hover:max-h-[500px] overflow-hidden transition-all duration-300 ease-in-out delay-150">
                 <?php echo $aspiring_outcome?>
             </div>
         </div>
