@@ -23,7 +23,7 @@
             "posts_per_page" => 10
         ));
     ?>
-    <div class="pt-[70px]">
+    <div class="pt-[30px] md:pt-[70px]">
         <div class="bg-[#196129] h-[650px]">
             <?php
                 // $home_banner = new WP_Query(array(
@@ -73,7 +73,7 @@
                         <h2>Key pillars of our work</h2>
                     </div>
                 </div>
-                <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-center items-start gap-[20px]">
+                <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-center items-start gap-[10px] xl:gap-[20px]">
                     <?php 
                         $components = new WP_Query(array(
                             "post_type" => "component",
@@ -192,16 +192,20 @@
                             <p>Become part of discussions and build our community. Join a vibrant network of agricultural professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
                         </div>
                         <div class="flex items-center gap-[20px]">
-                            <?php
-                                get_button_data('button-template', array(
-                                    'title' => 'Register for free',
-                                    'button_class' => 'button-green',
-                                    'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
-                                    'button_bg' => '#2a7f3d',
-                                    'root_url' => "$root_url/partnerships/"
-                                ));
-                            ?>
-                            <a class="" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
+                            <div>
+                                <?php
+                                    get_button_data('button-template', array(
+                                        'title' => 'Register for free',
+                                        'button_class' => 'button-green',
+                                        'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
+                                        'button_bg' => '#2a7f3d',
+                                        'root_url' => "$root_url/partnerships/"
+                                    ));
+                                ?>
+                            </div>
+                            <div class="flex">
+                                <a class="w-[100%]" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
+                            </div>
                         </div>
                     </div>
                     <div class="flex gap-[20px] h-[450px]">
@@ -233,9 +237,20 @@
         </div>
         <div class="bg-[#FFFbf1] pt-[50px] pb-[150px]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div class="flex justify-between items-end pb-[50px]">
-                    <div class="">
-                        <h2 class="text-[36px] font-[600]">Knowledge resources</br> empowering informed decisions</h2>
+                <div class="flex flex-col xl:flex-row justify-between items-start gap-[20px] xl:items-end pb-[50px]">
+                    <div class="flex w-[100%] justify-between items-end">
+                        <h2 class="text-[22px] xl:text-[36px] font-[600]">Knowledge resources</br> empowering informed decisions</h2>
+                        <div class="block xl:hidden">
+                            <?php
+                                get_button_data('button-template', array(
+                                    'title' => 'Explore resources',
+                                    'button_class' => 'button-green',
+                                    'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
+                                    'button_bg' => '#2a7f3d',
+                                    'root_url' => "$root_url/partnerships/"
+                                ));
+                            ?>
+                        </div>
                     </div>
                     <div class="flex gap-[20px] items-center">
                         <div class="relative">
@@ -265,7 +280,7 @@
                         <div class="flex h-[100%]">
                             <input id="search-resources" class="w-[250px] font-[600] h-[100%] border-b-[1px] bg-transparent border-[#458753] text-[18px] text-[#458753] placeholder-[#458753] py-[10px] px-[10px]" type="text" placeholder="Enter Topic">
                         </div>
-                        <div class="flex">
+                        <div class="hidden xl:flex">
                             <?php
                                 get_button_data('button-template', array(
                                     'title' => 'Explore resources',

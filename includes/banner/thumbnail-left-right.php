@@ -16,8 +16,8 @@
 ?>
 
 <div class="center-align slide-content h-[100%] w-[100%] relative">
-    <div class="flex gap-[20px] mx-auto w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px]">
-        <div class="<?php echo esc_attr($items_alignment); ?> text-container w-[50%] mx-auto z-[2]">
+    <div class="flex flex-col-reverse md:flex-row gap-[20px] mx-auto w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px]">
+        <div class="<?php echo esc_attr($items_alignment); ?> text-container w-[100%] xl:w-[50%] mx-auto z-[2]">
             <div class="<?php echo esc_attr($banner_alignment); ?> w-[100%] leading-[1.2]">
                 <h1><?php the_title(); ?></h1>
             </div>

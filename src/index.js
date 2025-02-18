@@ -2,6 +2,7 @@ import ModalManager from "../modules/ModalManager";
 import HomeResourceSearch from "../modules/HomeResourceSearch";
 import FaqAcc from "../modules/FaqAcc";
 import MapFunc from "../modules/MapFunc";
+import MobileMenuFunc from "../modules/MenuFunctionality";
 // import MouseOverFunc from "../modules/MouseOverFunc";
 
 
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const homeResourceSearch = new HomeResourceSearch();
     const faqAcc = new FaqAcc();
     const mapFunc = new MapFunc();
+    const menuFunc = new MobileMenuFunc();
     // const mousehover = new MouseOverFunc();
 
 
@@ -51,6 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.handleMapFunction = function(index) {
         mapFunc.onMouseHoverMap(index);
+    }
+
+    window.handleMobileMenu = function(event) {
+        menuFunc.toggleMenu();
     }
 
     // window.mouseOverFunction = function(index) {
@@ -224,8 +230,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $('.banner-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
-            autoplay: false,   
-            autoplaySpeed: 3000,
+            autoplay: true,   
+            autoplaySpeed: 2000,
             dots: true,
             arrows: false,
         });
@@ -235,8 +241,8 @@ document.addEventListener("DOMContentLoaded", function () {
         $('.featured-material-slider').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
-            autoplay: false,
-            autoplaySpeed: 3000,
+            autoplay: true,
+            autoplaySpeed: 2000,
             dots: true,
             arrows: false,
         });
@@ -247,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesToShow: 3,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 3000,
+            autoplaySpeed: 2000,
             dots: true,
             arrows: false,
         });

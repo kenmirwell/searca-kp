@@ -17,10 +17,10 @@
 
 <div class="center-align slide-content h-[100%] w-[100%] relative">
     <div class="<?php echo esc_attr($items_alignment); ?> text-container w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
-        <div class="<?php echo esc_attr($banner_alignment); ?> w-[1080px] leading-[1.2]">
+        <div class="<?php echo esc_attr($banner_alignment); ?> max-w-[780px] leading-[1.2]">
             <h1><?php the_title(); ?></h1>
         </div>
-        <div class="<?php echo esc_attr($banner_alignment); ?> w-[1080px] tracking-wide leading-relaxed">
+        <div class="<?php echo esc_attr($banner_alignment); ?> max-w-[780px] tracking-wide leading-relaxed">
             <?php the_content(); ?>
         </div>
         <div class="w-auto">

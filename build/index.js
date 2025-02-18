@@ -215,6 +215,33 @@ class MapFunc {
 
 /***/ }),
 
+/***/ "./modules/MenuFunctionality.js":
+/*!**************************************!*\
+  !*** ./modules/MenuFunctionality.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class MobileMenuFunc {
+  constructor() {}
+  toggleMenu() {
+    const menuContainer = document.getElementById("mobile-menu-container");
+    if (menuContainer.classList.contains("active-mobile-menu")) {
+      menuContainer.classList.remove("active-mobile-menu");
+      menuContainer.classList.add("inactive-mobile-menu");
+    } else {
+      menuContainer.classList.remove("inactive-mobile-menu");
+      menuContainer.classList.add("active-mobile-menu");
+    }
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MobileMenuFunc);
+
+/***/ }),
+
 /***/ "./modules/ModalManager.js":
 /*!*********************************!*\
   !*** ./modules/ModalManager.js ***!
@@ -432,8 +459,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const ENV_VARS = {
-  ROOT_URL: "https://bcsdevelopmentgator.site/wp-json/",
-  API_URL: "https://bcsdevelopmentgator.site/wp-json/wp/v2/"
+  ROOT_URL: "https://cadre.searca.org/",
+  API_URL: "https://cadre.searca.org/wp-json/wp/v2/"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ENV_VARS);
 
@@ -504,6 +531,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/HomeResourceSearch */ "./modules/HomeResourceSearch.js");
 /* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
 /* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
+/* harmony import */ var _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/MenuFunctionality */ "./modules/MenuFunctionality.js");
+
 
 
 
@@ -515,6 +544,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
   const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
   const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__["default"]();
   // const mousehover = new MouseOverFunc();
 
   if (window.location.search.includes('error_registration=true')) {
@@ -546,6 +576,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.handleMapFunction = function (index) {
     mapFunc.onMouseHoverMap(index);
+  };
+  window.handleMobileMenu = function (event) {
+    menuFunc.toggleMenu();
   };
 
   // window.mouseOverFunction = function(index) {
@@ -692,8 +725,8 @@ document.addEventListener("DOMContentLoaded", function () {
     $('.banner-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 3000,
+      autoplay: true,
+      autoplaySpeed: 2000,
       dots: true,
       arrows: false
     });
@@ -702,8 +735,8 @@ document.addEventListener("DOMContentLoaded", function () {
     $('.featured-material-slider').slick({
       slidesToShow: 4,
       slidesToScroll: 1,
-      autoplay: false,
-      autoplaySpeed: 3000,
+      autoplay: true,
+      autoplaySpeed: 2000,
       dots: true,
       arrows: false
     });
@@ -713,7 +746,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 2000,
       dots: true,
       arrows: false
     });

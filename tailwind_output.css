@@ -692,6 +692,14 @@ video {
   z-index: 2;
 }
 
+.z-\[99999\] {
+  z-index: 99999;
+}
+
+.z-\[9999\] {
+  z-index: 9999;
+}
+
 .z-\[999\] {
   z-index: 999;
 }
@@ -702,14 +710,6 @@ video {
 
 .z-\[9\] {
   z-index: 9;
-}
-
-.z-\[99999\] {
-  z-index: 99999;
-}
-
-.z-\[9999\] {
-  z-index: 9999;
 }
 
 .m-auto {
@@ -776,12 +776,20 @@ video {
   margin-top: 80px;
 }
 
+.mr-\[20px\] {
+  margin-right: 20px;
+}
+
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
+}
+
+.table {
+  display: table;
 }
 
 .hidden {
@@ -900,8 +908,16 @@ video {
   height: 100%;
 }
 
-.max-h-\[500px\] {
-  max-height: 500px;
+.h-screen {
+  height: 100vh;
+}
+
+.h-\[540px\] {
+  height: 540px;
+}
+
+.h-\[700px\] {
+  height: 700px;
 }
 
 .max-h-0 {
@@ -1056,8 +1072,20 @@ video {
   width: 100%;
 }
 
+.w-\[200\] {
+  width: 200;
+}
+
+.w-\[780px\] {
+  width: 780px;
+}
+
 .min-w-\[35px\] {
   min-width: 35px;
+}
+
+.max-w-\[780px\] {
+  max-width: 780px;
 }
 
 .scale-\[1\] {
@@ -1500,6 +1528,10 @@ video {
   padding: 10px;
 }
 
+.p-\[15px\] {
+  padding: 15px;
+}
+
 .p-\[16px\] {
   padding: 16px;
 }
@@ -1514,10 +1546,6 @@ video {
 
 .p-\[5px\] {
   padding: 5px;
-}
-
-.p-\[15px\] {
-  padding: 15px;
 }
 
 .px-\[10px\] {
@@ -1789,6 +1817,10 @@ video {
   font-size: 34px;
 }
 
+.text-\[36px\] {
+  font-size: 36px;
+}
+
 .text-\[42px\] {
   font-size: 42px;
 }
@@ -1799,10 +1831,6 @@ video {
 
 .text-\[48px\] {
   font-size: 48px;
-}
-
-.text-\[36px\] {
-  font-size: 36px;
 }
 
 .font-\[200\] {
@@ -1976,6 +2004,10 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .backdrop-blur-lg {
   --tw-backdrop-blur: blur(16px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -2059,10 +2091,6 @@ video {
   background-color: rgb(255 203 0 / var(--tw-bg-opacity));
 }
 
-.group:hover .group-hover\:p-\[10px\] {
-  padding: 10px;
-}
-
 .group:hover .group-hover\:text-\[\#ceab23\] {
   --tw-text-opacity: 1;
   color: rgb(206 171 35 / var(--tw-text-opacity));
@@ -2095,6 +2123,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -2111,6 +2143,10 @@ video {
     height: 320px;
   }
 
+  .md\:h-\[650px\] {
+    height: 650px;
+  }
+
   .md\:w-\[200px\] {
     width: 200px;
   }
@@ -2119,8 +2155,24 @@ video {
     width: 768px;
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:pb-\[40px\] {
     padding-bottom: 40px;
+  }
+
+  .md\:pl-\[60px\] {
+    padding-left: 60px;
+  }
+
+  .md\:pl-\[0px\] {
+    padding-left: 0px;
+  }
+
+  .md\:pt-\[70px\] {
+    padding-top: 70px;
   }
 
   .md\:text-\[14px\] {
@@ -2171,6 +2223,14 @@ video {
 
   .lg\:w-\[980px\] {
     width: 980px;
+  }
+
+  .lg\:w-\[250px\] {
+    width: 250px;
+  }
+
+  .lg\:w-\[240px\] {
+    width: 240px;
   }
 
   .lg\:flex-row {
@@ -2258,6 +2318,14 @@ video {
     display: block;
   }
 
+  .xl\:flex {
+    display: flex;
+  }
+
+  .xl\:hidden {
+    display: none;
+  }
+
   .xl\:h-\[435px\] {
     height: 435px;
   }
@@ -2272,6 +2340,34 @@ video {
 
   .xl\:w-\[250px\] {
     width: 250px;
+  }
+
+  .xl\:w-\[240px\] {
+    width: 240px;
+  }
+
+  .xl\:w-\[1080px\] {
+    width: 1080px;
+  }
+
+  .xl\:w-\[780px\] {
+    width: 780px;
+  }
+
+  .xl\:w-\[50\%\] {
+    width: 50%;
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:items-end {
+    align-items: flex-end;
+  }
+
+  .xl\:gap-\[20px\] {
+    gap: 20px;
   }
 
   .xl\:border-2 {
@@ -2294,5 +2390,9 @@ video {
 
   .xl\:text-\[18px\] {
     font-size: 18px;
+  }
+
+  .xl\:text-\[36px\] {
+    font-size: 36px;
   }
 }
