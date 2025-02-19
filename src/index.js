@@ -256,6 +256,30 @@ document.addEventListener("DOMContentLoaded", function () {
             autoplaySpeed: 2000,
             dots: true,
             arrows: false,
+            infinite: true,
+            responsive: [
+                {
+                  breakpoint: 768,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                },
+                // {
+                //   breakpoint: 600,
+                //   settings: {
+                //     slidesToShow: 2,
+                //     slidesToScroll: 2
+                //   }
+                // },
+                // {
+                //   breakpoint: 480,
+                //   settings: {
+                //     slidesToShow: 1,
+                //     slidesToScroll: 1
+                //   }
+                // }
+            ]
         });
     });
 });

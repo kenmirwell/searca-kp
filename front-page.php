@@ -109,106 +109,88 @@
                     </div>
                 </div>
             </div>
-        <div class="bg-[#196129] pt-[80px] relative overflow-hidden">
-            <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div class="flex justify-center gap-[60px] items-start">
-                    <div class="w-[40%] pt-[50px] flex flex-col gap-[20px] text-left items-center mx-auto pb-[20px] md:pb-[40px]">
-                        <div class="text-[#ffffff] w-[100%] text-[22px] lg:text-[36px] font-[600]">
-                            <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
-                        </div>
-                        <div class="flex flex-col gap-[20px]">
-                            <div class="text-[#ffffff] w-[100%] font-light md:font-normal text-[12px] lg:text-[16px]">
-                                <p class="font-[300]"><?php echo $agpractices_brief_description ?></p>
-                                <ul class="flex flex-col gap-[20px] py-[50px] agpractices-list">
-                                    <li class="flex gap-[10px] items-center">
-                                        <svg width="21" height="11" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M34 2L12 24L2 14" stroke="#CEAB23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        <span>Customized recommendations for sustainable practices.</span>
-                                    </li>
-                                    <li class="flex gap-[10px] items-center">
-                                        <svg width="21" height="11" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M34 2L12 24L2 14" stroke="#CEAB23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        <span>Empowering decisions with advanced modeling.</span>
-                                    </li>
-                                    <li class="flex gap-[10px] items-center">
-                                        <svg width="21" height="11" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M34 2L12 24L2 14" stroke="#CEAB23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                        <span>Helping stakeholders achieve efficient outcomes.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                       <?php
-                            get_button_data('button-template', array(
-                                'title' => 'Explore the platform',
-                                'button_class' => 'button-gold',
-                                'ar_bg' => 'bg-[#2a7f3d]',
-                                'button_bg' => '#ceab23',
-                                'root_url' => "$root_url/agricultural-data-tools/"
-                            ));
-                       ?>
-                    </div>
-                    <div class="w-[60%]">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.png" alt="Leaf Image">
-                        <a href="/agricultural-data-tools/" class="flex justify-center p-[20px] bg-[#2a7f3d] overflow-hidden rounded-t-xl">
-                            <img class="w-full h-full object-cover" src="<?php echo esc_url($agpractices_image) ?>" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- <img class="w-[100%] absolute opacity-[.09] top-[0]" src="https://bcsdevelopmentgator.site/wp-content/uploads/2024/10/20231125123019_mm_aung_chan_thar-766aa0f6.webp" alt=""> -->
-        </div>
-        <!-- <div class="py-[20px] lg:py-[100px]">
-            <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div class="flex gap-[40px] items-center">
-                    <div class="w-[30%] rounded-lg overflow-hidden">
-                        <img src="<?php //echo esc_url($cop_image) ?>" alt="">
-                    </div>
-                    <div class="w-[80%] lg:w-[50%] flex flex-col gap-[10px] text-left">
-                        <h6 class="text-[16px] lg:text-[24px] font-[600]">Join the Community</h6>
-                        <p class="text-[12px] lg:text-[16px] font-[300]">Built upon SEARCA's experiences and goals in developing and disseminating science-based information, the K-Hub aims to create a collaborative space for learning through this. The platform is set to be a system that produces a digital lifestyle, allowing its users to share and co-learn about each other's experiences in day-to-day operations.</p>
-                        <a class="text-[12px] lg:text-[16px] text-[#458753]" href="">Learn More</a>
-                    </div>
-                    <div class="hidden lg:block w-[1px] h-[250px] bg-[#458753]"></div>
-                    <div class="hidden lg:flex text-[12px] lg:text-[16px] w-[20%] flex flex-col items-end gap-[5px] font-[600] text-center">
-                        <a class="rounded-lg bg-[#F3BD1C] px-[35px] py-[10px] w-[100%]" href="<?php //echo esc_url(get_permalink(416)) ?>">Log in</a>
-                        <div class="flex gap-[10px] justify-center w-[100%]">
-                            <span>or</span>
-                            <a class="text-[#458753]" href="<?php //echo esc_url(get_permalink(341)) ?>">Register for free</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="py-[20px] lg:py-[100px]">
-            <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div>
-                    <h2 class="text-[36px] font-[600]">Sprouting Knowledge.</br> Cultivating Conversations.</h2>
-                    <div class="flex justify-between pt-[20px] pb-[40px]">
-                        <div class=" w-[70%]">
-                            <p>Become part of discussions and build our community. Join a vibrant network of agricultural professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
-                        </div>
-                        <div class="flex items-center gap-[20px]">
-                            <div>
+            <div class="relative">
+                <div class="bg-[#196129] pt-[50px] pb-[30px] lg:pb-[0] lg:pt-[80px] overflow-hidden">
+                    <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
+                        <div class="flex justify-center gap-[20px] xl:gap-[60px] items-start">
+                            <div class="w-[100%] lg:w-[40%] py-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-center mx-auto z-[2]">
+                                <div class="text-[#ffffff] w-[100%] text-[22px] lg:text-[36px] font-[600]">
+                                    <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
+                                </div>
+                                <div class="flex flex-col gap-[20px]">
+                                    <div class="text-[#ffffff] w-[100%] font-light md:font-normal text-[12px] lg:text-[16px]">
+                                        <p class="font-[300]"><?php echo $agpractices_brief_description ?></p>
+                                        <ul class="flex flex-col gap-[5px] lg:gap-[20px] py-[20px] lg:py-[50px] agpractices-list">
+                                            <li class="flex gap-[10px] items-center">
+                                                <svg width="21" height="11" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M34 2L12 24L2 14" stroke="#CEAB23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Customized recommendations for sustainable practices.</span>
+                                            </li>
+                                            <li class="flex gap-[10px] items-center">
+                                                <svg width="21" height="11" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M34 2L12 24L2 14" stroke="#CEAB23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Empowering decisions with advanced modeling.</span>
+                                            </li>
+                                            <li class="flex gap-[10px] items-center">
+                                                <svg width="21" height="11" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M34 2L12 24L2 14" stroke="#CEAB23" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <span>Helping stakeholders achieve efficient outcomes.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <?php
                                     get_button_data('button-template', array(
-                                        'title' => 'Register for free',
-                                        'button_class' => 'button-green',
-                                        'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
-                                        'button_bg' => '#2a7f3d',
-                                        'root_url' => "$root_url/partnerships/"
+                                        'title' => 'Explore the platform',
+                                        'button_class' => 'button-gold',
+                                        'ar_bg' => 'bg-[#2a7f3d]',
+                                        'button_bg' => '#ceab23',
+                                        'root_url' => "$root_url/agricultural-data-tools/"
                                     ));
                                 ?>
                             </div>
-                            <div class="flex">
-                                <a class="w-[100%]" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
+                            <div class="hidden md:block w-[60%] mt-[-20px] lg:mt-[0px]">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.png" alt="Leaf Image">
+                                <a href="/agricultural-data-tools/" class="flex justify-center p-[10px] lg:p-[20px] bg-[#2a7f3d] overflow-hidden rounded-t-xl">
+                                    <img class="w-full h-full object-cover" src="<?php echo esc_url($agpractices_image) ?>" alt="">
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-[20px] h-[450px]">
+                </div>
+                <img class="absolute top-[0] opacity-[.09] w-full h-full object-cover z-[1] flex md:hidden" src="<?php echo esc_url($agpractices_image) ?>" alt="">
+            </div>
+        <div class="py-[20px] lg:py-[100px]">
+            <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
+                <div class="flex flex-row md:flex-col gap-[20px] md:gap-[0] items-center items-start">
+                    <div class="w-[100%]">
+                        <h2 class="text-[22px] md:text-[36px] font-[600]">Sprouting Knowledge.</br> Cultivating Conversations.</h2>
+                        <div class="flex flex-col md:flex-row justify-between gap-[20px] md:gap-[0px] pt-[20px] pb-[20px] md:pb-[40px]">
+                            <div class="text-[14px] md:text-[16px] w-[100%] md:w-[70%]">
+                                <p>Become part of discussions and build our community. Join a vibrant network of agricultural professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
+                            </div>
+                            <div class="flex items-center gap-[20px]">
+                                <div>
+                                    <?php
+                                        get_button_data('button-template', array(
+                                            'title' => 'Register for free',
+                                            'button_class' => 'button-green',
+                                            'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
+                                            'button_bg' => '#2a7f3d',
+                                            'root_url' => "$root_url/partnerships/"
+                                        ));
+                                    ?>
+                                </div>
+                                <div class="flex">
+                                    <a class="w-[100%]" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[100%] hidden md:flex gap-[20px] h-[350px] lg:h-[450px]">
                         <div class="flex items-end relative h-[100%] w-[30%] rounded-3xl overflow-hidden">
                             <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($cop_image) ?>">
                         </div>
@@ -216,12 +198,21 @@
                             <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($cop_image_2) ?>">
                         </div>
                     </div>
+                    <div class="w-[100%] flex md:hidden gap-[20px] h-[270px] lg:h-[450px] relative">
+                        <div class="absolute border-r-[15px] border-b-[15px] border-[#ffffff] z-[1] flex items-end h-[50%] w-[50%] rounded-tl-xl rounded-br-xl overflow-hidden">
+                            <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($cop_image) ?>">
+                        </div>
+                        <div class="flex items-end relative h-[100%] w-[100%] rounded-xl overflow-hidden">
+                            <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($cop_image_2) ?>">
+                        </div>
+                    </div>
                 </div>        
             </div>
         </div>
         <div class="flex w-[100%] h-[720px] relative">
-            <div class="flex w-[60%] mx-auto gap-[100px] items-center relative z-[9]">
-                <h2 class="text-[#ffffff] text-[36px] font-[600]">See CADRE in Action</br> Driving Agricultural</br> Innovation</h2>
+            <div class="flex flex-col xl:flex-row w-[90%] lg:w-[1024px] xl:w-[1280px] justify-center xl:justify-start xl:w-[60%] mx-auto gap-[100px] items-center relative z-[9]">
+                <h2 class="hidden xl:block text-[#ffffff] text-[36px] font-[600]">See CADRE in Action</br> Driving Agricultural</br> Innovation</h2>
+                <h2 class="block xl:hidden text-[#ffffff] text-[22px] font-[600] text-center">See CADRE in Action Driving Agricultural Innovation</h2>
                 <div class="flex flex-col items-center justify-center gap-[20px]">
                     <div class="flex relative justify-center items-center">
                         <div class="bg-[#ffffff] p-[50px] rounded-full"></div>
@@ -229,7 +220,7 @@
                             <path d="M0 14V0L11 7L0 14Z" fill="#1D1B20"/>
                         </svg>
                     </div>
-                    <h2 class="text-[#ffffff]">Watch the Video</h2>
+                    <h2 class="text-[#ffffff] text-[12px] xl:text-[16px]">Watch the Video</h2>
                 </div>
             </div>
             <div class="bg-black opacity-50 w-[100%] h-[100%] absolute top-0 left-0 z-[1]"></div>
@@ -238,8 +229,9 @@
         <div class="bg-[#FFFbf1] pt-[50px] pb-[150px]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <div class="flex flex-col xl:flex-row justify-between items-start gap-[20px] xl:items-end pb-[50px]">
-                    <div class="flex w-[100%] justify-between items-end">
-                        <h2 class="text-[22px] xl:text-[36px] font-[600]">Knowledge resources</br> empowering informed decisions</h2>
+                    <div class="block md:flex w-[100%] xl:w-auto justify-between items-end">
+                        <h2 class="hidden md:block text-[22px] xl:text-[36px] font-[600]">Knowledge resources</br> empowering informed decisions</h2>
+                        <h2 class="block md:hidden text-[22px] xl:text-[36px] font-[600] pb-[20px]">Knowledge resources empowering informed decisions</h2>
                         <div class="block xl:hidden">
                             <?php
                                 get_button_data('button-template', array(
@@ -252,9 +244,9 @@
                             ?>
                         </div>
                     </div>
-                    <div class="flex gap-[20px] items-center">
-                        <div class="relative">
-                            <div onclick="handlePopup('filter-type', event)" class="flex gap-[20px] justify-between items-center text-[#458753] text-[16px] font-[600] border-b-[1px] border-[#458753] py-[10px] cursor-pointer">
+                    <div class="flex gap-[20px] items-center w-[100%] xl:w-auto">
+                        <div class="relative w-[100%] xl:w-auto">
+                            <div onclick="handlePopup('filter-type', event)" class="flex gap-[20px] justify-between items-center text-[#458753] text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#458753] py-[10px] cursor-pointer">
                                 <p>Select Type</p>
                                 <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M30 2L16 16L2 2" stroke="#458753" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -277,8 +269,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="flex h-[100%]">
-                            <input id="search-resources" class="w-[250px] font-[600] h-[100%] border-b-[1px] bg-transparent border-[#458753] text-[18px] text-[#458753] placeholder-[#458753] py-[10px] px-[10px]" type="text" placeholder="Enter Topic">
+                        <div class="flex h-[100%] w-[100%] xl:w-auto">
+                            <input id="search-resources" class="w-[100%] xl:w-[250px] font-[600] h-[100%] border-b-[1px] bg-transparent border-[#458753] text-[14px] xl:text-[18px] text-[#458753] placeholder-[#458753] py-[10px] px-[10px]" type="text" placeholder="Enter Topic">
                         </div>
                         <div class="hidden xl:flex">
                             <?php
@@ -323,7 +315,7 @@
                             <a href="<?php echo get_permalink($learning_materials_id) ?>" class="hidden md:flex justify-center gap-[30px] relative py-[10px] h-[500px] h-auto">
                                 <div class="flex h-auto justify-start gap-[20px] w-[100%]">
                                     <div class="flex flex-col h-auto rounded-[15px] overflow-hidden cursor-pointer">
-                                        <div class="flex h-[400px] relative bg-[#ffffff] rounded-[15px] overflow-hidden">
+                                        <div class="flex h-[350px] xl:h-[400px] relative bg-[#ffffff] rounded-[15px] overflow-hidden">
                                             <div class="absolute top-[15px] left-[15px] z-[11]">
                                                 <?php 
                                                     $terms = get_the_terms(get_the_ID(), 'km_category'); 
@@ -347,14 +339,14 @@
                                             ?>
                                         </div>
                                         <div class="flex h-auto pb-[20px]">
-                                            <div class="pt-[40px] pb-[10px]">
+                                            <div class="pt-[20px] xl:pt-[40px] pb-[10px]">
                                                 <div class="flex gap-[10px]">
-                                                    <p class="text-[16px] text-[#458753]">Published Date</p>
+                                                    <p class="text-[14px] xl:text-[16px] text-[#458753]">Published Date</p>
                                                 </div>
-                                                <div class="flex items-end text-[24px] font-bold">
+                                                <div class="flex items-end text-[18px] xl:text-[24px] font-bold">
                                                     <h4><?php the_title()?></h4>
                                                 </div>
-                                                <div class="pt-[10px] font-extralight text-[16px] h-[60px] overflow-hidden">
+                                                <div class="pt-[10px] font-extralight text-[14px] xl:text-[16px] h-[50px] xl:h-[60px] overflow-hidden">
                                                     <p><?php the_content()?></p>
                                                 </div>
                                             </div>
@@ -371,7 +363,7 @@
         </div>
         <div class="bg-[#196129] pt-[100px] pb-[150px]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div class="flex gap-[80px]">
+                <div class="block xl:flex gap-[80px]">
                     <div class="flex flex-col gap-[20px] w-[50%]">
                         <h2 class="text-[48px] text-[#ffffff] font-[600]">Frequently Asked Questions</h2>
                         <p  class="text-[#ffffff]">Find answers to common questions about CADRE, our platform, and how we support sustainable agriculture in Southeast Asia.</p>
