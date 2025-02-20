@@ -26,7 +26,7 @@ while (have_posts()) {
                 <div class="relative w-[600px] h-[600px]">
                     <?php 
                         $countries = new WP_Query(array(
-                            "post_type" => "country-post-type",
+                            "post_type" => "country-profile",
                             "posts_per_page" => 10,
                             'order' => 'DESC',     
                         ));
@@ -44,7 +44,7 @@ while (have_posts()) {
                 <div id="map-container" class="absolute top-0 w-[600px] h-[600px]">
                     <?php 
                     $countries = new WP_Query(array(
-                        "post_type" => "country-post-type",
+                        "post_type" => "country-profile",
                         "posts_per_page" => 10,
                         'order' => 'DESC',     
                     ));

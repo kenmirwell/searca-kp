@@ -11,6 +11,10 @@ body {
     line-height: 1.675;
 }
 
+#cadre-footer-text {
+    font-family: "Cormorant Garamond", sans-serif;
+}
+
 .primary-menu-tablet {
     display: flex;
     font-size: 14px;
@@ -529,6 +533,11 @@ select {
 #country-Indonesia {
     right: 50%;
     top: 76%;
+}
+
+#country-Timor-Leste {
+    right: 213px;
+    bottom: 0px;
 }
 
 .hide-header {

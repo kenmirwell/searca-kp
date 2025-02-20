@@ -37,8 +37,8 @@
                         <div class="relative w-[800px] h-[600px] mx-auto">
                             <?php 
                                 $countries = new WP_Query(array(
-                                    "post_type" => "country-post-type",
-                                    "posts_per_page" => 10,
+                                    "post_type" => "country-profile",
+                                    "posts_per_page" => 11,
                                     'order' => 'DESC',     
                                 ));
 
@@ -55,8 +55,8 @@
                         <div id="map-container" class="absolute top-0 w-[800px] h-[600px] mx-auto">
                             <?php 
                             $countries = new WP_Query(array(
-                                "post_type" => "country-post-type",
-                                "posts_per_page" => 10,
+                                "post_type" => "country-profile",
+                                "posts_per_page" => 11,
                                 'order' => 'DESC',     
                             ));
 

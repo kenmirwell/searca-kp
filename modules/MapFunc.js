@@ -4,7 +4,7 @@ class MapFunc {
     }
 
     onMouseHoverMap() {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 12; i++) {
             const elements = document.getElementsByClassName(`country-${i}`);
             const maps = document.getElementsByClassName(`map-${i}`);
 
@@ -12,8 +12,9 @@ class MapFunc {
                 document.getElementById(`country-Philippines`)?.classList.add("active-icon");
                 document.getElementById(`map-Philippines`)?.classList.add("active-map");
 
-                for (let j = 0; j < 10; j++) {
-                    if (j !== 4) {
+                //initialize an active country base on index 0
+                for (let j = 0; j < 12; j++) {
+                    if (j !== 0) {
                         const otherElements = document.getElementsByClassName(`country-${j}`);
                         const otherMaps = document.getElementsByClassName(`map-${j}`);
 
@@ -38,7 +39,7 @@ class MapFunc {
                         map.classList.remove("inactive-map");
                     });
 
-                    for (let j = 0; j < 10; j++) {
+                    for (let j = 0; j < 12; j++) {
                         if (j !== i) {
                             const otherElements = document.getElementsByClassName(`country-${j}`);
                             const otherMaps = document.getElementsByClassName(`map-${j}`);
