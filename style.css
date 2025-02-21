@@ -643,10 +643,22 @@ select {
     display: block;
 }
 
+.blub-icon {
+    display: inline-block; /* Ensures proper scaling */
+    animation: pulse-resize 1.5s infinite ease-in-out;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+@keyframes pulse-resize {
+    0% { transform: scale(0.8); }  /* Normal size */
+    50% { transform: scale(1.4); } /* Enlarge */
+    100% { transform: scale(0.8); }  /* Back to normal */
+}
+
 
 @media (max-width: 1280px) {
     .primary-menu .menu-item {
