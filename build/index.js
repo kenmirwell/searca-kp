@@ -549,6 +549,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__["default"]();
   // const mousehover = new MouseOverFunc();
 
+  document.getElementById("contactus-header-button").addEventListener("click", function () {
+    document.getElementById("footer").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
   if (window.location.search.includes('error_registration=true')) {
     const emailValidation = document.getElementsByClassName("email-validation");
     emailValidation[0].style.display = "block";

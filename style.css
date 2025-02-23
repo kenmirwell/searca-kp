@@ -7,8 +7,16 @@
 
 body {
     /* font-family: 'inter'; */
-    font-family: "Plus Jakarta Sans", sans-serif;
+    font-family: "Inter", sans-serif;
     line-height: 1.675;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", sans-serif;
+}
+
+p {
+    font-family: "Raleway", sans-serif;
 }
 
 #cadre-footer-text {

@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuFunc = new MobileMenuFunc();
     // const mousehover = new MouseOverFunc();
 
+    document.getElementById("contactus-header-button").addEventListener("click", function() {
+        document.getElementById("footer").scrollIntoView({ behavior: "smooth" });
+    });
+
 
     if(window.location.search.includes('error_registration=true')) {
         const emailValidation = document.getElementsByClassName("email-validation");

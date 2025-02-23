@@ -34,7 +34,7 @@
 <?php 
     }
 ?>
-<div class="bg-[#101010]">
+<div id="footer" class="bg-[#101010]">
     <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[35px] lg:py-[50px] font-extralight">
         <div class="border-b-[1px] border-[#ffffff]">
             <a href="/">

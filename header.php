@@ -124,24 +124,18 @@
                         )
                     ?>
                 </div>
-                <div class="flex gap-[10px]">
-                    <div onclick="onModal('search-modal', 'open')" class="flex justify-center items-center text-[#7C7C7C] rounded-full bg-[#F3BD1C] p-[10px] min-w-[35px] h-[35px]">
-                        <svg width="17" height="17" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.91189 0C3.55164 0 0 3.55164 0 7.91189C0 12.2721 3.55164 15.8238 7.91189 15.8238C9.80798 15.8238 11.5493 15.1505 12.914 14.0328L17.6379 18.7567C17.7109 18.8327 17.7982 18.8933 17.8948 18.9351C17.9914 18.9768 18.0954 18.9989 18.2007 19C18.3059 19.001 18.4104 18.9811 18.5078 18.9413C18.6053 18.9015 18.6938 18.8427 18.7682 18.7682C18.8427 18.6938 18.9015 18.6053 18.9413 18.5078C18.9811 18.4104 19.001 18.3059 19 18.2007C18.9989 18.0954 18.9768 17.9914 18.9351 17.8948C18.8933 17.7982 18.8327 17.7109 18.7567 17.6379L14.0328 12.914C15.1505 11.5493 15.8238 9.80798 15.8238 7.91189C15.8238 3.55164 12.2721 0 7.91189 0ZM7.91189 1.58238C11.417 1.58238 14.2414 4.40683 14.2414 7.91189C14.2414 11.417 11.417 14.2414 7.91189 14.2414C4.40683 14.2414 1.58238 11.417 1.58238 7.91189C1.58238 4.40683 4.40683 1.58238 7.91189 1.58238Z" fill="#000000"/>
+                <div class="flex gap-[10px] items-center">
+                    <div onclick="onModal('search-modal', 'open')" class="flex">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5 21.75C5.85 21.75 1.25 17.15 1.25 11.5C1.25 5.85 5.85 1.25 11.5 1.25C17.15 1.25 21.75 5.85 21.75 11.5C21.75 17.15 17.15 21.75 11.5 21.75ZM11.5 2.75C6.67 2.75 2.75 6.68 2.75 11.5C2.75 16.32 6.67 20.25 11.5 20.25C16.33 20.25 20.25 16.32 20.25 11.5C20.25 6.68 16.33 2.75 11.5 2.75Z" fill="black"/>
+                            <path d="M21.9999 22.75C21.8099 22.75 21.6199 22.68 21.4699 22.53L19.4699 20.53C19.1799 20.24 19.1799 19.76 19.4699 19.47C19.7599 19.18 20.2399 19.18 20.5299 19.47L22.5299 21.47C22.8199 21.76 22.8199 22.24 22.5299 22.53C22.3799 22.68 22.1899 22.75 21.9999 22.75Z" fill="black"/>
                         </svg>
                     </div>
                     <div class="relative">
-                        <div onclick="handlePopup('auth', event)" class="flex gap-[10px] justify-center items-center text-[14px] min-w-[35px] h-[35px] rounded-full bg-[#C5192D]">
-                            <svg width="19" height="19" viewBox="0 0 241 221" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="121" cy="59" r="59" fill="white"/>
-                                <g clip-path="url(#clip0_1639_52)">
-                                    <ellipse cx="121" cy="230.5" rx="107" ry="120.5" fill="white"/>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1639_52">
-                                        <path d="M12 110H230V201C230 212.046 221.046 221 210 221H32C20.9543 221 12 212.046 12 201V110Z" fill="white"/>
-                                    </clipPath>
-                                </defs>
+                        <div onclick="handlePopup('auth', event)" class="flex">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <?php 
@@ -202,6 +196,9 @@
                         <?php 
                             } 
                         ?>
+                    </div>
+                    <div id="contactus-header-button" class="py-[5px] px-[20px] bg-[#2a7f3d] rounded-full overflow-hidden">
+                        <button class="text-[#ffffff]">Contact us</button>
                     </div>
                 </div>
             </div>
