@@ -1,19 +1,29 @@
 <div class="bg-[#FFFbf1] pt-[50px] pb-[150px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col xl:flex-row justify-between items-start gap-[20px] xl:items-end pb-[50px]">
-            <div class="block md:flex w-[100%] lg:w-auto justify-between items-end">
+            <div class="block md:flex w-[100%] justify-between items-end">
                 <h2 class="hidden md:block text-[22px] xl:text-[36px] font-[600]">Knowledge resources</br> empowering informed decisions</h2>
                 <h2 class="block md:hidden text-[22px] xl:text-[36px] font-[600] pb-[20px]">Knowledge resources empowering informed decisions</h2>
-                <div class="block xl:hidden">
-                    <?php
-                        get_button_data('button-template', array(
-                            'title' => 'Explore resources',
-                            'button_class' => 'button-green',
-                            'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
-                            'button_bg' => '#2a7f3d',
-                            'root_url' => "$root_url/partnerships/"
-                        ));
-                    ?>
+                <div class="flex xl:hidden">
+                    <!-- <?php
+                        // get_button_data('button-template', array(
+                        //     'title' => 'Explore resources',
+                        //     'button_class' => 'button-green',
+                        //     'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
+                        //     'button_bg' => '#2a7f3d',
+                        //     'root_url' => "$root_url/partnerships/"
+                        // ));
+                    ?> -->
+                    <a href="/knowledge-resources" class="w-auto group cursor-pointer">
+                        <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
+                            <p class="text-[#ffffff]">Explore resources</p>
+                            <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="flex gap-[20px] items-center w-[100%] xl:w-auto">
@@ -45,15 +55,25 @@
                     <input id="search-resources" class="w-[100%] xl:w-[250px] font-[600] h-[100%] border-b-[1px] bg-transparent border-[#458753] text-[14px] xl:text-[18px] text-[#458753] placeholder-[#458753] py-[10px] px-[10px]" type="text" placeholder="Enter Topic">
                 </div>
                 <div class="hidden xl:flex">
-                    <?php
-                        get_button_data('button-template', array(
-                            'title' => 'Explore resources',
-                            'button_class' => 'button-green',
-                            'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
-                            'button_bg' => '#2a7f3d',
-                            'root_url' => "$root_url/partnerships/"
-                        ));
-                    ?>
+                    <!-- <?php
+                        // get_button_data('button-template', array(
+                        //     'title' => 'Explore resources',
+                        //     'button_class' => 'button-green',
+                        //     'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
+                        //     'button_bg' => '#2a7f3d',
+                        //     'root_url' => "$root_url/partnerships/"
+                        // ));
+                    ?> -->
+                    <a href="/knowledge-resources" class="w-auto group cursor-pointer">
+                        <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
+                            <p class="text-[#ffffff]">Explore resources</p>
+                            <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

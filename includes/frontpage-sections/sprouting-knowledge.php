@@ -8,7 +8,10 @@
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col-reverse sm:flex-row md:flex-col gap-[20px] md:gap-[0] items-center items-start">
             <div class="w-[100%]">
-                <h2 class="text-[22px] md:text-[32px] lg:text-[36px] font-[600] pb-[20px] sm:pb-[0px]">Sprouting Knowledge.</br> Cultivating Conversations.</h2>
+                <div>
+                    <h2 class="text-[22px] md:text-[32px] lg:text-[36px] font-[600]">Community of practice</h2>
+                    <h2 class="text-[22px] md:text-[32px] lg:text-[36px] font-[600] pb-[20px] sm:pb-[0px]">Sprouting Knowledge. Cultivating Conversations.</h2>
+                </div>
                 <div class="relative block sm:hidden w-[100%] max-w-[600px] mx-auto">
                     <!-- Large Image -->
                     <div class="rounded-xl overflow-hidden border-[8px] border-white shadow-lg">
@@ -28,17 +31,28 @@
                         <p>Become part of discussions and build our community. Join a vibrant network of agricultural professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center gap-[10px] sm:gap-[20px]">
-                        <div>
-                            <?php
-                                get_button_data('button-template', array(
-                                    'title' => 'Register for free',
-                                    'button_class' => 'button-green',
-                                    'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
-                                    'button_bg' => '#2a7f3d',
-                                    'root_url' => "$root_url/partnerships/"
-                                ));
-                            ?>
-                        </div>
+                        <!-- <div> -->
+                            <!-- <?php
+                                // get_button_data('button-template', array(
+                                //     'title' => 'Register for free',
+                                //     'button_class' => 'button-green',
+                                //     'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
+                                //     'button_bg' => '#2a7f3d',
+                                //     'root_url' => "$root_url/partnerships/"
+                                // ));
+                            ?> -->
+                        <!-- </div> -->
+
+                        <a href="/partnerships" class="w-auto group cursor-pointer">
+                            <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
+                                <p class="text-[#ffffff]">Register for free</p>
+                                <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
                         <div class="flex">
                             <a class="w-[100%]" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
                         </div>

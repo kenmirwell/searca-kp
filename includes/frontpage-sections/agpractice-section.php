@@ -1,3 +1,7 @@
+<?php 
+    $agpractices_brief_description = get_query_var('agpractices_brief_description');
+?>
+
 <div class="relative">
     <div class="bg-[#196129] pt-[50px] pb-[30px] lg:pb-[0] lg:pt-[80px] overflow-hidden">
         <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
@@ -31,15 +35,15 @@
                             </ul>
                         </div>
                     </div>
-                    <?php
-                        get_button_data('button-template', array(
-                            'title' => 'Explore the platform',
-                            'button_class' => 'button-gold',
-                            'ar_bg' => 'bg-[#2a7f3d]',
-                            'button_bg' => '#ceab23',
-                            'root_url' => "$root_url/agricultural-data-tools/"
-                        ));
-                    ?>
+                    <!-- <?php
+                        // get_button_data('button-template', array(
+                        //     'title' => 'Explore the platform',
+                        //     'button_class' => 'button-green',
+                        //     'ar_bg' => 'bg-[#ceab23]',
+                        //     'button_bg' => '#2a7f3d',
+                        //     'root_url' => "$root_url/agricultural-data-tools/"
+                        // ));
+                    ?> -->
                 </div>
                 <div class="hidden md:block w-[60%] mt-[-20px] lg:mt-[0px]">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.png" alt="Leaf Image">

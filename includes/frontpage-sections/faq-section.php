@@ -1,16 +1,18 @@
-<div class="bg-[#196129] py-[50px] md:py-[100px] relative">
+<div class="bg-[#196129] md:py-[50px] relative">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="block md:flex gap-[20px] lg:gap-[80px]">
             <div class="flex flex-col gap-[20px] w-[100%] md:w-[50%]">
                 <h2 class="text-[22px] lg:text-[48px] text-[#ffffff] font-[600]">Frequently Asked Questions</h2>
                 <p  class="text-[14px] lg:text-[18px] text-[#ffffff]">Find answers to common questions about CADRE, our platform, and how we support sustainable agriculture in Southeast Asia.</p>
                 <div class="flex">
-                    <a class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] rounded-full" href="<?php echo esc_url(get_permalink(341)) ?>">
-                        <button class="text-[#ffffff]">View FAQs</button>
-                        <div class="bg-[#ceab23] rounded-full p-[10px]">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                    <a href="#" class="w-auto group cursor-pointer">
+                        <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
+                            <p class="text-[#ffffff]">View FAQs</p>
+                            <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
+                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
                         </div>
                     </a>
                 </div>

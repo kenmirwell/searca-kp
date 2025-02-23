@@ -465,18 +465,19 @@ select {
 }
 
 .active-faq {
-    background-color: #ffffff;
+    background-color: #0C5C32;
     transition: all 0.3s ease;
 }
 
 .active-faq > .flex > h6 {
-    color: #ceab23;
+    color: #ffffff;
     transition: all 0.3s ease;
 }
 
 .active-faq .answer {
-    color: #999999;
+    color: #ffffff;
     transition: all 0.3s ease;
+    font-weight: 200;
 }
 
 .colab-list li::before {

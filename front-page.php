@@ -17,6 +17,7 @@
 
         $root_url = get_option('root_url');
 
+        set_query_var('agpractices_image', $agpractices_image);
         set_query_var('cop_image', $cop_image);
         set_query_var('cop_image_2', $cop_image_2);
         set_query_var('root_url', $root_url);
@@ -26,7 +27,7 @@
         <?php get_template_part("includes/frontpage-sections/hero-section"); ?>
 
         <div class="py-[100px] bg-[#fffeeb]">
-            <?php get_template_part("includes/frontpage-sections/comm-of-practice"); ?>
+            <?php get_template_part("includes/frontpage-sections/key-pillars"); ?>
             <?php get_template_part("includes/frontpage-sections/agpractice-section"); ?>
             <?php get_template_part("includes/frontpage-sections/sprouting-knowledge"); ?> 
             <?php get_template_part("includes/frontpage-sections/cadre-inaction"); ?>
