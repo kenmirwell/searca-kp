@@ -637,15 +637,6 @@ document.addEventListener("DOMContentLoaded", function () {
       accGroup.classList.add("active-faq");
       accContainer.style.height = height + "px";
     }
-
-    //Initial setup for map
-    if (map) {
-      const rect = map.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      console.log("x-coordinates", x);
-      console.log("y-coordinates", y);
-    }
   };
   window.handleFaqAccordion = function (elementId, containerId, headId, index) {
     faqAcc.handleFaqAcc(elementId, containerId, headId, index);

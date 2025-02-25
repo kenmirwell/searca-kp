@@ -63,8 +63,10 @@
         // register_nav_menu("header_menu", "Header Menu");
         register_nav_menus(
             array(
-                "header_menu" => "Header Menu",
-                "footer_menu" => "Footer Menu",
+                "header_menu"   => "Header Menu",
+                "footer_menu"   => "Footer Menu",
+                "quick_links"   => "Quick Links",
+                "help"          => "Help"
             )
         );
 

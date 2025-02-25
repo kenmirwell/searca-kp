@@ -249,13 +249,13 @@
                                         <div class="flex items-center gap-[10px]">
                                             <div class="rounded-full h-[30px] w-[30px] bg-[#E8E8E8]"></div>
                                             <div>
-                                                <p class="text-[#7C7C7C] text-[12px]">
+                                                <div class="text-[#7C7C7C] text-[12px]">
                                                     <?php if($author_ID){ ?>        
                                                             <p class="text-[#7C7C7C] text-[12px]"><?php echo get_the_title( $author_ID ); ?></p>
                                                     <?php } else { ?>    
                                                             <p class="text-[#7C7C7C] text-[12px]">Author unknown</p>
                                                     <?php } ?>
-                                                </p>
+                                                </div>
                                             </div>
                                         </div>
                                         <div>

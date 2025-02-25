@@ -32,9 +32,11 @@
                     set_query_var('thumbnail_url', $thumbnail_url);
                     set_query_var('page_link', $page_link);
 
-                get_template_part("includes/components/component", "desktop");
+                // get_template_part("includes/components/component", "desktop");
 
-                get_template_part("includes/components/component", "mobile");
+                // get_template_part("includes/components/component", "mobile");
+                
+                get_template_part("includes/components/component");
             ?>
             <?php } } 
             

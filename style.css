@@ -12,11 +12,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Inter", sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 
 p {
-    font-family: "Raleway", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 #cadre-footer-text {
@@ -97,6 +97,19 @@ p {
 
 .menu-item-type-custom {
     /* display: none; */
+}
+
+
+.footer-quick-links {
+    color: #ffffff;
+}
+
+.footer-quick-links li {
+    padding-bottom: 20px
+}
+
+.footer-quick-links .sub-menu li {
+    display: none;
 }
 
 .slick-dotted.slick-slider {
@@ -589,7 +602,7 @@ select {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.inactive-icon img{
+.inactive-icon .flag-icon{
     transform: scale(0.5);
 }
 
@@ -597,9 +610,8 @@ select {
     z-index: 99;
 }
 
-.active-icon img{
-    transform: scale(1);
-
+.active-icon .flag-icon{
+    transform: scale(0.8);
 }
 
 .inactive-map{
