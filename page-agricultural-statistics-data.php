@@ -54,18 +54,18 @@
                         </div>
                         <div id="map-container" class="absolute top-0 w-[800px] h-[600px] mx-auto">
                             <?php 
-                            $countries = new WP_Query(array(
-                                "post_type" => "country-profile",
-                                "posts_per_page" => 11,
-                                'order' => 'DESC',     
-                            ));
+                                $countries = new WP_Query(array(
+                                    "post_type" => "country-profile",
+                                    "posts_per_page" => 11,
+                                    'order' => 'DESC',     
+                                ));
 
-                            if ($countries->have_posts()) {
-                                while ($countries->have_posts()) {
-                                    $countries->the_post();
-                                    $country_index = (int) $countries->current_post;
+                                if ($countries->have_posts()) {
+                                    while ($countries->have_posts()) {
+                                        $countries->the_post();
+                                        $country_index = (int) $countries->current_post;
 
-                                    $flag_url = get_field('flag');
+                                        $flag_url = get_field('flag');
                             ?>
                                 <a href="<?php echo get_permalink(); ?>" 
                                     id="country-<?php the_title(); ?>" 
