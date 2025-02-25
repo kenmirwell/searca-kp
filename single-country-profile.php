@@ -27,44 +27,46 @@ while (have_posts()) {
     <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[40px]">
         <div class="flex flex-row-reverse gap-[20px]">
             <div class="w-[30%] sticky top-[0px] h-[500px]">
-                <ul>
-                    <li>Background</li>
-                    <li>Language</li>
-                    <li>Geographic Profile</li>
-                    <li>Demographic Profile</li>
-                    <li>Economic Profile</li>
-                    <li>Main Products</li>
-                    <li>Industry Profile</li>
-                    <li>Current Concerns</li>
-                    <li>Current Concerns</li>
-                    <li>Important Agricultural-related Policies and Legislations</li>
+                <ul class="flex flex-col gap-[20px] text-[16px] pb-[20px] border-b-[1px]">
+                    <li class="cursor-pointer">Background</li>
+                    <li class="cursor-pointer">Language</li>
+                    <li class="cursor-pointer">Geographic Profile</li>
+                    <li class="cursor-pointer">Demographic Profile</li>
+                    <li class="cursor-pointer">Economic Profile</li>
+                    <li class="cursor-pointer">Main Products</li>
+                    <li class="cursor-pointer">Industry Profile</li>
+                    <li class="cursor-pointer">Current Concerns</li>
+                    <li class="cursor-pointer">Important Agricultural-related Policies and Legislations</li>
                 </ul>
-                <div class="flex flex-wrap">
-                    <?php 
-                        $countries = new WP_Query(array(
-                            "post_type" => "country-profile",
-                            "posts_per_page" => 11,
-                            'order' => 'DESC',     
-                        ));
+                <div class="pt-[20px]">
+                    <p>Other South East Asian Countries</p>
+                    <div class="flex flex-wrap gap-[10px] pt-[20px]">
+                        <?php 
+                            $countries = new WP_Query(array(
+                                "post_type" => "country-profile",
+                                "posts_per_page" => 11,
+                                'order' => 'DESC',     
+                            ));
 
-                        if ($countries->have_posts()) {
-                            while ($countries->have_posts()) {
-                                $countries->the_post();
-                                $country_index = (int) $countries->current_post;
+                            if ($countries->have_posts()) {
+                                while ($countries->have_posts()) {
+                                    $countries->the_post();
+                                    $country_index = (int) $countries->current_post;
 
-                                $flag_url = get_field('flag');
-                    ?>
-                        <a href="<?php echo get_permalink(); ?>" class="w-[30px]">
-                            <img class="" src="<?php echo esc_url($flag_url); ?>" alt="">
-                        </a>
-                    <?php 
+                                    $flag_url = get_field('flag');
+                        ?>
+                            <a href="<?php echo get_permalink(); ?>" class="w-[40px]">
+                                <img class="" src="<?php echo esc_url($flag_url); ?>" alt="">
+                            </a>
+                        <?php 
+                            } 
                         } 
-                    } 
-                    wp_reset_postdata(); // Reset the query
-                    ?>
+                        wp_reset_postdata(); // Reset the query
+                        ?>
+                    </div>
                 </div>
             </div>
-            <div class="w-[70%]">
+            <div class="w-[70%] border-r-[1px] pr-[20px]">
                 <?php if (have_rows('content_container')): ?>
                     <div class="">
                         <?php while (have_rows('content_container')): the_row(); ?>

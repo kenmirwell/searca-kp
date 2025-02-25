@@ -31,19 +31,14 @@
                         <p>Become part of discussions and build our community. Join a vibrant network of agricultural professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center gap-[10px] sm:gap-[20px]">
-                        <!-- <div> -->
-                            <!-- <?php
-                                // get_button_data('button-template', array(
-                                //     'title' => 'Register for free',
-                                //     'button_class' => 'button-green',
-                                //     'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
-                                //     'button_bg' => '#2a7f3d',
-                                //     'root_url' => "$root_url/partnerships/"
-                                // ));
-                            ?> -->
-                        <!-- </div> -->
+                        <?php
+                            get_button_data('button-template', array(
+                                'title' => 'Register for free',
+                                'root_url' => "/partnerships"
+                            ));
+                        ?>
 
-                        <a href="/partnerships" class="w-auto group cursor-pointer">
+                        <!-- <a href="/partnerships" class="w-auto group cursor-pointer">
                             <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
                                 <p class="text-[#ffffff]">Register for free</p>
                                 <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
@@ -52,7 +47,7 @@
                                     </svg>
                                 </div>
                             </div>
-                        </a>
+                        </a> -->
                         <div class="flex">
                             <a class="w-[100%]" href="<?php echo esc_url(get_permalink(416)) ?>">Log in</a>
                         </div>

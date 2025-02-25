@@ -35,16 +35,13 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- <?php
-                        // get_button_data('button-template', array(
-                        //     'title' => 'Explore the platform',
-                        //     'button_class' => 'button-green',
-                        //     'ar_bg' => 'bg-[#ceab23]',
-                        //     'button_bg' => '#2a7f3d',
-                        //     'root_url' => "$root_url/agricultural-data-tools/"
-                        // ));
-                    ?> -->
-                    <div class="flex">
+                    <?php
+                        get_button_data('button-template', array(
+                            'title' => 'Explore the platform',
+                            'root_url' => "agricultural-data-tools"
+                        ));
+                    ?>
+                    <!-- <div class="flex">
                         <a href="/agricultural/data/tools" class="w-auto group cursor-pointer">
                             <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
                                 <p class="text-[#ffffff]">Explore the platform</p>
@@ -55,7 +52,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="hidden md:block w-[60%] mt-[-20px] lg:mt-[0px]">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.png" alt="Leaf Image">

@@ -4,7 +4,7 @@
             <div class="flex flex-col gap-[20px] w-[100%] md:w-[50%]">
                 <h2 class="text-[22px] lg:text-[48px] text-[#ffffff] font-[600]">Frequently Asked Questions</h2>
                 <p  class="text-[14px] lg:text-[18px] text-[#ffffff]">Find answers to common questions about CADRE, our platform, and how we support sustainable agriculture in Southeast Asia.</p>
-                <div class="flex">
+                <!-- <div class="flex">
                     <a href="#" class="w-auto group cursor-pointer">
                         <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
                             <p class="text-[#ffffff]">View FAQs</p>
@@ -15,7 +15,13 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> -->
+                <?php
+                    get_button_data('button-template', array(
+                        'title' => 'Explore the platform',
+                        'root_url' => "#"
+                    ));
+                ?>
             </div>
             <div class="flex flex-col gap-[10px] lg:gap-[20px] w-[100%] md:w-[50%] pt-[20px] md:pt-[0px] lg:pt-[30px]">
                 <?php 
