@@ -1,10 +1,13 @@
+<?php if (!empty($alignment)): ?>
+<div class="flex <?php echo esc_html($alignment); ?>">
+<?php endif; ?>
 
-<div class="flex">
-    <?php if (isset($root_url)): ?>
-    <a href="<?php echo esc_url($root_url) ?>/" class="w-auto group cursor-pointer">
+    <?php if (!empty($root_url)): ?>
+    <a href="<?php echo esc_url($root_url); ?>/" class="w-auto group cursor-pointer">
     <?php endif; ?>
+
         <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
-            <?php if (isset($title)): ?>
+            <?php if (!empty($title)): ?>
                 <p class="text-[#ffffff]"><?php echo esc_html($title); ?></p>
             <?php endif; ?>
             <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
@@ -13,5 +16,11 @@
                 </svg>
             </div>
         </div>
+
+    <?php if (!empty($root_url)): ?>
     </a>
+    <?php endif; ?>
+
+<?php if (!empty($alignment)): ?>
 </div>
+<?php endif; ?>

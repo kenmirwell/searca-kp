@@ -3,29 +3,15 @@
 ?>
     <div class="relative h-[500px] flex items-center">
         <div class="text-center w-[90%] flex flex-col md:w-[768px] mx-auto z-[3] relative text-[#ffffff] gap-[15px]">
-            <h2 class="text-[32px] lg:text-[48px] font-[600] italic">Explore Southeast Asia's agricultural landscapes</h2>
-            <h6 class="text-[16px] md:text-[22px]">Southeast Asia feeds the world through agriculture that transforms lives across the region." Then the button will have these texts: Explore Country Profiles</h6>
-            <div class="flex justify-center">
-                <!-- <?php
-                    // get_button_data('button-template', array(
-                    //     'title' => 'Explore resources',
-                    //     'button_class' => 'button-green',
-                    //     'ar_bg' => 'bg-[#ceab23] group-hover:bg-[#ffcb00]',
-                    //     'button_bg' => '#2a7f3d',
-                    //     'root_url' => "$root_url/partnerships/"
-                    // ));
-                ?> -->
-                <a href="/agricultural-statistics-data" class="w-auto group cursor-pointer">
-                    <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
-                        <p class="text-[#ffffff]">Explore resources</p>
-                        <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
-                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <h2 class="text-[32px] lg:text-[48px] font-bold italic">Explore Southeast Asia's agricultural landscapes</h2>
+            <p class="text-[16px] md:text-[18px] pb-[10px]">Southeast Asia feeds the world through agriculture that transforms lives across the region." Then the button will have these texts: Explore Country Profiles</p>
+            <?php
+                get_button_data('button-template', array(
+                    'title' => 'Explore the platform',
+                    'root_url' => "/agricultural-statistics-data",
+                    'alignment' => "justify-center"
+                ));
+            ?>
         </div>
         <div class="bg-black opacity-50 w-[100%] h-[100%] absolute top-0 left-0 z-[2]"></div>
         <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/02/image-2.png" alt="">

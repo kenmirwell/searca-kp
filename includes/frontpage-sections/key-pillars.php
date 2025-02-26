@@ -1,7 +1,7 @@
 <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
     <div class="flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
-        <div class="font-[600] text-left">
-            <h6 class="text-[22px] md:text-[36px]">Key pillars of our work</h6>
+        <div class="font-bold text-left">
+            <h6 class="text-[22px] md:text-[42px]">Key pillars of our work</h6>
         </div>
     </div>
     <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-center items-start gap-[10px] xl:gap-[20px]">

@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,   
-            autoplaySpeed: 2000,
+            autoplaySpeed: 10000,
             dots: true,
             arrows: false,
         });
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesToShow: 4,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 5000,
             dots: true,
             arrows: false,
         });
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
             slidesToShow: 3,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 2000,
+            autoplaySpeed: 5000,
             dots: true,
             arrows: false,
             infinite: true,

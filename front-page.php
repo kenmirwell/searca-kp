@@ -18,10 +18,12 @@
         $root_url = get_option('root_url');
 
         set_query_var('agpractices_image', $agpractices_image);
+        set_query_var('agpractices_brief_description',  $agpractices_brief_description);
         set_query_var('cop_image', $cop_image);
         set_query_var('cop_image_2', $cop_image_2);
         set_query_var('root_url', $root_url);
         set_query_var('cadre_in_action_banner', $cadre_in_action_banner);
+
 ?>
     <div class="pt-[30px] md:pt-[70px]">
         <?php get_template_part("includes/frontpage-sections/hero-section"); ?>

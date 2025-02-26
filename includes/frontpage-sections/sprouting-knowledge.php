@@ -8,9 +8,9 @@
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col-reverse sm:flex-row md:flex-col gap-[20px] md:gap-[0] items-center items-start">
             <div class="w-[100%]">
-                <div>
-                    <h2 class="text-[22px] md:text-[32px] lg:text-[36px] font-[600]">Community of practice</h2>
-                    <h2 class="text-[22px] md:text-[32px] lg:text-[36px] font-[600] pb-[20px] sm:pb-[0px]">Sprouting Knowledge. Cultivating Conversations.</h2>
+                <div class="font-bold">
+                    <h2 class="text-[22px] md:text-[32px] lg:text-[42px]">Community of practice</h2>
+                    <h2 class="text-[22px] md:text-[32px] lg:text-[42px] pb-[20px] sm:pb-[0px]">Sprouting Knowledge. Cultivating Conversations.</h2>
                 </div>
                 <div class="relative block sm:hidden w-[100%] max-w-[600px] mx-auto">
                     <!-- Large Image -->
@@ -34,7 +34,8 @@
                         <?php
                             get_button_data('button-template', array(
                                 'title' => 'Register for free',
-                                'root_url' => "/partnerships"
+                                'root_url' => "/partnerships",
+                                'alignment' => "justify-start"
                             ));
                         ?>
 

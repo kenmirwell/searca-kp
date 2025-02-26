@@ -2,8 +2,8 @@
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col xl:flex-row justify-between items-start gap-[20px] xl:items-end pb-[50px]">
             <div class="block md:flex w-[100%] justify-between items-end">
-                <h2 class="hidden md:block text-[22px] xl:text-[36px] font-[600]">Knowledge resources</br> empowering informed decisions</h2>
-                <h2 class="block md:hidden text-[22px] xl:text-[36px] font-[600] pb-[20px]">Knowledge resources empowering informed decisions</h2>
+                <h2 class="hidden md:block text-[22px] xl:text-[42px] font-[700]">Knowledge resources</br> empowering informed decisions</h2>
+                <h2 class="block md:hidden text-[22px] xl:text-[42px] font-[700] pb-[20px]">Knowledge resources empowering informed decisions</h2>
                 <!-- <div class="flex">
                     <a href="/knowledge-resources" class="w-auto group cursor-pointer">
                         <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
@@ -19,7 +19,8 @@
                 <?php
                     get_button_data('button-template', array(
                         'title' => 'Explore resources',
-                        'root_url' => "/knowledge-resources"
+                        'root_url' => "/knowledge-resources",
+                        'alignment' => "justify-start"
                     ));
                 ?>
             </div>
