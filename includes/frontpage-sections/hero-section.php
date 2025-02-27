@@ -21,6 +21,7 @@
                     set_query_var('banner_alignment', $banner_alignment);
                     set_query_var('banner_background', $banner_background);
                     set_query_var('button_name', $button_name);
+                    set_query_var('button_link', $button_link);
         ?>  
             <div class="slide-container">
                 <?php

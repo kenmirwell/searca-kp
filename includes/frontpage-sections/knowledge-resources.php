@@ -27,59 +27,7 @@
         </div>
         <div class="flex gap-[20px]">
             <div class="w-[20%] hidden lg:block">
-                <div class="relative ">
-                    <div onclick="handlePopup('filter-type', event)" class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer">
-                        <p class="text-[16px]">Type</p>
-                        <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <div id="filter-type" class="rounded-lg overflow-hidden">
-                        <?php
-                            $terms = get_terms(array(
-                                'taxonomy' => 'km_category', 
-                                'hide_empty' => false,       
-                            ));
-                        ?>
-                        <ul class="category-container relative py-[20px] z-[99] w-[100%] flex flex-col">
-                            <?php    
-                            if (!is_wp_error($terms)) {
-                                foreach ($terms as $term) {
-                            ?>
-                                <div class="flex gap-[10px] items-center">
-                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" stroke="#D3D3D3"/>
-                                    </svg>
-                                    <li class="w-[200px] font-[200] hover:font-[600] text-[#000000] text-[14px] px-[10px] py-[5px] cursor-pointer" data-name="<? echo $term->name ?>" data-value="<? echo esc_attr($term->term_id) ?>"><?php echo esc_html($term->name) ?></li>
-                                </div>
-                            <?php } } ?>
-                        </ul>
-                    </div>
-                </div>
-                <div class="relative ">
-                    <div  class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer">
-                        <p class="text-[16px]">Author</p>
-                        <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="relative ">
-                    <div  class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer">
-                        <p class="text-[16px]">Published Date</p>
-                        <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="relative ">
-                    <div class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer">
-                        <p class="text-[16px]">Country</p>
-                        <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                </div>
+                <?php get_template_part("includes/section/home-side-filter"); ?>
             </div>
             <div class="w-[100%] lg:w-[80%]">
                 <div class="w-[100%]">
@@ -91,59 +39,7 @@
                             <li class="cursor-pointer text-[#848484] text-[16px] py-[5px] pl-[10px]">By Keyword</li>
                         </ul>
                         <div class="w-[100%] block lg:hidden">
-                            <div class="relative ">
-                                <div onclick="handlePopup('filter-type-mobile', event)" class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer">
-                                    <p class="text-[16px]">Type</p>
-                                    <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div id="filter-type-mobile" class="rounded-lg overflow-hidden">
-                                    <?php
-                                        $terms = get_terms(array(
-                                            'taxonomy' => 'km_category', 
-                                            'hide_empty' => false,       
-                                        ));
-                                    ?>
-                                    <ul class="category-container relative py-[20px] z-[99] w-[100%] flex flex-col">
-                                        <?php    
-                                        if (!is_wp_error($terms)) {
-                                            foreach ($terms as $term) {
-                                        ?>
-                                            <div class="flex gap-[10px] items-center">
-                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" stroke="#D3D3D3"/>
-                                                </svg>
-                                                <li class="w-[200px] font-[200] hover:font-[600] text-[#000000] text-[14px] px-[10px] py-[5px] cursor-pointer" data-name="<? echo $term->name ?>" data-value="<? echo esc_attr($term->term_id) ?>"><?php echo esc_html($term->name) ?></li>
-                                            </div>
-                                        <?php } } ?>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="relative ">
-                                <div  class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer">
-                                    <p class="text-[16px]">Author</p>
-                                    <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="relative ">
-                                <div  class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer">
-                                    <p class="text-[16px]">Published Date</p>
-                                    <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="relative ">
-                                <div class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer">
-                                    <p class="text-[16px]">Country</p>
-                                    <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                            </div>
+                            <?php get_template_part("includes/section/home-side-filter"); ?>
                         </div>
                     </div>
                 </div>

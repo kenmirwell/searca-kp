@@ -72,6 +72,10 @@ p {
     display: block;
 }
 
+.primary-menu .menu-item-type-post_type:hover > .sub-menu {
+    display: block;
+}
+
 .primary-menu .sub-menu {
     color: #000000;
     display: none;
@@ -667,6 +671,12 @@ select {
 .blub-icon {
     display: inline-block; /* Ensures proper scaling */
     animation: pulse-resize 1.5s infinite ease-in-out;
+}
+
+
+.banner-slider .slide-container .center-align .text-container a {
+    padding: 0 !important;
+    background-color: transparent !important;
 }
 
 @keyframes spin {
