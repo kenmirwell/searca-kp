@@ -17,6 +17,7 @@ class FaqAcc {
   handleFaqAcc(elementId, index) {
     const accElement = document.getElementById(elementId);
     const height = accElement.offsetHeight;
+    console.log(height);
     for (let i = 0; i < 6; i++) {
       if (index !== i) {
         document.getElementById(`answer-container-${i}`).style.height = 0;
@@ -39,6 +40,34 @@ class FaqAcc {
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FaqAcc);
+
+/***/ }),
+
+/***/ "./modules/FrontpageFilterAcc.js":
+/*!***************************************!*\
+  !*** ./modules/FrontpageFilterAcc.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class FrontpageFilterAcc {
+  constructor() {}
+  handleHomeFilterAcc(elementId, index) {
+    const accElement = document.getElementById(elementId);
+    const height = accElement.offsetHeight;
+    for (let i = 0; i < 3; i++) {
+      if (index !== i) {
+        document.getElementById(`home-side-filter-container-${i}`).style.height = 0;
+      } else {
+        document.getElementById(`home-side-filter-container-${i}`).style.height = height + "px";
+      }
+    }
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FrontpageFilterAcc);
 
 /***/ }),
 
@@ -534,6 +563,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
 /* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
 /* harmony import */ var _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/MenuFunctionality */ "./modules/MenuFunctionality.js");
+/* harmony import */ var _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modules/FrontpageFilterAcc */ "./modules/FrontpageFilterAcc.js");
+
 
 
 
@@ -545,6 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
   const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
   const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
+  const homeFilterAcc = new _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_5__["default"]();
   const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
   const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__["default"]();
   // const mousehover = new MouseOverFunc();
@@ -621,15 +653,10 @@ document.addEventListener("DOMContentLoaded", function () {
   window.onload = function () {
     const accElement = document.getElementById("answer-0");
     const accContainer = document.getElementById("answer-container-0");
-    const accHead = document.getElementById("faq-head-0");
     const accGroup = document.getElementById("faq-group-0");
-    const map = document.getElementById("map-container");
-    const phil = document.getElementById("country-Philippines");
-    const laos = document.getElementById("country-Laos");
-    const indo = document.getElementById("country-Indonesia");
-    const camb = document.getElementById("country-Cambodia");
-    const myan = document.getElementById("country-Myanmar");
-    const brun = document.getElementById("country-Brunei");
+    const homeaccElement = document.getElementById("home-side-filter-content-0");
+    const homeaccContainer = document.getElementById("home-side-filter-container-0");
+    const homeaccGroup = document.getElementById("home-side-filter-group-0");
 
     //initial setup for accordion in FAQ in homepage
     if (accElement) {
@@ -637,9 +664,16 @@ document.addEventListener("DOMContentLoaded", function () {
       accGroup.classList.add("active-faq");
       accContainer.style.height = height + "px";
     }
+    if (homeaccContainer) {
+      const height = homeaccElement.offsetHeight;
+      homeaccContainer.style.height = height + "px";
+    }
   };
   window.handleFaqAccordion = function (elementId, containerId, headId, index) {
     faqAcc.handleFaqAcc(elementId, containerId, headId, index);
+  };
+  window.handleHomeAccordion = function (elementId, containerId, headId, index) {
+    homeFilterAcc.handleHomeFilterAcc(elementId, containerId, headId, index);
   };
   window.onModal = function (id, action) {
     modalManager.toggleModal(id);

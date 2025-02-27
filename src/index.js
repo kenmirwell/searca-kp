@@ -3,6 +3,7 @@ import HomeResourceSearch from "../modules/HomeResourceSearch";
 import FaqAcc from "../modules/FaqAcc";
 import MapFunc from "../modules/MapFunc";
 import MobileMenuFunc from "../modules/MenuFunctionality";
+import HomeFilterAcc from "../modules/FrontpageFilterAcc"
 // import MouseOverFunc from "../modules/MouseOverFunc";
 
 
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalManager = new ModalManager();
     const homeResourceSearch = new HomeResourceSearch();
     const faqAcc = new FaqAcc();
+    const homeFilterAcc = new HomeFilterAcc();
     const mapFunc = new MapFunc();
     const menuFunc = new MobileMenuFunc();
     // const mousehover = new MouseOverFunc();
@@ -103,16 +105,11 @@ document.addEventListener("DOMContentLoaded", function () {
     window.onload = function() {
         const accElement = document.getElementById("answer-0");
         const accContainer = document.getElementById("answer-container-0");
-        const accHead = document.getElementById("faq-head-0");
         const accGroup = document.getElementById("faq-group-0");
 
-        const map = document.getElementById("map-container");
-        const phil = document.getElementById("country-Philippines");
-        const laos = document.getElementById("country-Laos");
-        const indo = document.getElementById("country-Indonesia");
-        const camb = document.getElementById("country-Cambodia");
-        const myan = document.getElementById("country-Myanmar");
-        const brun = document.getElementById("country-Brunei");
+        const homeaccElement = document.getElementById("home-side-filter-content-0");
+        const homeaccContainer = document.getElementById("home-side-filter-container-0");
+        const homeaccGroup = document.getElementById("home-side-filter-group-0");
 
         //initial setup for accordion in FAQ in homepage
         if(accElement) {    
@@ -121,10 +118,20 @@ document.addEventListener("DOMContentLoaded", function () {
             accGroup.classList.add("active-faq");
             accContainer.style.height = height+"px";
         }
+
+        if(homeaccContainer) {    
+            const height = homeaccElement.offsetHeight;
+            
+            homeaccContainer.style.height = height+"px";
+        }
     }
 
     window.handleFaqAccordion = function(elementId, containerId, headId, index) {
         faqAcc.handleFaqAcc(elementId, containerId, headId, index);
+    }
+
+    window.handleHomeAccordion = function(elementId, containerId, headId, index) {
+        homeFilterAcc.handleHomeFilterAcc(elementId, containerId, headId, index)
     }
 
     window.onModal = function(id, action) {

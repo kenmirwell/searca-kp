@@ -6,6 +6,7 @@ class FaqAcc {
 
         const height = accElement.offsetHeight;
 
+        console.log(height)
         for(let i = 0; i < 6; i++) {
             if(index !== i) {
                 document.getElementById(`answer-container-${i}`).style.height = 0;
