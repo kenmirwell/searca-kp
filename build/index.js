@@ -92,6 +92,55 @@ class HomeResourcesSearch {
     this.selectedTypeName = null;
     this.searchQuery = '';
   }
+  handleSearch() {
+    const inputField = document.getElementById("search-resources");
+    const categoryContainers = document.querySelectorAll(".type-category-container, .author-category-container, .country-category-container");
+    let selectedValues = {}; // Store selected values by taxonomy
+
+    // Add event listeners dynamically
+    categoryContainers.forEach(container => {
+      container.addEventListener("click", e => {
+        const item = e.target.closest("li");
+        if (!item) return;
+        const taxonomy = item.getAttribute("data-taxonomy"); // Get taxonomy name
+        const value = item.getAttribute("data-value"); // Get selected value
+        const filterItem = document.getElementById(`filter-item-${value}`);
+        if (!taxonomy || !value || !filterItem) return;
+        const checkedBox = filterItem.querySelector(".checked-box");
+        const uncheckedBox = filterItem.querySelector(".unchecked-box");
+        if (checkedBox && uncheckedBox) {
+          checkedBox.classList.toggle("hidden");
+          uncheckedBox.classList.toggle("hidden");
+        }
+
+        // Initialize taxonomy array if not exists
+        if (!selectedValues[taxonomy]) {
+          selectedValues[taxonomy] = [];
+        }
+
+        // Toggle selection
+        if (selectedValues[taxonomy].includes(value)) {
+          selectedValues[taxonomy] = selectedValues[taxonomy].filter(v => v !== value);
+          if (selectedValues[taxonomy].length === 0) delete selectedValues[taxonomy]; // Remove empty taxonomy
+        } else {
+          selectedValues[taxonomy].push(value);
+        }
+        console.log("Selected Values:", selectedValues);
+
+        // Build query dynamically
+        let queryString = Object.keys(selectedValues).map(tax => selectedValues[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
+        let apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${queryString}&per_page=5`;
+        this.toggleSearch(e);
+      });
+    });
+
+    // Search input event listener with debounce
+    let debounceTimer;
+    inputField.addEventListener("input", e => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => this.toggleSearch(e), 300);
+    });
+  }
   toggleSearch(e) {
     const featured = document.getElementById("home-featured-resources");
     const searched = document.getElementById("home-search-result");
@@ -155,23 +204,6 @@ class HomeResourcesSearch {
       featured.style.display = "block";
       searched.style.display = "none";
       searchedTitle.style.display = "none";
-    }
-  }
-  handleSearch() {
-    const inputField = document.getElementById("search-resources");
-    const listItems = document.querySelectorAll('.category-container li');
-    listItems.forEach(item => {
-      item.onclick = e => {
-        this.selectedTypeValue = item.getAttribute('data-value');
-        this.selectedTypeName = item.getAttribute('data-name');
-        console.log("this.selectedTypeName", this.selectedTypeName);
-        this.toggleSearch(e);
-      };
-    });
-    if (inputField) {
-      inputField.addEventListener("input", e => {
-        this.toggleSearch(e);
-      });
     }
   }
 }

@@ -6,19 +6,6 @@
 
         $aspiring_outcome = get_field("aspiring_outcome");
 
-        $expected_output = get_field("expected_output");
-
-        $grants_image = get_field("travel_grants_image");
-        $grants_desc = get_field("travel_grants_description");
-        $grants_link = get_field("travel_grants_link");
-
-        $staf_ex_image = get_field("staff_exchange_image");
-        $staf_ex_desc = get_field("staff_exchange_description");
-        $staf_ex_link = get_field("staff_exchange_link");
-
-        $tsw_image = get_field("trainings_seminars_workshops_image");
-        $tsw_desc = get_field("trainings_seminars_workshops_description");
-        $tsw_link = get_field("trainings_seminars_workshop_link");
 
 
 ?>
@@ -49,43 +36,27 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-col gap-[60px] py-[60px]">
-            <div class="sm:w-[640px] md:w-[768px] lg:w-[980px] mx-auto">
-                <div class="flex gap-[20px] items-center">
-                    <div class="w-[40%] h-[200px] md:h-[250px] rounded-lg overflow-hidden">
-                        <img class="w-full h-full object-cover" src="<?php echo esc_url($grants_image); ?>" alt="">
+        <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
+            <?php if (have_rows('content')): ?>
+                <?php $index = 0; // Initialize counter ?>
+                <?php while (have_rows('content')): the_row(); ?>
+                    <?php $index++; // Increment counter ?>
+                    
+                    <div class="flex gap-[20px] items-center py-[20px] <?php echo ($index % 2 === 0) ? 'flex-row' : 'flex-row-reverse'; ?>"> 
+                        <!-- Example: Apply different background styles for even and odd indexes -->
+
+                        <div class="w-[40%] h-[200px] rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover" src="<?php echo esc_url(get_sub_field('image')); ?>" alt="">
+                        </div>
+                        <div class="flex flex-col gap-[20px] w-[100%]">
+                            <h6 class="text-[#000000] font-bold text-[18px]"><?php the_sub_field('heading'); ?></h6>
+                            <p class="text-[#000000] pb-[10px] text-[14px]"><?php the_sub_field('description'); ?></p>
+                            <a class="text-[14px]" href="<?php echo esc_url(get_sub_field('button_link')); ?>">Learn More</a>
+                        </div>
                     </div>
-                    <div class="flex flex-col gap-[20px] w-[100%]">
-                        <h2 class="text-[24px]">Travel Grants</h2>
-                        <p class="text-[14px] font-[300]"><?php echo $grants_desc ?></p>
-                        <a class= "text-[14px]" href="<?php echo esc_url($grants_link); ?>">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="sm:w-[640px] md:w-[768px] lg:w-[980px] mx-auto">
-                <div class="flex flex-row-reverse gap-[20px] items-center">
-                    <div class="w-[40%] h-[200px] md:h-[250px] rounded-lg overflow-hidden">
-                        <img class="w-full h-full object-cover" src="<?php echo esc_url($staf_ex_image); ?>" alt="">
-                    </div>
-                    <div class="flex flex-col gap-[20px] w-[100%] items-end text-right">
-                        <h2 class="text-[24px]">Staﬀ Exchanges and Mentorship Program</h2>
-                        <p class="text-[14px] font-[300]"><?php echo $staf_ex_desc ?></p>
-                        <a class= "text-[14px]" href="<?php echo esc_url($staf_ex_link); ?>">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="sm:w-[640px] md:w-[768px] lg:w-[980px] mx-auto">
-                <div class="flex gap-[20px] items-center">
-                    <div class="w-[40%] h-[200px] md:h-[250px] rounded-lg overflow-hidden">
-                        <img class="w-full h-full object-cover" src="<?php echo esc_url($tsw_image); ?>" alt="">
-                    </div>
-                    <div class="flex flex-col gap-[20px] w-[100%]">
-                        <h2 class="text-[24px]">Trainings, Seminars, Workshops</h2>
-                        <p class="text-[14px] font-[300]"><?php echo $tsw_desc ?></p>
-                        <a class= "text-[14px]" href="<?php echo esc_url($tsw_link); ?>">Learn More</a>
-                    </div>
-                </div>
-            </div>
+
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
     </div>
 <?php 
