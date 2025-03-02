@@ -177,9 +177,9 @@
     <div 
         id="home-side-filter-head-3"
         onclick="handleHomeAccordion('home-side-filter-content-3', parseInt('3', 10))"   
-        class="flex gap-[20px] justify-between items-center text-[14px]  xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer"
+        class="flex gap-[20px] justify-between items-center text-[14px] xl:text-[18px] font-[600] border-b-[1px] border-[#CECECE] py-[10px] cursor-pointer"
     >
-        <p class="text-[16px]">Publication Date</p>
+        <p class="text-[16px]">Publication Year</p>
         <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -190,40 +190,35 @@
         style="height: 0;" 
     >
         <?php
-            $date_field = 'published_date'; // Replace with your actual ACF field name
-            
-            // Get all knowledge_management posts
-            $args = array(
-                'post_type'      => 'knowledge_management',
-                'posts_per_page' => -1, // Get all posts
-                'fields'         => 'ids', // Optimize performance by retrieving only IDs
-            );
+        // Fetch unique published dates
+        $args = array(
+            'post_type'      => 'knowledge-management',
+            'posts_per_page' => -1,
+            'meta_key'       => 'published_date',
+            'orderby'        => 'meta_value',
+            'order'          => 'ASC',
+            'fields'         => 'ids',
+        );
 
-            $query = new WP_Query($args);
-            $date_values = array();
-            
-            var_dump($query);
-            if ($query->have_posts()) {
-                foreach ($query->posts as $post_id) {
-                    $date_value = get_field($date_field, $post_id); // Fetch ACF date field
-                    if ($date_value) {
-                        $date_values[] = $date_value;
-                    }
+        $query = new WP_Query($args);
+        $dates = [];
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+                $date = get_field('published_date'); // Ensure this returns the expected format
+                if ($date && !in_array($date, $dates)) {
+                    $dates[] = $date;
                 }
             }
-
-            wp_reset_postdata(); // Reset query
-
-            // Remove duplicate dates and sort in descending order
-            $date_values = array_unique($date_values);
-
-            rsort($date_values);
+            wp_reset_postdata();
+        }
         ?>
-        
+
         <ul id="home-side-filter-content-3" class="date-category-container category-container relative py-[20px] z-[99] w-[100%] flex flex-col">
             <?php    
-            if (!empty($date_values)) {
-                foreach ($date_values as $date) {
+            if (!empty($dates)) {
+                foreach ($dates as $date) {
                     $date_id = sanitize_title($date); // Generate a unique ID from the date
             ?>
                 <div 
@@ -253,4 +248,5 @@
         </ul>
     </div>
 </div>
+
 
