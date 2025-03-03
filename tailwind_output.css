@@ -1286,6 +1286,10 @@ video {
   overflow: hidden;
 }
 
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
 .overflow-y-scroll {
   overflow-y: scroll;
 }
@@ -2222,6 +2226,15 @@ video {
   font-weight: 600;
 }
 
+.hover\:font-\[700\]:hover {
+  font-weight: 700;
+}
+
+.hover\:text-\[\#096936\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(9 105 54 / var(--tw-text-opacity));
+}
+
 .hover\:shadow-md:hover {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -2400,6 +2413,10 @@ video {
 
   .md\:pt-\[70px\] {
     padding-top: 70px;
+  }
+
+  .md\:pt-\[20px\] {
+    padding-top: 20px;
   }
 
   .md\:text-\[14px\] {

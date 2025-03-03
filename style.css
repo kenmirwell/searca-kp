@@ -481,8 +481,12 @@ select {
 }
 
 .home-search-item {
-    border-bottom: .5px solid #d8d8d8;
-    padding-bottom: 5px;
+    padding: 10px 0px;
+}
+
+.home-search-item:hover {
+    background-color: #f3f3f3;
+    transition: all 0.3s ease;
 }
 
 .answer {
@@ -677,6 +681,11 @@ select {
 .banner-slider .slide-container .center-align .text-container a {
     padding: 0 !important;
     background-color: transparent !important;
+}
+
+.active-searchby {
+    color: #096936;
+    font-weight: 700;
 }
 
 @keyframes spin {

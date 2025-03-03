@@ -34,21 +34,20 @@
                     <div class="flex flex-col w-[100%] gap-[10px]">
                         <input id="search-resources" class="w-[100%] border-[1px] bg-transparent border-[#CECECE] text-[16px] text-[#000000] placeholder-[#848484] py-[10px] px-[10px]" type="text" placeholder="Search by Topic">
                         <ul class="flex lg:justify-end">
-                            <li class="cursor-pointer text-[#848484] text-[16px] py-[5px] px-[10px] border-r-[1px] border-[#CECECE]">By Title</li>
-                            <li class="cursor-pointer text-[#848484] text-[16px] py-[5px] px-[10px] border-r-[1px] border-[#CECECE]">By Author</li>
-                            <li class="cursor-pointer text-[#848484] text-[16px] py-[5px] pl-[10px]">By Keyword</li>
+                            <button id="search-by-title" class="cursor-pointer hover:font-[700] text-[16px] py-[5px] px-[10px] border-r-[1px] border-[#CECECE]">By Title</button>
+                            <button id="search-by-keyword" class="cursor-pointer hover:font-[700] text-[16px] py-[5px] pl-[10px]">By Keyword</button>
                         </ul>
                         <div class="w-[100%] block lg:hidden">
                             <?php get_template_part("includes/section/home-side-filter"); ?>
                         </div>
                     </div>
                 </div>
-                <div class="w-[100%] pt-[20px] md:pt-[50px]">
+                <div class="w-[100%] pt-[20px] md:pt-[20px]">
                     <div id="home-search-container" class="home-search-container hidden">
-                        <div id="search-result-title" class="hidden pb-[20px]">
+                        <!-- <div id="search-result-title" class="hidden pb-[20px]">
                             <h6 class="font-[600]">Search Result</h6>
-                        </div>
-                        <div id="home-search-result" class="flex flex-col gap-[10px]">
+                        </div> -->
+                        <div id="home-search-result" class="flex flex-col h-[300px] overflow-y-scroll">
                         </div>
                     </div>
                     <div id="home-featured-resources" class="h-auto">

@@ -91,14 +91,34 @@ class HomeResourcesSearch {
     this.typingTimer;
     this.selectedTypeValue = null;
     this.selectedTypeName = null;
-    this.searchQuery = '';
+    this.searchQuery = "";
+    this.searchBy = "search"; // Default to keyword-based search
+    this.initEvents();
+  }
+  initEvents() {
+    const searchByTitle = document.getElementById("search-by-title");
+    const searchByKeyword = document.getElementById("search-by-keyword");
+    if (!searchByTitle || !searchByKeyword) {
+      console.error("Search filter elements missing!");
+      return;
+    }
+    searchByTitle.addEventListener("click", () => {
+      this.searchBy = "title_search"; // Switch to title-based search
+      searchByTitle.classList.add("active-searchby");
+      searchByKeyword.classList.remove("active-searchby");
+    });
+    searchByKeyword.addEventListener("click", () => {
+      this.searchBy = "search"; // Switch to keyword-based search
+      searchByKeyword.classList.add("active-searchby");
+      searchByTitle.classList.remove("active-searchby");
+    });
   }
   handleSearch() {
     const inputField = document.getElementById("search-resources");
-    const categoryContainers = document.querySelectorAll(".type-category-container, .author-category-container, .country-category-container");
-    let selectedValues = {}; // Store selected values by taxonomy
+    const categoryContainers = document.querySelectorAll(".type-category-container, .author-category-container, .country-category-container, .date-category-container");
+    let selectedValues = {}; // Keep selectedValues local to function
 
-    // Add event listeners dynamically
+    // Handle category filters dynamically
     categoryContainers.forEach(container => {
       container.addEventListener("click", e => {
         const item = e.target.closest("li");
@@ -126,12 +146,7 @@ class HomeResourcesSearch {
         } else {
           selectedValues[taxonomy].push(value);
         }
-        console.log("Selected Values:", selectedValues);
-
-        // Build query dynamically
-        let queryString = Object.keys(selectedValues).map(tax => selectedValues[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
-        let apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${queryString}&per_page=5`;
-        this.toggleSearch(e);
+        this.performSearch(selectedValues);
       });
     });
 
@@ -139,73 +154,79 @@ class HomeResourcesSearch {
     let debounceTimer;
     inputField.addEventListener("input", e => {
       clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(() => this.toggleSearch(e), 300);
+      debounceTimer = setTimeout(() => {
+        const searchValue = e.target.value.trim();
+
+        // Reset other search mode when switching
+        if (this.searchBy === "search") {
+          delete selectedValues["title_search"];
+        } else {
+          delete selectedValues["search"];
+        }
+
+        // Update the selected search filter
+        if (searchValue.length > 0) {
+          selectedValues[this.searchBy] = [searchValue];
+        } else {
+          delete selectedValues[this.searchBy];
+        }
+        this.performSearch(selectedValues);
+      }, 500); // 500ms debounce delay
     });
   }
-  toggleSearch(e) {
+  performSearch(selectedValues) {
+    let queryString = Object.keys(selectedValues).map(tax => selectedValues[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
+    let apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${queryString}`;
+    requestAnimationFrame(() => {
+      //built in javascript function
+      this.toggleSearch(apiUrl, selectedValues);
+    });
+  }
+  toggleSearch(apiUrl, selectedValues) {
     const featured = document.getElementById("home-featured-resources");
-    const searched = document.getElementById("home-search-result");
-    const searchedTitle = document.getElementById("search-result-title");
     const searchContainer = document.getElementById("home-search-container");
-    if (e.target && e.target.id === 'search-resources') {
-      this.searchQuery = e.target.value.trim();
-    }
-    clearTimeout(this.typingTimer);
-    if (this.searchQuery || this.selectedTypeValue) {
+    if (Object.values(selectedValues).length !== 0) {
+      clearTimeout(this.typingTimer);
       featured.style.display = "none";
-      searched.style.display = "flex";
       searchContainer.style.display = "block";
-      searchedTitle.style.display = "block";
       if (!this.isSpinnerVisible) {
-        searched.innerHTML = '<div class="loader-container"><div class="loader"></div></div>';
+        this.updateSearchResults(`<div class="loader-container"><div class="loader"></div></div>`);
         this.isSpinnerVisible = true;
       }
       this.typingTimer = setTimeout(() => {
-        const getData = async () => {
-          try {
-            const categoryQuery = this.selectedTypeValue ? `&km_category=${this.selectedTypeValue}` : "";
-
-            // const response = await fetch(`https://bcsdevelopmentgator.site/wp-json/custom/v1/search?search=${this.searchQuery}${categoryQuery}&per_page=5`);
-            const response = await fetch(`${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?search=${this.searchQuery}${categoryQuery}&per_page=5`);
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const data = await response.json();
-            if (data.length > 0) {
-              searched.innerHTML = "";
-              if (!this.selectedTypeName) {
-                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.searchQuery}</span></h6>`;
-              } else if (!this.searchQuery) {
-                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName}</span></h6>`;
-              } else {
-                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName} with ${this.searchQuery}</span></h6>`;
-              }
-              data.forEach(item => {
-                searched.innerHTML += `<div class="home-search-item"><a href="${item.link}"><p class="text-[14px]">${item.title.rendered}</p></a></div>`;
-              });
-              this.isSpinnerVisible = false;
-            } else {
-              if (!this.selectedTypeName) {
-                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.searchQuery}</span></h6>`;
-              } else if (!this.searchQuery) {
-                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName}</span></h6>`;
-              } else {
-                searchedTitle.innerHTML = `<h6 class="font-[600]">Search Result for <span class="text-[#458753]">${this.selectedTypeName} with ${this.searchQuery}</span></h6>`;
-              }
-              searched.innerHTML = `<div class="loader-container"><p>No result</p></div>`;
-              this.isSpinnerVisible = true;
-            }
-          } catch (err) {
-            console.error("Error fetching data:", err);
-          }
-        };
-        getData();
-      });
+        this.fetchData(apiUrl);
+      }, 500); // 500ms debounce delay
     } else {
       featured.style.display = "block";
-      searched.style.display = "none";
-      searchedTitle.style.display = "none";
+      searchContainer.style.display = "none";
     }
+  }
+  async fetchData(apiUrl) {
+    try {
+      if (!apiUrl) throw new Error("API URL is undefined or empty");
+      const response = await fetch(apiUrl);
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+      const data = await response.json();
+      if (data.length > 0) {
+        const resultsHTML = data.map(item => `<div class="home-search-item"><a class="text-[16px]" href="${item.link}">${item.title.rendered}</a></div>`).join("");
+        this.updateSearchResults(resultsHTML);
+        this.isSpinnerVisible = false;
+      } else {
+        this.updateSearchResults(`<div class="loader-container"><p>No result</p></div>`);
+        this.isSpinnerVisible = true;
+      }
+    } catch (err) {
+      console.error("Error fetching data:", err);
+    }
+  }
+  updateSearchResults(content) {
+    requestAnimationFrame(() => {
+      //built in javascript function
+      const searched = document.getElementById("home-search-result");
+      if (searched) {
+        searched.innerHTML = content;
+      }
+    });
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeResourcesSearch);
