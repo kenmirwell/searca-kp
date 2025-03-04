@@ -92,6 +92,7 @@ class HomeResourcesSearch {
     this.selectedTypeValue = null;
     this.selectedTypeName = null;
     this.searchQuery = "";
+    this.selectedValues = {};
     this.searchBy = "search"; // Default to keyword-based search
     this.initEvents();
   }
@@ -99,24 +100,46 @@ class HomeResourcesSearch {
     const searchByTitle = document.getElementById("search-by-title");
     const searchByKeyword = document.getElementById("search-by-keyword");
     if (!searchByTitle || !searchByKeyword) {
-      console.error("Search filter elements missing!");
       return;
     }
     searchByTitle.addEventListener("click", () => {
       this.searchBy = "title_search"; // Switch to title-based search
       searchByTitle.classList.add("active-searchby");
+      searchByTitle.classList.remove("inactive-searchby");
+      searchByKeyword.classList.add("inactive-searchby");
       searchByKeyword.classList.remove("active-searchby");
+      if (this.selectedValues["search"] && this.selectedValues["search"].length > 0) {
+        this.selectedValues["title_search"] = this.selectedValues["search"];
+        delete this.selectedValues["search"];
+      } else {
+        delete this.selectedValues["search"];
+      }
+      this.performSearch(this.selectedValues); //what am i doing wrong here
     });
     searchByKeyword.addEventListener("click", () => {
       this.searchBy = "search"; // Switch to keyword-based search
-      searchByKeyword.classList.add("active-searchby");
+      searchByTitle.classList.add("inactive-searchby");
       searchByTitle.classList.remove("active-searchby");
+      searchByKeyword.classList.add("active-searchby");
+      searchByKeyword.classList.remove("inactive-searchby");
+      console.log("this.selectedValues[title_search]", this.selectedValues["title_search"]);
+      if (this.selectedValues["title_search"] && this.selectedValues["title_search"].length > 0) {
+        this.selectedValues["search"] = this.selectedValues["title_search"];
+        delete this.selectedValues["title_search"];
+      } else {
+        delete this.selectedValues["title_search"];
+      }
+      this.performSearch(this.selectedValues); //what am i doing wrong here
     });
   }
   handleSearch() {
     const inputField = document.getElementById("search-resources");
     const categoryContainers = document.querySelectorAll(".type-category-container, .author-category-container, .country-category-container, .date-category-container");
-    let selectedValues = {}; // Keep selectedValues local to function
+    if (!inputField || !categoryContainers) {
+      return;
+    }
+
+    // Keep this.selectedValues local to function
 
     // Handle category filters dynamically
     categoryContainers.forEach(container => {
@@ -135,18 +158,18 @@ class HomeResourcesSearch {
         }
 
         // Initialize taxonomy array if not exists
-        if (!selectedValues[taxonomy]) {
-          selectedValues[taxonomy] = [];
+        if (!this.selectedValues[taxonomy]) {
+          this.selectedValues[taxonomy] = [];
         }
 
         // Toggle selection
-        if (selectedValues[taxonomy].includes(value)) {
-          selectedValues[taxonomy] = selectedValues[taxonomy].filter(v => v !== value);
-          if (selectedValues[taxonomy].length === 0) delete selectedValues[taxonomy]; // Remove empty taxonomy
+        if (this.selectedValues[taxonomy].includes(value)) {
+          this.selectedValues[taxonomy] = this.selectedValues[taxonomy].filter(v => v !== value);
+          if (this.selectedValues[taxonomy].length === 0) delete this.selectedValues[taxonomy]; // Remove empty taxonomy
         } else {
-          selectedValues[taxonomy].push(value);
+          this.selectedValues[taxonomy].push(value);
         }
-        this.performSearch(selectedValues);
+        this.performSearch(this.selectedValues);
       });
     });
 
@@ -159,24 +182,25 @@ class HomeResourcesSearch {
 
         // Reset other search mode when switching
         if (this.searchBy === "search") {
-          delete selectedValues["title_search"];
+          delete this.selectedValues["title_search"];
         } else {
-          delete selectedValues["search"];
+          delete this.selectedValues["search"];
         }
 
         // Update the selected search filter
         if (searchValue.length > 0) {
-          selectedValues[this.searchBy] = [searchValue];
+          this.selectedValues[this.searchBy] = [searchValue];
         } else {
-          delete selectedValues[this.searchBy];
+          delete this.selectedValues[this.searchBy];
         }
-        this.performSearch(selectedValues);
+        this.performSearch(this.selectedValues);
       }, 500); // 500ms debounce delay
     });
   }
   performSearch(selectedValues) {
     let queryString = Object.keys(selectedValues).map(tax => selectedValues[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
     let apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${queryString}`;
+    console.log("apiUrl", apiUrl);
     requestAnimationFrame(() => {
       //built in javascript function
       this.toggleSearch(apiUrl, selectedValues);
@@ -650,16 +674,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   let tab = 0;
   let isShown = false;
-  let onSearch = false;
-  let modalStatus = false;
-  let popupStatus = false;
-  let activePopupId = null;
-  let activePopupIds = [];
   const overview = document.getElementById("material-overview");
   const content = document.getElementById("material-content");
   const testimonials = document.getElementById("material-testimonials");
   const authorsDropdown = document.getElementById("author-dropdown");
-  const searchModal = document.getElementById("search-modal");
   if (overview) {
     if (tab == 0) {
       overview.style.display = "block";

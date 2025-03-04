@@ -1,24 +1,18 @@
 <?php 
-    function add_title_only_search( $args, $request ) {
-        if ( isset( $request['title_search'] ) ) {
-            global $wpdb;
-            $search_query = esc_sql( $request['title_search'] );
+  function custom_search_endpoint($query_args, $request) {
+    global $wpdb;
     
-            $args['s'] = $search_query;
-            $args['posts_per_page'] = -1; // Adjust as needed
-    
-            // Restrict search to post title
-            $args['meta_query'] = array(
-                array(
-                    'key'     => 'post_title',
-                    'value'   => $search_query,
-                    'compare' => 'LIKE'
-                )
-            );
-        }
-        return $args;
+    $title_search = $request->get_param('title_search'); // Get the title search parameter
+
+    if (!empty($title_search)) {
+        add_filter('posts_where', function ($where) use ($wpdb, $title_search) {
+            return $where . $wpdb->prepare(" AND {$wpdb->posts}.post_title LIKE %s", '%' . $wpdb->esc_like($title_search) . '%');
+        });
     }
-    
-    add_filter( 'rest_knowledge-management_query', 'add_title_only_search', 10, 2 );
-    
+
+    return $query_args;
+}
+
+add_filter('rest_knowledge-management_query', 'custom_search_endpoint', 10, 2);
+
 ?>

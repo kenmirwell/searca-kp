@@ -34,7 +34,7 @@
     include(get_stylesheet_directory() . '/includes/shortcodes/knowledge-management.php');
 
     //custom enpoint
-    include(get_stylesheet_directory() . '/includes/custom-enpoints/home-search-endpoint.php');
+    include(get_stylesheet_directory() . '/includes/custom-endpoints/home-search-endpoint.php');
     
 
     add_action('init', 'theme_set_options');

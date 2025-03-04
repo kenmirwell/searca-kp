@@ -24,17 +24,7 @@
                     </div>
                     <div class="text-[16px] font-extralight flex gap-[20px] text-[#ffffff]">
                         <div class="w-[50%]">
-                            <?php 
-                                the_content();
-                             ?>
-                        </div>
-                        <div class="w-[50%]">
-                            <div class="">
-                                <p><span class="font-[600]">Expected Output: </span><?php echo $expected_output ?></p>
-                            </div>
-                            <div class="pt-[20px]">
-                                <p> <span class="font-[600]">Aspiring Outcome: </span><?php echo $aspiring_outcome ?></p>
-                            </div>
+                            <?php the_content(); ?>
                         </div>
                     </div>
                 </div>

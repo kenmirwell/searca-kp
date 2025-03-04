@@ -38,16 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let tab = 0;
     let isShown = false;
-    let onSearch = false;
-    let modalStatus = false;
-    let popupStatus = false;
-    let activePopupId = null;
-    let activePopupIds = [];
     const overview = document.getElementById("material-overview")
     const content = document.getElementById("material-content")
     const testimonials = document.getElementById("material-testimonials")
     const authorsDropdown = document.getElementById("author-dropdown")
-    const searchModal = document.getElementById("search-modal")
     
     if(overview) {
         if (tab == 0) {
@@ -179,6 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
             listenerStatus[id] = { isOpen: true };
         }
     };
+
+    
+
     
     // Close all modals when clicking outside
     document.addEventListener('click', function(event) {
@@ -200,7 +197,6 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     window.addEventListener('scroll', (event) => {
-       
         const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
         if (currentScrollTop > triggerHeight) {
@@ -223,6 +219,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+
 
     jQuery(document).ready(function($) {
         $('.banner-slider').slick({

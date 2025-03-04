@@ -35,6 +35,6 @@
             </div>
         </a>
     </div>
-    <div class="bg-black opacity-50 w-[100%] h-[100%] absolute top-0 left-0 z-[1]"></div>
+    <div class="bg-gradient-to-l from-[rgba(0,0,0,0.2)] to-[rgba(0,0,0,0.7)] w-[100%] h-[100%] absolute top-0 left-0 z-[1]"></div>
     <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($banner_background); ?>" alt="<?php the_title(); ?>">
 </div>

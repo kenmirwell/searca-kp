@@ -52,7 +52,7 @@ p {
 
 .primary-menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     gap: 20px;
     align-items: flex-start;
     position: relative;
@@ -480,6 +480,8 @@ select {
     padding: 0px !important;
 }
 
+
+
 .home-search-item {
     padding: 10px 0px;
 }
@@ -683,9 +685,20 @@ select {
     background-color: transparent !important;
 }
 
-.active-searchby {
-    color: #096936;
-    font-weight: 700;
+.active-searchby .checked-box {
+    display: block;
+}
+
+.active-searchby .unchecked-box {
+    display: none;
+}
+
+.inactive-searchby .checked-box {
+    display: none;
+}
+
+.inactive-searchby .unchecked-box {
+    display: block;
 }
 
 @keyframes spin {

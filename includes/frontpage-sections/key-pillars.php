@@ -4,7 +4,7 @@
             <h6 class="text-[22px] md:text-[42px]">Key pillars of our work</h6>
         </div>
     </div>
-    <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-center items-start gap-[10px] xl:gap-[20px]">
+    <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-between items-start gap-[10px] xl:gap-[20px]">
         <?php 
             $components = new WP_Query(array(
                 "post_type" => "component",

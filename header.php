@@ -104,100 +104,98 @@
                     <?php the_custom_logo(); ?>
                 </div>
             <?php } ?>
-            <div class="flex gap-[20px] justify-between items-center">
-                <div class="justify-between gap-[20px] hidden xl:block">
-                    <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location'    => 'header_menu',
-                                'container'         => '',
-                                'menu_id'           => 'main-menu',
-                                'menu_class'        => 'primary-menu',
-                            )
+            <div class="justify-between gap-[20px] hidden xl:block">
+                <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location'    => 'header_menu',
+                            'container'         => '',
+                            'menu_id'           => 'main-menu',
+                            'menu_class'        => 'primary-menu',
                         )
+                    )
+                ?>
+            </div>
+            <div class="flex gap-[10px] items-center">
+                <div onclick="onModal('search-modal', 'open')" class="flex">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.5 21.75C5.85 21.75 1.25 17.15 1.25 11.5C1.25 5.85 5.85 1.25 11.5 1.25C17.15 1.25 21.75 5.85 21.75 11.5C21.75 17.15 17.15 21.75 11.5 21.75ZM11.5 2.75C6.67 2.75 2.75 6.68 2.75 11.5C2.75 16.32 6.67 20.25 11.5 20.25C16.33 20.25 20.25 16.32 20.25 11.5C20.25 6.68 16.33 2.75 11.5 2.75Z" fill="black"/>
+                        <path d="M21.9999 22.75C21.8099 22.75 21.6199 22.68 21.4699 22.53L19.4699 20.53C19.1799 20.24 19.1799 19.76 19.4699 19.47C19.7599 19.18 20.2399 19.18 20.5299 19.47L22.5299 21.47C22.8199 21.76 22.8199 22.24 22.5299 22.53C22.3799 22.68 22.1899 22.75 21.9999 22.75Z" fill="black"/>
+                    </svg>
+                </div>
+                <div class="relative">
+                    <div onclick="handlePopup('auth', event)" class="flex">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <?php 
+                        $current_user = wp_get_current_user();
+                        
+                        if ( is_user_logged_in() ) {
+                            $user_id = $current_user->ID;
+                            $user_name = $current_user->user_login ;
+                            $user_email = $current_user->user_email;
+                            $display_name = $current_user->display_name;
+                            $first_name = $current_user->user_firstname;
+                            $last_name = $current_user->user_lastname;
+                            $userRole = $current_user->roles;
+
+                            $firstname_initial = substr($first_name, 0, 1);
+                            $lastname_initial = substr($last_name, 0, 1);
+                    ?>
+
+                            <div id="auth" class="absolute hidden flex flex-col gap-[10px] text-[14px] bg-[#ffffff] w-[300px] rounded-lg z-50 right-0 top-[40px]">
+                                <div class="w-[100%] flex justify-center pt-[30px] bg-[#FFF7E0] relative h-[65px]"></div>
+                                <div class="w-[100%] flex flex-col items-center mt-[-45px] z-[9]">
+                                    <div class="flex p-[20px] rounded-full bg-[#C5192D] w-[60px] h-[60px] justify-center items-center text-[32px] text-[#ffffff]">
+                                        <span><?php echo $firstname_initial ?></span>
+                                        <span><?php echo $lastname_initial ?></span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-[2px] pt-[5px]">
+                                        <p><?php echo $display_name ?></p>
+                                        <p><?php echo $user_email ?></p>
+                                    </div>
+                                </div>
+                                <div class="w-[100%] justify-center">
+                                    <div class="px-[35px] py-[20px] flex justify-center">
+                                        <a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php  
+                        } else { 
+                    ?>
+                        
+                            <!-- <div id="auth" class="absolute hidden flex flex-col gap-[10px] py-[15px] px-[10px] text-[14px] bg-[#ffffff] w-[100px] rounded-lg z-50 right-0 top-[40px]">
+                                <div class="py-[5px]">
+                                    <p onclick="onModal('login-modal')" class="cursor-pointer">Login</p>
+                                </div>
+                                <div>
+                                    <p onclick="onModal('signup-modal')" class="cursor-pointer">Signup</p>  
+                                </div class="py-[5px]">
+                            </div> -->
+                            <div id="auth" class="absolute hidden flex flex-col gap-[10px] py-[15px] px-[10px] text-[14px] bg-[#ffffff] w-[100px] rounded-lg z-50 right-0 top-[40px]">
+                                <div class="py-[5px]">
+                                    <a href="<?php echo esc_url(get_permalink(416)) ?>">Login</a>
+                                </div>
+                                <div>
+                                    <!-- <p onclick="onModal('signup-modal')" class="cursor-pointer">Signup</p>   -->
+                                    <a href="<?php echo esc_url(get_permalink(341)) ?>">Signup</a>
+                                </div class="py-[5px]">
+                            </div>
+                    <?php 
+                        } 
                     ?>
                 </div>
-                <div class="flex gap-[10px] items-center">
-                    <div onclick="onModal('search-modal', 'open')" class="flex">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.5 21.75C5.85 21.75 1.25 17.15 1.25 11.5C1.25 5.85 5.85 1.25 11.5 1.25C17.15 1.25 21.75 5.85 21.75 11.5C21.75 17.15 17.15 21.75 11.5 21.75ZM11.5 2.75C6.67 2.75 2.75 6.68 2.75 11.5C2.75 16.32 6.67 20.25 11.5 20.25C16.33 20.25 20.25 16.32 20.25 11.5C20.25 6.68 16.33 2.75 11.5 2.75Z" fill="black"/>
-                            <path d="M21.9999 22.75C21.8099 22.75 21.6199 22.68 21.4699 22.53L19.4699 20.53C19.1799 20.24 19.1799 19.76 19.4699 19.47C19.7599 19.18 20.2399 19.18 20.5299 19.47L22.5299 21.47C22.8199 21.76 22.8199 22.24 22.5299 22.53C22.3799 22.68 22.1899 22.75 21.9999 22.75Z" fill="black"/>
-                        </svg>
-                    </div>
-                    <div class="relative">
-                        <div onclick="handlePopup('auth', event)" class="flex">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <?php 
-                            $current_user = wp_get_current_user();
-                            
-                            if ( is_user_logged_in() ) {
-                                $user_id = $current_user->ID;
-                                $user_name = $current_user->user_login ;
-                                $user_email = $current_user->user_email;
-                                $display_name = $current_user->display_name;
-                                $first_name = $current_user->user_firstname;
-                                $last_name = $current_user->user_lastname;
-                                $userRole = $current_user->roles;
-
-                                $firstname_initial = substr($first_name, 0, 1);
-                                $lastname_initial = substr($last_name, 0, 1);
-                        ?>
-
-                                <div id="auth" class="absolute hidden flex flex-col gap-[10px] text-[14px] bg-[#ffffff] w-[300px] rounded-lg z-50 right-0 top-[40px]">
-                                    <div class="w-[100%] flex justify-center pt-[30px] bg-[#FFF7E0] relative h-[65px]"></div>
-                                    <div class="w-[100%] flex flex-col items-center mt-[-45px] z-[9]">
-                                        <div class="flex p-[20px] rounded-full bg-[#C5192D] w-[60px] h-[60px] justify-center items-center text-[32px] text-[#ffffff]">
-                                            <span><?php echo $firstname_initial ?></span>
-                                            <span><?php echo $lastname_initial ?></span>
-                                        </div>
-                                        <div class="flex flex-col items-center gap-[2px] pt-[5px]">
-                                            <p><?php echo $display_name ?></p>
-                                            <p><?php echo $user_email ?></p>
-                                        </div>
-                                    </div>
-                                    <div class="w-[100%] justify-center">
-                                        <div class="px-[35px] py-[20px] flex justify-center">
-                                            <a href="<?php echo wp_logout_url(home_url()); ?>">Logout</a>
-                                        </div>
-                                    </div>
-                                </div>
-                        <?php  
-                            } else { 
-                        ?>
-                            
-                                <!-- <div id="auth" class="absolute hidden flex flex-col gap-[10px] py-[15px] px-[10px] text-[14px] bg-[#ffffff] w-[100px] rounded-lg z-50 right-0 top-[40px]">
-                                    <div class="py-[5px]">
-                                        <p onclick="onModal('login-modal')" class="cursor-pointer">Login</p>
-                                    </div>
-                                    <div>
-                                        <p onclick="onModal('signup-modal')" class="cursor-pointer">Signup</p>  
-                                    </div class="py-[5px]">
-                                </div> -->
-                                <div id="auth" class="absolute hidden flex flex-col gap-[10px] py-[15px] px-[10px] text-[14px] bg-[#ffffff] w-[100px] rounded-lg z-50 right-0 top-[40px]">
-                                    <div class="py-[5px]">
-                                        <a href="<?php echo esc_url(get_permalink(416)) ?>">Login</a>
-                                    </div>
-                                    <div>
-                                        <!-- <p onclick="onModal('signup-modal')" class="cursor-pointer">Signup</p>   -->
-                                        <a href="<?php echo esc_url(get_permalink(341)) ?>">Signup</a>
-                                    </div class="py-[5px]">
-                                </div>
-                        <?php 
-                            } 
-                        ?>
-                    </div>
-                    <div id="contactus-header-button" class="hidden sm:block py-[10px] px-[20px] bg-[#2a7f3d] rounded-full overflow-hidden">
-                        <button class="text-[#ffffff]">Contact us</button>
-                    </div>
-                    <div onclick="handleMobileMenu()" class="block sm:hidden">
-                        <svg width="20" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.8125 4.18212C0.597012 4.18212 0.390349 4.27024 0.237976 4.4271C0.0856026 4.58396 0 4.7967 0 5.01854C0 5.24037 0.0856026 5.45312 0.237976 5.60998C0.390349 5.76684 0.597012 5.85496 0.8125 5.85496V4.18212ZM12.1875 5.85496C12.403 5.85496 12.6097 5.76684 12.762 5.60998C12.9144 5.45312 13 5.24037 13 5.01854C13 4.7967 12.9144 4.58396 12.762 4.4271C12.6097 4.27024 12.403 4.18212 12.1875 4.18212V5.85496ZM0.8125 0C0.597012 0 0.390349 0.0881231 0.237976 0.244983C0.0856026 0.401843 0 0.61459 0 0.836423C0 1.05826 0.0856026 1.271 0.237976 1.42786C0.390349 1.58472 0.597012 1.67285 0.8125 1.67285V0ZM12.1875 1.67285C12.403 1.67285 12.6097 1.58472 12.762 1.42786C12.9144 1.271 13 1.05826 13 0.836423C13 0.61459 12.9144 0.401843 12.762 0.244983C12.6097 0.0881231 12.403 0 12.1875 0V1.67285ZM0.8125 8.36423C0.597012 8.36423 0.390349 8.45235 0.237976 8.60921C0.0856026 8.76607 0 8.97882 0 9.20065C0 9.42249 0.0856026 9.63523 0.237976 9.79209C0.390349 9.94895 0.597012 10.0371 0.8125 10.0371V8.36423ZM12.1875 10.0371C12.403 10.0371 12.6097 9.94895 12.762 9.79209C12.9144 9.63523 13 9.42249 13 9.20065C13 8.97882 12.9144 8.76607 12.762 8.60921C12.6097 8.45235 12.403 8.36423 12.1875 8.36423V10.0371ZM0.8125 5.85496H12.1875V4.18212H0.8125V5.85496ZM0.8125 1.67285H12.1875V0H0.8125V1.67285ZM0.8125 10.0371H12.1875V8.36423H0.8125V10.0371Z" fill="black"/>
-                        </svg>
-                    </div>
+                <div id="contactus-header-button" class="hidden sm:block py-[10px] px-[20px] text-[#000000] hover:text-[#ffffff] border-[1px] border-[#000000] hover:border-[#2a7f3d] hover:bg-[#2a7f3d] rounded-full overflow-hidden transition-all duration-200 ease">
+                    <button class="">Contact us</button>
+                </div>
+                <div onclick="handleMobileMenu()" class="block sm:hidden">
+                    <svg width="20" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.8125 4.18212C0.597012 4.18212 0.390349 4.27024 0.237976 4.4271C0.0856026 4.58396 0 4.7967 0 5.01854C0 5.24037 0.0856026 5.45312 0.237976 5.60998C0.390349 5.76684 0.597012 5.85496 0.8125 5.85496V4.18212ZM12.1875 5.85496C12.403 5.85496 12.6097 5.76684 12.762 5.60998C12.9144 5.45312 13 5.24037 13 5.01854C13 4.7967 12.9144 4.58396 12.762 4.4271C12.6097 4.27024 12.403 4.18212 12.1875 4.18212V5.85496ZM0.8125 0C0.597012 0 0.390349 0.0881231 0.237976 0.244983C0.0856026 0.401843 0 0.61459 0 0.836423C0 1.05826 0.0856026 1.271 0.237976 1.42786C0.390349 1.58472 0.597012 1.67285 0.8125 1.67285V0ZM12.1875 1.67285C12.403 1.67285 12.6097 1.58472 12.762 1.42786C12.9144 1.271 13 1.05826 13 0.836423C13 0.61459 12.9144 0.401843 12.762 0.244983C12.6097 0.0881231 12.403 0 12.1875 0V1.67285ZM0.8125 8.36423C0.597012 8.36423 0.390349 8.45235 0.237976 8.60921C0.0856026 8.76607 0 8.97882 0 9.20065C0 9.42249 0.0856026 9.63523 0.237976 9.79209C0.390349 9.94895 0.597012 10.0371 0.8125 10.0371V8.36423ZM12.1875 10.0371C12.403 10.0371 12.6097 9.94895 12.762 9.79209C12.9144 9.63523 13 9.42249 13 9.20065C13 8.97882 12.9144 8.76607 12.762 8.60921C12.6097 8.45235 12.403 8.36423 12.1875 8.36423V10.0371ZM0.8125 5.85496H12.1875V4.18212H0.8125V5.85496ZM0.8125 1.67285H12.1875V0H0.8125V1.67285ZM0.8125 10.0371H12.1875V8.36423H0.8125V10.0371Z" fill="black"/>
+                    </svg>
                 </div>
             </div>
         </div>

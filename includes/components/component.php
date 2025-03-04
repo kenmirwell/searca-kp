@@ -9,7 +9,7 @@
 ?>
 
 <div class="block w-[100%] md:w-auto h-[370px] xl:h-[435px] rounded-[20px] group component-<?php echo $components_index; ?>">
-    <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] w-[100%] md:w-[200px] xl:w-[240px] rounded-3xl overflow-hidden">
+    <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] w-[100%] md:w-[300px] rounded-3xl overflow-hidden">
          <div class="p-[20px] z-[2]">
             <div class="text-[12px] xl:text-[18px] font-bold pt-[10px] text-[#ffffff]">
                 <h4><?php the_title()?></h4>
