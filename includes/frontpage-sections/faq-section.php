@@ -55,5 +55,5 @@
             </div>
         </div>
     </div>
-    <img class="absolute bottom-[0] left-[0] w-[100%] md:w-[90%] xl:w-[70%] h-[50%] object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/02/faq-bg.png" alt="">
+    <img class="absolute bottom-[0] left-[0] w-[100%] md:w-[90%] xl:w-[45%] h-[50%] object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/02/faq-bg.png" alt="">
 </div>

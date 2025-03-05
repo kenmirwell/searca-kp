@@ -2,8 +2,8 @@
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col xl:flex-row justify-between items-start gap-[20px] xl:items-end pb-[50px]">
             <div class="block md:flex w-[100%] justify-between items-end">
-                <h2 class="hidden md:block text-[22px] xl:text-[42px] font-[700]">Knowledge resources</br> empowering informed decisions</h2>
-                <h2 class="block md:hidden text-[22px] xl:text-[42px] font-[700] pb-[20px]">Knowledge resources empowering informed decisions</h2>
+                <h2 class="hidden md:block text-[#1f1f1f] text-[22px] xl:text-[42px] font-[700] leading-[1.3]">Knowledge resources</br> empowering informed decisions</h2>
+                <h2 class="block md:hidden text-[#1f1f1f] text-[22px] xl:text-[42px] font-[700] pb-[20px]">Knowledge resources empowering informed decisions</h2>
                 <!-- <div class="flex">
                     <a href="/knowledge-resources" class="w-auto group cursor-pointer">
                         <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
@@ -32,7 +32,7 @@
             <div class="w-[100%] lg:w-[80%]">
                 <div class="w-[100%]">
                     <div class="flex flex-col w-[100%] gap-[10px]">
-                        <input id="search-resources" class="w-[100%] border-[1px] bg-transparent border-[#CECECE] text-[16px] text-[#000000] placeholder-[#848484] py-[10px] px-[10px]" type="text" placeholder="Search by Topic">
+                        <input id="search-resources" class="w-[100%] border-[1px] bg-transparent border-[#CECECE] text-[16px] rounded-lg text-[#000000] placeholder-[#848484] py-[10px] px-[10px]" type="text" placeholder="Search by Topic">
                         <ul class="flex lg:justify-end">
                             <div id="search-by-title" class="flex gap-[5px] items-center cursor-pointer text-[16px] py-[5px] px-[10px]">
                                 <div>

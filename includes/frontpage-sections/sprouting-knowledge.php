@@ -9,8 +9,8 @@
         <div class="flex flex-col-reverse sm:flex-row md:flex-col gap-[20px] md:gap-[0] items-center items-start">
             <div class="w-[100%]">
                 <div class="font-bold">
-                    <h2 class="text-[22px] md:text-[32px] lg:text-[42px]">Community of practice</h2>
-                    <h2 class="text-[22px] md:text-[32px] lg:text-[42px] pb-[20px] sm:pb-[0px]">Sprouting Knowledge. Cultivating Conversations.</h2>
+                    <h2 class="text-[22px] md:text-[32px] text-[#1f1f1f] lg:text-[42px]">Community of practice</h2>
+                    <!-- <h2 class="text-[22px] md:text-[32px] lg:text-[42px] pb-[20px] sm:pb-[0px]">Sprouting Knowledge. Cultivating Conversations.</h2> -->
                 </div>
                 <div class="relative block sm:hidden w-[100%] max-w-[600px] mx-auto">
                     <!-- Large Image -->
@@ -28,7 +28,7 @@
                 </div>
                 <div class="flex flex-col md:flex-row justify-between gap-[20px] md:gap-[0px] pt-[20px] pb-[20px] md:pb-[40px]">
                     <div class="hidden sm:block text-[14px] md:text-[16px] w-[100%] md:w-[70%]">
-                        <p>Become part of discussions and build our community. Join a vibrant network of agricultural professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
+                        <p>Become part of discussions and build our community. Join a vibrant network of agricultural</br> professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
                     </div>
                     <div class="flex flex-col sm:flex-row items-center gap-[10px] sm:gap-[20px]">
                         <?php

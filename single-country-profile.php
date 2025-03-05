@@ -151,41 +151,11 @@ while (have_posts()) {
                                     <h2 class="text-[#000000] pb-[10px] text-[36px] font-bold"><?php the_sub_field('topic'); ?></h2>
 
                                     <?php if (have_rows('content')): ?>
-                                        <div class="flex flex-col gap-[10px]">
+                                        <div class="content-pertopic flex flex-col gap-[10px]">
                                             <?php while (have_rows('content')): the_row(); ?>
                                                 <h6 class="text-[#000000] pb-[10px] text-[22px] font-bold"><?php the_sub_field('sub_topic'); ?></h6>
-
-                                                <?php if (have_rows('content_sub_topic')): ?>
-                                                    <div class="flex flex-col gap-[10px]">
-                                                        <?php while (have_rows('content_sub_topic')): the_row(); ?>
-                                                            <p class="text-[#000000] pb-[10px] text-[14px]"><?php the_sub_field('paragraph_sub_topic'); ?></p>
-
-                                                            <?php if (have_rows('bullet')): ?>
-                                                                <div class="flex flex-col gap-[10px]">
-                                                                    <?php while (have_rows('bullet')): the_row(); ?>
-                                                                        <div class="flex gap-[10px] items-center">
-                                                                            <!-- Check if either bullet_title or bullet_content exists -->
-                                                                            <?php if (get_sub_field('bullet_title') || get_sub_field('bullet_content')): ?>
-                                                                                <div class="w-[8px] h-[8px] bg-[#000000] rounded-full"></div>
-                                                                            <?php endif; ?>
-
-                                                                            <!-- Bullet Title -->
-                                                                            <?php if (get_sub_field('bullet_title')): ?>
-                                                                                <p class="text-[#000000] text-[14px]"><?php the_sub_field('bullet_title'); ?></p>
-                                                                            <?php endif; ?>
-
-                                                                            <!-- Bullet Content -->
-                                                                            <?php if (get_sub_field('bullet_content')): ?>
-                                                                                <p class="text-[#000000] text-[14px]"><?php the_sub_field('bullet_content'); ?></p>
-                                                                            <?php endif; ?>
-                                                                        </div>
-                                                                    <?php endwhile; ?>
-                                                                </div>
-                                                            <?php endif; ?>
-
-                                                        <?php endwhile; ?>
-                                                    </div>
-                                                <?php endif; ?>
+                                    
+                                                <?php the_sub_field('content_editor'); ?>
 
                                             <?php endwhile; ?>
                                         </div>

@@ -6,8 +6,8 @@
     <div class="bg-[#196129] pt-[50px] pb-[30px] lg:pb-[0] lg:pt-[80px] overflow-hidden">
         <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
             <div class="flex justify-center gap-[20px] xl:gap-[60px] items-start">
-                <div class="w-[100%] lg:w-[40%] py-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
-                    <div class="text-[#ffffff] w-[100%] text-[22px] md:text-[32px] lg:text-[42px] font-bold">
+                <div class="w-[100%] lg:w-[50%] py-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
+                    <div class="text-[#ffffff] w-[100%] text-[22px] md:text-[32px] lg:text-[42px] font-bold leading-[1.3]">
                         <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
                     </div>
                     <div class="flex flex-col gap-[20px]">
@@ -55,8 +55,8 @@
                         </a>
                     </div> -->
                 </div>
-                <div class="hidden md:block w-[60%] mt-[-20px] lg:mt-[0px]">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/leaf.png" alt="Leaf Image">
+                <div class="hidden md:block w-[50%] mt-[-20px] lg:mt-[0px]">
+                    <!-- <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/leaf.png" alt="Leaf Image"> -->
                     <a href="/agricultural-data-tools/" class="flex justify-center p-[10px] lg:p-[20px] bg-[#2a7f3d] overflow-hidden rounded-t-xl">
                         <img class="w-full h-full object-cover" src="<?php echo esc_url($agpractices_image) ?>" alt="">
                     </a>
