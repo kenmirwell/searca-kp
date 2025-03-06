@@ -241,8 +241,11 @@
                             <?php foreach ($filter_group as $filter): ?>
                                 <?php if ($filter['key'] !== 'Date'): ?>
                                     <div class="border-t-[1px] py-[20px]">
-                                        <div class="flex justify-between pb-[10px]">
-                                            <p class="text-[14px]"><?php echo esc_html($filter['key']); ?></p>
+                                        <div class="flex justify-between pb-[10px] items-center">
+                                            <p class="text-[16px]"><?php echo esc_html($filter['key']); ?></p>
+                                            <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
                                         </div>
                                         <div class="overflow-y-scroll">
                                             <div class="flex flex-col h-[100px]">
@@ -267,8 +270,11 @@
                                 <?php else: ?>
                                     <!-- Handle Published Date inside the loop -->
                                     <div class="border-t-[1px] py-[20px]">
-                                        <div class="flex justify-between pb-[10px]">
-                                            <p class="text-[14px]"><?php echo esc_html($filter['key']); ?></p>
+                                        <div class="flex justify-between pb-[10px] items-center">
+                                            <p class="text-[16px]"><?php echo esc_html($filter['key']); ?></p>
+                                            <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
                                         </div>
                                         <div class="overflow-y-scroll">
                                             <div class="flex flex-col h-[100px]">
