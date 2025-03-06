@@ -161,6 +161,11 @@
                         if ($knowledge_management->have_posts()) {
                             while ($knowledge_management->have_posts()){
                                 $knowledge_management->the_post();
+                                
+                                $author_ID = get_the_author_meta('ID'); 
+                                $author_name = get_the_author(); 
+
+                                var_dump($author_name);
                     ?>
                         <div class="flex rounded-full drop-shadow-md items-center group transition-all duration-200 ease cursor-pointer">
                             <div class="flex rounded-l-[15px] bg-[#ffffff] items-center w-[30%] h-[100%] overflow-hidden relative">
@@ -182,11 +187,13 @@
                                         <div class="rounded-full h-[30px] w-[30px] bg-[#E8E8E8]"></div>
                                         <div>
                                             <p class="text-[#7C7C7C] text-[12px]">
-                                                <?php if($author_ID){ ?>        
-                                                        <p class="text-[#7C7C7C] text-[12px]"><?php echo get_the_title( $author_ID ); ?></p>
-                                                <?php } else { ?>    
-                                                        <p class="text-[#7C7C7C] text-[12px]">Author unknown</p>
-                                                <?php } ?>
+                                                <div class="text-[#7C7C7C] text-[12px]">
+                                                    <?php if($author_name){ ?>        
+                                                        <?php echo esc_html($author_name); ?>
+                                                    <?php } else { ?>    
+                                                        Author unknown
+                                                    <?php } ?>
+                                                </div>
                                             </p>
                                         </div>
                                     </div>

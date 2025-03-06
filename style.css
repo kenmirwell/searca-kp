@@ -572,6 +572,10 @@ select {
     bottom: 0px;
 }
 
+.single-country-content > p {
+    font-weight: 300;
+}
+
 .hide-header {
     transform: translateY(-100%);
 }
@@ -708,7 +712,7 @@ select {
     height: 320px;
   }
 
-  .swiper-slide {
+.swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -716,11 +720,17 @@ select {
     font-size: 22px;
     font-weight: bold;
     color: #fff;
-  }
+}
 
-  .swiper-slide {
+.swiper-slide {
     background-color: #ffffff;
-  }
+}
+
+.fadein-shape {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 2s; /* Delay of 700ms */
+}
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
@@ -733,6 +743,10 @@ select {
     100% { transform: scale(0.8); }  /* Back to normal */
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 @media (max-width: 1280px) {
     .primary-menu .menu-item {

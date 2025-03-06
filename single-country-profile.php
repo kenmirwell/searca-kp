@@ -56,7 +56,7 @@ while (have_posts()) {
                 <?php 
                     if(!empty(get_the_post_thumbnail_url())) {
                 ?>
-                    <div class="bg-[#B59637] absolute w-[280px] h-[200px] absolute top-[140px] left-[0] z-[0] rounded-xl" style="transform: rotate(80deg);"></div> 
+                    <div class="fadein-shape bg-[#B59637] absolute w-[280px] h-[200px] absolute top-[140px] left-[0] z-[0] rounded-xl" style="transform: rotate(80deg);"></div> 
                 <?php } ?>
             </div>
         </div>
@@ -130,7 +130,7 @@ while (have_posts()) {
                         </div>
                     </div>
                 </div>
-                <div class="w-[70%] border-r-[1px] pr-[40px]">
+                <div class="single-country-content w-[70%] border-r-[1px] pr-[40px]">
                     <div>
                         <h2 class="text-[36px] font-bold pb-[20px]">Background</h2>
                         <?php if (have_rows('background')): ?>
