@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
             accHead.style.paddingBottom = "10px"
         }
 
-        console.log(accContainer, accElement, height)
     }
     
 
@@ -117,6 +116,18 @@ document.addEventListener("DOMContentLoaded", function () {
             const height = homeaccElement.offsetHeight;
             
             homeaccContainer.style.height = height+"px";
+        }
+
+        if(document.getElementById("swiper-wrapper")) {
+            const swiper = new Swiper(".mySwiper", {
+                effect: "cards",
+                grabCursor: true,
+                cardsEffect: {
+                    perSlideOffset: 10,
+                    perSlideRotate: 7,
+                    rotate: true,
+                  },
+              });
         }
     }
 
@@ -219,6 +230,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+
 
 
 

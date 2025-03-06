@@ -15,7 +15,6 @@
     "tailwindcss": "^3.4.10"
   },
   "dependencies": {
-    "@wordpress/scripts": "^29.0.0",
-    "swiper": "^11.2.5"
+    "@wordpress/scripts": "^29.0.0"
   }
 }

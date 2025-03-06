@@ -710,7 +710,6 @@ document.addEventListener("DOMContentLoaded", function () {
       accContainer.classList.add("active");
       accHead.style.paddingBottom = "10px";
     }
-    console.log(accContainer, accElement, height);
   };
   window.dropDown = function () {
     if (isShown) {
@@ -739,6 +738,17 @@ document.addEventListener("DOMContentLoaded", function () {
     if (homeaccContainer) {
       const height = homeaccElement.offsetHeight;
       homeaccContainer.style.height = height + "px";
+    }
+    if (document.getElementById("swiper-wrapper")) {
+      const swiper = new Swiper(".mySwiper", {
+        effect: "cards",
+        grabCursor: true,
+        cardsEffect: {
+          perSlideOffset: 10,
+          perSlideRotate: 7,
+          rotate: true
+        }
+      });
     }
   };
   window.handleFaqAccordion = function (elementId, containerId, headId, index) {
