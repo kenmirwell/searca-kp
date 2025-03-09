@@ -228,96 +228,103 @@
                         <form method="get" action="">
                             <div class="flex gap-[20px] w-[100%] pb-[20px]">
                                 <button class="flex justify-center text-[14px] py-[10px] px-[10px] bg-[#196129] hover:bg-[#00b127] text-[#ffffff] w-[100%] text-left rounded-md" type="submit">Apply Filter</button>
-                                <button class="flex justify-center text-[14px] py-[10px] px-[10px] bg-[#196129] hover:bg-[#00b127] text-[#ffffff] w-[100%] text-left rounded-md" type="submit">Clear Filter</button>
                             </div>
-                            <div>
-                                <p>Filter by:</p>
-                            </div>
-                            <div class="border-t-[1px] py-[20px]">
-                                <div class="flex justify-between pb-[10px]">
-                                    <p class="text-[14px]">Type</p>
-                                </div>
+                            <?php 
+                            $filter_group = array(
+                                array( 'key' => 'Type', 'value' => 'km_category', 'index' => 0),
+                                array( 'key' => 'Author', 'value' => 'research_author', 'index' => 1),
+                                array( 'key' => 'Country', 'value' => 'country', 'index' => 2),
+                                array( 'key' => 'Date', 'value' => 'published_date', 'index' => 3)
+                            );
+                            ?>
 
-                                <div class="flex flex-col">
-                                    <?php
-                                        $categories = get_categories(array(
-                                            'taxonomy' => 'km_category', 
-                                            'hide_empty' => true,
-                                        ));
-                                        foreach ($categories as $category) {
-                                            $checked = isset($_GET['type']) && in_array($category->term_id, $_GET['type']) ? 'checked' : '';
-                                    ?>
-                                            <div class="flex gap-[10px] items-baseline">
-                                                <input type="checkbox" name="type[]" value="<?php echo $category->term_id; ?>" <?php echo $checked; ?>>
-                                                <p class="text-[14px]"><?php echo $category->name; ?></p>
+                            <?php foreach ($filter_group as $filter): ?>
+                                <?php if ($filter['key'] !== 'Date'): ?>
+                                    <div id="km-side-filter-group-<?php echo $filter['index']; ?>" class="py-[10px] border-b-[1px]">
+                                        <div 
+                                            id="km-side-filter-head-<?php echo $filter['index']; ?>" 
+                                            class="flex justify-between items-center"
+                                            onclick="handleKmFilterAccordion('km-side-filter-content-<?php echo $filter['index']; ?>', 'km-side-filter-group-<?php echo $filter['index']; ?>', <?php echo $filter['index']; ?>)"   
+                                        >
+                                            <p class="text-[16px]"><?php echo esc_html($filter['key']); ?></p>
+                                            <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div id="km-side-filter-container-<?php echo $filter['index']; ?>" class="overflow-y-scroll pr-[20px] scrollbar-custom transition-all duration-200 ease"  style="height: 0;" >
+                                            <div id="km-side-filter-content-<?php echo $filter['index']; ?>" class="flex flex-col">
+                                                <?php
+                                                    $taxonomy = $filter['value'];
+                                                    $categories = get_categories(array(
+                                                        'taxonomy'   => $taxonomy, 
+                                                        'hide_empty' => true,
+                                                    ));
+
+                                                    foreach ($categories as $category) {
+                                                        $checked = isset($_GET[$filter['key']]) && in_array($category->term_id, $_GET[$filter['key']]) ? 'checked' : '';
+                                                ?>
+                                                        <div class="flex gap-[10px] items-baseline">
+                                                            <input type="checkbox" name="<?php echo esc_attr($filter['key']); ?>[]" value="<?php echo esc_attr($category->term_id); ?>" <?php echo $checked; ?>>
+                                                            <p class="text-[14px]"><?php echo esc_html($category->name); ?></p>
+                                                        </div>
+                                                <?php } ?>
                                             </div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="border-t-[1px] py-[20px]">
-                                <div>
-                                    <p class="text-[14px]">Author</p>
-                                </div>
-                                <div class="flex flex-col">
-                                    <?php
-                                        $categories = get_categories(array(
-                                            'taxonomy' => 'research_author', 
-                                            'hide_empty' => true,
-                                        ));
-                                        foreach ($categories as $category) {
-                                            $checked = isset($_GET['author']) && in_array($category->term_id, $_GET['author']) ? 'checked' : '';
-                                    ?>
-                                            <div class="flex gap-[10px] items-baseline">
-                                                <input type="checkbox" name="author[]" value="<?php echo $category->term_id; ?>" <?php echo $checked; ?>>
-                                                <p class="text-[14px]"><?php echo $category->name; ?></p>
+                                        </div>
+                                    </div>
+                                <?php else: ?>
+                                    <!-- Handle Published Date inside the loop -->
+                                    <div id="km-side-filter-group-<?php echo $filter['index']; ?>" class="py-[10px] border-b-[1px]">
+                                        <div 
+                                            id="km-side-filter-head-<?php echo $filter['index']; ?>" 
+                                            class="flex justify-between items-center"
+                                            onclick="handleKmFilterAccordion('km-side-filter-content-<?php echo $filter['index']; ?>', 'km-side-filter-group-<?php echo $filter['index']; ?>', <?php echo $filter['index']; ?>)" 
+                                        >
+                                            <p class="text-[16px]"><?php echo esc_html($filter['key']); ?></p>
+                                            <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div id="km-side-filter-container-<?php echo $filter['index']; ?>" class="overflow-y-scroll pr-[20px] scrollbar-custom transition-all duration-200 ease"  style="height: 0;">
+                                            <div id="km-side-filter-content-<?php echo $filter['index']; ?>" class="flex flex-col">
+                                                <?php
+                                                    $unique_dates = [];
+                                                    $args = array(
+                                                        'post_type'      => 'knowledge-management', // Change this to your post type
+                                                        'posts_per_page' => -1,
+                                                        'meta_key'       => $filter['value'],
+                                                    );
+                                                    $query = new WP_Query($args);
+
+                                                    if ($query->have_posts()) {
+                                                        while ($query->have_posts()) {
+                                                            $query->the_post();
+                                                            $date_value = get_post_meta(get_the_ID(), $filter['value'], true);
+                                                            if (!empty($date_value) && !in_array($date_value, $unique_dates)) {
+                                                                $unique_dates[] = $date_value;
+                                                            }
+                                                        }
+                                                        wp_reset_postdata();
+                                                    }
+
+                                                    // Display checkboxes for unique dates
+                                                    foreach ($unique_dates as $date) {
+                                                        $checked = isset($_GET[$filter['key']]) && in_array($date, $_GET[$filter['key']]) ? 'checked' : '';
+                                                ?>
+                                                        <div class="flex gap-[10px] items-baseline">
+                                                            <input type="checkbox" name="<?php echo esc_attr($filter['key']); ?>[]" value="<?php echo esc_attr($date); ?>" <?php echo $checked; ?>>
+                                                            <p class="text-[14px]"><?php echo esc_html($date); ?></p>
+                                                        </div>
+                                                <?php } ?>
                                             </div>
-                                    <?php } ?>
-                                </div>
-                                <?php
-                                    // wp_dropdown_categories(array(
-                                    //     'taxonomy'     => 'research_author',  
-                                    //     'name'          => 'research_author',  
-                                    //     'orderby'       => 'name', 
-                                    //     'show_option_all' => 'Select Category',  
-                                    //     'selected'      => isset($_GET['research_author']) ? $_GET['research_author'] : '', 
-                                    //     'hide_empty'    => false,   
-                                    // ));
-                                ?>
-                            </div>
-                            <div class="border-t-[1px] py-[20px]">
-                                <div>
-                                    <p class="text-[14px]">Country</p>
-                                </div>
-                                <div>
-                                    <?php
-                                        wp_dropdown_categories(array(
-                                            'taxonomy'         => 'country', 
-                                            'name'             => 'country', 
-                                            'orderby'          => 'name',
-                                            'show_option_all'  => 'Select Country',
-                                            'selected'         => $selected_country, 
-                                            'hide_empty'       => false, 
-                                            'value_field'      => 'slug',  
-                                        ));
-                                    ?>
-                                </div>
-                            </div>
-                            <div class="border-t-[1px] py-[20px]">
-                                <div class="flex gap-[10px]">
-                                    <p class="text-[14px]">Published Date</p>
-                                </div>
-                                <div class="flex gap-[10px] justify-between items-center rounded-sm">
-                                    <input
-                                        class="text-[14px] w-[100%] py-[5px] px-[5px] border-[1px] border-[#000000] rounded-md"
-                                        type="date"
-                                        id="published-date"
-                                        name="published_date"
-                                        value="<?php echo isset($_GET['published_date']) ? esc_attr($_GET['published_date']) : ''; ?>"
-                                    />
-                                </div>
-                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </form>
                     </div>
+                    
+                    
+                    
                     <div class="flex flex-wrap w-[80%] gap-[30px] relative justify-right">
                         <?php                            
                             if ($knowledge_management->have_posts()) {

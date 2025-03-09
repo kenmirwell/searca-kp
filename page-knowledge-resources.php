@@ -131,124 +131,193 @@
         </div>
         <div class="pb-[50px]">
             <div class="pt-[100px]">
-                <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] pb-[40px] mx-auto">
-                    <input id="search-resources" class="w-[100%] border-[1px] bg-transparent border-[#CECECE] text-[16px] rounded-lg text-[#000000] placeholder-[#848484] py-[10px] px-[10px]" type="text" placeholder="Search by Topic">
-                    <ul class="flex lg:justify-end">
-                        <div id="search-by-title" class="flex gap-[5px] items-center cursor-pointer text-[16px] py-[5px] px-[10px]">
-                            <div>
-                                <svg class="checked-box hidden" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 15C11.3833 15 12.5625 14.5125 13.5375 13.5375C14.5125 12.5625 15 11.3833 15 10C15 8.61667 14.5125 7.4375 13.5375 6.4625C12.5625 5.4875 11.3833 5 10 5C8.61667 5 7.4375 5.4875 6.4625 6.4625C5.4875 7.4375 5 8.61667 5 10C5 11.3833 5.4875 12.5625 6.4625 13.5375C7.4375 14.5125 8.61667 15 10 15ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#1D1B20"/>
-                                </svg>
-                                <svg class="unchecked-box" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#1D1B20"/>
-                                </svg>
-                            </div>
-                            <p>By Title</p>
-                        </div>
-                        <div id="search-by-keyword" class="flex gap-[5px] items-center cursor-pointer text-[16px] py-[5px] pl-[10px]">
-                            <div>
-                                <svg class="checked-box" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 15C11.3833 15 12.5625 14.5125 13.5375 13.5375C14.5125 12.5625 15 11.3833 15 10C15 8.61667 14.5125 7.4375 13.5375 6.4625C12.5625 5.4875 11.3833 5 10 5C8.61667 5 7.4375 5.4875 6.4625 6.4625C5.4875 7.4375 5 8.61667 5 10C5 11.3833 5.4875 12.5625 6.4625 13.5375C7.4375 14.5125 8.61667 15 10 15ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#1D1B20"/>
-                                </svg>
-                                <svg class="unchecked-box hidden" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#1D1B20"/>
-                                </svg>
-                            </div>
-                            <p>By Keyword</p>
-                        </div>
-                    </ul>
-                </div>
                 <?php
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                    
-                    $taxonomy = 'km_category'; 
-                    $terms = get_terms(array(
-                        'taxonomy' => $taxonomy,
-                        'hide_empty' => false, 
-                    ));
 
-                    $selected_categories = isset($_GET['type']) ? array_map('absint', $_GET['type']) : array();
-                    $selected_author = isset($_GET['research_author']) ? absint($_GET['research_author']) : null;
-                    $selected_country = isset($_GET['country']) ? sanitize_text_field($_GET['country']) : null;
-                    $published_date = isset($_GET['published_date']) ? sanitize_text_field($_GET['published_date']) : null;
-                    
+                    $selected_categories = isset($_GET['km_category']) ? array_map('absint', $_GET['km_category']) : array();
+                    $selected_author = isset($_GET['research_author']) ? array_map('absint', $_GET['research_author']) : array();
+                    $selected_country = isset($_GET['country']) ? array_map('sanitize_text_field', $_GET['country']) : array(); // Country might use slugs
+                    $published_years = isset($_GET['published_date']) ? array_map('sanitize_text_field', $_GET['published_date']) : array(); //this extracts only the year
+
+                    $search_query = ''; // Default empty search query
+                    $search_type = ''; // Determines if search is by title or keyword
+
+                    // Check if "searchby-title" or "searchby-keyword" is set
+                    if (!empty($_GET['searchby-title'])) {
+                        $search_query = sanitize_text_field($_GET['searchby-title']);
+                        $search_type = 'title';
+                    } elseif (!empty($_GET['searchby-keyword'])) {
+                        $search_query = sanitize_text_field($_GET['searchby-keyword']);
+                        $search_type = 'keyword';
+                    }
+
+                    // Base Query Arguments
                     $args = array(
-                        'post_type' => 'knowledge-management',
-                        "post_per_page" => 5,
-                        'paged' => $paged,
+                        'post_type'      => 'knowledge-management',
+                        'posts_per_page' => 15,
+                        'paged'          => $paged,
                     );
-                    
+
+                    // Handle Search by Title or Keyword
+                    if (!empty($search_query)) {
+                        if ($search_type === 'title') {
+                            // Filter by Post Title only
+                            $args['s'] = $search_query;
+                            add_filter('posts_search', function ($search, $wp_query) {
+                                global $wpdb;
+                                if ($wp_query->is_search() && !empty($wp_query->get('s'))) {
+                                    $search = $wpdb->prepare(" AND {$wpdb->posts}.post_title LIKE %s ", '%' . $wpdb->esc_like($wp_query->get('s')) . '%');
+                                }
+                                return $search;
+                            }, 10, 2);
+                        } else {
+                            // Default WordPress search (searches title + content)
+                            $args['s'] = $search_query;
+                        }
+                    }
+
+                    // Taxonomy Query
+                    $tax_query = array();
+
                     if (!empty($selected_categories)) {
-                        $args['tax_query'] = array(
-                            array(
-                                'taxonomy' => 'km_category',
-                                'field'    => 'term_id',
-                                'terms'    => $selected_categories,
-                                'operator' => 'IN',
-                            ),
+                        $tax_query[] = array(
+                            'taxonomy' => 'km_category',
+                            'field'    => 'term_id',
+                            'terms'    => $selected_categories,
+                            'operator' => 'IN',
                         );
                     }
 
                     if (!empty($selected_author)) {
-                        $args['tax_query'] = array(
-                            array(
-                                'taxonomy' => 'research_author',
-                                'field'    => 'term_id',
-                                'terms'    => $selected_author,
-                                'operator' => 'IN',
-                            ),
+                        $tax_query[] = array(
+                            'taxonomy' => 'research_author',
+                            'field'    => 'term_id',
+                            'terms'    => $selected_author,
+                            'operator' => 'IN',
                         );
                     }
 
                     if (!empty($selected_country)) {
-                        $args['tax_query'] = array(
-                            array(
-                                'taxonomy' => 'country', 
-                                'field'    => 'slug',   
-                                'terms'    => $selected_country, 
-                            ),
+                        $tax_query[] = array(
+                            'taxonomy' => 'country',
+                            'field'    => 'slug',
+                            'terms'    => $selected_country,
                         );
                     }
 
-                    if (!empty($published_date)) {
-                        $args['meta_query'] = array(
-                            array(
-                                'key'     => 'published_date', 
-                                'value'   => $published_date,  
-                                'compare' => '=',              
-                            ),
-                        );
+                    // Only add tax_query if filters exist
+                    if (!empty($tax_query)) {
+                        $args['tax_query'] = $tax_query;
                     }
-                    
+
+                    // Meta Query for Published Date
+                    if (!empty($published_years)) {
+                        $meta_query = array('relation' => 'OR'); // Allow filtering by multiple years
+
+                        foreach ($published_years as $year) {
+                            $meta_query[] = array(
+                                'key'     => 'published_date',
+                                'value'   => $year,
+                                'compare' => 'LIKE',
+                            );
+                        }
+
+                        $args['meta_query'] = $meta_query;
+                    }
+
+                    // Execute the Query
                     $knowledge_management = new WP_Query($args);
 
                 ?>
+                <?php 
+                    $name = 'searchby-keyword';
+                    $search_value = '';
+
+                    foreach ($_GET as $key => $value) {
+                        if (strpos($key, 'searchby-') === 0) {
+                            $name = htmlspecialchars($key);
+                            break;
+                        }
+                    }
+
+                    if (isset($_GET['searchby-keyword'])) {
+                        $search_value = sanitize_text_field($_GET['searchby-keyword']);
+                    } elseif (isset($_GET['searchby-title'])) {
+                        $search_value = sanitize_text_field($_GET['searchby-title']);
+                    }
+                ?>
+            <form method="get" action="">
+                <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] pb-[40px] mx-auto">
+                    <div class="flex relative items-center">
+                        <button class="absolute left-[18px] cursor-pointer" type="submit">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.5 20.75C4.85 20.75 0.25 16.15 0.25 10.5C0.25 4.85 4.85 0.25 10.5 0.25C16.15 0.25 20.75 4.85 20.75 10.5C20.75 16.15 16.15 20.75 10.5 20.75ZM10.5 1.75C5.67 1.75 1.75 5.68 1.75 10.5C1.75 15.32 5.67 19.25 10.5 19.25C15.33 19.25 19.25 15.32 19.25 10.5C19.25 5.68 15.33 1.75 10.5 1.75Z" fill="#444242"/>
+                                <path d="M20.9995 21.7495C20.8095 21.7495 20.6195 21.6795 20.4695 21.5295L18.4695 19.5295C18.1795 19.2395 18.1795 18.7595 18.4695 18.4695C18.7595 18.1795 19.2395 18.1795 19.5295 18.4695L21.5295 20.4695C21.8195 20.7595 21.8195 21.2395 21.5295 21.5295C21.3795 21.6795 21.1895 21.7495 20.9995 21.7495Z" fill="#444242"/>
+                            </svg>
+                        </button>
+                        <input id="km-search-resources" name="<?php echo $name; ?>" value="<?php echo esc_attr($search_value); ?>" class="w-[100%] border-[1px] bg-transparent border-[#CECECE] text-[16px] rounded-lg text-[#000000] placeholder-[#848484] py-[10px] pr-[10px] pl-[50px]" type="text" placeholder="Search by Topic">
+                    </div>
+
+                    <div class="flex lg:justify-end">
+                        <div id="km-search-by-title" class="flex gap-[5px] items-center cursor-pointer text-[16px] py-[5px] px-[10px]">
+                            <div>
+                                <svg class="km-checked-box hidden" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 15C11.3833 15 12.5625 14.5125 13.5375 13.5375C14.5125 12.5625 15 11.3833 15 10C15 8.61667 14.5125 7.4375 13.5375 6.4625C12.5625 5.4875 11.3833 5 10 5C8.61667 5 7.4375 5.4875 6.4625 6.4625C5.4875 7.4375 5 8.61667 5 10C5 11.3833 5.4875 12.5625 6.4625 13.5375C7.4375 14.5125 8.61667 15 10 15ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#1D1B20"/>
+                                </svg>
+                                <svg class="km-unchecked-box" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#1D1B20"/>
+                                </svg>
+                            </div>
+                            <div>By Title</div>
+                        </div>
+                        <div id="km-search-by-keyword" class="flex gap-[5px] items-center cursor-pointer text-[16px] py-[5px] pl-[10px]">
+                            <div>
+                                <svg class="km-checked-box" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 15C11.3833 15 12.5625 14.5125 13.5375 13.5375C14.5125 12.5625 15 11.3833 15 10C15 8.61667 14.5125 7.4375 13.5375 6.4625C12.5625 5.4875 11.3833 5 10 5C8.61667 5 7.4375 5.4875 6.4625 6.4625C5.4875 7.4375 5 8.61667 5 10C5 11.3833 5.4875 12.5625 6.4625 13.5375C7.4375 14.5125 8.61667 15 10 15ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#1D1B20"/>
+                                </svg>
+                                <svg class="km-unchecked-box hidden" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18Z" fill="#1D1B20"/>
+                                </svg>
+                            </div>
+                            <div>By Keyword</div>
+                        </div>
+                    </div>
+                </div>
                 <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] relative mx-auto flex justify-between gap-[40px]">
                     <div class="w-[20%] z-[9] bg-[#ffffff] sticky top-[50px] h-[600px]">
-                        <form method="get" action="">
-                            <div class="flex gap-[20px] w-[100%] pb-[20px]">
+                        <!-- <form method="get" action=""> -->
+                            <div class="flex gap-[20px] w-[100%] pb-[20px] items-center">
                                 <button class="flex justify-center text-[14px] py-[10px] px-[10px] bg-[#196129] hover:bg-[#00b127] text-[#ffffff] w-[100%] text-left rounded-md" type="submit">Apply Filter</button>
+                                <a href="<?php echo esc_url(remove_query_arg(array('searchby-keyword', 'searchby-title', 'km_category', 'research_author', 'country', 'published_date'))); ?>" class="reset-button">
+                                    <svg width="28" height="20" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M46 3.99917V15.9992M46 15.9992H34M46 15.9992L36.72 7.27917C34.5705 5.1286 31.9113 3.55759 28.9904 2.71272C26.0695 1.86786 22.9822 1.77668 20.0166 2.44769C17.0509 3.1187 14.3036 4.53004 12.0309 6.55001C9.75827 8.56998 8.03434 11.1327 7.02 13.9992M2 35.9992V23.9992M2 23.9992H14M2 23.9992L11.28 32.7192C13.4295 34.8697 16.0887 36.4408 19.0096 37.2856C21.9305 38.1305 25.0178 38.2217 27.9834 37.5507C30.9491 36.8796 33.6964 35.4683 35.9691 33.4483C38.2417 31.4284 39.9657 28.8656 40.98 25.9992" stroke="#B3B3B3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
                             </div>
                             <?php 
-                                $filter_group = array(
-                                    array( 'key' => 'Type', 'value' => 'km_category'),
-                                    array( 'key' => 'Author', 'value' => 'research_author'),
-                                    array( 'key' => 'Country', 'value' => 'country'),
-                                    array( 'key' => 'Date', 'value' => 'published_date')
-                                );
+                            $filter_group = array(
+                                array( 'key' => 'Type', 'value' => 'km_category', 'index' => 0),
+                                array( 'key' => 'Author', 'value' => 'research_author', 'index' => 1),
+                                array( 'key' => 'Country', 'value' => 'country', 'index' => 2),
+                                array( 'key' => 'Date', 'value' => 'published_date', 'index' => 3)
+                            );
                             ?>
 
                             <?php foreach ($filter_group as $filter): ?>
                                 <?php if ($filter['key'] !== 'Date'): ?>
-                                    <div class="border-t-[1px] py-[20px]">
-                                        <div class="flex justify-between pb-[10px] items-center">
+                                    <div id="km-side-filter-group-<?php echo $filter['index']; ?>" class="py-[10px] border-b-[1px]">
+                                        <div 
+                                            id="km-side-filter-head-<?php echo $filter['index']; ?>" 
+                                            class="flex justify-between items-center"
+                                            onclick="handleKmFilterAccordion('km-side-filter-content-<?php echo $filter['index']; ?>', 'km-side-filter-group-<?php echo $filter['index']; ?>', <?php echo $filter['index']; ?>)"   
+                                        >
                                             <p class="text-[16px]"><?php echo esc_html($filter['key']); ?></p>
                                             <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                         </div>
-                                        <div class="overflow-y-scroll">
-                                            <div class="flex flex-col h-[100px]">
+                                        <div id="km-side-filter-container-<?php echo $filter['index']; ?>" class="overflow-y-scroll pr-[20px] scrollbar-custom transition-all duration-200 ease"  style="height: 0;" >
+                                            <div id="km-side-filter-content-<?php echo $filter['index']; ?>" class="flex flex-col">
                                                 <?php
                                                     $taxonomy = $filter['value'];
                                                     $categories = get_categories(array(
@@ -257,10 +326,10 @@
                                                     ));
 
                                                     foreach ($categories as $category) {
-                                                        $checked = isset($_GET[$filter['key']]) && in_array($category->term_id, $_GET[$filter['key']]) ? 'checked' : '';
+                                                        $checked = isset($_GET[$filter['value']]) && in_array($category->term_id, $_GET[$filter['value']]) ? 'checked' : '';
                                                 ?>
                                                         <div class="flex gap-[10px] items-baseline">
-                                                            <input type="checkbox" name="<?php echo esc_attr($filter['key']); ?>[]" value="<?php echo esc_attr($category->term_id); ?>" <?php echo $checked; ?>>
+                                                            <input type="checkbox" name="<?php echo esc_attr($filter['value']); ?>[]" value="<?php echo esc_attr($category->term_id); ?>" <?php echo $checked; ?>>
                                                             <p class="text-[14px]"><?php echo esc_html($category->name); ?></p>
                                                         </div>
                                                 <?php } ?>
@@ -269,15 +338,19 @@
                                     </div>
                                 <?php else: ?>
                                     <!-- Handle Published Date inside the loop -->
-                                    <div class="border-t-[1px] py-[20px]">
-                                        <div class="flex justify-between pb-[10px] items-center">
+                                    <div id="km-side-filter-group-<?php echo $filter['index']; ?>" class="py-[10px] border-b-[1px]">
+                                        <div 
+                                            id="km-side-filter-head-<?php echo $filter['index']; ?>" 
+                                            class="flex justify-between items-center"
+                                            onclick="handleKmFilterAccordion('km-side-filter-content-<?php echo $filter['index']; ?>', 'km-side-filter-group-<?php echo $filter['index']; ?>', <?php echo $filter['index']; ?>)" 
+                                        >
                                             <p class="text-[16px]"><?php echo esc_html($filter['key']); ?></p>
                                             <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                                             </svg>
                                         </div>
-                                        <div class="overflow-y-scroll">
-                                            <div class="flex flex-col h-[100px]">
+                                        <div id="km-side-filter-container-<?php echo $filter['index']; ?>" class="overflow-y-scroll pr-[20px] scrollbar-custom transition-all duration-200 ease"  style="height: 0;">
+                                            <div id="km-side-filter-content-<?php echo $filter['index']; ?>" class="flex flex-col">
                                                 <?php
                                                     $unique_dates = [];
                                                     $args = array(
@@ -290,9 +363,15 @@
                                                     if ($query->have_posts()) {
                                                         while ($query->have_posts()) {
                                                             $query->the_post();
+                                                            // $date_value = get_post_meta(get_the_ID(), $filter['value'], true);
+                                                            // if (!empty($date_value) && !in_array($date_value, $unique_dates)) {
+                                                            //     $unique_dates[] = $date_value;
+                                                            // }
                                                             $date_value = get_post_meta(get_the_ID(), $filter['value'], true);
-                                                            if (!empty($date_value) && !in_array($date_value, $unique_dates)) {
-                                                                $unique_dates[] = $date_value;
+                                                            $year_value = substr($date_value, 0, 4); // Extract the year
+
+                                                            if (!empty($year_value)) {
+                                                                $unique_dates[$year_value] = $year_value; // Store only unique years as array keys
                                                             }
                                                         }
                                                         wp_reset_postdata();
@@ -300,10 +379,10 @@
 
                                                     // Display checkboxes for unique dates
                                                     foreach ($unique_dates as $date) {
-                                                        $checked = isset($_GET[$filter['key']]) && in_array($date, $_GET[$filter['key']]) ? 'checked' : '';
+                                                        $checked = isset($_GET[$filter['value']]) && in_array($date, $_GET[$filter['value']]) ? 'checked' : '';
                                                 ?>
                                                         <div class="flex gap-[10px] items-baseline">
-                                                            <input type="checkbox" name="<?php echo esc_attr($filter['key']); ?>[]" value="<?php echo esc_attr($date); ?>" <?php echo $checked; ?>>
+                                                            <input type="checkbox" name="<?php echo esc_attr($filter['value']); ?>[]" value="<?php echo esc_attr($date); ?>" <?php echo $checked; ?>>
                                                             <p class="text-[14px]"><?php echo esc_html($date); ?></p>
                                                         </div>
                                                 <?php } ?>
@@ -312,10 +391,8 @@
                                     </div>
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                        </form>
+                        <!-- </form> -->
                     </div>
-                    
-                    
                     
                     <div class="flex flex-wrap w-[80%] gap-[30px] relative justify-right">
                         <?php                            
@@ -401,6 +478,7 @@
                         ?>
                     </div>
                 </div>
+            </form>
             </div>
         </div>
     </div>

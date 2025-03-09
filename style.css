@@ -732,6 +732,25 @@ select {
     animation-delay: 2s; /* Delay of 700ms */
 }
 
+.scrollbar-custom::-webkit-scrollbar {
+    width: 4px !important;
+  }
+  
+.scrollbar-custom::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+}
+  
+.scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #0a875a !important;
+    border-radius: 4px !important;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: #0a875a !important
+}
+  
+  
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

@@ -57,13 +57,14 @@ class FrontpageFilterAcc {
   constructor() {}
   handleHomeFilterAcc(elementId, index) {
     const accElement = document.getElementById(elementId);
-    const height = accElement.offsetHeight;
-    console.log("height", height);
+    const height = accElement.offsetHeight < 200 ? accElement.offsetHeight : 200;
     for (let i = 0; i < 4; i++) {
       if (index !== i) {
         document.getElementById(`home-side-filter-container-${i}`).style.height = 0;
+        document.getElementById(`home-side-filter-container-${i}`).style.margin = "0";
       } else {
         document.getElementById(`home-side-filter-container-${i}`).style.height = height + "px";
+        document.getElementById(`home-side-filter-container-${i}`).style.margin = "10px 0";
       }
     }
   }
@@ -254,6 +255,93 @@ class HomeResourcesSearch {
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HomeResourcesSearch);
+
+/***/ }),
+
+/***/ "./modules/KmFilter.js":
+/*!*****************************!*\
+  !*** ./modules/KmFilter.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class KmFilter {
+  constructor() {}
+  handleKmSearchby() {
+    const searchByTitle = document.getElementById("km-search-by-title");
+    const searchByKeyword = document.getElementById("km-search-by-keyword");
+    const searchInput = document.getElementById("km-search-resources");
+    if (searchInput.name === "searchby-title") {
+      searchByTitle.querySelector(".km-checked-box").classList.remove("hidden");
+      searchByTitle.querySelector(".km-unchecked-box").classList.add("hidden");
+      searchByKeyword.querySelector(".km-checked-box").classList.add("hidden");
+      searchByKeyword.querySelector(".km-unchecked-box").classList.remove("hidden");
+    } else {
+      searchByKeyword.querySelector(".km-checked-box").classList.remove("hidden");
+      searchByKeyword.querySelector(".km-unchecked-box").classList.add("hidden");
+      searchByTitle.querySelector(".km-checked-box").classList.add("hidden");
+      searchByTitle.querySelector(".km-unchecked-box").classList.remove("hidden");
+    }
+    function updateSearchOption(selected) {
+      console.log("selected", selected);
+      if (selected === "searchby-title") {
+        searchInput.name = "searchby-title";
+        searchByTitle.querySelector(".km-checked-box").classList.remove("hidden");
+        searchByTitle.querySelector(".km-unchecked-box").classList.add("hidden");
+        searchByKeyword.querySelector(".km-checked-box").classList.add("hidden");
+        searchByKeyword.querySelector(".km-unchecked-box").classList.remove("hidden");
+      } else {
+        searchInput.name = "searchby-keyword";
+        searchByKeyword.querySelector(".km-checked-box").classList.remove("hidden");
+        searchByKeyword.querySelector(".km-unchecked-box").classList.add("hidden");
+        searchByTitle.querySelector(".km-checked-box").classList.add("hidden");
+        searchByTitle.querySelector(".km-unchecked-box").classList.remove("hidden");
+      }
+    }
+    searchByTitle.addEventListener("click", function (e) {
+      console.log(e);
+      updateSearchOption("searchby-title");
+    });
+    searchByKeyword.addEventListener("click", function (e) {
+      console.log(e);
+      updateSearchOption("searchby-keyword");
+    });
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (KmFilter);
+
+/***/ }),
+
+/***/ "./modules/KmFilterAcc .js":
+/*!*********************************!*\
+  !*** ./modules/KmFilterAcc .js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class KmFilterAcc {
+  constructor() {}
+  handleKmFilterAcc(elementId, groupId, index) {
+    const accElement = document.getElementById(elementId);
+    const height = accElement.offsetHeight < 200 ? accElement.offsetHeight : 200;
+    for (let i = 0; i < 4; i++) {
+      if (index !== i) {
+        document.getElementById(`km-side-filter-container-${i}`).style.height = 0;
+        document.getElementById(`km-side-filter-container-${i}`).style.margin = "0";
+      } else {
+        document.getElementById(`km-side-filter-container-${i}`).style.height = height + "px";
+        document.getElementById(`km-side-filter-container-${i}`).style.margin = "10px 0";
+      }
+    }
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (KmFilterAcc);
 
 /***/ }),
 
@@ -642,6 +730,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
 /* harmony import */ var _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/MenuFunctionality */ "./modules/MenuFunctionality.js");
 /* harmony import */ var _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modules/FrontpageFilterAcc */ "./modules/FrontpageFilterAcc.js");
+/* harmony import */ var _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/KmFilterAcc  */ "./modules/KmFilterAcc .js");
+/* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
+
+
 
 
 
@@ -657,6 +749,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const homeFilterAcc = new _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_5__["default"]();
   const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
   const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__["default"]();
+  const kmFilterAcc = new _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__["default"]();
+  const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__["default"]();
   // const mousehover = new MouseOverFunc();
 
   document.getElementById("contactus-header-button").addEventListener("click", function () {
@@ -727,7 +821,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const accGroup = document.getElementById("faq-group-0");
     const homeaccElement = document.getElementById("home-side-filter-content-0");
     const homeaccContainer = document.getElementById("home-side-filter-container-0");
-    const homeaccGroup = document.getElementById("home-side-filter-group-0");
+    const kmAccElement = document.getElementById("km-side-filter-content-0");
+    const kmAccContainer = document.getElementById("km-side-filter-container-0");
+    const searchByTitle = document.getElementById("km-search-by-title");
 
     //initial setup for accordion in FAQ in homepage
     if (accElement) {
@@ -738,6 +834,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (homeaccContainer) {
       const height = homeaccElement.offsetHeight;
       homeaccContainer.style.height = height + "px";
+      homeaccContainer.style.margin = "10px 0";
+    }
+    if (kmAccContainer) {
+      const height = kmAccElement.offsetHeight;
+      kmAccContainer.style.height = height + "px";
+      kmAccContainer.style.margin = "10px 0";
     }
     if (document.getElementById("swiper-wrapper")) {
       const swiper = new Swiper(".mySwiper", {
@@ -750,12 +852,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
+    if (searchByTitle) {
+      knFilter.handleKmSearchby();
+    }
   };
   window.handleFaqAccordion = function (elementId, containerId, headId, index) {
     faqAcc.handleFaqAcc(elementId, containerId, headId, index);
   };
   window.handleHomeAccordion = function (elementId, containerId, headId, index) {
     homeFilterAcc.handleHomeFilterAcc(elementId, containerId, headId, index);
+  };
+  window.handleKmFilterAccordion = function (elementId, groupId, index) {
+    kmFilterAcc.handleKmFilterAcc(elementId, groupId, index);
   };
   window.onModal = function (id, action) {
     modalManager.toggleModal(id);

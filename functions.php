@@ -37,7 +37,9 @@
 
     //custom enpoint
     include(get_stylesheet_directory() . '/includes/custom-endpoints/home-search-endpoint.php');
-    
+
+     //custom search query
+    include(get_stylesheet_directory() . '/includes/custom-search-query/custom-search-query.php');
 
     add_action('init', 'theme_set_options');
 

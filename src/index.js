@@ -4,6 +4,8 @@ import FaqAcc from "../modules/FaqAcc";
 import MapFunc from "../modules/MapFunc";
 import MobileMenuFunc from "../modules/MenuFunctionality";
 import HomeFilterAcc from "../modules/FrontpageFilterAcc"
+import KmFilterAcc from "../modules/KmFilterAcc ";
+import KmFilter from "../modules/KmFilter";
 // import MouseOverFunc from "../modules/MouseOverFunc";
 
 
@@ -15,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const homeFilterAcc = new HomeFilterAcc();
     const mapFunc = new MapFunc();
     const menuFunc = new MobileMenuFunc();
+    const kmFilterAcc = new KmFilterAcc();
+    const knFilter  = new KmFilter();
     // const mousehover = new MouseOverFunc();
 
     document.getElementById("contactus-header-button").addEventListener("click", function() {
@@ -102,7 +106,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const homeaccElement = document.getElementById("home-side-filter-content-0");
         const homeaccContainer = document.getElementById("home-side-filter-container-0");
-        const homeaccGroup = document.getElementById("home-side-filter-group-0");
+
+        const kmAccElement = document.getElementById("km-side-filter-content-0");
+        const kmAccContainer = document.getElementById("km-side-filter-container-0");
+
+        const searchByTitle = document.getElementById("km-search-by-title");
 
         //initial setup for accordion in FAQ in homepage
         if(accElement) {    
@@ -116,6 +124,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const height = homeaccElement.offsetHeight;
             
             homeaccContainer.style.height = height+"px";
+            homeaccContainer.style.margin = "10px 0";
+        }
+
+        if(kmAccContainer) {    
+            const height = kmAccElement.offsetHeight;
+            
+            kmAccContainer.style.height = height+"px";
+            kmAccContainer.style.margin = "10px 0";
         }
 
         if(document.getElementById("swiper-wrapper")) {
@@ -129,6 +145,11 @@ document.addEventListener("DOMContentLoaded", function () {
                   },
               });
         }
+
+        if(searchByTitle) {
+           knFilter.handleKmSearchby();
+        }
+        
     }
 
     window.handleFaqAccordion = function(elementId, containerId, headId, index) {
@@ -137,6 +158,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.handleHomeAccordion = function(elementId, containerId, headId, index) {
         homeFilterAcc.handleHomeFilterAcc(elementId, containerId, headId, index)
+    }
+
+    window.handleKmFilterAccordion = function(elementId, groupId, index) {
+        kmFilterAcc.handleKmFilterAcc(elementId, groupId, index)
     }
 
     window.onModal = function(id, action) {
