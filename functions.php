@@ -41,6 +41,9 @@
      //custom search query
     include(get_stylesheet_directory() . '/includes/custom-search-query/custom-search-query.php');
 
+    //acf styling
+    // include(get_stylesheet_directory() . '/includes/functions/acf-style.php');
+
     add_action('init', 'theme_set_options');
 
     function theme_set_options() {
