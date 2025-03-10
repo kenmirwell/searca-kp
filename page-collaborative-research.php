@@ -39,6 +39,42 @@
             <div class="bg-[#096936] opacity-[0.90] w-full h-full absolute top-0 left-0 z-[1]"></div>
             <img class="absolute w-full h-full object-cover z-[0]" src="<?php echo esc_url($hero_background); ?>" alt="<?php the_title(); ?>">
         </div>
+        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
+            <?php if (have_rows('boxed_three_column_section')): ?>
+                <?php while (have_rows('boxed_three_column_section')): the_row(); ?>
+                    <div class="text-left flex flex-col gap-[10px] pb-[20px]">
+                        <h2 class="text-[42px] font-bold"><?php the_sub_field('title'); ?></h2>
+                        <p><?php the_sub_field('subtext'); ?></p>
+                    </div>
+                    <?php if (have_rows('thumbnail_section')): ?>
+                        <div class="flex gap-[20px] items-center justify-between">
+                            <?php while (have_rows('thumbnail_section')): the_row(); ?>
+                                <div class="flex flex-col gap-[20px] justify-between items-start text-left w-[100%]">
+                                    <div class="rounded-lg w-[50px] overflow-hidden">
+                                        <img
+                                            class="w-full h-full object-cover z-[0]" 
+                                            src="<?php echo esc_url(get_sub_field('icon')); ?>" 
+                                            alt="<?php echo esc_attr(get_sub_field('title')); ?>"
+                                        >
+                                    </div>
+                                    <h6 class="font-[600] text-[24px]"><?php the_sub_field('thumbnail_title'); ?></h6>
+                                    <div class="h-[90px]">
+                                        <p><?php the_sub_field('thumbnail_subtext'); ?></p>
+                                    </div>
+                                    <div class="relative overflow-hidden rounded-xl w-[100%] h-[400px]">
+                                        <img
+                                            class="absolute w-full h-full object-cover z-[0]" 
+                                            src="<?php echo esc_url(get_sub_field('thumbnail')); ?>" 
+                                            alt="<?php echo esc_attr(get_sub_field('thumbnail')); ?>"
+                                        >
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    <?php endif; ?> 
+                <?php endwhile; ?>
+            <?php endif; ?> 
+        </div>
         <?php if (have_rows('inner_content')): ?>
             <?php while (have_rows('inner_content')): the_row(); ?>
                 <?php if (!get_sub_field("has_white_background")): ?>
@@ -48,15 +84,15 @@
                 <?php endif; ?>
                     <?php if (get_sub_field("is_text_right")): ?>
                         <div>
-                            <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
+                            <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
                                 <div class="flex flex-col gap-[10px]">
                                     <div class="flex justify-between gap-[100px] items-center">
                                         <div class="relative w-[50%]">
                                             <img class="w-full z-[0]" src="<?php echo esc_url(get_sub_field("section_image")); ?>" alt="<?php the_title(); ?>">
                                         </div>
                                         <div class="flex flex-col gap-[10px] w-[50%]">
-                                            <h6 class="text-[36px] font-bold pb-[10px]"><?php the_sub_field('section_title'); ?></h6>
-                                            <div class="text-[14px] flex flex-col gap-[15px]">
+                                            <h6 class="text-[42px] font-bold pb-[10px]"><?php the_sub_field('section_title'); ?></h6>
+                                            <div class="inner-content-text-area text-[14px] flex flex-col gap-[15px]">
                                                 <?php the_sub_field('text_area'); ?>
                                             </div>
                                             <?php if (get_sub_field("button_name")): ?>
@@ -67,8 +103,7 @@
                                                 <div class="flex mt-[12px]">
                                                     <a href="<?php echo esc_url($button_link); ?>" class="w-auto group cursor-pointer">
                                                         <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] 
-                                                            <?php echo $is_button_gold ? 'bg-[#2a7f3d] group-hover:bg-[#ceab23]' : 'bg-[#ceab23] group-hover:bg-[#2a7f3d]'; ?> 
-                                                            transition-all duration-200 ease rounded-full">
+                                                            <?php echo $is_button_gold ? 'bg-[#2a7f3d] group-hover:bg-[#ceab23]' : 'bg-[#ceab23] group-hover:bg-[#2a7f3d]'; ?> transition-all duration-200 ease rounded-full">
                                                             
                                                             <p class="text-[#ffffff]"><?php echo esc_html($button_name); ?></p>
                                                             
@@ -91,15 +126,15 @@
                             </div>
                         </div>
                     <?php else: ?>  
-                        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
+                        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
                             <div class="flex flex-col gap-[10px]">
                                 <div class="flex flex-row-reverse justify-between gap-[100px] items-center">
                                     <div class="relative w-[50%]">
                                         <img class="w-full z-[0]" src="<?php echo esc_url(get_sub_field("section_image")); ?>" alt="<?php the_title(); ?>">
                                     </div>
                                     <div class="flex flex-col gap-[10px] w-[50%]">
-                                        <h6 class="text-[36px] font-bold pb-[10px]"><?php the_sub_field('section_title'); ?></h6>
-                                        <div class="text-[14px] flex flex-col gap-[15px]">
+                                        <h6 class="text-[42px] font-bold pb-[10px]"><?php the_sub_field('section_title'); ?></h6>
+                                        <div class="inner-content-text-area text-[14px] flex flex-col gap-[15px]">
                                             <?php the_sub_field('text_area'); ?>
                                         </div>
                                         <?php if (get_sub_field("button_name")): ?>
@@ -110,8 +145,7 @@
                                             <div class="flex mt-[12px]">
                                                 <a href="<?php echo esc_url($button_link); ?>" class="w-auto group cursor-pointer">
                                                     <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] 
-                                                        <?php echo $is_button_gold ? 'bg-[#2a7f3d] group-hover:bg-[#ceab23]' : 'bg-[#ceab23] group-hover:bg-[#2a7f3d]'; ?> 
-                                                        transition-all duration-200 ease rounded-full">
+                                                        <?php echo $is_button_gold ? 'bg-[#2a7f3d] group-hover:bg-[#ceab23]' : 'bg-[#ceab23] group-hover:bg-[#2a7f3d]'; ?> transition-all duration-200 ease rounded-full">
                                                         
                                                         <p class="text-[#ffffff]"><?php echo esc_html($button_name); ?></p>
                                                         

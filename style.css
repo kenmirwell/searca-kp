@@ -748,7 +748,68 @@ select {
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
     background: #0a875a !important
 }
+
+.moss-check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.moss-check-icon {
+    width: 26px;
+    height: 26px;
+    border: 3px solid #0C5C32; /* Dark green border */
+    border-radius: 5px; /* Rounded corners */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
+  /* Creating the checkmark */
+.moss-check-icon::after {
+    content: "";
+    width: 6px;
+    height: 12px;
+    border: solid #0C5C32; /* Dark green check */
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    position: absolute;
+  }
+
+.white-check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.white-check-icon {
+    width: 26px;
+    height: 26px;
+    border: 3px solid #6BA586; /* Dark green border */
+    border-radius: 5px; /* Rounded corners */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Creating the checkmark */
+.white-check-icon::after {
+    content: "";
+    width: 6px;
+    height: 12px;
+    border: solid #ffffff; /* Dark green check */
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    position: absolute;
+  }
+  
+.inner-content-text-area ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
   
 
 @keyframes spin {

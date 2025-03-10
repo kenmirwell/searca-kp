@@ -1,27 +1,36 @@
-<?php 
-    if (!is_page("agricultural-statistics-data")) {
-?>
-    <div class="relative h-[500px] flex items-center overflow-hidden">
-        <div class="text-center w-[90%] flex flex-col md:w-[768px] mx-auto z-[3] relative text-[#ffffff] gap-[15px]">
-            <h2 class="text-[32px] lg:text-[48px] font-bold italic leading-[1.3]">Explore Southeast Asia's agricultural landscapes</h2>
-            <p class="text-[16px] md:text-[18px] pb-[10px]">Southeast Asia feeds the world through agriculture that transforms lives across the region." Then the button will have these texts: Explore Country Profiles</p>
-            <?php
-                get_button_data('button-template', array(
-                    'title' => 'Explore Country Profiles',
-                    'root_url' => "/agricultural-statistics-data",
-                    'alignment' => "justify-center"
-                ));
-            ?>
-        </div>
-        <div class="z-[3] bg-[#ffffff] absolute opacity-[0.03] right-[307px] rotate-[15deg] h-[650px] top-[-80px] w-[146px]"></div>
-        <div class="z-[3] bg-[#ffffff] absolute opacity-[0.05] right-[156px] rotate-[15deg] h-[650px] top-[-80px] w-[146px]"></div>
-        <div class="bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.3)] w-[100%] h-[100%] absolute top-0 left-0 z-[2]"></div>
-        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/03/image-12.png" alt="">
+<div class="relative h-[500px] flex items-center overflow-hidden">
+    <div class="text-center w-[90%] flex flex-col md:w-[768px] mx-auto z-[3] relative text-[#ffffff] gap-[15px]">
+        <?php if(!is_page("community-of-practice")): ?>
+        <h2 class="text-[32px] lg:text-[48px] font-bold italic leading-[1.3]">Explore Southeast Asia's agricultural landscapes</h2>
+        <p class="text-[16px] md:text-[18px] pb-[10px]">Southeast Asia feeds the world through agriculture that transforms lives across the region.</p>
+        <?php
+            get_button_data('button-template', array(
+                'title' => 'Explore Country Profiles',
+                'root_url' => "/agricultural-statistics-data",
+                'alignment' => "justify-center"
+            ));
+        ?>
+        <?php else: ?>
+        <h2 class="text-[32px] lg:text-[48px] font-bold italic leading-[1.3]">Join Our Community</h2>
+        <p class="text-[16px] md:text-[18px] pb-[10px]">Be part of a growing network driving impactful change in agriculture and rural development.</p>
+        <?php
+            get_button_data('button-template', array(
+                'title' => 'Join Now',
+                'root_url' => "/",
+                'alignment' => "justify-center"
+            ));
+        ?>
+        <?php endif; ?>
     </div>
-
-<?php 
-    }
-?>
+    <div class="z-[3] bg-[#ffffff] absolute opacity-[0.03] right-[307px] rotate-[15deg] h-[650px] top-[-80px] w-[146px]"></div>
+    <div class="z-[3] bg-[#ffffff] absolute opacity-[0.05] right-[156px] rotate-[15deg] h-[650px] top-[-80px] w-[146px]"></div>
+    <div class="bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.3)] w-[100%] h-[100%] absolute top-0 left-0 z-[2]"></div>
+    <?php if(!is_page("community-of-practice")): ?>
+        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/03/image-12.png" alt="">
+    <?php else: ?>
+        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/03/Group-1597884836.png" alt="">
+    <?php endif; ?>
+</div>
 <div id="footer" class="bg-[#101010]">
     <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[35px] lg:py-[50px] font-extralight">
         <div class="flex flex-col md:flex-row gap-[60px] pb-[20px] md:pb-[100px] border-b-[1px] border-opacity-50 border-[#ffffff]">

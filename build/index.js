@@ -2,6 +2,56 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./modules/AgdomImageTransition.js":
+/*!*****************************************!*\
+  !*** ./modules/AgdomImageTransition.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class AgdomTransition {
+  constructor() {}
+  handleTrasition() {
+    const keyPoints = document.querySelectorAll(".key-point");
+    const images = document.querySelectorAll(".image-wrapper");
+    keyPoints.forEach(item => {
+      item.addEventListener("mouseenter", function () {
+        let index = item.getAttribute("data-index");
+        images.forEach(img => {
+          img.style.opacity = img.getAttribute("data-index") === index ? "1" : "0";
+        });
+        keyPoints.forEach(kp => {
+          kp.style.backgroundColor = kp.getAttribute("data-index") === index ? "#0C5C32" : "transparent";
+        });
+      });
+    });
+
+    // Show the first image by default
+    if (images.length > 0) {
+      images[0].style.opacity = "1";
+    }
+    if (keyPoints.length > 0) {
+      keyPoints[0].style.backgroundColor = "#0C5C32";
+    }
+
+    // Optional: Reset to first image when mouse leaves key points
+    document.querySelector(".flex").addEventListener("mouseleave", function () {
+      images.forEach((img, idx) => {
+        img.style.opacity = idx === 0 ? "1" : "0";
+      });
+      keyPoints.forEach((kp, idx) => {
+        kp.style.backgroundColor = idx === 0 ? "#0C5C32" : "transparent";
+      });
+    });
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AgdomTransition);
+
+/***/ }),
+
 /***/ "./modules/FaqAcc.js":
 /*!***************************!*\
   !*** ./modules/FaqAcc.js ***!
@@ -732,6 +782,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modules/FrontpageFilterAcc */ "./modules/FrontpageFilterAcc.js");
 /* harmony import */ var _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/KmFilterAcc  */ "./modules/KmFilterAcc .js");
 /* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
+/* harmony import */ var _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modules/AgdomImageTransition */ "./modules/AgdomImageTransition.js");
+
 
 
 
@@ -751,6 +803,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__["default"]();
   const kmFilterAcc = new _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__["default"]();
   const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__["default"]();
+  const agdomImageTransition = new _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_8__["default"]();
   // const mousehover = new MouseOverFunc();
 
   document.getElementById("contactus-header-button").addEventListener("click", function () {
@@ -824,6 +877,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const kmAccElement = document.getElementById("km-side-filter-content-0");
     const kmAccContainer = document.getElementById("km-side-filter-container-0");
     const searchByTitle = document.getElementById("km-search-by-title");
+    const agdomKeypoint = document.getElementById('agdom-keypoints');
 
     //initial setup for accordion in FAQ in homepage
     if (accElement) {
@@ -840,6 +894,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const height = kmAccElement.offsetHeight;
       kmAccContainer.style.height = height + "px";
       kmAccContainer.style.margin = "10px 0";
+    }
+    if (agdomKeypoint) {
+      agdomImageTransition.handleTrasition();
     }
     if (document.getElementById("swiper-wrapper")) {
       const swiper = new Swiper(".mySwiper", {

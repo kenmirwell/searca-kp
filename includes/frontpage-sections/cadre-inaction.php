@@ -15,6 +15,9 @@
             <h2 class="text-[#ffffff] text-[12px] xl:text-[16px]">Watch the Video</h2>
         </div>
     </div>
+    <div class="z-[3] bg-[#ffffff] absolute opacity-[0.05] left-[144px] rotate-[15deg] h-[900px] top-[-80px] w-[146px]"></div>
+    <div class="z-[3] bg-[#ffffff] absolute opacity-[0.03] left-[200px] rotate-[15deg] h-[900px] top-[-80px] w-[146px]"></div>
+    <div class="z-[3] bg-[#ffffff] absolute opacity-[0.05] left-[350px] rotate-[15deg] h-[900px] top-[-80px] w-[146px]"></div>
     <div class="bg-black opacity-50 w-[100%] h-[100%] absolute top-0 left-0 z-[1]"></div>
     <img class="absolute w-full h-full object-cover object-bottom" src="<?php echo esc_url($cadre_in_action_banner) ?>">
 </div>

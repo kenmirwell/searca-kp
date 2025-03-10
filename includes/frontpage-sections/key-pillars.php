@@ -1,8 +1,9 @@
 <div class="py-[50px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
-            <div class="font-bold text-left">
-                <h6 class="text-[22px] md:text-[42px] text-[#1f1f1f]">Key pillars of our work</h6>
+            <div class="text-left w-[50%]">
+                <h6 class="text-[22px] md:text-[42px] text-[#1f1f1f] pb-[10px] font-bold">Key pillars of our work</h6>
+                <p class="text-[16px]">The foundation of our work, driving collaboration, research, and sustainable solutions in agriculture, forestry, and natural resource management.</p>
             </div>
         </div>
         <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-between items-start gap-[10px] xl:gap-[20px]">
