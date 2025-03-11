@@ -23,13 +23,15 @@
                     </div>
                     <div>
                         <p class="text-[#ffffff] pb-[20px]"><?php echo esc_html(get_the_content()); ?></p>
-                        <?php
-                            get_button_data('button-template', array(
-                                'title' => "Explore " . get_the_title(), // Concatenating the function result
-                                'root_url' => "#",
-                                'alignment' => "justify-start"
-                            ));
-                        ?>
+                        <div class="flex">
+                            <?php
+                                button_template('common-button', array(
+                                    'title' => "Explore " . get_the_title(),
+                                    'url' => "#",
+                                    'color' => 'gold'
+                                ))
+                            ?>
+                        </div>
                     </div>
                 </div>
                 <div class="flex relative w-[100%]">
