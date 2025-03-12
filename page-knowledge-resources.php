@@ -62,7 +62,7 @@
                                                     }
                                                 ?>
                                         </div>
-                                        <div class="text-[#000000] text-[16px] font-[600] pt-[10px] leading-[1.3] pb-[10px]">
+                                        <div class="text-[#000000] text-[16px] font-[600] pt-[10px] pb-[10px]">
                                             <?php
                                                 $text = get_the_title(); // Get the title as a string
                                                 $limit = 70;

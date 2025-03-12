@@ -15,16 +15,16 @@
     }
 ?>
 
-<div class="center-align slide-content h-[100%] w-[100%] relative">
+<div class="center-align slide-content h-[100%] w-[100%] relative y-thumbnail">
     <div class="<?php echo esc_attr($items_alignment); ?> text-container w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
-        <div class="<?php echo esc_attr($banner_alignment); ?> w-[1080px] leading-[1.2]">
+        <div class="<?php echo esc_attr($banner_alignment); ?> w-[1080px]">
             <h1><?php the_title(); ?></h1>
         </div>
         <div class="<?php echo esc_attr($banner_alignment); ?> w-[1080px] tracking-wide leading-relaxed">
             <?php the_content(); ?>
         </div>
         <a id="slider-banner-button" href="<?php echo $button_link ?>" class="w-auto cursor-pointer">
-            <div class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
+            <div class="flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#096936] group-hover:bg-[#B59637] transition-all duration-200 ease rounded-full">
                 <button><?php echo esc_html($button_name); ?></button>
                 <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -7,6 +7,7 @@ import HomeFilterAcc from "../modules/FrontpageFilterAcc"
 import KmFilterAcc from "../modules/KmFilterAcc ";
 import KmFilter from "../modules/KmFilter";
 import AgdomTransition from "../modules/AgdomImageTransition";
+import CustomVideoButton from "../modules/VideoFunc";
 // import MouseOverFunc from "../modules/MouseOverFunc";
 
 
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const kmFilterAcc = new KmFilterAcc();
     const knFilter  = new KmFilter();
     const agdomImageTransition = new AgdomTransition();
+    const customVideoButton = new CustomVideoButton();
     // const mousehover = new MouseOverFunc();
 
     document.getElementById("contactus-header-button").addEventListener("click", function() {
@@ -116,6 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const agdomKeypoint = document.getElementById('agdom-keypoints');
 
+        const cadreVideo = document.getElementById("cadrein-action-video")
+
         //initial setup for accordion in FAQ in homepage
         if(accElement) {    
             const height = accElement.offsetHeight;
@@ -140,6 +144,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if(agdomKeypoint) {
             agdomImageTransition.handleTrasition();
+        }
+
+        if(cadreVideo) {
+            customVideoButton.handleCustomVideoButton();
         }
 
         if(document.getElementById("swiper-wrapper")) {

@@ -1,9 +1,9 @@
-<div class="bg-[#FFFbf1] pt-[50px] pb-[60px] lg:pb-[150px]">
+<div class="bg-[#FFFFFF] pt-[50px] pb-[60px] lg:pb-[150px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col xl:flex-row justify-between items-start gap-[20px] xl:items-end pb-[50px]">
             <div class="block md:flex w-[100%] justify-between items-center">
-                <div class="flex flex-col gap-[10px] w-[70%]">
-                    <h2 class="hidden md:block text-[#1f1f1f] text-[22px] xl:text-[42px] font-[700] leading-[1.3]">Knowledge resources</br> empowering informed decisions</h2>
+                <div class="flex flex-col gap-[10px] w-[60%]">
+                    <h2 class="hidden md:block text-[#1f1f1f] text-[22px] xl:text-[42px] font-[700]">Knowledge resources</br> empowering informed decisions</h2>
                     <h2 class="block md:hidden text-[#1f1f1f] text-[22px] xl:text-[42px] font-[700] pb-[20px]">Knowledge resources empowering informed decisions</h2>
                     <p>Access a wealth of research, data, and best practices to support informed decision-making in agriculture, forestry, and natural resource management.</p>
                 </div>

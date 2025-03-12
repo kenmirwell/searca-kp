@@ -695,6 +695,49 @@ class ModalManager {
 
 /***/ }),
 
+/***/ "./modules/VideoFunc.js":
+/*!******************************!*\
+  !*** ./modules/VideoFunc.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class CustomVideoButton {
+  constructor() {}
+  handleCustomVideoButton(elementId, index) {
+    const video = document.getElementById("cadrein-action-video");
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const overlay = document.getElementById('c-a-video-overlay');
+    const container = document.getElementById('c-a-video-container');
+    container.addEventListener('click', e => {
+      if (video.paused) {
+        video.play();
+        overlay.style.opacity = "0";
+        playPauseBtn.style.opacity = "0";
+      } else {
+        video.pause();
+        overlay.style.opacity = "0.5";
+        playPauseBtn.style.opacity = "1";
+      }
+    });
+
+    // container.addEventListener('click', (e) => {
+    //     if (!video.paused) {
+    //         console.log("e", e)
+    //         video.pause();
+    //         overlay.style.opacity = "0.5"
+    //         playPauseBtn.style.opacity = "1"
+    //     }
+    // });
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomVideoButton);
+
+/***/ }),
+
 /***/ "./src/config.js":
 /*!***********************!*\
   !*** ./src/config.js ***!
@@ -783,6 +826,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/KmFilterAcc  */ "./modules/KmFilterAcc .js");
 /* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
 /* harmony import */ var _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modules/AgdomImageTransition */ "./modules/AgdomImageTransition.js");
+/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
+
 
 
 
@@ -804,6 +849,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const kmFilterAcc = new _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__["default"]();
   const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__["default"]();
   const agdomImageTransition = new _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_8__["default"]();
+  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_9__["default"]();
   // const mousehover = new MouseOverFunc();
 
   document.getElementById("contactus-header-button").addEventListener("click", function () {
@@ -878,6 +924,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const kmAccContainer = document.getElementById("km-side-filter-container-0");
     const searchByTitle = document.getElementById("km-search-by-title");
     const agdomKeypoint = document.getElementById('agdom-keypoints');
+    const cadreVideo = document.getElementById("cadrein-action-video");
 
     //initial setup for accordion in FAQ in homepage
     if (accElement) {
@@ -897,6 +944,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (agdomKeypoint) {
       agdomImageTransition.handleTrasition();
+    }
+    if (cadreVideo) {
+      customVideoButton.handleCustomVideoButton();
     }
     if (document.getElementById("swiper-wrapper")) {
       const swiper = new Swiper(".mySwiper", {

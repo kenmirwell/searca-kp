@@ -1,25 +1,29 @@
 <div class="relative h-[500px] flex items-center overflow-hidden">
     <div class="text-center w-[90%] flex flex-col md:w-[768px] mx-auto z-[3] relative text-[#ffffff] gap-[15px]">
         <?php if(!is_page("community-of-practice")): ?>
-        <h2 class="text-[32px] lg:text-[48px] font-bold italic leading-[1.3]">Explore Southeast Asia's agricultural landscapes</h2>
+        <h2 class="text-[48px] font-bold italic">Explore Southeast Asia's agricultural landscapes</h2>
         <p class="text-[16px] md:text-[18px] pb-[10px]">Southeast Asia feeds the world through agriculture that transforms lives across the region.</p>
-        <?php
-            get_button_data('button-template', array(
-                'title' => 'Explore Country Profiles',
-                'root_url' => "/agricultural-statistics-data",
-                'alignment' => "justify-center"
-            ));
-        ?>
+        <div class="flex justify-center">
+            <?php
+                button_template('common-button', array(
+                    'title' => "Explore Country Profiles",
+                    'url' => "#",
+                    'color' => 'gold'
+                ))
+            ?>
+        </div>
         <?php else: ?>
-        <h2 class="text-[32px] lg:text-[48px] font-bold italic leading-[1.3]">Join Our Community</h2>
+        <h2 class="text-[48px] font-bold italic">Join Our Community</h2>
         <p class="text-[16px] md:text-[18px] pb-[10px]">Be part of a growing network driving impactful change in agriculture and rural development.</p>
-        <?php
-            get_button_data('button-template', array(
-                'title' => 'Join Now',
-                'root_url' => "/",
-                'alignment' => "justify-center"
-            ));
-        ?>
+        <div class="flex justify-center">
+            <?php
+                button_template('common-button', array(
+                    'title' => "Join Now",
+                    'url' => "#",
+                    'color' => 'gold'
+                ))
+            ?>
+        </div>
         <?php endif; ?>
     </div>
     <div class="z-[3] bg-[#ffffff] absolute opacity-[0.03] right-[307px] rotate-[15deg] h-[650px] top-[-80px] w-[146px]"></div>
@@ -147,19 +151,19 @@
                 <div class="text-[12px] md:text-[14px] lg:text-[16px]">
                     <h6 class="font-[600] pb-[20px]">Resource</h6>
                     <ul class="footer-quick-links">
-                        <li>Blog</li>
-                        <li>Testimonials</li>
-                        <li>Information</li>
-                        <li>Legal</li>
-                        <li>Payments</li>
+                        <li class="">Blog</li>
+                        <li class="">Testimonials</li>
+                        <li class="">Information</li>
+                        <li class="">Legal</li>
+                        <li class="">Payments</li>
                     </ul>
                 </div>
                 <div class="text-[12px] md:text-[14px] lg:text-[16px]">
                     <h6 class="font-[600] pb-[20px]">Help</h6>
                     <ul class="footer-quick-links">
-                        <li>FAQ</li>
-                        <li>Help Center</li>
-                        <li>Support</li>
+                        <li class="">FAQ</li>
+                        <li class="">Help Center</li>
+                        <li class="">Support</li>
                     </ul>
                 </div>
             </div>

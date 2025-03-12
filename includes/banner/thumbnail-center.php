@@ -15,9 +15,9 @@
     }
 ?>
 
-<div class="center-align slide-content h-[100%] w-[100%] relative">
+<div class="center-align slide-content h-[100%] w-[100%] relative thumbnail-c">
     <div class="<?php echo esc_attr($items_alignment); ?> text-container w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
-        <div class="<?php echo esc_attr($banner_alignment); ?> leading-[1.2]">
+        <div class="<?php echo esc_attr($banner_alignment); ?>">
             <h1><?php the_title(); ?></h1>
         </div>
         <div class="<?php echo esc_attr($banner_alignment); ?> tracking-wide leading-relaxed">

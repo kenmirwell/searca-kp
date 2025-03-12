@@ -9,8 +9,7 @@
         <div class="flex flex-col-reverse sm:flex-row md:flex-col gap-[20px] md:gap-[0] items-center items-start">
             <div class="w-[100%]">
                 <div class="font-bold">
-                    <h2 class="text-[22px] md:text-[32px] text-[#1f1f1f] lg:text-[42px]">Community of practice</h2>
-                    <!-- <h2 class="text-[22px] md:text-[32px] lg:text-[42px] pb-[20px] sm:pb-[0px]">Sprouting Knowledge. Cultivating Conversations.</h2> -->
+                    <h2 class="text-[22px] md:text-[32px] text-[#1f1f1f] lg:text-[42px] leading-[1.2] pb-[10px]">Community of practice:<br>Cultivating Conversations,</h2>
                 </div>
                 <div class="relative block sm:hidden w-[100%] max-w-[600px] mx-auto">
                     <!-- Large Image -->
@@ -56,10 +55,10 @@
                 </div>
             </div>
             <div class="w-[100%] hidden md:flex gap-[20px] h-[350px] lg:h-[450px]">
-                <div class="flex items-end relative h-[100%] w-[30%] rounded-3xl overflow-hidden">
+                <div class="flex items-end relative h-[100%] w-[40%] rounded-3xl overflow-hidden">
                     <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($cop_image) ?>">
                 </div>
-                <div class="flex items-end relative h-[100%] w-[70%] rounded-3xl overflow-hidden">
+                <div class="flex items-end relative h-[100%] w-[100%] rounded-3xl overflow-hidden">
                     <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($cop_image_2) ?>">
                 </div>
             </div>

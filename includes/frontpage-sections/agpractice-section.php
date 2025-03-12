@@ -3,12 +3,12 @@
 ?>
 
 <div class="relative">
-    <div class="bg-[#196129] overflow-hidden">
+    <div class="bg-[#096936] overflow-hidden">
         <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
             <div class="flex relative pt-[50px] py-[60px] justify-center gap-[20px] items-start">
                 <div class="w-[100%] py-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
                     <div class="w-[50%]">
-                        <div class="text-[#ffffff] w-[100%] text-[22px] md:text-[32px] lg:text-[42px] font-bold leading-[1.3]">
+                        <div class="text-[#ffffff] w-[100%] text-[22px] md:text-[32px] lg:text-[42px] font-bold">
                             <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
                         </div>
                         <div class="flex flex-col gap-[20px]">

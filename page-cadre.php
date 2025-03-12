@@ -46,30 +46,7 @@
 
 ?>
 <div class="">
-    <div class="bg-[#196129]">
-        <div class="flex relative w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pt-[120px] pb-[50px] font-light">
-            <div class="w-[50%]">
-                <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight">
-                    <p class="cursor-pointer"><a href="/">Home |</a></p>
-                    <p class="cursor-pointer">About</p>
-                </div>
-                <div class="text-[#F7D671] text-[45px] pb-[20px] my-[20px]">
-                    <h1 class="cursor-pointer font-[500]"><?php the_title() ?></h1>
-                </div>
-            </div>
-            <div class="absolute right-0 bottom-0 w-[50%] h-[500px]">
-                <?php
-                    if ( has_post_thumbnail() ) {
-                        $thumbnail_url = get_the_post_thumbnail_url();
-                ?>
-                      <div class="bg-black opacity-50 w-[100%] h-[100%] absolute top-0 left-0 z-[1]"></div>
-                      <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
-                <?php
-                    }
-                ?>
-            </div>
-        </div>
-    </div>
+    <?php get_template_part("includes/section/common-hero"); ?>
     <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px] font-light">
         <div class="flex gap-[20px]">
             <div class="flex flex-col gap-[20px] w-[50%]">

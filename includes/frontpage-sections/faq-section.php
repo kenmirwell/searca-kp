@@ -1,16 +1,18 @@
-<div class="bg-[#196129] py-[30px] md:py-[50px] relative">
+<div class="bg-[#096936] py-[30px] md:py-[50px] relative">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="block md:flex gap-[20px] lg:gap-[80px]">
             <div class="flex flex-col gap-[20px] w-[100%] md:w-[50%]">
-                <h2 class="text-[22px] lg:text-[42px] text-[#ffffff] font-[700]">Frequently Asked</br> Questions</h2>
+                <h2 class="text-[22px] lg:text-[48px] text-[#ffffff] font-[700]">Frequently Asked</br> Questions</h2>
                 <p  class="text-[14px] lg:text-[18px] text-[#ffffff]">Find answers to common questions about CADRE, our platform, and how we support sustainable agriculture in Southeast Asia.</p>
-                <?php
-                    get_button_data('button-template', array(
-                        'title' => 'View FAQs',
-                        'root_url' => "#",
-                        'alignment' => "justify-start"
-                    ));
-                ?>
+                <div class="flex">
+                    <?php
+                        button_template('common-button', array(
+                            'title' => "View FAQs",
+                            'url' => "#",
+                            'color' => 'gold'
+                        ))
+                    ?>
+                </div>
             </div>
             <div class="flex flex-col gap-[10px] lg:gap-[20px] w-[100%] md:w-[50%] pt-[20px] md:pt-[0px] lg:pt-[30px]">
                 <?php 

@@ -21,6 +21,8 @@
         wp_enqueue_script('slick-js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), null, true);
         // Enqueue custom JS to initialize the slider
         // wp_enqueue_script('custom-slick-init', get_template_directory_uri() . '/js/slick-init.js', array('jquery', 'slick-js'), null, true);
+        //Circular progress
+        // wp_enqueue_script('circle-progress', 'https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js', array(), null, true);
     }
 
     //includes
