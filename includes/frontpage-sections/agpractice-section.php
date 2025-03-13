@@ -5,13 +5,13 @@
 <div class="relative">
     <div class="bg-[#096936] overflow-hidden">
         <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-            <div class="flex relative pt-[50px] py-[60px] justify-center gap-[20px] items-start">
-                <div class="w-[100%] py-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
-                    <div class="w-[50%]">
-                        <div class="text-[#ffffff] w-[100%] text-[22px] md:text-[32px] lg:text-[42px] font-bold">
+            <div class="flex flex-col md:flex-row relative pt-[50px] py-[60px] justify-center gap-[20px] items-start">
+                <div class="w-[100%] pb-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
+                    <div class="w-[100%] xl:w-[50%]">
+                        <div class="text-[#ffffff] w-[100%] text-display-24 md:text-display-42 font-bold">
                             <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
                         </div>
-                        <div class="flex flex-col gap-[20px]">
+                        <div class="flex flex-col gap-[20px] pt-[20px]">
                             <div class="text-[#ffffff] w-[100%] font-light md:font-normal text-[12px] lg:text-[16px]">
                                 <p class="font-[300]"><?php echo $agpractices_brief_description ?></p>
                                 <ul class="flex flex-col w-[100%] gap-[5px] lg:gap-[20px] py-[20px] lg:pt-[30px] agpractices-list">
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="absolute bottom-0 right-0 w-[50%]">
+                <div class="xl:absolute bottom-0 right-0 w-[100%] xl:w-[50%]">
                     <a href="/agricultural-data-tools/" class="flex justify-center p-[10px] lg:p-[20px] bg-[#2a7f3d] overflow-hidden rounded-t-xl">
                         <img class="w-full h-full object-cover" src="<?php echo esc_url($agpractices_image) ?>" alt="">
                     </a>
@@ -55,5 +55,4 @@
             </div>
         </div>
     </div>
-    <img class="absolute top-[0] opacity-[.09] w-full h-full object-cover z-[1] flex md:hidden" src="<?php echo esc_url($agpractices_image) ?>" alt="">
 </div>

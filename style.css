@@ -25,36 +25,8 @@ body {
     font-family: "Inter-Display", sans-serif;
 }
 
-h1, h2 {
-    line-height: 66px;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
-}
-
-h1 {
-    font-size: 48px;
-}
-
-h2 {
-    font-size: 42px;
-}
-
-h3 {
-    font-size: 24px;
-}
-
-h4 {
-    font-size: 22px;
-}
-
-h5 {
-    font-family: 20px;
-}
-
-h6 {
-    font-family: 18px;
 }
 
 p {
@@ -177,6 +149,8 @@ p {
 .banner-slider .slide-container .slide-content h1 {
     font-weight: 700;
     font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -1.2px;
 }
 
 .banner-slider .slide-container > .text-left {
@@ -904,7 +878,9 @@ select {
     }
 
     .banner-slider .slide-container .slide-content h1 {
-        font-size: 32px;
+        font-size: 42px;
+        line-height: 50px;
+        letter-spacing: -1.1px;
     }
 
     .slide-container .text-left .text-container p {
@@ -944,6 +920,8 @@ select {
 
     .banner-slider .slide-container .slide-content h1 {
         font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.24px;
     }
 
 }

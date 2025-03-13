@@ -1,4 +1,4 @@
-<div class="bg-[#196129] h-[650px]">
+<div class="bg-[#196129] h-[500px] lg:h-[650px]">
     <?php
         $home_banner = new WP_Query(array(
             "post_type" => "home-banner",

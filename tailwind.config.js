@@ -17,6 +17,7 @@ module.exports = {
         'display-18': ['18px', { lineHeight: '28px', letterSpacing: '0px' }],
         'display-16': ['16px', { lineHeight: '24px', letterSpacing: '0px' }],
         'display-14': ['14px', { lineHeight: '21px', letterSpacing: '0px' }],
+        'display-12': ['12px', { lineHeight: '16px', letterSpacing: '0px' }],
       }
     }
   },

@@ -5,33 +5,9 @@
         the_post();
 ?>
     <div>
-        <div class="bg-[#196129] pt-[70px]">
-            <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px] font-light">
-                <div>
-                    <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight">
-                        <p class="cursor-pointer"><a href="/">Home |</a></p>
-                        <p class="cursor-pointer"><?php the_title()?></p>
-                    </div>
-                    <div class="border-b-[1px] border-[#F7D671] text-[#F7D671] text-[45px] pb-[20px] my-[20px]">
-                        <h1 class="cursor-pointer"><?php the_title() ?></h1>
-                    </div>
-                    <div class="text-[16px] font-extralight flex gap-[20px] text-[#ffffff]">
-                        <div class="w-[50%]">
-                            <div class="">
-                                <p>Asia is the largest continent in the world covering about 30% of the Earth’s total land area. It is the world’s most populous continent, and it houses a total of 48 countries. It is divided into six main geographical regions: Northern Asia, Western Asia, Central Asia, Eastern Asia, Southern Asia, and Southeast Asia.</p>
-                            </div>
-                        </div>
-                        <div class="w-[50%]">
-                            <div class="">
-                                <p>Southeast Asia consists of 11 countries that are generally divided into “mainland” and “island” zones.  The mainland zones are essentially viewed as an extension of the Asian continent, and this includes Cambodia, Lao PDR, Myanmar, Thailand, and Vietnam. The Islands of Southeast Asia, also known as the Insular Region, includes Brunei Darussalam, Indonesia, Malaysia, Philippines, Singapore, and Timor-Leste.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-[#FDFDEF] py-[100px]">
-            <div class="flex relative w-[800px] mx-auto h-[100%]">
+        <?php get_template_part("includes/section/common-hero"); ?>
+        <div class="bg-[#ffffff] py-[100px]">
+            <div class="flex relative w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto h-[100%]">
                 <div class="flex w-[800px] mx-auto h-[100%] py-[20px] z-[1]">
                     <div class="w-[800px] flex justify-center mx-auto relative">
                         <div class="relative w-[800px] h-[600px] mx-auto">
@@ -90,11 +66,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="absolute w-[100%] top-0 right-0 flex flex-col gap-[20px] text-[#000000] z-[0]">
-                    <h2 class="text-[32px] text-right">Agricultural Landscape in Southeast Asia:</br> A Regional Profile </h2>
-                        <!-- <p class="text-right">Asia is the largest continent in the world covering about 30% of the Earth&apos;s total land area. It is the world&apos;s most populous continent, and it houses a total of 48 countries. It is divided into six main geographical regions: Northern Asia, Western Asia, Central Asia, Eastern Asia, Southern Asia, and Southeast Asia.</p>
-                        <p class="text-right">Southeast Asia consists of 11 countries that are generally divided into “mainland” and “island” zones.  The mainland zones are essentially viewed as an extension of the Asian continent, and this includes Cambodia, Lao PDR, Myanmar, Thailand, and Vietnam. The Islands of Southeast Asia, also known as the Insular Region, includes Brunei Darussalam, Indonesia, Malaysia, Philippines, Singapore, and Timor-Leste.   -->
-                    </p>
+                <div class="absolute w-[100%] top-0 right-0 flex flex-col gap-[20px] text-[#000000] z-[0] w-[500px]">
+                    <h2 class="text-display-42 font-bold text-left">Explore South East Asian Counties</h2>
+                    <p class="text-left">A dedicated digital space where members can engage in discussions, share research insights, and collaborate on agricultural solutions.</p>
                 </div>
             </div>
         </div>

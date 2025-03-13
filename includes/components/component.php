@@ -9,9 +9,9 @@
 ?>
 
 <div class="block w-[100%] md:w-auto h-[370px] xl:h-[435px] rounded-[20px] group component-<?php echo $components_index; ?>">
-    <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] w-[100%] md:w-[300px] rounded-3xl overflow-hidden">
+    <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] w-[100%] md:w-[250px] xl:w-[300px] rounded-3xl overflow-hidden">
          <div class="p-[20px] z-[2]">
-            <div class="text-[12px] xl:text-[18px] font-bold pt-[10px] text-[#ffffff]">
+            <div class="text-display-16 xl:text-display-18 font-bold pt-[10px] text-[#ffffff]">
                 <h4><?php the_title()?></h4>
             </div>
             <div id="comp-container-<?php echo get_the_ID(); ?>" class="hidden md:block component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff] max-h-0 group-hover:max-h-[500px] overflow-hidden transition-all duration-300 ease-in-out delay-150">

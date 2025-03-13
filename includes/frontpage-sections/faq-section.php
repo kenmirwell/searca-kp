@@ -1,5 +1,5 @@
 <div class="bg-[#096936] py-[30px] md:py-[50px] relative">
-    <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
+    <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto z-[1] relative">
         <div class="block md:flex gap-[20px] lg:gap-[80px]">
             <div class="flex flex-col gap-[20px] w-[100%] md:w-[50%]">
                 <h2 class="text-[22px] lg:text-[48px] text-[#ffffff] font-[700]">Frequently Asked</br> Questions</h2>
@@ -57,5 +57,5 @@
             </div>
         </div>
     </div>
-    <img class="absolute bottom-[0] left-[0] w-[100%] md:w-[90%] xl:w-[45%] h-[50%] object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/02/faq-bg.png" alt="">
+    <img class="absolute bottom-[0] left-[0] w-[100%] md:w-[90%] xl:w-[45%] h-[50%] object-cover z-[0]" src="https://cadre.searca.org/wp-content/uploads/2025/02/faq-bg.png" alt="">
 </div>
