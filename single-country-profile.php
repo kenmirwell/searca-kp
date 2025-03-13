@@ -63,6 +63,7 @@ while (have_posts()) {
         <div class="bg-gradient-to-r from-black/90 to-black/40 w-full h-full absolute top-0 left-0 z-[1]"></div>
         <img class="absolute w-full h-full object-cover z-[0]" src="<?php echo esc_url($hero_background); ?>" alt="<?php the_title(); ?>">
     </div>
+    <?php if (strcasecmp(get_the_title(), "philippines") === 0): ?>
     <div class="bg-[#2a7f3d] py-[50px]">
         <?php 
             $qf_desc = get_field('quick_facts_description');
@@ -87,6 +88,17 @@ while (have_posts()) {
             </div>
         </div>
     </div>
+    <?php else: ?>
+        <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
+            <div class="h-[500px] flex justify-center">
+                <div class="flex flex-col gap-[20px] justify-center items-center">
+                    <h4 class="text-[36px]">We're Sorry, This Section is Unavailable</h4>
+                    <p class="">It seems this section is currently empty. You can return to <a class="text-[#2a7f3d] font-bold" href="https://cadre.searca.org/agricultural-statistics-data/">Agricultural Statistics Data</a> for more information.</p>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (strcasecmp(get_the_title(), "philippines") === 0): ?>
     <div class="py-[50px]">
         <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
             <div class="flex flex-row-reverse gap-[20px]">
@@ -170,6 +182,7 @@ while (have_posts()) {
             </div>
         </div>
     </div>
+    <?php endif; ?>
 <?php 
 }
 get_footer();
