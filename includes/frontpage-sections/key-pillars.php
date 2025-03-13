@@ -6,7 +6,7 @@
                 <p class="text-[16px]">The foundation of our work, driving collaboration, research, and sustainable solutions in agriculture, forestry, and natural resource management.</p>
             </div>
         </div>
-        <div class="flex flex-wrap lg:flex-nowrap flex-col sm:flex-row justify-between items-start gap-[10px] xl:gap-[20px]">
+        <div class="flex flex-wrap xl:flex-nowrap flex-col sm:flex-row justify-between items-start gap-[10px] xl:gap-[20px]">
             <?php 
                 $components = new WP_Query(array(
                     "post_type" => "component",
@@ -33,10 +33,6 @@
                         set_query_var('expected_output', $expected_output);
                         set_query_var('thumbnail_url', $thumbnail_url);
                         set_query_var('page_link', $page_link);
-
-                    // get_template_part("includes/components/component", "desktop");
-
-                    // get_template_part("includes/components/component", "mobile");
                     
                     get_template_part("includes/components/component");
                 ?>

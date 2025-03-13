@@ -36,7 +36,7 @@
         </div>
     </div>
     <div id="c-a-video-overlay" class="bg-black opacity-50 w-[100%] h-[100%] absolute top-0 left-0 z-[1]"></div>
-    <video id="cadrein-action-video" autoplay loop playsinline class="absolute inset-0 w-full h-full object-cover" poster="<?php echo get_template_directory_uri(); ?>/assets/images/CADRE_PREV.jpg">
+    <video id="cadrein-action-video" loop playsinline class="absolute inset-0 w-full h-full object-cover" poster="<?php echo get_template_directory_uri(); ?>/assets/images/CADRE_PREV.jpg">
         <source src="<?php echo get_template_directory_uri(); ?>/assets/videos/searca_avp.mp4" type="video/mp4">
     </video>
 </div>

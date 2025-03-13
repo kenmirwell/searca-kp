@@ -21,7 +21,7 @@
                         <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight">
                             <div class="flex gap-[10px] items-center py-[10px] px-[15px] rounded-full border-[1px] border-[#EBEBEB82]">
                                 <div class="h-[10px] w-[10px] bg-[#F7D671] rounded-full"></div>
-                                <h1><?php the_title() ?></h1>
+                                <p><?php the_title() ?></p>
                             </div>
                         </div>
                         <div class="text-[#ffffff] text-[45px] font-bold max-w-[500px]">
@@ -107,7 +107,7 @@
                                                 <?php } ?>
                                             </div>
                                         </div>
-                                        <a class="px-[20px] py-[10px] rounded-full bg-[#196129] text-[#fffffff] text-[14px] font-[400]" href="<?php echo get_permalink($learning_materials_id) ?>">Read More</a>
+                                        <a class="px-[20px] py-[10px] rounded-full bg-[#196129] text-[#ffffff] text-[14px] font-[400]" href="<?php echo get_permalink($learning_materials_id) ?>">Read More</a>
                                     </div>
                             <?php 
                                 } }

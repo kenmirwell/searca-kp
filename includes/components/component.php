@@ -14,10 +14,10 @@
             <div class="text-[12px] xl:text-[18px] font-bold pt-[10px] text-[#ffffff]">
                 <h4><?php the_title()?></h4>
             </div>
-            <div id="comp-contianer-<?php echo get_the_ID(); ?>" class="hidden md:block component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff] max-h-0 group-hover:max-h-[500px] overflow-hidden transition-all duration-300 ease-in-out delay-150">
+            <div id="comp-container-<?php echo get_the_ID(); ?>" class="hidden md:block component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff] max-h-0 group-hover:max-h-[500px] overflow-hidden transition-all duration-300 ease-in-out delay-150">
                 <?php echo $aspiring_outcome?>
             </div>
-            <div id="comp-contianer-<?php echo get_the_ID(); ?>" class="block md:hidden component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff]">
+            <div id="comp-container-<?php echo get_the_ID(); ?>" class="block md:hidden component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff]">
                 <?php echo $aspiring_outcome?>
             </div>
         </div>

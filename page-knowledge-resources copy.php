@@ -107,7 +107,7 @@
                                                 <?php } ?>
                                             </div>
                                         </div>
-                                        <a class="px-[20px] py-[10px] rounded-full bg-[#196129] text-[#fffffff] text-[14px] font-[400]" href="<?php echo get_permalink($learning_materials_id) ?>">Read More</a>
+                                        <a class="px-[20px] py-[10px] rounded-full bg-[#196129] text-[#ffffff] text-[14px] font-[400]" href="<?php echo get_permalink($learning_materials_id) ?>">Read More</a>
                                     </div>
                             <?php 
                                 } }
