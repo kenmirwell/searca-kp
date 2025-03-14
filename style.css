@@ -49,14 +49,74 @@ p {
 }
 
 .primary-menu-tablet li {
-    color: #ffffff !important;
+    color: #000000 !important;
+}
+
+.primary-menu-tablet .menu-item-type-post_type:hover > .sub-menu {
+    display: block;
+}
+
+.primary-menu-tablet .sub-menu {
+    color: #000000;
+    display: none;
+    font-weight: 200;
+    position: absolute;
+    background-color: #ffffff;
+    z-index: 9999;
+    width: 250px;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.primary-menu-tablet .sub-menu li {
+    padding: 5px 15px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.primary-menu-tablet .sub-menu li:hover {
+    color: #096936;
+    width: 100%;
 }
 
 .primary-menu-mobile {
-    text-align: center;
+    text-align: left;
 }
 
 .primary-menu-mobile > .menu-item  {
+    position: relative;
+    padding: 8px 0;
+}
+
+.primary-menu-mobile > .menu-item::after  {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background-image: url('/wp-content/themes/Searca/assets/images/arrow-right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-45deg) translateY(-40%)
+}
+
+.primary-menu-mobile-home::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background-image: url('/wp-content/themes/Searca/assets/images/arrow-right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-45deg) translateY(-40%)
+}
+
+.primary-menu-mobile-home {
+    position: relative;
+    width: 100%;
     padding: 8px 0;
 }
 
@@ -66,7 +126,7 @@ p {
 
 .primary-menu {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     gap: 20px;
     align-items: flex-start;
     position: relative;

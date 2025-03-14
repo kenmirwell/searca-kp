@@ -104,7 +104,7 @@
                     <?php the_custom_logo(); ?>
                 </div>
             <?php } ?>
-            <div class="justify-between gap-[20px] hidden xl:block">
+            <div class="justify-between gap-[20px] hidden md:block">
                 <?php
                     wp_nav_menu(
                         array(
@@ -167,39 +167,30 @@
                     <?php  
                         } else { 
                     ?>
-                        
-                            <!-- <div id="auth" class="absolute hidden flex flex-col gap-[10px] py-[15px] px-[10px] text-[14px] bg-[#ffffff] w-[100px] rounded-lg z-50 right-0 top-[40px]">
-                                <div class="py-[5px]">
-                                    <p onclick="onModal('login-modal')" class="cursor-pointer">Login</p>
-                                </div>
-                                <div>
-                                    <p onclick="onModal('signup-modal')" class="cursor-pointer">Signup</p>  
-                                </div class="py-[5px]">
-                            </div> -->
-                            <div id="auth" class="absolute hidden flex flex-col gap-[10px] py-[15px] px-[10px] text-[14px] bg-[#ffffff] w-[100px] rounded-lg z-50 right-0 top-[40px]">
-                                <div class="py-[5px]">
-                                    <a href="<?php echo esc_url(get_permalink(416)) ?>">Login</a>
-                                </div>
-                                <div>
-                                    <!-- <p onclick="onModal('signup-modal')" class="cursor-pointer">Signup</p>   -->
-                                    <a href="<?php echo esc_url(get_permalink(341)) ?>">Signup</a>
-                                </div class="py-[5px]">
+                        <div id="auth" class="absolute hidden flex flex-col gap-[10px] py-[15px] px-[10px] text-[14px] bg-[#ffffff] w-[100px] rounded-lg z-50 right-0 top-[40px]">
+                            <div class="py-[5px]">
+                                <a href="<?php echo esc_url(get_permalink(416)) ?>">Login</a>
                             </div>
+                            <div>
+                                <!-- <p onclick="onModal('signup-modal')" class="cursor-pointer">Signup</p>   -->
+                                <a href="<?php echo esc_url(get_permalink(341)) ?>">Signup</a>
+                            </div class="py-[5px]">
+                        </div>
                     <?php 
                         } 
                     ?>
                 </div>
                 <div id="contactus-header-button" class="hidden sm:block py-[10px] px-[20px] text-[#000000] hover:text-[#ffffff] border-[1px] border-[#000000] hover:border-[#2a7f3d] hover:bg-[#2a7f3d] rounded-full overflow-hidden transition-all duration-200 ease">
-                    <button class="">Contact us</button>
+                    <button class="w-[80px]">Contact us</button>
                 </div>
                 <div onclick="handleMobileMenu()" class="block sm:hidden">
-                    <svg width="20" viewBox="0 0 13 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.8125 4.18212C0.597012 4.18212 0.390349 4.27024 0.237976 4.4271C0.0856026 4.58396 0 4.7967 0 5.01854C0 5.24037 0.0856026 5.45312 0.237976 5.60998C0.390349 5.76684 0.597012 5.85496 0.8125 5.85496V4.18212ZM12.1875 5.85496C12.403 5.85496 12.6097 5.76684 12.762 5.60998C12.9144 5.45312 13 5.24037 13 5.01854C13 4.7967 12.9144 4.58396 12.762 4.4271C12.6097 4.27024 12.403 4.18212 12.1875 4.18212V5.85496ZM0.8125 0C0.597012 0 0.390349 0.0881231 0.237976 0.244983C0.0856026 0.401843 0 0.61459 0 0.836423C0 1.05826 0.0856026 1.271 0.237976 1.42786C0.390349 1.58472 0.597012 1.67285 0.8125 1.67285V0ZM12.1875 1.67285C12.403 1.67285 12.6097 1.58472 12.762 1.42786C12.9144 1.271 13 1.05826 13 0.836423C13 0.61459 12.9144 0.401843 12.762 0.244983C12.6097 0.0881231 12.403 0 12.1875 0V1.67285ZM0.8125 8.36423C0.597012 8.36423 0.390349 8.45235 0.237976 8.60921C0.0856026 8.76607 0 8.97882 0 9.20065C0 9.42249 0.0856026 9.63523 0.237976 9.79209C0.390349 9.94895 0.597012 10.0371 0.8125 10.0371V8.36423ZM12.1875 10.0371C12.403 10.0371 12.6097 9.94895 12.762 9.79209C12.9144 9.63523 13 9.42249 13 9.20065C13 8.97882 12.9144 8.76607 12.762 8.60921C12.6097 8.45235 12.403 8.36423 12.1875 8.36423V10.0371ZM0.8125 5.85496H12.1875V4.18212H0.8125V5.85496ZM0.8125 1.67285H12.1875V0H0.8125V1.67285ZM0.8125 10.0371H12.1875V8.36423H0.8125V10.0371Z" fill="black"/>
+                    <svg width="29" height="17" viewBox="0 0 29 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.0625C0 0.475697 0.540989 0 1.20833 0H27.7917C28.459 0 29 0.475697 29 1.0625C29 1.6493 28.459 2.125 27.7917 2.125H1.20833C0.540989 2.125 0 1.6493 0 1.0625ZM0 8.5C0 7.9132 0.540989 7.4375 1.20833 7.4375H27.7917C28.459 7.4375 29 7.9132 29 8.5C29 9.0868 28.459 9.5625 27.7917 9.5625H1.20833C0.540989 9.5625 0 9.0868 0 8.5ZM13.2917 15.9375C13.2917 15.3507 13.8327 14.875 14.5 14.875H27.7917C28.459 14.875 29 15.3507 29 15.9375C29 16.5243 28.459 17 27.7917 17H14.5C13.8327 17 13.2917 16.5243 13.2917 15.9375Z" fill="#096936"/>
                     </svg>
                 </div>
             </div>
         </div>
-        <div class="bg-[#2a7f3d] z-[9999] hidden md:block xl:hidden">
+        <div class="mid-size bg-[#FFFFFF] z-[9999] hidden sm:block lg:hidden">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <?php
                     wp_nav_menu(
@@ -213,23 +204,34 @@
                 ?>
             </div>
         </div>
-        <div id="mobile-menu-container" class="bg-[#ffffff] absolute top-0 h-screen w-[100%] z-[9999] inactive-mobile-menu">
-            <div class="p-[20px] pt-[50px]">
-                <div onclick="handleMobileMenu()" class="flex justify-end mr-[20px]">
-                    <svg width="20" height="20" viewBox="0 0 207 207" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M197 10L10 197M10 10L197 197" stroke="#1E1E1E" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+        <div id="mobile-menu-container" class="md:hidden bg-transparent absolute top-0 h-screen w-[100%] z-[9999] inactive-mobile-menu">
+            <div class="bg-[#000000] opacity-[0.8] absolute top-0 w-[100%] h-[100%] z-[0]"></div>
+            <div class="absolute w-[100%] bg-[#ffffff] h-[500px] rounded-t-2xl bottom-0 p-[20px] pt-[50px] z-[1]">
+                <div class="flex justify-between items-center pb-[20px]">
+                    <div id="contactus-header-button" class="py-[10px] px-[20px] text-[#ffffff] border-[1px] border-[#2a7f3d] bg-[#2a7f3d] rounded-full overflow-hidden transition-all duration-200 ease">
+                        <button class="w-[90px]">Contact us</button>
+                    </div>
+                    <div onclick="handleMobileMenu()" class="flex justify-end mr-[20px]">
+                        <svg width="20" height="20" viewBox="0 0 207 207" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M197 10L10 197M10 10L197 197" stroke="#1E1E1E" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
-                <?php
-                    wp_nav_menu(
-                        array(
-                            'theme_location'    => 'header_menu',
-                            'container'         => '',
-                            'menu_id'           => 'main-menu-mobile',
-                            'menu_class'        => 'primary-menu-mobile',
+                <div class="pt-[20px] border-t-[1px] border-[#DBDBDB]">
+                    <div class="flex primary-menu-mobile-home w-[100%]">
+                        <a href="/" class="w-[100%]">Home</a>
+                    </div>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location'    => 'header_menu',
+                                'container'         => '',
+                                'menu_id'           => 'main-menu-mobile',
+                                'menu_class'        => 'primary-menu-mobile',
+                            )
                         )
-                    )
-                ?>
+                    ?>
+                </div>
             </div>
         </div>
     </div>

@@ -142,7 +142,7 @@
                     <h2 class="text-[36px] font-bold">AgPractices&Domains Web Application</h2>
                 </div>
                 <div class="w-[50%]">
-                    <a href="#" class="flex justify-end w-auto group cursor-pointer">
+                    <a href="https://agpractices.searcaapps.org:3443/" class="flex justify-end w-auto group cursor-pointer">
                         <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] group-hover:bg-[#ceab23] bg-[#2a7f3d] transition-all duration-200 ease rounded-full">
                             <p class="text-[#ffffff]">Visit Platform</p>
                             <div class="rounded-full p-[15px] transition-all duration-200 ease group-hover:bg-[#2a7f3d] bg-[#ceab23]">
@@ -164,6 +164,11 @@
                     >
                 </div>
             </div>
+            <!-- <iframe src="https://agpractices.searcaapps.org:3443/" 
+                width="100%" 
+                height="600" 
+                style="border: none;">
+            </iframe> -->
         </div> 
         <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
             <div class="flex justify-between items-center">
