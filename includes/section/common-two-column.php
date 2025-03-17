@@ -15,7 +15,7 @@
                                 </div>
                                 <div class="flex flex-col gap-[10px] w-[50%]">
                                     <h6 class="text-[42px] font-bold pb-[10px]"><?php the_sub_field('section_title'); ?></h6>
-                                    <div class="inner-content-text-area text-[14px] flex flex-col gap-[15px]">
+                                    <div class="inner-content-text-area text-[16px] flex flex-col gap-[15px]">
                                         <?php the_sub_field('text_area'); ?>
                                     </div>
                                     <?php if (get_sub_field("button_name")): ?>
@@ -43,7 +43,6 @@
                                             </a>
                                         </div>
                                     <?php endif; ?>
-
                                 </div>
                             </div>
                         </div>

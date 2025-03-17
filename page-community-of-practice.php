@@ -72,9 +72,19 @@
                             <?php if (have_rows('key_points')): ?>
                                 <div class="flex flex-wrap gap-[20px] w-[100%] justify-end">
                                     <?php while (have_rows('key_points')): the_row(); ?>
-                                        <div class="text-left text-[#ffffff] pb-[20px] w-[450px]">
-                                            <h6 class="text-[22px] font-bold pb-[20px]"><?php the_sub_field('title'); ?></h6>
-                                            <p class="text-[#C2C2C2] font-[300]"><?php the_sub_field('subtext'); ?></p>
+                                        <div>
+                                            <div class="flex">
+                                                <div class="bg-[#407738] p-[10px] rounded-lg">
+                                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M2.5 15C2.5 21.9036 8.09644 27.5 15 27.5C21.9036 27.5 27.5 21.9036 27.5 15C27.5 8.09644 21.9036 2.5 15 2.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M22.5 15C22.5 10.8579 19.1421 7.5 15 7.5C10.8579 7.5 7.5 10.8579 7.5 15C7.5 19.1421 10.8579 22.5 15 22.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="text-left text-[#ffffff] py-[20px] w-[450px]">
+                                                <h6 class="text-[22px] font-bold pb-[20px]"><?php the_sub_field('title'); ?></h6>
+                                                <p class="text-[#C2C2C2] font-[300]"><?php the_sub_field('subtext'); ?></p>
+                                            </div>
                                         </div>
                                     <?php endwhile; ?>
                                 </div>

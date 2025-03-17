@@ -134,7 +134,7 @@ p {
 }
 
 .primary-menu > .menu-item {
-    font-size: 14px;
+    font-size: 16px;
     transition: all 0.1s ease;
 }
 
@@ -842,6 +842,7 @@ select {
 .moss-check-icon {
     width: 26px;
     height: 26px;
+    min-width: 25px;
     border: 3px solid #0C5C32; /* Dark green border */
     border-radius: 5px; /* Rounded corners */
     position: relative;
@@ -870,6 +871,7 @@ select {
 .white-check-icon {
     width: 26px;
     height: 26px;
+    min-width: 25px;
     border: 3px solid #6BA586; /* Dark green border */
     border-radius: 5px; /* Rounded corners */
     position: relative;
@@ -888,13 +890,57 @@ select {
     transform: rotate(45deg);
     position: absolute;
   }
+
+.simple-bullet-black, .simple-bullet-white {
+    padding-left: 15px;
+    position: relative;
+}
+
+  /* Creating the checkmark */
+.simple-bullet-black::before, .simple-bullet-white::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-top: 8px;
+    left: 0;
+    border-radius: 1000px;
+    position: absolute;
+  }
+
+.simple-bullet-black::before {
+    border: solid #000000; /* Dark green check */
+    background-color: #000000;
+}
+
+.simple-bullet-white::before {
+    border: solid #ffffff; /* Dark green check */
+    background-color: #ffffff;
+}
   
+.impact-item {
+    padding: 20px 0 20px 20px;
+    border-left: 1px solid #B59637;
+}
+
+.white-impact-border {
+    height: 1px;
+    width: 100%;
+    background-color: #777777;
+    margin: 40px 0;
+}
+
+.moss-impact-border {
+    height: 1px;
+    width: 100%;
+    background-color: #C8C8C8;
+    margin: 40px 0;
+}
+
 .inner-content-text-area ul {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-  
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
