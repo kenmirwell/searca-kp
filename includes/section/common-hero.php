@@ -1,5 +1,5 @@
-<div class="relative h-[800px] flex jusitify-center">
-    <div class="flex gap-[50px] items-center w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[150px] font-light z-[2]">
+<div class="relative h-[700px] xl:h-[800px] flex jusitify-center">
+    <div class="flex gap-[50px] items-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[150px] font-light z-[2]">
         <div class="w-[100%] flex flex-col gap-[30px]">
             <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight mb-[10px]">
                 <div class="flex gap-[10px] items-center py-[10px] px-[15px] rounded-full border-[1px] border-[#EBEBEB82]">
@@ -8,8 +8,8 @@
                 </div>
             </div>
             <div class="text-[#ffffff] flex flex-col gap-[20px]">
-                <h1 class="text-display-48 font-bold"><?php echo esc_html(get_field("page_identifier")); ?></h1>
-                <p class="text-display-16 pb-[20px]"><?php echo esc_html(get_the_content()); ?></p>
+                <h1 class="text-display-32 lg:text-display-48 font-bold"><?php echo esc_html(get_field("page_identifier")); ?></h1>
+                <p class="text-display-14 lg:text-display-16"><?php echo esc_html(get_the_content()); ?></p>
             </div>
             <div class="flex">
                 <?php
@@ -21,7 +21,7 @@
                 ?>
             </div>
         </div>
-        <div class="flex relative w-[100%]">
+        <div class="hidden md:flex relative w-[100%]">
             <img class="w-full z-[0]" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
         </div>
     </div>
