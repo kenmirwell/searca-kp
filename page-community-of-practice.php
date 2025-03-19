@@ -47,18 +47,15 @@
                                 <h2 class="text-[36px] font-bold"><?php the_sub_field('title'); ?></h2>
                                 <p><?php the_sub_field('subtext'); ?></p>
                             </div>
-                            <div class="w-[50%]">
-                                <a href="<?php echo esc_url(the_sub_field('button_link')); ?>" class="flex justify-end w-auto group cursor-pointer">
-                                    <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#ceab23] group-hover:bg-[#2a7f3d] transition-all duration-200 ease rounded-full">
-                                        <p class="text-[#ffffff]"><?php the_sub_field('button_name'); ?></p>
-                                        <div class="rounded-full p-[15px] transition-all duration-200 ease bg-[#2a7f3d] group-hover:bg-[#ceab23]">
-                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" 
-                                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </a>
+                            <div class="w-[100%] flex justify-end ">
+                                <?php $button_link = get_sub_field('button_link'); ?>
+                                <?php
+                                    button_template('common-button', array(
+                                        'title' => 'Join the community',
+                                        'url' => $button_link,
+                                        'color' => 'gold_to_white'
+                                    ))
+                                ?>
                             </div>
                         </div>
                         <div class="flex justify-between gap-[20px] items-center pt-[50px]">

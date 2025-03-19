@@ -9,7 +9,7 @@
                         button_template('common-button', array(
                             'title' => "View FAQs",
                             'url' => "#",
-                            'color' => 'gold'
+                            'color' => 'gold_to_green'
                         ))
                     ?>
                 </div>

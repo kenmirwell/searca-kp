@@ -21,26 +21,19 @@
                                 <?php if (get_sub_field("button_name")): ?>
                                     <?php $button_link = get_sub_field('button_link'); ?>
                                     <?php $button_name = get_sub_field('button_name'); ?>
-                                    <?php $is_button_gold = get_sub_field("is_button_gold"); ?>
+                                    <?php $button_color_transition = get_sub_field("button_color_transition"); ?>
+                                    <?php $button_color_setup = strtolower(str_replace(' ', '_', $button_color_transition)); ?>
                                     <?php $is_text_right = get_sub_field("is_text_right"); ?>
+                                    <?php $has_white_background = get_sub_field("ihas_white_background"); ?>
 
                                     <div class="flex mt-[12px]">
-                                        <a href="<?php echo esc_url($button_link); ?>" class="w-auto group cursor-pointer">
-                                            <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] 
-                                                <?php echo $is_button_gold ? 'bg-[#2a7f3d] group-hover:bg-[#ceab23]' : 'bg-[#ceab23] group-hover:bg-[#2a7f3d]'; ?> transition-all duration-200 ease rounded-full">
-                                                
-                                                <p class="text-[#ffffff]"><?php echo esc_html($button_name); ?></p>
-                                                
-                                                <div class="rounded-full p-[15px] transition-all duration-200 ease 
-                                                    <?php echo $is_button_gold ? 'bg-[#ceab23] group-hover:bg-[#2a7f3d]' : 'bg-[#2a7f3d] group-hover:bg-[#ceab23]'; ?>">
-                                                    
-                                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" 
-                                                            stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </a>
+                                        <?php
+                                            button_template('common-button', array(
+                                                'title' => "Explore the platform",
+                                                'url' => $button_link,
+                                                'color' => $button_color_setup
+                                            ))
+                                        ?>
                                     </div>
                                 <?php endif; ?>
                             </div>

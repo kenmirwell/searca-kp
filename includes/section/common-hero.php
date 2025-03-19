@@ -16,7 +16,7 @@
                     button_template('common-button', array(
                         'title' => "Explore " . get_the_title(),
                         'url' => "#",
-                        'color' => 'gold'
+                        'color' => 'gold_to_white'
                     ))
                 ?>
             </div>

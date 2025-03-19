@@ -20,7 +20,7 @@
                 button_template('common-button', array(
                     'title' => "Join Now",
                     'url' => "#",
-                    'color' => 'gold'
+                    'color' => 'gold_to_green'
                 ))
             ?>
         </div>
