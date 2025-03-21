@@ -6,15 +6,15 @@
 ?>
     <div>
         <?php get_template_part("includes/section/common-hero"); ?>
-        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
+        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[80px]">
             <?php if (have_rows('boxed_three_column_section')): ?>
                 <?php while (have_rows('boxed_three_column_section')): the_row(); ?>
                     <div class="text-left flex flex-col gap-[10px] pb-[20px]">
-                        <h2 class="text-[36px] font-bold"><?php the_sub_field('title'); ?></h2>
-                        <p><?php the_sub_field('subtext'); ?></p>
+                        <h2 class="text-display-24 lg:text-display-48 font-bold text-[#1f1f1f]"><?php the_sub_field('title'); ?></h2>
+                        <p class="text-display-16 md:text-display-18"><?php the_sub_field('subtext'); ?></p>
                     </div>
                     <?php if (have_rows('thumbnail_section')): ?>
-                        <div class="flex gap-[20px] items-center justify-between">
+                        <div class="flex flex-col lg:flex-row gap-[20px] items-center justify-between">
                             <?php while (have_rows('thumbnail_section')): the_row(); ?>
                                 <div class="flex flex-col gap-[20px] justify-between items-start text-left w-[100%] border-[#C2C2C2] border-t-[1px] pt-[50px]">
                                     <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,15 +39,15 @@
             <?php endif; ?> 
         </div>
         <div class="bg-[#096936]">
-            <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
+            <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[80px]">
                 <?php if (have_rows('community_invitation_section')): ?>
                     <?php while (have_rows('community_invitation_section')): the_row(); ?>
-                        <div class="flex justify-between">
+                        <div class="flex flex-col lg:flex-row justify-between">
                             <div class="w-[100%] text-left flex flex-col gap-[10px] pb-[20px] text-[#ffffff]">
-                                <h2 class="text-[36px] font-bold"><?php the_sub_field('title'); ?></h2>
-                                <p><?php the_sub_field('subtext'); ?></p>
+                                <h2 class="text-display-24 lg:text-display-48 font-bold"><?php the_sub_field('title'); ?></h2>
+                                <p class="text-display-16 md:text-display-18"><?php the_sub_field('subtext'); ?></p>
                             </div>
-                            <div class="w-[100%] flex justify-end ">
+                            <div class="w-[100%] flex justify-start lg:justify-end ">
                                 <?php $button_link = get_sub_field('button_link'); ?>
                                 <?php
                                     button_template('common-button', array(
@@ -58,8 +58,8 @@
                                 ?>
                             </div>
                         </div>
-                        <div class="flex justify-between gap-[20px] items-center pt-[50px]">
-                            <div class="rounded-xl overflow-hidden w-[35%] relative top-[-10px] flex">
+                        <div class="flex flex-col lg:flex-row justify-between gap-[40px] xl:gap-[20px] items-start xl:items-center pt-[50px]">
+                            <div class="rounded-xl overflow-hidden w-[100%] h-[300px] lg:h-[100%] xl:w-[35%] relative top-[-10px] flex">
                                 <img 
                                     class="w-full h-full object-cover" 
                                     src="<?php echo esc_url(get_sub_field('image')); ?>" 
@@ -67,9 +67,9 @@
                                 >
                             </div>
                             <?php if (have_rows('key_points')): ?>
-                                <div class="flex flex-wrap gap-[20px] w-[100%] justify-end">
+                                <div class="flex flex-wrap gap-[20px] w-[100%] justify-between xl:justify-end">
                                     <?php while (have_rows('key_points')): the_row(); ?>
-                                        <div>
+                                        <div class="w-[100%] lg:w-[450px]">
                                             <div class="flex">
                                                 <div class="bg-[#407738] p-[10px] rounded-lg">
                                                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <div class="text-left text-[#ffffff] py-[20px] w-[450px]">
+                                            <div class="text-left text-[#ffffff] py-[20px]">
                                                 <h6 class="text-[22px] font-bold pb-[20px]"><?php the_sub_field('title'); ?></h6>
                                                 <p class="text-[#C2C2C2] font-[300]"><?php the_sub_field('subtext'); ?></p>
                                             </div>
@@ -91,17 +91,17 @@
                 <?php endif; ?> 
             </div>
         </div>
-        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
+        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[80px]">
             <?php if (have_rows('round_three_column_section')): ?>
                 <?php while (have_rows('round_three_column_section')): the_row(); ?>
                     <div class="text-center flex flex-col gap-[10px] pb-[20px]">
-                        <h2 class="text-[36px] font-bold"><?php the_sub_field('title'); ?></h2>
-                        <p><?php the_sub_field('subtext'); ?></p>
+                        <h2 class="text-display-24 lg:text-display-48 font-bold text-[#1f1f1f]"><?php the_sub_field('title'); ?></h2>
+                        <p class="text-display-16 md:text-display-18 w-[80%] m-auto"><?php the_sub_field('subtext'); ?></p>
                     </div>
                     <?php if (have_rows('thumbnail_section')): ?>
-                        <div class="flex gap-[20px] items-center justify-between">
+                        <div class="flex flex-col lg:flex-row gap-[20px] items-center justify-between">
                             <?php while (have_rows('thumbnail_section')): the_row(); ?>
-                                <div class="flex flex-col gap-[10px] items-center text-center w-[700px]">
+                                <div class="flex flex-col gap-[10px] items-center text-center w-[80%] lg:w-[700px]">
                                     <div class="relative overflow-hidden rounded-full bg-[#8FBAA3] w-[200px] h-[200px] mb-[20px]">
                                         <div class="rounded-full overflow-hidden w-[200px] h-[200px] relative top-[-10px]">
                                             <img 

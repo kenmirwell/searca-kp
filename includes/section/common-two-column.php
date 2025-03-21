@@ -14,7 +14,9 @@
                                 <img class="w-full z-[0]" src="<?php echo esc_url(get_sub_field("section_image")); ?>" alt="<?php the_title(); ?>">
                             </div>
                             <div class="flex flex-col gap-[10px] w-[100%] lg:w-[50%]">
-                                <h6 class="text-display-28 lg:text-display-42 font-bold pb-[10px]"><?php the_sub_field('section_title'); ?></h6>
+                            <h6 class='text-display-28 lg:text-display-42 font-bold pb-[10px] <?php echo (!get_sub_field("has_white_background")) ? "text-[#ffffff]" : "text-[#1f1f1f]"; ?>'>
+                                <?php the_sub_field('section_title'); ?>
+                            </h6>
                                 <div class="inner-content-text-area text-display-14 text-display-16 flex flex-col gap-[15px]">
                                     <?php the_sub_field('text_area'); ?>
                                 </div>
