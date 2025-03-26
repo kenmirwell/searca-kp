@@ -1,4 +1,4 @@
-<div class="py-[50px]">
+<div class="py-[80px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
             <div class="text-left w-[100%] lg:w-[50%]">

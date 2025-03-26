@@ -8,7 +8,10 @@
             <div class="flex flex-col md:flex-row relative pt-[50px] py-[60px] justify-center gap-[20px] items-start">
                 <div class="w-[100%] pb-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
                     <div class="w-[100%] xl:w-[50%]">
-                        <div class="text-[#ffffff] w-[100%] text-display-24 md:text-display-42 font-bold">
+                        <div class="hidden lg:block text-[#ffffff] w-[100%] text-display-24 md:text-display-42 font-bold">
+                            <h2>Agpractices&Domains:</br> transforming agriculture</br> through data and innovation</h2>
+                        </div>
+                        <div class="block lg:hidden text-[#ffffff] w-[100%] text-display-24 md:text-display-42 font-bold">
                             <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
                         </div>
                         <div class="flex flex-col gap-[20px] pt-[20px]">

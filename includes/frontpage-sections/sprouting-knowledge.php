@@ -25,8 +25,8 @@
                         <img class="w-full h-full object-cover rounded-xl" src="<?php echo esc_url($cop_image) ?>" alt="Small Image">
                     </div>
                 </div>
-                <div class="flex flex-col lg:flex-row justify-between gap-[20px] md:gap-[0px]">
-                    <div class="hidden md:block text-[14px] md:text-[16px] w-[100%] lg:w-[70%] pb-[20px]">
+                <div class="flex flex-col lg:flex-row justify-between gap-[20px] md:gap-[0px] pb-[40px]">
+                    <div class="hidden md:block text-[14px] md:text-[16px] w-[100%] lg:w-[70%]">
                         <p>Become part of discussions and build our community. Join a vibrant network of agricultural</br> professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>
                     </div>
                     <div class="flex flex-row items-center gap-[10px] sm:gap-[20px] pt-[30px] md:pt-[0px]">

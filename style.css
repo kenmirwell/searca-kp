@@ -835,15 +835,15 @@ select {
 
 .moss-check-item {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 10px;
 }
 
 .moss-check-icon {
-    width: 26px;
-    height: 26px;
-    min-width: 25px;
-    border: 2px solid #0C5C32; /* Dark green border */
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+    border: 1.5px solid #0C5C32; /* Dark green border */
     border-radius: 5px; /* Rounded corners */
     position: relative;
     display: flex;
@@ -854,25 +854,25 @@ select {
   /* Creating the checkmark */
 .moss-check-icon::after {
     content: "";
-    width: 6px;
-    height: 12px;
+    width: 4px;
+    height: 10px;
     border: solid #0C5C32; /* Dark green check */
-    border-width: 0 2px 2px 0;
+    border-width: 0 1.5px 1.5px 0;
     transform: rotate(45deg);
     position: absolute;
   }
 
 .white-check-item {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 10px;
 }
 
 .white-check-icon {
-    width: 26px;
-    height: 26px;
-    min-width: 25px;
-    border: 2px solid #6BA586; /* Dark green border */
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+    border: 1.3px solid #6BA586; /* Dark green border */
     border-radius: 5px; /* Rounded corners */
     position: relative;
     display: flex;
@@ -883,10 +883,10 @@ select {
   /* Creating the checkmark */
 .white-check-icon::after {
     content: "";
-    width: 6px;
-    height: 12px;
+    width: 4px;
+    height: 10px;
     border: solid #ffffff; /* Dark green check */
-    border-width: 0 2px 2px 0;
+    border-width: 0 1.3px 1.3px 0;
     transform: rotate(45deg);
     position: absolute;
   }
@@ -941,6 +941,10 @@ select {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+.semi-bold {
+    font-weight: 600;
 }
 
 @keyframes spin {
