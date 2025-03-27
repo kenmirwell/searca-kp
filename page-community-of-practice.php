@@ -7,8 +7,8 @@
     <div>
         <?php get_template_part("includes/section/common-hero"); ?>
         <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[80px]">
-            <?php if (have_rows('boxed_three_column_section')): ?>
-                <?php while (have_rows('boxed_three_column_section')): the_row(); ?>
+            <?php if (have_rows('boxed_three_column_section_unique')): ?>
+                <?php while (have_rows('boxed_three_column_section_unique')): the_row(); ?>
                     <div class="text-left flex flex-col gap-[10px] pb-[20px]">
                         <h2 class="text-display-24 lg:text-display-48 font-bold text-[#1f1f1f]"><?php the_sub_field('title'); ?></h2>
                         <p class="text-display-16 md:text-display-18"><?php the_sub_field('subtext'); ?></p>
@@ -43,11 +43,11 @@
                 <?php if (have_rows('community_invitation_section')): ?>
                     <?php while (have_rows('community_invitation_section')): the_row(); ?>
                         <div class="flex flex-col lg:flex-row justify-between">
-                            <div class="w-[100%] text-left flex flex-col gap-[10px] pb-[20px] text-[#ffffff]">
+                            <div class="w-[60%] text-left flex flex-col gap-[10px] pb-[20px] text-[#ffffff]">
                                 <h2 class="text-display-24 lg:text-display-48 font-bold"><?php the_sub_field('title'); ?></h2>
                                 <p class="text-display-16 md:text-display-18"><?php the_sub_field('subtext'); ?></p>
                             </div>
-                            <div class="w-[100%] flex justify-start lg:justify-end ">
+                            <div class="w-[40%] flex justify-start lg:justify-end ">
                                 <?php $button_link = get_sub_field('button_link'); ?>
                                 <?php
                                     button_template('common-button', array(
@@ -111,7 +111,7 @@
                                             >
                                         </div>
                                     </div>
-                                    <h6 class="font-[600] text-[24px]"><?php the_sub_field('thumbnail_title'); ?></h6>
+                                    <h6 class="font-[600] text-[24px] w-[300px]"><?php the_sub_field('thumbnail_title'); ?></h6>
                                     <p><?php the_sub_field('thumbnail_subtext'); ?></p>
                                 </div>
                             <?php endwhile; ?>

@@ -841,23 +841,25 @@ select {
 
 .moss-check-icon {
     width: 23px;
-    height: 23px;
+    /* height: 23px; */
     min-width: 23px;
-    border: 1.5px solid #0C5C32; /* Dark green border */
+    border: 2px solid #0C5C32; /* Dark green border */
     border-radius: 5px; /* Rounded corners */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 9px;
+    padding-bottom: 11px;
   }
   
   /* Creating the checkmark */
 .moss-check-icon::after {
     content: "";
-    width: 4px;
+    width: 6px;
     height: 10px;
-    border: solid #0C5C32; /* Dark green check */
-    border-width: 0 1.5px 1.5px 0;
+    border: solid #0C5C32;
+    border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     position: absolute;
   }
@@ -870,23 +872,25 @@ select {
 
 .white-check-icon {
     width: 23px;
-    height: 23px;
+    /* height: 23px; */
     min-width: 23px;
-    border: 1.3px solid #6BA586; /* Dark green border */
+    border: 2px solid #6BA586; /* Dark green border */
     border-radius: 5px; /* Rounded corners */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 9px;
+    padding-bottom: 11px;
   }
   
   /* Creating the checkmark */
 .white-check-icon::after {
     content: "";
-    width: 4px;
+    width: 6px;
     height: 10px;
     border: solid #ffffff; /* Dark green check */
-    border-width: 0 1.3px 1.3px 0;
+    border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     position: absolute;
   }
@@ -918,16 +922,18 @@ select {
 }
   
 .impact-item {
-    padding: 20px 0 20px 20px;
+    padding: 0px 0 0px 20px;
+    width: 500px;
     border-left: 1px solid #B59637;
     font-style: italic;
 }
 
 .white-impact-border {
-    height: 1px;
+    height: 2px;
     width: 100%;
     background-color: #777777;
     margin: 15px 0;
+    opacity: 0.2;
 }
 
 .moss-impact-border {
