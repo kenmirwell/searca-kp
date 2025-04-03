@@ -8,7 +8,7 @@
     $components_index =  get_query_var('component_index');
 ?>
 
-<div class="block w-[100%] md:w-auto h-[370px] xl:h-[435px] rounded-[20px] group component-<?php echo $components_index; ?>">
+<div class="component-item-element block w-[100%] md:w-auto h-[370px] xl:h-[435px] rounded-[20px] group component-<?php echo $components_index; ?>">
     <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] w-[100%] md:w-[250px] xl:w-[300px] rounded-3xl overflow-hidden">
          <div class="p-[20px] z-[2]">
             <div class="text-display-16 xl:text-display-18 font-bold pt-[10px] text-[#ffffff]">

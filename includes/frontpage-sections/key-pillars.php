@@ -1,6 +1,6 @@
 <div class="py-[80px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
+        <div class="simple-header flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
             <div class="text-left w-[100%] lg:w-[50%]">
                 <h6 class="text-display-24 md:text-display-42 text-[#1f1f1f] pb-[10px] font-bold">Key pillars of our work</h6>
                 <p class="text-display-12 md:text-display-16">The foundation of our work, driving collaboration, research, and sustainable solutions in agriculture, forestry, and natural resource management.</p>
@@ -16,7 +16,6 @@
 
                 if ($components->have_posts()) {
                     while ($components->have_posts()){
-                
                         $components->the_post();
                         $logo_url = get_field("component_logo");
                         $card_color = get_field("component_color");

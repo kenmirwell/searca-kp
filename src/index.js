@@ -8,6 +8,7 @@ import KmFilterAcc from "../modules/KmFilterAcc ";
 import KmFilter from "../modules/KmFilter";
 import AgdomTransition from "../modules/AgdomImageTransition";
 import CustomVideoButton from "../modules/VideoFunc";
+import GsapControls from "../modules/Gsap";
 // import MouseOverFunc from "../modules/MouseOverFunc";
 
 
@@ -23,7 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const knFilter  = new KmFilter();
     const agdomImageTransition = new AgdomTransition();
     const customVideoButton = new CustomVideoButton();
+    const gsapControls = new GsapControls();
     // const mousehover = new MouseOverFunc();
+
+    gsapControls.heroSlider();
+    gsapControls.heroSection();
+    gsapControls.commonHeroAnimation();
+    gsapControls.commonTwoColumn();
+    gsapControls.boxedThreeColumn();
 
     document.getElementById("contactus-header-button").addEventListener("click", function() {
         document.getElementById("footer").scrollIntoView({ behavior: "smooth" });
@@ -104,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     homeResourceSearch.handleSearch();
 
     window.onload = function() {
+        console.log("on load")
         const accElement = document.getElementById("answer-0");
         const accContainer = document.getElementById("answer-container-0");
         const accGroup = document.getElementById("faq-group-0");
@@ -165,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if(searchByTitle) {
            knFilter.handleKmSearchby();
         }
-        
+
     }
 
     window.handleFaqAccordion = function(elementId, containerId, headId, index) {

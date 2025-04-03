@@ -1,5 +1,5 @@
 <div class="bg-[#FFFFFF] pt-[50px] pb-[60px] lg:pb-[150px]">
-    <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
+    <div class="knowledge-resources opacity-[0] w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col xl:flex-row justify-between items-start gap-[20px] xl:items-end pb-[50px]">
             <div class="block md:flex w-[100%] justify-between items-center">
                 <div class="flex flex-col gap-[10px] w-[100%] lg:w-[60%] pb-[20px] md:pb-[0px]">

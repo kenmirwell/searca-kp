@@ -31,6 +31,9 @@
     include get_template_directory() . '/includes/functions/button-template-func.php'; //this is the same with get_stylesheet_directory
     include(get_stylesheet_directory() . '/includes/functions/button-func.php');
     // include get_template_directory() . '/includes/functions/button-func.php';
+    
+    //gsap
+    include(get_stylesheet_directory() . '/includes/functions/gsap.php');
 
     //shortcode
     include(get_stylesheet_directory() . '/includes/shortcodes/agpractices-shortcode.php');
@@ -124,6 +127,16 @@
 
         return false;
     });
+
+    function add_module_attribute($tag, $handle, $src) {
+        if ('gsap-custom' === $handle) { // Apply only to your script
+            return '<script type="module" src="' . esc_url($src) . '"></script>';
+        }
+        return $tag;
+    }
+    
+    add_filter('script_loader_tag', 'add_module_attribute', 10, 3);
+    
     
 
 

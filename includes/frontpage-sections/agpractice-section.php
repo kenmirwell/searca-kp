@@ -5,9 +5,9 @@
 <div class="relative">
     <div class="bg-[#096936] overflow-hidden">
         <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-            <div class="flex flex-col md:flex-row relative pt-[50px] py-[60px] justify-center gap-[20px] items-start">
+            <div class="ag-elements flex flex-col md:flex-row relative pt-[50px] py-[60px] justify-center gap-[20px] items-start">
                 <div class="w-[100%] pb-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
-                    <div class="w-[100%] xl:w-[50%]">
+                    <div class="ag-element-left opacity-[0] w-[100%] xl:w-[50%]">
                         <div class="hidden lg:block text-[#ffffff] w-[100%] text-display-24 md:text-display-42 font-bold">
                             <h2>Agpractices&Domains:</br> transforming agriculture</br> through data and innovation</h2>
                         </div>
@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="xl:absolute bottom-0 right-0 w-[100%] xl:w-[50%]">
+                <div class="ag-element-right opacity-[0] xl:absolute bottom-0 right-0 w-[100%] xl:w-[50%]">
                     <a href="/agricultural-data-tools/" class="flex justify-center p-[10px] lg:p-[20px] bg-[#2a7f3d] overflow-hidden rounded-t-xl">
                         <img class="w-full h-full object-cover" src="<?php echo esc_url($agpractices_image) ?>" alt="">
                     </a>

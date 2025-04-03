@@ -6,7 +6,7 @@
 
 <div class="py-[50px] lg:py-[100px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="flex flex-col-reverse md:flex-row lg:flex-col gap-[20px] md:gap-[0] items-center items-start">
+        <div class="comm-of-practice opacity-[0] flex flex-col-reverse md:flex-row lg:flex-col gap-[20px] md:gap-[0] items-center items-start">
             <div class="w-[100%]">
                 <div class="font-bold">
                     <h2 class="text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]">Community of practice:<br>Cultivating Conversations,</h2>

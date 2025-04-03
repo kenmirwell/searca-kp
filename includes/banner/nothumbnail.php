@@ -17,7 +17,7 @@
 ?>
 
 <div class="center-align slide-content h-[100%] w-[100%] relative n-thumbnail">
-    <div class="<?php echo esc_attr($items_alignment); ?> text-container w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
+    <div class="hero-text-element <?php echo esc_attr($items_alignment); ?> text-container w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
         <div class="<?php echo esc_attr($banner_alignment); ?> max-w-[780px] ">
             <h1 class=""><?php the_title(); ?></h1>
         </div>

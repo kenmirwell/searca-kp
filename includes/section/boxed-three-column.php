@@ -1,4 +1,4 @@
-<div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
+<div class="boxed-three-column w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
     <?php if (have_rows('boxed_three_column_section')): ?>
         <?php while (have_rows('boxed_three_column_section')): the_row(); ?>
             <div class="text-left flex flex-col gap-[10px] pb-[20px]">
@@ -8,7 +8,7 @@
             <?php if (have_rows('thumbnail_section')): ?>
                 <div class="flex flex-col lg:flex-row gap-[40px] lg:gap-[20px] items-center justify-between">
                     <?php while (have_rows('thumbnail_section')): the_row(); ?>
-                        <div class="flex flex-col gap-[10px] lg:gap-[20px] justify-between items-start text-left w-[100%]">
+                        <div class="boxed-item opacity-[0] flex flex-col gap-[10px] lg:gap-[20px] justify-between items-start text-left w-[100%]">
                             <div class="rounded-lg w-[35px] lg:w-[40px] overflow-hidden">
                                 <img
                                     class="w-full h-full object-cover z-[0]" 
