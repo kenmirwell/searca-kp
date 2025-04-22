@@ -7,10 +7,10 @@
     <div>
         <?php get_template_part("includes/section/common-hero"); ?>
         <div class="bg-[#ffffff] py-[100px]">
-            <div class="flex relative w-[100%] lg:w-[1024px] xl:w-[1280px] mx-auto h-[100%]">
-                <div class="flex w-[100%] lg:w-[800px] lg:ml-[10%] h-[100%] py-[20px] z-[1]">
+            <div class="flex relative justify-center w-[100%] lg:w-[1024px] xl:w-[1280px] mx-auto h-[100%]">
+                <div class="flex w-[100%] h-[100%] py-[20px] z-[1]">
                     <div class="w-[500px] lg:w-[800px] flex justify-center mx-auto relative">
-                        <div class="relative w-[500px] lg:w-[800px] h-[600px] mx-auto">
+                        <div class="relative w-[600px] lg:w-[800px] h-[600px] mx-auto">
                             <?php 
                                 $countries = new WP_Query(array(
                                     "post_type" => "country-profile",
@@ -28,7 +28,7 @@
                                     <img id="map-<?php the_title(); ?>" class="map-<?php echo $country_index; ?> absolute top-0 left-0 w-[100%] transition-all duration-300 ease-in-out" src="<?php echo esc_url($image_url); ?>" alt="">
                             <?php } }?>
                         </div>
-                        <div id="map-container" class="absolute top-0 w-[500px] lg:w-[800px] h-[600px] mx-auto">
+                        <div id="map-container" class="absolute top-0 w-[600px] lg:w-[800px] h-[600px] mx-auto">
                             <?php 
                                 $countries = new WP_Query(array(
                                     "post_type" => "country-profile",
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hidden lg:block absolute w-[100%] top-0 right-0 flex flex-col gap-[20px] text-[#000000] z-[0] w-[500px]">
+                <div class="hidden lg:block absolute w-[100%] top-[-50px] right-0 flex flex-col gap-[20px] text-[#000000] z-[0] w-[500px]">
                     <h2 class="text-display-42 font-bold text-left">Explore South East Asian Counties</h2>
                     <p class="text-left">A dedicated digital space where members can engage in discussions, share research insights, and collaborate on agricultural solutions.</p>
                 </div>
