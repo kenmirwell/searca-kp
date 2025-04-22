@@ -824,6 +824,10 @@ video {
   margin-bottom: 20px;
 }
 
+.ml-\[10\%\] {
+  margin-left: 10%;
+}
+
 .ml-\[30px\] {
   margin-left: 30px;
 }
@@ -2413,10 +2417,6 @@ video {
   opacity: 0.90;
 }
 
-.opacity-0 {
-  opacity: 0;
-}
-
 .opacity-\[0\] {
   opacity: 0;
 }
@@ -2766,6 +2766,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:ml-\[10\%\] {
+    margin-left: 10%;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -2832,6 +2836,10 @@ video {
 
   .lg\:w-\[80\%\] {
     width: 80%;
+  }
+
+  .lg\:w-\[800px\] {
+    width: 800px;
   }
 
   .lg\:flex-row {

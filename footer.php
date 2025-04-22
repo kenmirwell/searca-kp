@@ -7,7 +7,7 @@
             <?php
                 button_template('common-button', array(
                     'title' => "Explore Country Profiles",
-                    'url' => "#",
+                    'url' => "/agricultural-statistics-data",
                     'color' => 'gold_to_green'
                 ))
             ?>
@@ -19,7 +19,7 @@
             <?php
                 button_template('common-button', array(
                     'title' => "Join Now",
-                    'url' => "#",
+                    'url' => "/agricultural-statistics-data",
                     'color' => 'gold_to_green'
                 ))
             ?>

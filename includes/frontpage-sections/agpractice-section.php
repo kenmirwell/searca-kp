@@ -43,8 +43,8 @@
                             <?php
                                 button_template('common-button', array(
                                     'title' => "Explore the platform",
-                                    'url' => "#",
-                                    'color' => 'gold_to_green'
+                                    'url' => "/agricultural-digital-tools",
+                                    'color' => 'gold_to_white'
                                 ))
                             ?>
                         </div>
