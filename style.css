@@ -958,6 +958,13 @@ select {
     font-weight: 600;
 }
 
+.active-topic-button {
+    background-color: #cbe0d5; /* blue-600 */
+    font-weight: bold;
+}
+
+
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

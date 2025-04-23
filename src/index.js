@@ -37,6 +37,43 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("footer").scrollIntoView({ behavior: "smooth" });
     });
 
+    
+    const sections = document.querySelectorAll('[id^="topic-"]'); // all sections with id like topic-1, topic-2...
+    const buttons = {};
+
+    // Add click listeners
+    sections.forEach((section, index) => {
+        const id = section.id;
+        const button = document.getElementById(`${id}-button`);
+        if (button) {
+            buttons[id] = button;
+
+            button.addEventListener("click", function () {
+                section.scrollIntoView({ behavior: "smooth" });
+            });
+        }
+    });
+
+    // Scroll event to highlight the active button
+    window.addEventListener("scroll", () => {
+        let currentSection = null;
+
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                currentSection = section.id;
+            }
+        });
+
+        // Highlight only the active button
+        for (const id in buttons) {
+            if (id === currentSection) {
+                buttons[id].classList.add("active-topic-button");
+            } else {
+                buttons[id].classList.remove("active-topic-button");
+            }
+        }
+    });
 
     if(window.location.search.includes('error_registration=true')) {
         const emailValidation = document.getElementsByClassName("email-validation");
