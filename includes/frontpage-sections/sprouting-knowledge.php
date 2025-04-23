@@ -9,7 +9,7 @@
         <div class="comm-of-practice opacity-[0] flex flex-col-reverse md:flex-row lg:flex-col gap-[20px] md:gap-[0] items-center items-start">
             <div class="w-[100%]">
                 <div class="font-bold">
-                    <h2 class="text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]">Community of practice:<br>Cultivating Conversations,</h2>
+                    <h2 class="text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]">Community of practice:<br>Cultivating Conversations</h2>
                 </div>
                 <div class="block md:hidden pb-[30px] text-[14px] md:text-[16px] w-[100%]">
                     <p>Become part of discussions and build our community. Join a vibrant network of agricultural</br> professionals, researchers, and stakeholders dedicated to driving sustainable change in Southeast Asia.</p>

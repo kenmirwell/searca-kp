@@ -660,6 +660,11 @@ select {
     font-weight: 300;
 }
 
+
+.sea-content > p {
+    font-weight: 300;
+}
+
 .hide-header {
     transform: translateY(-100%);
 }

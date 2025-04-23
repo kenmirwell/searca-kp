@@ -9,10 +9,10 @@
                 <div class="w-[100%] pb-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
                     <div class="ag-element-left opacity-[0] w-[100%] xl:w-[50%]">
                         <div class="hidden lg:block text-[#ffffff] w-[100%] text-display-24 md:text-display-42 font-bold">
-                            <h2>Agpractices&Domains:</br> transforming agriculture</br> through data and innovation</h2>
+                            <h2>Agpractices&Domains:</br> Transforming agriculture</br> through data and innovation</h2>
                         </div>
                         <div class="block lg:hidden text-[#ffffff] w-[100%] text-display-24 md:text-display-42 font-bold">
-                            <h2>Agpractices&Domains: transforming agriculture through data and innovation</h2>
+                            <h2>Agpractices&Domains: Transforming agriculture through data and innovation</h2>
                         </div>
                         <div class="flex flex-col gap-[20px] pt-[20px]">
                             <div class="text-[#ffffff] w-[100%] font-light md:font-normal text-[12px] lg:text-[16px]">

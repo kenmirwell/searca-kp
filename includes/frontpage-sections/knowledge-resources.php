@@ -3,8 +3,8 @@
         <div class="flex flex-col xl:flex-row justify-between items-start gap-[20px] xl:items-end pb-[50px]">
             <div class="block md:flex w-[100%] justify-between items-center">
                 <div class="flex flex-col gap-[10px] w-[100%] lg:w-[60%] pb-[20px] md:pb-[0px]">
-                    <h2 class="hidden md:block text-[#1f1f1f] text-display-22 xl:text-display-42 font-[700]">Knowledge resources</br> empowering informed decisions</h2>
-                    <h2 class="block md:hidden text-[#1f1f1f] text-display-22 xl:text-display-42 font-[700]">Knowledge resources empowering informed decisions</h2>
+                    <h2 class="hidden md:block text-[#1f1f1f] text-display-22 xl:text-display-42 font-[700]">Knowledge resources</br> Empowering informed decisions</h2>
+                    <h2 class="block md:hidden text-[#1f1f1f] text-display-22 xl:text-display-42 font-[700]">Knowledge resources Empowering informed decisions</h2>
                     <p>Access a wealth of research, data, and best practices to support informed decision-making in agriculture, forestry, and natural resource management.</p>
                 </div>
                 <!-- <div class="flex">

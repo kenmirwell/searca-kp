@@ -71,7 +71,7 @@ while (have_posts()) {
         <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
             <div class="text-[#ffffff] flex flex-col items-center justify-center">
                 <h2 class="text-[42px] font-bold">Quick Facts</h2>
-                <h6 class="flex text-[18px] justify-center items-center text-center w-[50%]">Agriculture plays a vital role in the Philippine economy, contributing significantly to employment and GDP.</h6>
+                <h6 class="flex text-[18px] justify-center items-center text-center w-[50%]"><?php echo $qf_desc ?></h6>
             </div>
             <div class="pt-[20px]">
                 <?php if (have_rows('quick_facts')): ?>

@@ -72,7 +72,111 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="bg-[#096936] py-[100px]">
+            <?php 
+                $qf_desc = get_field('quick_facts_description');
+            ?>
+            <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
+                <div class="text-[#ffffff] flex flex-col items-center justify-center">
+                    <h2 class="text-[42px] font-bold">Southeast Asia’s Agricultural Quick Facts</h2>
+                    <h6 class="flex text-[18px] justify-center items-center text-center w-[50%]"><?php echo $qf_desc ?></h6>
+                </div>
+                <div class="pt-[50px]">
+                    <?php if (have_rows('quick_facts')): ?>
+                        <div class="flex justify-between">
+                            <?php while (have_rows('quick_facts')): the_row(); ?>
+                                <div class="flex flex-col text-center justify-center items-center">
+                                    <img class="w-[56px] h-[56px]" src="<?php echo esc_url(get_sub_field('fact_icon')); ?>" alt="">
+                                    <h6 class="text-[#ceab23] font-bold text-[22px]"><?php the_sub_field('fact_figure'); ?></h6>
+                                    <p class="text-[#ffffff] pb-[10px] text-[14px]"><?php the_sub_field('fact'); ?></p>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <div class="py-[50px]">
+            <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
+                <div class="flex flex-row-reverse gap-[20px]">
+                    <div class="w-[30%] sticky top-[0px] h-[700px] pl-[20px] pb-[50px]">
+                        <ul class="flex flex-col gap-[20px] text-[16px] pb-[20px] border-b-[1px]">
+                            <li class="cursor-pointer">Geographic Profile</li>
+                            <li class="cursor-pointer">Demographic Profile</li>
+                            <li class="cursor-pointer">Economic Profile</li>
+                            <li class="cursor-pointer">Main Products</li>
+                            <li class="cursor-pointer">Industry Profile</li>
+                        </ul>
+                        <div class="pt-[20px]">
+                            <p>Other South East Asian Countries</p>
+                            <div class="flex flex-wrap gap-[10px] pt-[20px]">
+                                <?php 
+                                    $countries = new WP_Query(array(
+                                        "post_type" => "country-profile",
+                                        "posts_per_page" => 11,
+                                        'order' => 'DESC',     
+                                    ));
+
+                                    if ($countries->have_posts()) {
+                                        while ($countries->have_posts()) {
+                                            $countries->the_post();
+                                            $country_index = (int) $countries->current_post;
+
+                                            $flag_url = get_field('flag');
+                                ?>
+                                    <a href="<?php echo get_permalink(); ?>" class="w-[40px]">
+                                        <img class="" src="<?php echo esc_url($flag_url); ?>" alt="">
+                                    </a>
+                                <?php 
+                                    } 
+                                } 
+                                wp_reset_postdata(); // Reset the query
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sea-content w-[70%] border-r-[1px] pr-[40px]">
+                        <div>
+                            <?php if (have_rows('background')): ?>
+                                <h2 class="text-[36px] font-bold pb-[20px]">Background</h2>
+                                <div class="flex flex-col gap-[10px]">
+                                    <?php while (have_rows('background')): the_row(); ?>
+                                        <p class="text-[#000000] pb-[10px] text-[14px]"><?php the_sub_field('paragraph'); ?></p>
+                                    <?php endwhile; ?>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <div>
+                            <?php if (have_rows('topics')): ?>
+                                <div class="flex flex-col gap-[10px]">
+                                    <?php while (have_rows('topics')): the_row(); ?>
+                                        <?php if (get_sub_field('topic_image')) : ?>
+                                            <div class="relative h-[500px] w-[100%] my-[20px]">
+                                                <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="<?php echo esc_url(get_sub_field('topic_image')); ?>" alt="">
+                                            </div>
+                                        <?php endif; ?>
+                                        <h2 class="text-[#000000] pb-[10px] text-[36px] font-bold"><?php the_sub_field('topic'); ?></h2>
+                                        <?php if (have_rows('content')): ?>
+                                            <div class="content-pertopic flex flex-col gap-[10px]">
+                                                <?php while (have_rows('content')): the_row(); ?>
+                                                    <h6 class="text-[#000000] pb-[10px] text-[22px] font-bold"><?php the_sub_field('sub_topic'); ?></h6>
+                                        
+                                                    <?php the_sub_field('content_editor'); ?>
+
+                                                <?php endwhile; ?>
+                                            </div>
+                                        <?php endif; ?>
+
+                                    <?php endwhile; ?>
+                                </div>
+                            <?php endif; ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div>
             <div class="w-[65%] sm:w-[640px] md:w-[768px] mx-auto py-[70px] font-light">
                 <div>
                     <div>
@@ -130,7 +234,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 <?php 
     }
