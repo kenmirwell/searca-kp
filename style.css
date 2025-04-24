@@ -83,12 +83,14 @@ p {
     text-align: left;
 }
 
-.primary-menu-mobile > .menu-item  {
+.primary-menu-mobile > .menu-item > a {
     position: relative;
+    display: block;
+    width: 100%;
     padding: 8px 0;
 }
 
-.primary-menu-mobile > .menu-item::after  {
+.primary-menu-mobile > .menu-item > a::after  {
     content: "";
     position: absolute;
     right: 0;
@@ -101,7 +103,13 @@ p {
     transform: rotate(-45deg) translateY(-40%)
 }
 
-.primary-menu-mobile-home::after {
+.primary-menu-mobile > .menu-item > .sub-menu > .menu-item  {
+    position: relative;
+    padding: 5px;
+    margin: 0 8px;
+}
+
+.primary-menu-mobile > .menu-item > .sub-menu > .menu-item::after  {
     content: "";
     position: absolute;
     right: 0;
@@ -118,10 +126,6 @@ p {
     position: relative;
     width: 100%;
     padding: 8px 0;
-}
-
-.primary-menu-mobile .sub-menu {
-    display: none;
 }
 
 .primary-menu {
@@ -928,7 +932,7 @@ select {
   
 .impact-item {
     padding: 0px 0 0px 20px;
-    width: 500px;
+    width: 400px;
     border-left: 1px solid #B59637;
     font-style: italic;
 }
@@ -1043,6 +1047,51 @@ select {
     .slide-container .center-align .text-container a {
        font-size: 12px;
     }
+
+    #country-Singapore {
+        left: 118px;
+        top: 44%;
+    }
+
+    #country-Brunei {
+        right: 49%;
+        top: 37%;
+    }
+
+    #country-Indonesia {
+        right: 49%;
+        top: 55%;
+    }
+
+    #country-Timor-Leste {
+        right: 146px;
+        bottom: 137px;
+    }
+
+    #country-Malaysia {
+        right: 75%;
+        top: 35%;
+    }
+
+    #country-Vietnam {
+        right: 66%;
+        top: 1%;
+    }
+
+    #country-Thailand {
+        left: 76px;
+        top: 7%;
+    }
+
+    #country-Laos {
+        right: 68%;
+        top: 10%;
+    }
+
+    #country-Cambodia {
+        right: 70%;
+        top: 20%;
+    }
 }
 
 @media (max-width: 768px) { 
@@ -1053,4 +1102,7 @@ select {
         letter-spacing: -0.24px;
     }
 
+    .impact-item {
+        width: 100%;
+    }
 }

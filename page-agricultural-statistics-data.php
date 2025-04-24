@@ -6,10 +6,10 @@
 ?>
     <div>
         <?php get_template_part("includes/section/common-hero"); ?>
-        <div class="bg-[#ffffff] py-[100px]">
-            <div class="flex relative justify-center w-[100%] lg:w-[1024px] xl:w-[1280px] mx-auto h-[100%]">
+        <div class="bg-[#ffffff] py-[100px] px-[20px] md:px-[0px]">
+            <div class="flex relative justify-center overflow-x-scroll md:overflow-x-visible w-[100%] lg:w-[1024px] xl:w-[1280px] mx-auto h-[100%] ">
                 <div class="flex w-[100%] h-[100%] py-[20px] z-[1]">
-                    <div class="w-[500px] lg:w-[800px] flex justify-center mx-auto relative">
+                    <div class="w-[600px] lg:w-[800px] flex justify-center mx-auto relative">
                         <div class="relative w-[600px] lg:w-[800px] h-[600px] mx-auto">
                             <?php 
                                 $countries = new WP_Query(array(

@@ -1357,6 +1357,14 @@ video {
   overflow: hidden;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
 .overflow-y-scroll {
   overflow-y: scroll;
 }
@@ -1921,11 +1929,6 @@ video {
   padding-bottom: 60px;
 }
 
-.py-\[70px\] {
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-
 .py-\[7px\] {
   padding-top: 7px;
   padding-bottom: 7px;
@@ -2325,11 +2328,6 @@ video {
   color: rgb(206 171 35 / var(--tw-text-opacity));
 }
 
-.text-\[\#f7d671\] {
-  --tw-text-opacity: 1;
-  color: rgb(247 214 113 / var(--tw-text-opacity));
-}
-
 .text-\[\#ffffff\] {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -2533,14 +2531,14 @@ video {
   background-color: rgb(247 247 247 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-\[\#ffefbe\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 239 190 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-\[\#cbe0d5\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(203 224 213 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#ffefbe\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 239 190 / var(--tw-bg-opacity));
 }
 
 .hover\:font-\[600\]:hover {
@@ -2602,11 +2600,6 @@ video {
 .group:hover .group-hover\:bg-\[\#ffffff\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.group:hover .group-hover\:bg-\[\#cbe0d5\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 224 213 / var(--tw-bg-opacity));
 }
 
 .group:hover .group-hover\:text-\[\#000000\] {
@@ -2702,6 +2695,10 @@ video {
     gap: 0px;
   }
 
+  .md\:overflow-x-visible {
+    overflow-x: visible;
+  }
+
   .md\:rounded-xl {
     border-radius: 0.75rem;
   }
@@ -2714,6 +2711,11 @@ video {
   .md\:py-\[50px\] {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+
+  .md\:px-\[0px\] {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .md\:pb-\[0px\] {
@@ -2894,6 +2896,10 @@ video {
 
   .lg\:gap-\[80px\] {
     gap: 80px;
+  }
+
+  .lg\:overflow-x-visible {
+    overflow-x: visible;
   }
 
   .lg\:p-\[20px\] {
