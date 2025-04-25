@@ -107,6 +107,7 @@ p {
     position: relative;
     padding: 5px;
     margin: 0 8px;
+    
 }
 
 .primary-menu-mobile > .menu-item > .sub-menu > .menu-item::after  {
@@ -126,6 +127,10 @@ p {
     position: relative;
     width: 100%;
     padding: 8px 0;
+}
+
+.primary-menu-mobile > .menu-item > .sub-menu > li > a {
+    font-size: 14px;
 }
 
 .primary-menu {
@@ -168,7 +173,6 @@ p {
 
 .primary-menu .sub-menu li {
     padding: 5px 15px;
-    font-size: 14px;
     width: 100%;
 }
 
