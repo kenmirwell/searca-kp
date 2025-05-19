@@ -16,8 +16,8 @@
     <div>
         <div class="bg-[#196129] relative">
             <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pt-[140px] pb-[125px] font-light">
-                <div class="flex justify-between items-center">
-                    <div class="w-[50%]">
+                <div class="flex flex-col gap-[100px] lg:gap-[0px] lg:flex-row justify-between items-center">
+                    <div class="w-[100%] lg:w-[50%]">
                         <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight">
                             <div class="flex gap-[10px] items-center py-[10px] px-[15px] rounded-full border-[1px] border-[#EBEBEB82]">
                                 <div class="h-[10px] w-[10px] bg-[#F7D671] rounded-full"></div>
@@ -29,8 +29,8 @@
                         </div>
                         <div class="text-[16px] font-extralight flex gap-[20px] text-[#ffffff]"><?php the_content(); ?></div>
                     </div>
-                    <div class="w-[50%]">
-                        <div class="w-[50%] h-[400px] swiper mySwiper">
+                    <div class="w-[100%] lg:w-[50%]">
+                        <div class="ml-[0px] lg:m-auto w-[80%] md:w-[50%] h-[400px] swiper mySwiper">
                             <div id="swiper-wrapper" class="swiper-wrapper">
                             <?php
                                 $knowledge_management = new WP_Query(array(
@@ -62,7 +62,7 @@
                                                     }
                                                 ?>
                                         </div>
-                                        <div class="text-[#000000] text-[16px] font-[600] pt-[10px] pb-[10px]">
+                                        <div class="text-[#000000] h-[55px] overflow-hidden text-[16px] font-[600] pt-[10px] pb-[10px]">
                                             <?php
                                                 $text = get_the_title(); // Get the title as a string
                                                 $limit = 70;
@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="absolute bottom-[0px]">
-                <svg width="1116" height="255" viewBox="0 0 1116 255" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg width="100%" height="255" viewBox="0 0 1116 255" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <rect width="1116" height="255" fill="url(#pattern0_1387_9067)"/>
                     <defs>
                     <pattern id="pattern0_1387_9067" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -283,8 +283,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] relative mx-auto flex justify-between gap-[40px]">
-                    <div class="w-[20%] z-[9] bg-[#ffffff] sticky top-[50px] h-[600px]">
+                <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] relative mx-auto flex flex-col lg:flex-row justify-between gap-[40px]">
+                    <div class="w-[20%] hidden lg:block z-[9] bg-[#ffffff] sticky top-[50px] h-[600px]">
                         <!-- <form method="get" action=""> -->
                             <div class="flex gap-[20px] w-[100%] pb-[20px] items-center">
                                 <button class="flex justify-center text-[14px] py-[10px] px-[10px] bg-[#196129] hover:bg-[#00b127] text-[#ffffff] w-[100%] text-left rounded-md" type="submit">Apply Filter</button>
@@ -394,7 +394,116 @@
                         <!-- </form> -->
                     </div>
                     
-                    <div class="flex flex-wrap w-[80%] gap-[30px] relative justify-right">
+                    <div class="w-[100%] block lg:hidden z-[9] bg-[#ffffff] h-auto">
+                        <!-- <form method="get" action=""> -->
+                            <div class="flex gap-[20px] w-[100%] pb-[20px] items-center">
+                                <button class="flex justify-center text-[14px] py-[10px] px-[10px] bg-[#196129] hover:bg-[#00b127] text-[#ffffff] w-[100%] text-left rounded-md" type="submit">Apply Filter</button>
+                                <a href="<?php echo esc_url(remove_query_arg(array('searchby-keyword', 'searchby-title', 'km_category', 'research_author', 'country', 'published_date'))); ?>" class="reset-button">
+                                    <svg width="28" height="20" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M46 3.99917V15.9992M46 15.9992H34M46 15.9992L36.72 7.27917C34.5705 5.1286 31.9113 3.55759 28.9904 2.71272C26.0695 1.86786 22.9822 1.77668 20.0166 2.44769C17.0509 3.1187 14.3036 4.53004 12.0309 6.55001C9.75827 8.56998 8.03434 11.1327 7.02 13.9992M2 35.9992V23.9992M2 23.9992H14M2 23.9992L11.28 32.7192C13.4295 34.8697 16.0887 36.4408 19.0096 37.2856C21.9305 38.1305 25.0178 38.2217 27.9834 37.5507C30.9491 36.8796 33.6964 35.4683 35.9691 33.4483C38.2417 31.4284 39.9657 28.8656 40.98 25.9992" stroke="#B3B3B3" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <?php 
+                            $filter_group = array(
+                                array( 'key' => 'Type', 'value' => 'km_category', 'index' => 0),
+                                array( 'key' => 'Author', 'value' => 'research_author', 'index' => 1),
+                                array( 'key' => 'Country', 'value' => 'country', 'index' => 2),
+                                array( 'key' => 'Date', 'value' => 'published_date', 'index' => 3)
+                            );
+                            ?>
+
+                            <?php foreach ($filter_group as $filter): ?>
+                                <?php if ($filter['key'] !== 'Date'): ?>
+                                    <div id="km-side-filter-group-<?php echo $filter['index']; ?>" class="py-[10px] border-b-[1px]">
+                                        <div 
+                                            id="km-side-filter-head-<?php echo $filter['index']; ?>" 
+                                            class="flex justify-between items-center"
+                                            onclick="handleKmFilterAccordion('km-side-filter-content-<?php echo $filter['index']; ?>', 'km-side-filter-group-<?php echo $filter['index']; ?>', <?php echo $filter['index']; ?>)"   
+                                        >
+                                            <p class="text-[16px]"><?php echo esc_html($filter['key']); ?></p>
+                                            <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div id="km-side-filter-container-<?php echo $filter['index']; ?>" class="overflow-y-scroll pr-[20px] scrollbar-custom transition-all duration-200 ease"  style="height: 0;" >
+                                            <div id="km-side-filter-content-<?php echo $filter['index']; ?>" class="flex flex-col">
+                                                <?php
+                                                    $taxonomy = $filter['value'];
+                                                    $categories = get_categories(array(
+                                                        'taxonomy'   => $taxonomy, 
+                                                        'hide_empty' => true,
+                                                    ));
+
+                                                    foreach ($categories as $category) {
+                                                        $checked = isset($_GET[$filter['value']]) && in_array($category->term_id, $_GET[$filter['value']]) ? 'checked' : '';
+                                                ?>
+                                                        <div class="flex gap-[10px] items-baseline">
+                                                            <input type="checkbox" name="<?php echo esc_attr($filter['value']); ?>[]" value="<?php echo esc_attr($category->term_id); ?>" <?php echo $checked; ?>>
+                                                            <p class="text-[14px]"><?php echo esc_html($category->name); ?></p>
+                                                        </div>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php else: ?>
+                                    <!-- Handle Published Date inside the loop -->
+                                    <div id="km-side-filter-group-<?php echo $filter['index']; ?>" class="py-[10px] border-b-[1px]">
+                                        <div 
+                                            id="km-side-filter-head-<?php echo $filter['index']; ?>" 
+                                            class="flex justify-between items-center"
+                                            onclick="handleKmFilterAccordion('km-side-filter-content-<?php echo $filter['index']; ?>', 'km-side-filter-group-<?php echo $filter['index']; ?>', <?php echo $filter['index']; ?>)" 
+                                        >
+                                            <p class="text-[16px]"><?php echo esc_html($filter['key']); ?></p>
+                                            <svg width="22" height="8" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M30 2L16 16L2 2" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <div id="km-side-filter-container-<?php echo $filter['index']; ?>" class="overflow-y-scroll pr-[20px] scrollbar-custom transition-all duration-200 ease"  style="height: 0;">
+                                            <div id="km-side-filter-content-<?php echo $filter['index']; ?>" class="flex flex-col">
+                                                <?php
+                                                    $unique_dates = [];
+                                                    $args = array(
+                                                        'post_type'      => 'knowledge-management', // Change this to your post type
+                                                        'posts_per_page' => -1,
+                                                        'meta_key'       => $filter['value'],
+                                                    );
+                                                    $query = new WP_Query($args);
+
+                                                    if ($query->have_posts()) {
+                                                        while ($query->have_posts()) {
+                                                            $query->the_post();
+                                                            // $date_value = get_post_meta(get_the_ID(), $filter['value'], true);
+                                                            // if (!empty($date_value) && !in_array($date_value, $unique_dates)) {
+                                                            //     $unique_dates[] = $date_value;
+                                                            // }
+                                                            $date_value = get_post_meta(get_the_ID(), $filter['value'], true);
+                                                            $year_value = substr($date_value, 0, 4); // Extract the year
+
+                                                            if (!empty($year_value)) {
+                                                                $unique_dates[$year_value] = $year_value; // Store only unique years as array keys
+                                                            }
+                                                        }
+                                                        wp_reset_postdata();
+                                                    }
+
+                                                    // Display checkboxes for unique dates
+                                                    foreach ($unique_dates as $date) {
+                                                        $checked = isset($_GET[$filter['value']]) && in_array($date, $_GET[$filter['value']]) ? 'checked' : '';
+                                                ?>
+                                                        <div class="flex gap-[10px] items-baseline">
+                                                            <input type="checkbox" name="<?php echo esc_attr($filter['value']); ?>[]" value="<?php echo esc_attr($date); ?>" <?php echo $checked; ?>>
+                                                            <p class="text-[14px]"><?php echo esc_html($date); ?></p>
+                                                        </div>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <!-- </form> -->
+                    </div>
+                    <div class="flex flex-wrap w-[100%] lg:w-[80%] gap-[30px] relative justify-right">
                         <?php                            
                             if ($knowledge_management->have_posts()) {
                                 while ($knowledge_management->have_posts()){
@@ -405,7 +514,7 @@
                                     
                                     $trimmed_author = mb_strimwidth($author_name, 0, 15, "..."); 
                         ?>
-                            <div class="flex flex-col w-[300px] rounded-full items-center group transition-all duration-200 ease cursor-pointer">
+                            <div class="flex flex-col w-[100%] lg:w-[300px] rounded-full items-center group transition-all duration-200 ease cursor-pointer">
                                 <div class="flex rounded-[15px] bg-[#ffffff] items-center w-[100%] h-[250px] overflow-hidden relative">
                                     <a href="<?php echo get_permalink() ?>">
                                         <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
