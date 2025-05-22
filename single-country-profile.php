@@ -33,7 +33,7 @@ while (have_posts()) {
     </style>
 
     <div class="relative h-[800px] flex jusitify-center">
-        <div class="flex items-center w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[150px] font-light z-[2]">
+        <div class="flex gap-[50px] items-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[150px] font-light z-[2]">
             <div class="w-[100%]">
                 <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight pb-[20px]">
                     <p class="cursor-pointer text-[#ffffff]"><a href="/">Home | Agricultural Statistics Data |</a></p>
@@ -51,7 +51,7 @@ while (have_posts()) {
                     ?>
                 </div>
             </div>
-            <div class="relative w-[100%] h-[100%]">
+            <div class="justify-center items-center w-[100%] h-[100%] hidden md:flex relative w-[100%] opacity-[0]">
                 <!-- <div class="featured-image-container absolute z-[1]"></div> 
                 <?php 
                     // if(!empty(get_the_post_thumbnail_url())) {
@@ -73,16 +73,16 @@ while (have_posts()) {
         ?>
         <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
             <div class="text-[#ffffff] flex flex-col items-center justify-center">
-                <h2 class="text-[42px] font-bold">Quick Facts</h2>
-                <h6 class="flex text-[18px] justify-center items-center text-center w-[50%]"><?php echo $qf_desc ?></h6>
+                <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[0px]">Quick Facts</h2>
+                <h6 class="flex text-display-14 lg:text-[18px] justify-center items-center xl:text-center w-[100%] lg:w-[50%]"><?php echo $qf_desc ?></h6>
             </div>
-            <div class="pt-[20px]">
+            <div class="pt-[50px]">
                 <?php if (have_rows('quick_facts')): ?>
-                    <div class="flex justify-between">
+                    <div class="flex flex-col gap-[50px] lg:flex-row justify-between">
                         <?php while (have_rows('quick_facts')): the_row(); ?>
                             <div class="flex flex-col text-center justify-center items-center">
-                                <img class="w-[100px] h-[100px]" src="<?php echo esc_url(get_sub_field('fact_icon')); ?>" alt="">
-                                <h6 class="text-[#ceab23] font-bold text-[32px]"><?php the_sub_field('fact_figure'); ?></h6>
+                                <img class="w-[56px] h-[56px]" src="<?php echo esc_url(get_sub_field('fact_icon')); ?>" alt="">
+                                <h6 class="text-[#ceab23] font-bold text-[22px]"><?php the_sub_field('fact_figure'); ?></h6>
                                 <p class="text-[#ffffff] pb-[10px] text-[14px]"><?php the_sub_field('fact'); ?></p>
                             </div>
                         <?php endwhile; ?>
