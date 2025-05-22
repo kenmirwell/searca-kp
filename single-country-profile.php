@@ -52,12 +52,15 @@ while (have_posts()) {
                 </div>
             </div>
             <div class="relative w-[100%] h-[100%]">
-                <div class="featured-image-container absolute z-[1]"></div> 
+                <!-- <div class="featured-image-container absolute z-[1]"></div> 
                 <?php 
-                    if(!empty(get_the_post_thumbnail_url())) {
-                ?>
-                    <div class="fadein-shape bg-[#B59637] absolute w-[280px] h-[200px] absolute top-[140px] left-[0] z-[0] rounded-xl" style="transform: rotate(80deg);"></div> 
-                <?php } ?>
+                    // if(!empty(get_the_post_thumbnail_url())) {
+                ?> -->
+                    <!-- <div class="fadein-shape bg-[#B59637] absolute w-[280px] h-[200px] absolute top-[140px] left-[0] z-[0] rounded-xl" style="transform: rotate(80deg);"></div>  -->
+                <?php //} ?>
+                <div class="image-element-container hidden md:flex relative w-[100%]">
+                    <img class="w-full z-[0]" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                </div>
             </div>
         </div>
         <div class="bg-gradient-to-r from-black/90 to-black/40 w-full h-full absolute top-0 left-0 z-[1]"></div>
