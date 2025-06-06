@@ -51,7 +51,7 @@ while (have_posts()) {
                     ?>
                 </div>
             </div>
-            <div class="justify-center items-center w-[100%] h-[100%] hidden md:flex relative w-[100%] opacity-[0]">
+            <div class="justify-center items-center w-[100%] h-[100%] hidden md:flex relative w-[100%]">
                 <!-- <div class="featured-image-container absolute z-[1]"></div> 
                 <?php 
                     // if(!empty(get_the_post_thumbnail_url())) {
@@ -59,14 +59,17 @@ while (have_posts()) {
                     <!-- <div class="fadein-shape bg-[#B59637] absolute w-[280px] h-[200px] absolute top-[140px] left-[0] z-[0] rounded-xl" style="transform: rotate(80deg);"></div>  -->
                 <?php //} ?>
                 <div class="image-element-container hidden md:flex relative w-[100%]">
-                    <img class="w-full z-[0]" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                    <img class="w-full z-[1]" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                 </div>
             </div>
         </div>
         <div class="bg-gradient-to-r from-black/90 to-black/40 w-full h-full absolute top-0 left-0 z-[1]"></div>
         <img class="absolute w-full h-full object-cover z-[0]" src="<?php echo esc_url($hero_background); ?>" alt="<?php the_title(); ?>">
     </div>
-    <?php if (strcasecmp(get_the_title(), "philippines") === 0): ?>
+    <?php 
+        // if (strcasecmp(get_the_title(), "philippines") === 0): 
+        if (have_rows('quick_facts')):
+    ?>
     <div class="bg-[#2a7f3d] py-[50px]">
         <?php 
             $qf_desc = get_field('quick_facts_description');
@@ -91,17 +94,11 @@ while (have_posts()) {
             </div>
         </div>
     </div>
-    <?php else: ?>
-        <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
-            <div class="h-[500px] flex justify-center">
-                <div class="flex flex-col gap-[20px] justify-center items-center">
-                    <h4 class="text-[36px]">We're Sorry, This Section is Unavailable</h4>
-                    <p class="">It seems this section is currently empty. You can return to <a class="text-[#2a7f3d] font-bold" href="https://cadre.searca.org/agricultural-statistics-data/">Agricultural Statistics Data</a> for more information.</p>
-                </div>
-            </div>
-        </div>
     <?php endif; ?>
-    <?php if (strcasecmp(get_the_title(), "philippines") === 0): ?>
+    <?php 
+        // if (strcasecmp(get_the_title(), "philippines") === 0): 
+        if (have_rows('background')):
+    ?>
     <div class="py-[50px]">
         <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
             <div class="flex flex-row-reverse gap-[20px]">
@@ -160,15 +157,21 @@ while (have_posts()) {
                         <?php if (have_rows('topics')): ?>
                             <div class="flex flex-col gap-[10px]">
                                 <?php while (have_rows('topics')): the_row(); ?>
-                                    <div class="relative h-[500px] w-[100%] my-[20px]">
-                                        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="<?php echo esc_url(get_sub_field('topic_image')); ?>" alt="">
-                                    </div>
-                                    <h2 class="text-[#000000] pb-[10px] text-[36px] font-bold"><?php the_sub_field('topic'); ?></h2>
-
+                                    <?php if(get_sub_field('topic_image')): ?>
+                                        <div class="relative h-[500px] w-[100%] my-[20px]">
+                                            <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="<?php echo esc_url(get_sub_field('topic_image')); ?>" alt="">
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if(get_sub_field('topic_image')): ?>
+                                        <h2 class="text-[#000000] pb-[10px] text-[36px] font-bold"><?php the_sub_field('topic'); ?></h2>
+                                    <?php else: ?>
+                                        <!-- this gives PADDING-TOP of 50PX when there is no image -->
+                                        <h2 class="text-[#000000] pt-[50px] text-[36px] font-bold"><?php the_sub_field('topic'); ?></h2>
+                                    <?php endif;?>
                                     <?php if (have_rows('content')): ?>
                                         <div class="content-pertopic flex flex-col gap-[10px]">
                                             <?php while (have_rows('content')): the_row(); ?>
-                                                <h6 class="text-[#000000] pb-[10px] text-[22px] font-bold"><?php the_sub_field('sub_topic'); ?></h6>
+                                                <h6 class="text-[#000000] pt-[10px] text-[22px] font-bold"><?php the_sub_field('sub_topic'); ?></h6>
                                     
                                                 <?php the_sub_field('content_editor'); ?>
 
@@ -185,6 +188,16 @@ while (have_posts()) {
             </div>
         </div>
     </div>
+    <?php endif; ?>
+    <?php if(!have_rows('background') && !have_rows('quick_facts')): ?>
+        <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
+            <div class="h-[500px] flex justify-center">
+                <div class="flex flex-col gap-[20px] justify-center items-center">
+                    <h4 class="text-[36px]">We're Sorry, This Section is Unavailable</h4>
+                    <p class="">It seems this section is currently empty. You can return to <a class="text-[#2a7f3d] font-bold" href="https://cadre.searca.org/agricultural-statistics-data/">Agricultural Statistics Data</a> for more information.</p>
+                </div>
+            </div>
+        </div>
     <?php endif; ?>
 <?php 
 }

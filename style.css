@@ -453,6 +453,45 @@ p {
     justify-content: center;
 }
 
+.point-green {
+  list-style: disc inside;
+  color: inherit; /* keep normal text color */
+}
+
+.point-green li::marker {
+  color: #2a7f3d; /* bullet color only */
+}
+
+.point-black {
+  list-style: disc inside;
+  color: inherit; /* keep normal text color */
+}
+
+.point-black li::marker {
+  color: black; /* bullet color only */
+}
+
+strong > .green {
+    color: #2a7f3d; 
+}
+
+.custom-bullet {
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
 .numbered-list, .numbered {
     counter-reset: list-counter;
 }
