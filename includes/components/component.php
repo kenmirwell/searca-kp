@@ -9,16 +9,25 @@
 ?>
 
 <div class="component-item-element block w-[100%] md:w-auto h-[370px] xl:h-[435px] rounded-[20px] group component-<?php echo $components_index; ?>">
-    <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] w-[100%] md:w-[250px] xl:w-[300px] rounded-3xl overflow-hidden">
+    <a href="<?php echo esc_url($page_link); ?>" class="flex items-end relative h-[100%] w-[100%] md:w-[250px] xl:w-[400px] rounded-3xl overflow-hidden">
          <div class="p-[20px] z-[2]">
             <div class="text-display-16 xl:text-display-18 font-bold pt-[10px] text-[#ffffff]">
                 <h4><?php the_title()?></h4>
             </div>
-            <div id="comp-container-<?php echo get_the_ID(); ?>" class="hidden md:block component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff] max-h-0 group-hover:max-h-[500px] overflow-hidden transition-all duration-300 ease-in-out delay-150">
+            <div id="comp-container-<?php echo get_the_ID(); ?>" class="hidden md:block component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff]">
                 <?php echo $aspiring_outcome?>
             </div>
             <div id="comp-container-<?php echo get_the_ID(); ?>" class="block md:hidden component-text pt-[10px] font-extralight text-[10px] xl:text-[14px] text-[#ffffff]">
                 <?php echo $aspiring_outcome?>
+            </div>
+            <div class="max-h-0 group-hover:max-h-[200px] overflow-hidden transition-all duration-300 ease-in-out delay-150">
+                <?php
+                    get_button_data('button-template', array(
+                        'title' => 'Explore resources',
+                        'root_url' => "/knowledge-resources",
+                        'alignment' => "justify-start"
+                    ));
+                ?>
             </div>
         </div>
         <div class="bg-gradient-to-t from-black to-transparent w-[100%] h-[100%] absolute top-0 left-0 z-[1]"></div>
