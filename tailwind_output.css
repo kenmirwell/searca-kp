@@ -3106,6 +3106,10 @@ video {
     width: 400px;
   }
 
+  .xl\:w-\[330px\] {
+    width: 330px;
+  }
+
   .xl\:flex-row {
     flex-direction: row;
   }
