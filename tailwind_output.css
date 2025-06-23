@@ -1032,8 +1032,16 @@ video {
   height: 100vh;
 }
 
+.h-\[\] {
+  height: ;
+}
+
 .max-h-0 {
   max-height: 0px;
+}
+
+.max-h-\[300px\] {
+  max-height: 300px;
 }
 
 .w-\[100\%\] {
@@ -2572,6 +2580,10 @@ video {
 
 .group:hover .group-hover\:max-h-\[200px\] {
   max-height: 200px;
+}
+
+.group:hover .group-hover\:max-h-\[300px\] {
+  max-height: 300px;
 }
 
 .group:hover .group-hover\:scale-\[1\.1\] {
