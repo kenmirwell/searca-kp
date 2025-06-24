@@ -29,8 +29,8 @@
     </div>
     <?php get_template_part("includes/frontpage-sections/key-pillars"); ?>
     <?php 
-        get_template_part("includes/frontpage-sections/agpractice-section"); 
-        // get_template_part("includes/frontpage-sections/country-profile"); 
+        get_template_part("includes/frontpage-sections/agpractice-section");
+        // get_template_part("includes/frontpage-sections/country-profile");
     ?>
     <?php get_template_part("includes/frontpage-sections/sprouting-knowledge"); ?> 
     <?php get_template_part("includes/frontpage-sections/cadre-inaction"); ?>
