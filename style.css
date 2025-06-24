@@ -282,12 +282,6 @@ p {
     /* align-items: center; */
 }
 
-.banner-slider .slide-container .center-align .text-container p {
-    padding: 30px 0;
-    line-height: 1.5;
-    font-weight: 200;
-}
-
 .banner-slider .slide-container .center-align .text-container .wp-block-buttons {
     justify-content: center;
 }

@@ -28,7 +28,10 @@
         <?php get_template_part("includes/frontpage-sections/hero-section"); ?>
     </div>
     <?php get_template_part("includes/frontpage-sections/key-pillars"); ?>
-    <?php get_template_part("includes/frontpage-sections/agpractice-section"); ?>
+    <?php 
+        get_template_part("includes/frontpage-sections/agpractice-section"); 
+        // get_template_part("includes/frontpage-sections/country-profile"); 
+    ?>
     <?php get_template_part("includes/frontpage-sections/sprouting-knowledge"); ?> 
     <?php get_template_part("includes/frontpage-sections/cadre-inaction"); ?>
     <?php get_template_part("includes/frontpage-sections/knowledge-resources"); ?>
