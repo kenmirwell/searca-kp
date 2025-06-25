@@ -5,7 +5,7 @@
                 <div class="slide-container">
                     <div class="flex space-between gap-[30px] items-end slide-content h-full w-full relative y-thumbnail">
                         <div class="w-[80%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
-                            <div class="items-left gap-[20px] text-container ml-[0px] mr-auto w-[768px]">
+                            <div class="flex flex-col items-left gap-[20px] text-container ml-[0px] mr-auto w-[768px]">
                                 <div class="items-end">
                                     <h1 class="text-display-48"><?php echo get_sub_field('hero_banner_title'); ?></h1>
                                 </div>

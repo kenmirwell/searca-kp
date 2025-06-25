@@ -1,38 +1,77 @@
 <div class="flex relative">
-    <div class="w-[50%] bg-[#096936]">
-        <div class="flex flex-col w-[60%] mx-auto">
-            <div class="text-[#ffffff] w-[100%] text-display-24 md:text-display-42 font-bold">
-                <h2>Country Agri Profile</br> Across Southeast Asia</h2>
+    <!-- Left Side -->
+    <div class="w-[50%] bg-[#096936] flex items-center">
+        <div class="flex flex-col w-[80%] md:w-[650px] ml-auto mr-[0px] pr-[50px] py-[20px]">
+            <div class="border-b-[1px] border-[#D4D4D4] pb-[20px]">
+                <h2 class="text-white text-display-24 md:text-display-42 font-bold">
+                    Country Agri Profile<br>Across Southeast Asia
+                </h2>
+                <p class="text-white font-light md:font-normal text-[12px] lg:text-[16px] mt-[20px]">
+                    Explore key agricultural data, policy trends, and national strategies across all 11 Southeast Asian countries. These profiles offer a snapshot of progress, priorities, and opportunities for collaboration.
+                </p>
             </div>
-            <div class="flex flex-col gap-[20px] pt-[20px]">
-                <div class="text-[#ffffff] w-[100%] font-light md:font-normal text-[12px] lg:text-[16px]">
-                    <p class="font-[300]">Explore key agricultural data, policy trends, and national strategies across all 11 Southeast Asian countries. These profiles offer a snapshot of progress, priorities, and opportunities for collaboration.</p>
+            <div class="flex justify-between text-[#ffffff] py-[20px]">
+                <div class="flex flex-col gap-[10px]">
+                    <div class="flex gap-[5px]">
+                        <p>📊 </p>
+                        <p>Agri Performance Snapshots</p>
+                    </div>
+                    <div class="flex gap-[5px]">
+                        <p>🧭 </p>
+                        <p>Key Policy Milestones</p>
+                    </div>
+                    <div class="flex gap-[5px]">
+                        <p>🌾 </p>
+                        <p>Food, Climate & Rural Indicators</p>
+                    </div>
                 </div>
+                <div class="flex flex-col gap-[10px]">
+                    <div class="flex gap-[5px]">
+                        <p>🔍 </p>
+                        <p>Challenges & Opportunities</p>
+                    </div>
+                    <div class="flex gap-[5px]">
+                        <p>🤝 </p>
+                        <p>Regional & Cross-Country Insights</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-max">
+                <?php
+                    button_template('common-button', array(
+                        'title' => "Explore All Country Profiles",
+                        'url' => "/agricultural-statistics-data",
+                        'color' => 'gold_to_white'
+                    ))
+                ?>
             </div>
         </div>
     </div>
-    <div class="w-[50%] mx-auto">
-        <div class="flex w-[100%] h-[100%] py-[20px] z-[1]">
-            <div class="w-[600px] lg:w-[800px] flex justify-center mx-auto relative">
-                <div class="relative w-[600px] lg:w-[800px] h-[600px] mx-auto">
-                    <?php 
-                        $countries = new WP_Query(array(
-                            "post_type" => "country-profile",
-                            "posts_per_page" => 11,
-                            'order' => 'DESC',     
-                        ));
 
-                        if ($countries->have_posts()) {
-                            while ($countries->have_posts()) {
-                                $countries->the_post();
-                                $country_index = (int) $countries->current_post;
+    <div class="w-[50%] bg-[#F5F8FC] flex items-center justify-center relative">
+       <div class="w-[80%] mx-auto my-[40px]">
+            <!-- Shared container -->
+            <div class="relative w-full max-w-[800px]" style="aspect-ratio: 4 / 3;">
+                <!-- MAP IMAGES -->
+                <?php 
+                    $countries = new WP_Query(array(
+                        "post_type" => "country-profile",
+                        "posts_per_page" => 11,
+                        'order' => 'DESC',     
+                    ));
 
-                                $image_url = get_field('map');
-                    ?>
-                            <img id="map-<?php the_title(); ?>" class="map-<?php echo $country_index; ?> absolute top-0 left-0 w-[100%] transition-all duration-300 ease-in-out" src="<?php echo esc_url($image_url); ?>" alt="">
-                    <?php } }?>
-                </div>
-                <div id="map-container" class="absolute top-0 w-[600px] lg:w-[800px] h-[600px] mx-auto">
+                    if ($countries->have_posts()) {
+                        while ($countries->have_posts()) {
+                            $countries->the_post();
+                            $country_index = $countries->current_post;
+                            $image_url = get_field('map');
+                ?>
+                    <img id="map-<?php the_title(); ?>" 
+                        class="map-<?php echo $country_index; ?> absolute inset-0 w-full h-full object-contain transition-all duration-300 ease-in-out" 
+                        src="<?php echo esc_url($image_url); ?>" alt="">
+                <?php } } wp_reset_postdata(); ?>
+
+                <!-- <div id="map-container" class="absolute top-0 w-[600px] lg:w-[800px] h-[600px] mx-auto"> -->
                     <?php 
                         $countries = new WP_Query(array(
                             "post_type" => "country-profile",
@@ -60,15 +99,17 @@
                                     </svg>
                                 </div>
                             </div>
-                            <p class="absolute z-[0] text-[14px] font-[500] flex justify-start items-center py-[7px] ml-[30px] rounded-br-full rounded-tr-full  bg-[#ffffff] overflow-hidden transition-all duration-300 ease-in-out"><?php the_title(); ?></p>
+                            <p class="absolute w-max z-[0] text-[14px] font-[500] flex justify-start items-center py-[7px] ml-[30px] rounded-br-full rounded-tr-full  bg-[#ffffff] overflow-hidden transition-all duration-300 ease-in-out"><?php the_title(); ?></p>
                         </a>
                     <?php 
                         } 
                     } 
                     wp_reset_postdata(); // Reset the query
                     ?>
-                </div>
+                <!-- </div> -->
             </div>
-        </div>
+            
+       </div>
     </div>
+
 </div>
