@@ -1,16 +1,19 @@
 <div class="relative h-[500px] flex items-center overflow-hidden">
-    <div class="text-center w-[90%] flex flex-col md:w-[768px] mx-auto z-[3] relative text-[#ffffff] gap-[15px]">
+    <div class="items-center text-center w-[90%] flex flex-col justify-center md:w-[768px] mx-auto z-[3] relative text-[#ffffff] gap-[15px]">
         <?php if(!is_page("community-of-practice")): ?>
-        <h2 class="text-display-24 lg:text-display-48  font-bold italic">Explore Southeast Asia's agricultural landscapes</h2>
-        <p class="text-display-16 md:text-display-18 pb-[10px]">Southeast Asia feeds the world through agriculture that transforms lives across the region.</p>
-        <div class="flex justify-center">
-            <?php
-                button_template('common-button', array(
-                    'title' => "Explore Country Profiles",
-                    'url' => "/agricultural-statistics-data",
-                    'color' => 'gold_to_green'
-                ))
-            ?>
+        <h2 class="text-display-24 lg:text-display-48  font-bold italic">Stay Updated with the Research Bulletin</h2>
+        <p class="text-display-16 md:text-display-18 pb-[10px]">Get the latest policy insights, research highlights, and knowledge resources from across Southeast Asia delivered straight to your inbox.</p>
+        <div class="flex pl-[20px] py-[5px] pr-[5px] rounded-full items-center justify-between bg-[#ffffff] w-max">
+            <input class="p-[10px] text-[#000000]" type="text" placeholder="Email">
+            <div class="flex justify-center">
+                <?php
+                    button_template('common-button', array(
+                        'title' => "Subscribe",
+                        'url' => "/agricultural-statistics-data",
+                        'color' => 'green_to_gold'
+                    ))
+                ?>
+            </div>
         </div>
         <?php else: ?>
         <h2 class="text-[48px] font-bold italic">Join Our Community</h2>

@@ -8,7 +8,7 @@
 
         <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
             <?php if (!empty($title)): ?>
-                <p class="text-[#ffffff]"><?php echo esc_html($title); ?></p>
+                <p class="text-[#ffffff] w-max"><?php echo esc_html($title); ?></p>
             <?php endif; ?>
             <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

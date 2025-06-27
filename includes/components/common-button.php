@@ -14,9 +14,9 @@
     <?php endif; ?>
 
         <?php if (!empty($title)): ?>
-            <p class="<?php echo $color == 'gold_to_white' ? 'text-[#ffffff] group-hover:text-[#000000]' : 'text-[#ffffff]'?>"><?php echo esc_html($title); ?></p>
+            <p class="w-max <?php echo $color == 'gold_to_white' ? 'text-[#ffffff] group-hover:text-[#000000]' : 'text-[#ffffff]'?>"><?php echo esc_html($title); ?></p>
         <?php else: ?>
-            <p class="<?php echo $color == 'gold_to_white' ? 'text-[#ffffff] group-hover:text-[#000000]' : 'text-[#ffffff]'?>">Learn More</p>
+            <p class="w-max <?php echo $color == 'gold_to_white' ? 'text-[#ffffff] group-hover:text-[#000000]' : 'text-[#ffffff]'?>">Learn More</p>
         <?php endif; ?>
 
         <!-- <div class="<?php //echo $color == 'gold' ? 'bg-[#096936] group-hover:bg-[#B59637]' : 'bg-[#B59637] group-hover:bg-[#096936]'; ?> rounded-full p-[15px] transition-all duration-200 ease"> -->
