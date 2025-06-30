@@ -1,7 +1,7 @@
-<div class="flex relative">
+<div class="flex flex-col lg:flex-row relative">
     <!-- Left Side -->
-    <div class="w-[50%] bg-[#096936] flex items-center">
-        <div class="flex flex-col w-[80%] md:w-[650px] ml-auto mr-[0px] pr-[50px] py-[20px]">
+    <div class="w-[100%] lg:w-[50%] bg-[#096936] flex items-center">
+        <div class="flex flex-col w-[90%] lg:w-[650px] ml-auto lg:ml-auto mr-auto lg:mr-[0px] pr-[0px] lg:pr-[50px] py-[20px]">
             <div class="border-b-[1px] border-[#D4D4D4] pb-[20px]">
                 <h2 class="text-white text-display-24 md:text-display-42 font-bold">
                     Country Agri Profile<br>Across Southeast Asia
@@ -10,7 +10,7 @@
                     Explore key agricultural data, policy trends, and national strategies across all 11 Southeast Asian countries. These profiles offer a snapshot of progress, priorities, and opportunities for collaboration.
                 </p>
             </div>
-            <div class="flex justify-between text-[#ffffff] py-[20px]">
+            <div class="flex flex-col lg:flex-row justify-between text-[#ffffff] py-[20px] gap-[8px]">
                 <div class="flex flex-col gap-[10px]">
                     <div class="flex gap-[5px]">
                         <p>📊 </p>
@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div class="w-[50%] bg-[#F5F8FC] flex items-center justify-center relative">
+    <div class="w-[100%] lg:w-[50%] bg-[#F5F8FC] flex items-center justify-center relative">
        <div class="w-[80%] mx-auto my-[40px]">
             <!-- Shared container -->
             <div class="relative w-full max-w-[800px]" style="aspect-ratio: 4 / 3;">

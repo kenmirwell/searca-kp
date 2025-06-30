@@ -2143,6 +2143,10 @@ video {
   padding-top: 80px;
 }
 
+.pr-\[0px\] {
+  padding-right: 0px;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2881,6 +2885,14 @@ video {
     margin: auto;
   }
 
+  .lg\:ml-auto {
+    margin-left: auto;
+  }
+
+  .lg\:mr-\[0px\] {
+    margin-right: 0px;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -2955,6 +2967,18 @@ video {
 
   .lg\:w-\[800px\] {
     width: 800px;
+  }
+
+  .lg\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .lg\:w-\[650px\] {
+    width: 650px;
+  }
+
+  .lg\:w-\[768px\] {
+    width: 768px;
   }
 
   .lg\:flex-row {
@@ -3041,6 +3065,10 @@ video {
 
   .lg\:pt-\[30px\] {
     padding-top: 30px;
+  }
+
+  .lg\:pr-\[50px\] {
+    padding-right: 50px;
   }
 
   .lg\:text-\[14px\] {

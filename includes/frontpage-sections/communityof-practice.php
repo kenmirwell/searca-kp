@@ -4,12 +4,12 @@
 
 <div class="py-[50px] lg:py-[100px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="flex justify-center pb-[50px]">
+        <div class="flex flex-col lg:flex-row justify-center pb-[50px]">
             <div class="flex flex-col gap-[20px]">
                 <?php if($page) : ?>
                     <?php if (get_field("image_cards_container_title", $page->ID)) : ?>
                         <div class="font-bold">
-                            <h2 class="w-[500px] text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]"><?php echo get_field("image_cards_container_title", $page->ID); ?></h2>
+                            <h2 class="w-[100%] lg:w-[500px] text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]"><?php echo get_field("image_cards_container_title", $page->ID); ?></h2>
                         </div>
                     <?php endif; ?>
                 <?php endif; ?>
@@ -31,7 +31,7 @@
                 ?>
             </div>
         </div>      
-        <div class="flex gap-[50px] justify-between">
+        <div class="flex flex-col lg:flex-row gap-[50px] justify-between">
             <?php if (have_rows('image_cards', $page->ID)) : ?>
                 <?php while (have_rows('image_cards', $page->ID)) : the_row(); ?>
                     <!-- Loop through each row in the 'about_description' repeater -->
