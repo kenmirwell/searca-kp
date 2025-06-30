@@ -35,7 +35,7 @@
             <?php if (have_rows('image_cards', $page->ID)) : ?>
                 <?php while (have_rows('image_cards', $page->ID)) : the_row(); ?>
                     <!-- Loop through each row in the 'about_description' repeater -->
-                    <div class="flex flex-col gap-[10px] w-[33.33%] text-left border-t-[1px] border-[#C2C2C2] pt-[50px]">
+                    <div class="flex flex-col gap-[10px] w-[100%] md:w-[33.33%] text-left border-t-[1px] border-[#C2C2C2] pt-[50px]">
                         <img class="w-[50px]" src="<?php echo esc_url(get_sub_field('image_card_icon')); ?>" alt="">
                         <div class="text-left">
                             <h6 class="font-bold text-display-24 text-[#1f1f1f]"><?php echo esc_html(get_sub_field('image_card_title')); ?></h6>

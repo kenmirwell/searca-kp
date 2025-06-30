@@ -9,8 +9,8 @@
                                 <div class="items-end">
                                     <h1 class="text-display-48"><?php echo get_sub_field('hero_banner_title'); ?></h1>
                                 </div>
-                                <div class="items-end tracking-wide leading-relaxed">
-                                    <?php echo get_sub_field('hero_banner_sub'); ?>
+                                <div class="items-end tracking-wide leading-relaxed text-display-12 md:text-display-16">
+                                    <p><?php echo get_sub_field('hero_banner_sub'); ?></p>
                                 </div>
                                 <a id="slider-banner-button" href="<?php echo esc_url(get_sub_field('hero_banner_button_link')); ?>" class="w-auto cursor-pointer">
                                     <div class="items-center w-max flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#096936] group-hover:bg-[#B59637] transition-all duration-200 ease rounded-full">

@@ -27,7 +27,7 @@
                 <div class="w-[90%] lg:w-[50%] pb-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
                     <div class="w-full">
                         <?php if (!empty($inner_group['split_section_title'])) : ?>
-                            <div class="hidden lg:block text-[#1f1f1f] text-display-24 md:text-display-42 font-bold">
+                            <div class="text-[#1f1f1f] text-display-24 lg:text-display-42 font-bold">
                                 <h2><?php echo esc_html($inner_group['split_section_title']); ?></h2>
                             </div>
                         <?php endif; ?>

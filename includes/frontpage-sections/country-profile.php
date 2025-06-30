@@ -6,11 +6,11 @@
                 <h2 class="text-white text-display-24 md:text-display-42 font-bold">
                     Country Agri Profile<br>Across Southeast Asia
                 </h2>
-                <p class="text-white font-light md:font-normal text-[12px] lg:text-[16px] mt-[20px]">
+                <p class="text-white font-light md:font-normal text-display-12 md:text-display-16 mt-[20px]">
                     Explore key agricultural data, policy trends, and national strategies across all 11 Southeast Asian countries. These profiles offer a snapshot of progress, priorities, and opportunities for collaboration.
                 </p>
             </div>
-            <div class="flex flex-col lg:flex-row justify-between text-[#ffffff] py-[20px] gap-[8px]">
+            <div class="flex flex-col lg:flex-row justify-between text-[#ffffff] py-[20px] gap-[8px] text-display-12 md:text-display-16">
                 <div class="flex flex-col gap-[10px]">
                     <div class="flex gap-[5px]">
                         <p>📊 </p>
