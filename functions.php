@@ -50,7 +50,7 @@
     include(get_stylesheet_directory() . '/includes/custom-search-query/custom-search-query.php');
 
     //acf styling
-    // include(get_stylesheet_directory() . '/includes/functions/acf-style.php');
+    include(get_stylesheet_directory() . '/includes/functions/acf-style.php');
 
     add_action('init', 'theme_set_options');
 

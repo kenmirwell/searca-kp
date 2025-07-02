@@ -9,12 +9,16 @@
             </div>
             <div class="text-[#ffffff] flex flex-col gap-[20px]">
                 <h1 class="text-display-32 lg:text-display-48 font-bold"><?php echo esc_html(get_field("page_title")); ?></h1>
-                <p class="text-display-14 lg:text-display-16"><?php echo esc_html(get_the_content()); ?></p>
+                <?php if (have_rows('hero_description')) : ?>
+                    <?php while (have_rows('hero_description')) : the_row(); ?>
+                        <p class="text-display-14 lg:text-display-16"><?php echo esc_html(get_sub_field("paragraph")); ?></p>          
+                    <?php endwhile; ?>
+                <?php endif; ?> 
             </div>
             <div class="flex">
                 <?php
                     button_template('common-button', array(
-                        'title' => "Explore " . get_the_title(),
+                        'title' => get_field('button_name'),
                         'url' => "#",
                         'color' => 'gold_to_white'
                     ))
@@ -22,7 +26,7 @@
             </div>
         </div>
         <div class="image-element-container hidden md:flex relative w-[100%] opacity-[0]">
-            <img class="w-full z-[0]" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+            <img class="w-full z-[0]" src="<?php echo esc_url(get_field("featured_image")); ?>" alt="<?php the_title(); ?>">
         </div>
     </div>
     <div class="bg-[#096936] opacity-[0.90] w-full h-full absolute top-0 left-0 z-[1]"></div>
