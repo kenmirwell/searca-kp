@@ -36,7 +36,7 @@
                 <?php endif; ?> 
                 
                 <?php if (get_field("agri_policy_image", $page->ID)) : ?> 
-                    <div class="relative">
+                    <div class="relative w-full h-[400px]">
                         <img class="absolute w-full h-full object-cover" src="<?php echo get_field('agri_policy_image'); ?>" alt="searca image">
                     </div>
                 <?php endif; ?>    
