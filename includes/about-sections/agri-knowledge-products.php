@@ -1,4 +1,4 @@
-<div id="agri-featured-resources" class="h-auto">
+<div id="home-featured-resources" class="h-auto">
   <?php
       $knowledge_management = new WP_Query(array(
           "post_type" => "knowledge-management",
