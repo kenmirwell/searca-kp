@@ -1,8 +1,8 @@
 <?php 
-  $page = get_query_var('page');
-  $group = get_field('split_section', $page->ID);
+    $page_id = get_query_var('page_id');
+    $group = get_field('split_section', $page_id);
 
-  $inner_group = $group['split_section_title_description'] ?? null;
+    $inner_group = $group['split_section_title_description'] ?? null;
 ?>
 
 <div class="relative">
@@ -12,7 +12,7 @@
 
                 <!-- LEFT IMAGE COLUMN -->
                 <div class="w-[90%] lg:w-[50%]">
-                    <?php if ($page && !empty($group['split_section_image'])) : ?>
+                    <?php if ($page_id && !empty($group['split_section_image'])) : ?>
                         <div class="w-full">
                             <img 
                                 class="w-full h-full object-cover" 

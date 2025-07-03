@@ -10,7 +10,7 @@
 
         $page = get_page_by_title('Home');
 
-        set_query_var('page', $page);
+        set_query_var('page_id', $page->ID);
         set_query_var('root_url', $root_url);
         set_query_var('cadre_in_action_banner', $cadre_in_action_banner);
 ?>
