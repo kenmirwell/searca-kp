@@ -369,6 +369,12 @@ p {
     width: 100%
 }
 
+#agri-featured-resources .slick-track {
+    display: flex !important; 
+    gap: 20px !important;
+    width: 100%
+}
+
 .custom-logo-link {
     width: 150px;
 }
