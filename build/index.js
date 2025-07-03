@@ -1351,7 +1351,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   jQuery(document).ready(function ($) {
-    $('.featured-material-slider').slick({
+    $('.agri-featured-resources').slick({
       slidesToShow: 4,
       slidesToScroll: 1,
       autoplay: true,
