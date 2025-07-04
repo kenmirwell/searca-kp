@@ -1382,7 +1382,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // }
       ]
     });
-    $('.agri-featured-resources').slick({
+    $('#agri-featured-resources').slick({
       slidesToShow: 4,
       slidesToScroll: 1,
       autoplay: true,

@@ -334,8 +334,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     jQuery(document).ready(function($) {
-        $('#home-featured-resources').slick({
-            slidesToShow: 3,
+        $('#agri-featured-resources').slick({
+            slidesToShow: 4,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 5000,
@@ -344,11 +344,11 @@ document.addEventListener("DOMContentLoaded", function () {
             infinite: true,
             responsive: [
                 {
-                  breakpoint: 768,
-                  settings: {
+                    breakpoint: 768,
+                    settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                  }
+                    }
                 },
                 // {
                 //   breakpoint: 600,
@@ -366,9 +366,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // }
             ]
         });
-
-        $('.agri-featured-resources').slick({
-            slidesToShow: 4,
+        $('#home-featured-resources').slick({
+            slidesToShow: 3,
             slidesToScroll: 1,
             autoplay: true,
             autoplaySpeed: 5000,
@@ -377,11 +376,11 @@ document.addEventListener("DOMContentLoaded", function () {
             infinite: true,
             responsive: [
                 {
-                    breakpoint: 768,
-                    settings: {
+                  breakpoint: 768,
+                  settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    }
+                  }
                 },
                 // {
                 //   breakpoint: 600,
