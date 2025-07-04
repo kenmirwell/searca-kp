@@ -13,6 +13,7 @@ import GsapControls from "../modules/Gsap";
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("#agri-featured-resources", document.getElementById("agri-featured-resources"));
 
     const modalManager = new ModalManager();
     const homeResourceSearch = new HomeResourceSearch();

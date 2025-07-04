@@ -1087,6 +1087,7 @@ __webpack_require__.r(__webpack_exports__);
 // import MouseOverFunc from "../modules/MouseOverFunc";
 
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("#agri-featured-resources", document.getElementById("agri-featured-resources"));
   const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
   const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
   const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
@@ -1351,8 +1352,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   jQuery(document).ready(function ($) {
-    $('#home-featured-resources').slick({
-      slidesToShow: 3,
+    $('#agri-featured-resources').slick({
+      slidesToShow: 4,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 5000,
@@ -1382,8 +1383,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // }
       ]
     });
-    $('#agri-featured-resources').slick({
-      slidesToShow: 4,
+    $('#home-featured-resources').slick({
+      slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 5000,
