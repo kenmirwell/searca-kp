@@ -341,7 +341,7 @@ p {
     border-color: #196129; 
 }
 
-.featured-material-slider .slick-track{
+/* .featured-material-slider .slick-track{
     display: flex !important; 
     gap: 20px !important;
 }
@@ -361,7 +361,7 @@ p {
 
 .featured-material-slider .slick-dots li.slick-active button:before {
     color: #000000 !important;
-}
+} */
 
 #home-featured-resources .slick-track {
     display: flex !important; 
@@ -370,6 +370,12 @@ p {
 }
 
 #agri-featured-resources .slick-track {
+    display: flex !important; 
+    gap: 20px !important;
+    width: 100%
+}
+
+.featured-publications .slick-track {
     display: flex !important; 
     gap: 20px !important;
     width: 100%

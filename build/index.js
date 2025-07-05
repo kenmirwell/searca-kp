@@ -1414,6 +1414,24 @@ document.addEventListener("DOMContentLoaded", function () {
       // }
       ]
     });
+    $('.featured-publications').each(function () {
+      $(this).slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        dots: true,
+        arrows: false,
+        infinite: true,
+        responsive: [{
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }]
+      });
+    });
   });
 });
 /******/ })()

@@ -11,10 +11,10 @@
     ?>
 
     <?php get_template_part("includes/components/common-hero"); ?>
-    <?php get_template_part("includes/about-sections/agri-policy"); ?>
-    <?php get_template_part("includes/about-sections/agri-food-impact"); ?>
-    <?php get_template_part("includes/about-sections/agri-mission-vision"); ?>
-    <?php get_template_part("includes/about-sections/agri-knowledge-products"); ?>
+    <?php get_template_part("includes/sections/about-sections/agri-policy"); ?>
+    <?php get_template_part("includes/sections/about-sections/agri-food-impact"); ?>
+    <?php get_template_part("includes/sections/about-sections/agri-mission-vision"); ?>
+    <?php get_template_part("includes/sections/about-sections/agri-knowledge-products"); ?>
 <?php 
     }
     get_footer()

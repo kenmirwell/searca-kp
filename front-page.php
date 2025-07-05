@@ -15,15 +15,15 @@
         set_query_var('cadre_in_action_banner', $cadre_in_action_banner);
 ?>
     <div class="pt-[30px] md:pt-[70px]">
-        <?php get_template_part("includes/frontpage-sections/hero-section"); ?>
+        <?php get_template_part("includes/sections/frontpage-sections/hero-section"); ?>
     </div>
-    <?php get_template_part("includes/frontpage-sections/key-pillars"); ?>
-    <?php get_template_part("includes/frontpage-sections/country-profile");?>
-    <?php get_template_part("includes/frontpage-sections/knowledge-resources"); ?>
-    <?php get_template_part("includes/frontpage-sections/cadre-inaction"); ?>
-    <?php get_template_part("includes/frontpage-sections/capri-section"); ?>
-    <?php get_template_part("includes/frontpage-sections/communityof-practice"); ?> 
-    <?php get_template_part("includes/frontpage-sections/faq-section"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/key-pillars"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/country-profile");?>
+    <?php get_template_part("includes/sections/frontpage-sections/knowledge-resources"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/cadre-inaction"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/capri-section"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/communityof-practice"); ?> 
+    <?php get_template_part("includes/sections/frontpage-sections/faq-section"); ?>
 <?php 
     }
     get_footer();
