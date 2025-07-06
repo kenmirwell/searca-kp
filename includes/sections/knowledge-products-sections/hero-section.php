@@ -7,9 +7,6 @@
     } else {
         $hero_url = $hero_bg; // already a URL
     }
-    echo 'DEBUG: Page ID = ' . $page_id . '<br>';
-    echo 'Title: ' . get_the_title($page_id) . '<br>';
-    var_dump(get_field('hero_background', $page_id)); // I'm getting value here
 ?>
 
 <div class="common-hero-container relative h-[700px] xl:h-[800px] flex jusitify-center">

@@ -6,17 +6,16 @@
 ?>
 
 <div class="relative">
-    <div class="bg-[#F2FFF8] overflow-hidden">
+    <div class="bg-[#ffffff] overflow-hidden">
         <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-            <div class="flex flex-col-reverse md:flex-row relative pt-[50px] py-[60px] justify-center gap-[50px] items-center">
+            <div class="flex flex-col-reverse md:flex-row relative py-[100px] justify-start gap-[50px] items-start">
 
                 <!-- LEFT IMAGE COLUMN -->
                 <div class="w-[90%] lg:w-[50%]">
-                    <?php var_dump($page_id); ?>
                     <?php if ($page_id && !empty($group['split_section_image'])) : ?>
                         <div class="w-full">
                             <img 
-                                class="w-full h-full object-cover" 
+                                class="w-full h-full object-cover rounded-lg" 
                                 src="<?php echo esc_url($group['split_section_image']); ?>" 
                                 alt="split image"
                             >
@@ -25,7 +24,7 @@
                 </div>
 
                 <!-- RIGHT TEXT COLUMN -->
-                <div class="w-[90%] lg:w-[50%] pb-[20px] xl:pt-[50px] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
+                <div class="w-[90%] lg:w-[50%] flex flex-col gap-[20px] text-left items-left mx-auto z-[2]">
                     <div class="w-full">
                         <?php if (!empty($inner_group['split_section_title'])) : ?>
                             <div class="text-[#1f1f1f] text-display-24 lg:text-display-42 font-bold">
