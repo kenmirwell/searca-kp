@@ -23,7 +23,7 @@
                 <div class="h-auto justify-start gap-[20px] w-[100%]">
                     <div class="flex flex-col h-auto rounded-[15px] overflow-hidden cursor-pointer">
                         <div class="p-[20px] bg-[#F5F8FC]">
-                            <div class="bg-[#DBE1E9] p-[10px] rounded-[8px] h-[320px] overflow-hidden">
+                            <div class="bg-[#DBE1E9] p-[5px] rounded-[8px] h-[320px] overflow-hidden">
                                 <div class="relative flex h-[250px] xl:h-[300px] rounded-[15px] overflow-hidden">
                                     <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
                                     <?php
