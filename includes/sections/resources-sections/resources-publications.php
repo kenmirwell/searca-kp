@@ -70,9 +70,9 @@ if (have_rows('split_section', $page_id)) : ?>
             <?php $text_content = ob_get_clean(); ?>
 
             <?php ob_start(); ?>
-                <div class="w-[100%] md:w-[50%] rounded-[20px] overflow-hidden">
+                <div class="w-[100%] md:w-[50%] rounded-[20px] overflow-hidden h-max">
                     <?php if (!empty($section_image)) : ?>
-                        <img class="w-full h-full object-cover" src="<?php echo esc_url($section_image); ?>" alt="split image">
+                        <img class="w-full h-full object-cover h-max" src="<?php echo esc_url($section_image); ?>" alt="split image">
                     <?php endif; ?>
                 </div>
             <?php $image_content = ob_get_clean(); ?>
