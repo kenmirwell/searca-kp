@@ -882,6 +882,10 @@ video {
   margin-top: 80px;
 }
 
+.mb-\[-80px\] {
+  margin-bottom: -80px;
+}
+
 .block {
   display: block;
 }
@@ -1566,6 +1570,10 @@ video {
   border-top-width: 1px;
 }
 
+.border-l-\[2px\] {
+  border-left-width: 2px;
+}
+
 .border-\[\#000000\] {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1643,6 +1651,11 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-\[\#B59637\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(181 150 55 / var(--tw-border-opacity));
 }
 
 .border-opacity-50 {
@@ -2197,6 +2210,14 @@ video {
 
 .pt-\[80px\] {
   padding-top: 80px;
+}
+
+.pl-\[0px\] {
+  padding-left: 0px;
+}
+
+.pt-\[0px\] {
+  padding-top: 0px;
 }
 
 .text-left {
@@ -2792,6 +2813,10 @@ video {
     margin-right: auto;
   }
 
+  .md\:mb-\[-80px\] {
+    margin-bottom: -80px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2806,6 +2831,14 @@ video {
 
   .md\:h-\[320px\] {
     height: 320px;
+  }
+
+  .md\:h-\[700px\] {
+    height: 700px;
+  }
+
+  .md\:h-\[300px\] {
+    height: 300px;
   }
 
   .md\:w-\[250px\] {
@@ -2856,6 +2889,14 @@ video {
     gap: 0px;
   }
 
+  .md\:gap-\[5px\] {
+    gap: 5px;
+  }
+
+  .md\:gap-\[50px\] {
+    gap: 50px;
+  }
+
   .md\:overflow-x-visible {
     overflow-x: visible;
   }
@@ -2881,6 +2922,11 @@ video {
   .md\:py-\[50px\] {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+
+  .md\:py-\[100px\] {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   .md\:pb-\[0px\] {
@@ -2915,6 +2961,10 @@ video {
     padding-top: 70px;
   }
 
+  .md\:pt-\[50px\] {
+    padding-top: 50px;
+  }
+
   .md\:text-\[12px\] {
     font-size: 12px;
   }
@@ -2947,6 +2997,12 @@ video {
     font-size: 42px;
     line-height: 50px;
     letter-spacing: -1.1px;
+  }
+
+  .md\:text-display-24 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.24px;
   }
 
   .md\:font-normal {
@@ -2997,6 +3053,10 @@ video {
 
   .lg\:h-\[90px\] {
     height: 90px;
+  }
+
+  .lg\:h-\[350px\] {
+    height: 350px;
   }
 
   .lg\:w-\[1024px\] {

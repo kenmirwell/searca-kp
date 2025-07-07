@@ -19,7 +19,7 @@
                     $learning_materials_id = get_the_ID();
         ?>
         <div>
-            <div class="hidden md:flex justify-center gap-[30px] relative py-[10px] h-[500px] h-auto">
+            <div class="flex justify-center gap-[30px] relative py-[10px] h-[500px] h-auto">
                 <div class="h-auto justify-start gap-[20px] w-[100%]">
                     <div class="flex flex-col justify-between">
                       <div class="flex flex-col h-auto rounded-[15px] overflow-hidden cursor-pointer">
@@ -40,7 +40,7 @@
                         </div>
                         <div class="flex h-auto pb-[10px] md:pb-[20px]">
                             <div class="pt-[20px] pb-[10px] w-[100%]">
-                                <div class="flex flex-col lg:flex-row gap-[5px] justify-between min-h-[30px] items-center">
+                                <div class="flex flex-col lg:flex-row gap-[10px] md:gap-[5px] justify-between min-h-[30px] items-start">
                                     <div class="flex items-center gap-[5px]">
                                           <div class="w-[20px]">
                                             <svg width="auto" height="auto" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +60,7 @@
 
                                     <?php $published_year = get_field("published_date"); ?>
                                     <?php  if($published_year) : ?>
-                                      <div class="">
+                                      <div class="pl-[20px] pl-[0px]">
                                           <p class="text-display-12 xl:text-display-14">
                                             <?php echo get_field("published_date"); ?>
                                           </p>

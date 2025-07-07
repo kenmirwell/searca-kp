@@ -410,10 +410,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 infinite: true,
                 responsive: [
                     {
+                        breakpoint: 1024, // screens smaller than 1024px
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
                         breakpoint: 768,
                         settings: {
-                            slidesToShow: 1,
+                            slidesToShow: 2,
                             slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 480, // screens smaller than 480px
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
                         }
                     }
                 ]

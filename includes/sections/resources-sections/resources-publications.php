@@ -9,6 +9,7 @@ if (have_rows('split_section', $page_id)) : ?>
             $image_alignment = $group['split_section_image_alignment'] ?? 'left';
             $bg_color = strtolower($group['split_section_background_color'] ?? '#ffffff');
             $section_image = $group['split_section_image'] ?? '';
+            $impact = get_sub_field('split_section_impact');
 
             $title_desc_group = get_sub_field('split_section_title_description') ?? [];
             $section_title = $title_desc_group['split_section_title'] ?? '';
@@ -16,13 +17,13 @@ if (have_rows('split_section', $page_id)) : ?>
             $points = $title_desc_group['split_section_points'] ?? [];
 
             ob_start(); ?>
-                <div class="w-[50%] flex items-center">
+                <div class="w-[100%] md:w-[50%] flex items-center">
                     <div class="">
                         <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?>">
-                            <h2 class="text-display-24 lg:text-display-42 font-bold"><?php echo esc_html($section_title); ?></h2>
+                            <h2 class="text-display-18 md:text-display-24 lg:text-display-42 font-bold"><?php echo esc_html($section_title); ?></h2>
                         </div>
                         <?php foreach ($descriptions as $desc) : ?>
-                            <p class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> pt-[10px]"><?php echo esc_html($desc['split_section_description']); ?></p>
+                            <p class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> pt-[10px] text-display-14 md:text-display-16"><?php echo esc_html($desc['split_section_description']); ?></p>
                         <?php endforeach; ?>
 
                         <?php if (!empty($points)) : ?>
@@ -35,7 +36,7 @@ if (have_rows('split_section', $page_id)) : ?>
                                         <?php if (!empty($point['point_title'])) : ?>
                                             <div class="flex gap-[10px] items-center">
                                                 <?php bullet_template('bullet-template', compact('type', 'color')); ?>
-                                                <h6 class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> font-[700]"><?php echo wp_kses_post($point['point_title']); ?></h6>
+                                                <h6 class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> font-[700] text-display-14 md:text-display-16"><?php echo wp_kses_post($point['point_title']); ?></h6>
                                             </div>
                                         <?php endif; ?>
                                         <?php if (!empty($point['point_description'])) : ?>
@@ -49,7 +50,7 @@ if (have_rows('split_section', $page_id)) : ?>
                                                         'color' => $color
                                                     ));
                                                 ?>
-                                                <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?>">
+                                                <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> text-display-14 md:text-display-16">
                                                     <?php echo wp_kses_post($point['point_description']); ?>
                                                 </div>
                                             </div>
@@ -58,12 +59,18 @@ if (have_rows('split_section', $page_id)) : ?>
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
+
+                        <?php if (!empty($impact)) : ?>
+                            <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> text-display-14 md:text-display-16 font-[200] italic pl-[20px] border-l-[2px] border-[#B59637] py-[10px]">
+                                <?php echo wp_kses_post($impact); ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php $text_content = ob_get_clean(); ?>
 
             <?php ob_start(); ?>
-                <div class="w-[50%] rounded-[20px] overflow-hidden">
+                <div class="w-[100%] md:w-[50%] rounded-[20px] overflow-hidden">
                     <?php if (!empty($section_image)) : ?>
                         <img class="w-full h-full object-cover" src="<?php echo esc_url($section_image); ?>" alt="split image">
                     <?php endif; ?>
@@ -72,8 +79,11 @@ if (have_rows('split_section', $page_id)) : ?>
 
             <div style="background-color: <?php echo esc_attr($bg_color); ?>;" class="overflow-hidden">
                 <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[40px]">
-                    <div class="flex flex-col lg:flex-row gap-[50px] justify-between">
+                    <div class="hidden md:flex flex-col md:flex-row gap-[10px] md:gap-[50px] justify-between">
                         <?php echo $image_alignment === 'right' ? $text_content . $image_content : $image_content . $text_content; ?>
+                    </div>
+                    <div class="flex md:hidden flex-col md:flex-row gap-[10px] md:gap-[50px] justify-between">
+                        <?php echo $image_alignment === 'right' ? $image_content . $text_content : $image_content . $text_content; ?>
                     </div>
                 </div>
             </div>

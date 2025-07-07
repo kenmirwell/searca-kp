@@ -5,10 +5,10 @@
 <div class="relative">
     <div class="bg-[#F2FFF8] overflow-hidden">
         <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-            <div class="relative flex flex-col relative pt-[50px] py-[60px] justify-start gap-[50px] items-start h-[700px] my-[100px]">
-                <div class="w-[50%]">
+            <div class="relative flex flex-col relative pt-[50px] py-[60px] justify-start items-start gap-[20px] md:gap-[0px]">
+                <div class="w-[100%] md:w-[50%] md:mb-[-80px]">
                     <?php if (get_field("agri_food_impact_title", $page_id)) : ?> 
-                        <div class="hidden lg:block text-[#000000] w-[100%] text-display-24 md:text-display-42 font-bold">
+                        <div class="text-[#000000] w-[100%] text-display-24 md:text-display-42 font-bold">
                             <h2><?php echo get_field("agri_food_impact_title", $page_id); ?></h2>
                         </div>
                     <?php endif; ?>    
@@ -25,7 +25,7 @@
                 </div>
                 
                 <?php if (get_field("agri_food_impact_image", $page_id)) : ?> 
-                    <div class="absolute top-[0px] w-full h-max">
+                    <div class="w-full h-max">
                         <img class="relative w-full h-full object-cover" src="<?php echo get_field('agri_food_impact_image'); ?>" alt="searca image">
                     </div>
                 <?php endif; ?>    

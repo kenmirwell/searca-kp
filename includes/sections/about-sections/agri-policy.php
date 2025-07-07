@@ -11,13 +11,13 @@
                         <h2><?php echo get_field("agri_policy_title", $page_id); ?></h2>
                     </div>
                 <?php endif; ?>    
-                <div class="flex gap-[20px] w-[100%] lg:w-[80%] lg:ml-auto">
+                <div class="flex flex-col lg:flex-row gap-[20px] w-[100%] lg:w-[80%] lg:ml-auto">
                     <?php if (have_rows('agri_policy_description', $page_id)) : ?>
                         <?php while (have_rows('agri_policy_description', $page_id)) : the_row(); ?>
-                            <div class="flex flex-col gap-[20px]">
+                            <div class="flex flex-col md:flex-row lg:flex-col gap-[20px]">
                                 <?php if (have_rows('agri_policy_description_columns', $page_id)) : ?>
                                     <?php while (have_rows('agri_policy_description_columns', $page_id)) : the_row(); ?>
-                                        <div class="flex flex-col">
+                                        <div class="flex flex-row lg:flex-col">
                                             <?php if (have_rows('agri_policy_description_column', $page_id)) : ?>
                                                 <?php while (have_rows('agri_policy_description_column', $page_id)) : the_row(); ?>
                                                     <div class="w-[100%] max-w-[980px] mx-auto">
