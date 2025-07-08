@@ -2530,6 +2530,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[\#1F1F1F\] {
+  --tw-text-opacity: 1;
+  color: rgb(31 31 31 / var(--tw-text-opacity));
+}
+
 .placeholder-\[\#458753\]::-moz-placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(69 135 83 / var(--tw-placeholder-opacity));
