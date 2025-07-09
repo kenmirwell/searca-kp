@@ -16,6 +16,8 @@
     <?php get_template_part("includes/sections/data-insights/split-section-i"); ?>
     <?php get_template_part("includes/sections/data-insights/country-profile"); ?>
     <?php get_template_part("includes/sections/data-insights/progressing-section"); ?>
+    <?php get_template_part("includes/sections/data-insights/split-section-ii"); ?>
+    <?php get_template_part("includes/sections/data-insights/make-it-work-section"); ?>
 <?php 
     }
     get_footer()

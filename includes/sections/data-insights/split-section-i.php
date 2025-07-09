@@ -22,9 +22,8 @@ if ($group) :
       <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?>">
           <h2 class="text-display-18 md:text-display-24 lg:text-display-42 font-bold"><?php echo esc_html($section_title); ?></h2>
       </div>
-      <?php foreach ($descriptions as $desc) : ?>
-          <p class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> pt-[10px] text-display-14 md:text-display-16"><?php echo esc_html($desc['split_section_description']); ?></p>
-      <?php endforeach; ?>
+        <p class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> pt-[10px] text-display-14 md:text-display-16"><?php echo wp_kses_post($descriptions); ?></p>
+
 
       <?php if (!empty($points)) : ?>
           <ul class="flex flex-col w-full gap-[5px] lg:gap-[20px] py-[20px] lg:pt-[30px] agpractices-list">
@@ -41,15 +40,6 @@ if ($group) :
                       <?php endif; ?>
                       <?php if (!empty($point['point_description'])) : ?>
                           <div class="flex gap-[10px]">
-                              <?php
-                                  $type = $point['bullet_type'] ?? 'check';
-                                  $color = $point['bullet_color'] ?? '#096936';
-
-                                  bullet_template('bullet-template', array(
-                                      'type' => $type,
-                                      'color' => $color
-                                  ));
-                              ?>
                               <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> text-display-14 md:text-display-16">
                                   <?php echo wp_kses_post($point['point_description']); ?>
                               </div>
