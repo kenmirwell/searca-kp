@@ -75,6 +75,7 @@ class ConsortiumInteractive {
         });
         keyPoints.forEach(kp => {
           kp.style.backgroundColor = kp.getAttribute("data-index") === index ? "#FEFBF1" : "transparent";
+          kp.style.borderColor = kp.getAttribute("data-index") === index ? "#DACB99" : "#D2D2D2";
         });
       });
     });
@@ -94,6 +95,7 @@ class ConsortiumInteractive {
       });
       keyPoints.forEach((kp, idx) => {
         kp.style.backgroundColor = idx === 0 ? "#FEFBF1" : "transparent";
+        kp.style.borderColor = idx === 0 ? "#DACB99" : "#D2D2D2";
       });
     });
   }
