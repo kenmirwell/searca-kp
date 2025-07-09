@@ -1066,6 +1066,22 @@ video {
   height: 100vh;
 }
 
+.h-\[270px\] {
+  height: 270px;
+}
+
+.h-\[320px\] {
+  height: 320px;
+}
+
+.h-\[220px\] {
+  height: 220px;
+}
+
+.h-\[240px\] {
+  height: 240px;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
