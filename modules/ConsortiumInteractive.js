@@ -14,7 +14,7 @@ class ConsortiumInteractive {
             });
 
             keyPoints.forEach((kp) => {
-                kp.style.backgroundColor = kp.getAttribute("data-index") === index ? "#0C5C32" : "transparent";
+                kp.style.backgroundColor = kp.getAttribute("data-index") === index ? "#FEFBF1" : "transparent";
             });
           });
       });
@@ -25,7 +25,7 @@ class ConsortiumInteractive {
       }
 
       if (keyPoints.length > 0) {
-        keyPoints[0].style.backgroundColor = "#0C5C32";
+        keyPoints[0].style.backgroundColor = "#FEFBF1";
     }
 
       // Optional: Reset to first image when mouse leaves key points
@@ -35,7 +35,7 @@ class ConsortiumInteractive {
           });
 
           keyPoints.forEach((kp, idx) => {
-            kp.style.backgroundColor = idx === 0 ? "#0C5C32" : "transparent";
+            kp.style.backgroundColor = idx === 0 ? "#FEFBF1" : "transparent";
         });
       });
   }
