@@ -14,6 +14,7 @@
     <?php get_template_part("includes/sections/consortium/split-section-i"); ?>
     <?php get_template_part("includes/sections/consortium/text-trio"); ?>
     <?php get_template_part("includes/sections/consortium/image-cards-trio"); ?>
+    <?php get_template_part("includes/sections/consortium/interactive-section"); ?>
 <?php 
     }
     get_footer()
