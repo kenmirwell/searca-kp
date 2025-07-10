@@ -16,14 +16,14 @@
             </div>
         </div>
         <?php else: ?>
-        <h2 class="text-[48px] font-bold italic">Join Our Community</h2>
-        <p class="text-[16px] md:text-[18px] pb-[10px]">Be part of a growing network driving impactful change in agriculture and rural development.</p>
+        <h2 class="text-[48px] font-bold italic">Ready to Be Part of the Conversation?</h2>
+        <p class="text-[16px] md:text-[18px] pb-[10px]">Join a growing network of thought leaders, practitioners, and changemakers shaping the future of agri-food policy in Southeast Asia. Share ideas, collaborate on research, and stay connected through our vibrant Community of Practice.</p>
         <div class="flex justify-center">
             <?php
                 button_template('common-button', array(
-                    'title' => "Join Now",
+                    'title' => "Join the Community",
                     'url' => "/agricultural-statistics-data",
-                    'color' => 'gold_to_green'
+                    'color' => 'green_to_gold'
                 ))
             ?>
         </div>
@@ -35,7 +35,7 @@
     <?php if(!is_page("community-of-practice")): ?>
         <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/03/Group-1597884740.jpg" alt="">
     <?php else: ?>
-        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/03/Group-1597884836.png" alt="">
+        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/07/image-15.png" alt="">
     <?php endif; ?>
 </div>
 <div id="footer" class="bg-[#101010]">

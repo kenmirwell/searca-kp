@@ -33,8 +33,12 @@
     <img class="absolute w-full h-full object-cover z-[0]" src="<?php echo esc_url(get_field('hero_background')); ?>" alt="<?php the_title(); ?>">
     <div class="absolute bottom-[-16px] z-[1] w-[100%]">
         <svg width="100%" height="100%" viewBox="0 0 1512 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <rect y="17" width="1512" height="47" fill="white"/>
-            <rect width="1512" height="18" transform="matrix(-1 0 0 -1 1512 18)" fill="url(#pattern0_0_1)"/>
+             <?php if(is_page("community-of-practice")): ?>
+                <rect y="17" width="100%" height="47" fill="#ebf3ef"/>
+            <?php else : ?>
+                 <rect y="17" width="100%" height="47" fill="white"/>
+                <rect width="100%" height="18" transform="matrix(-1 0 0 -1 1512 18)" fill="url(#pattern0_0_1)"/>
+            <?php endif; ?>
             <defs>
             <pattern id="pattern0_0_1" patternContentUnits="objectBoundingBox" width="1" height="1">
             <use xlink:href="#image0_0_1" transform="matrix(0.000531664 0 0 0.0562678 -0.0103977 -3.38889)"/>
