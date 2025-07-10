@@ -16,7 +16,7 @@
                         <!-- Key Points Section -->
                         <div class="flex flex-col gap-[20px] items-start justify-between w-[100%]">
                             <?php foreach ($key_points as $index => $point): ?>
-                                <div class="key-point cursor-pointer text-[#1F1F1F] rounded-xl w-[100%]" data-index="<?php echo $index; ?>">
+                                <div class="key-point cursor-pointer text-[#1F1F1F] rounded-xl w-[100%] p-[20px] border-[1px]" data-index="<?php echo $index; ?>">
                                     <div>
                                         <h6 class="font-[600] text-display-20 lg:text-display-24"><?php echo $point['title']; ?></h6>
                                         <p class="text-display-14 lg:text-display-16"><?php echo $point['subtext']; ?></p>
