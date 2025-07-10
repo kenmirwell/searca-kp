@@ -24,7 +24,7 @@
             <div class="flex">
                 <?php
                     button_template('common-button', array(
-                        'title' => "Learn More About CAPRI",
+                        'title' => "Learn More About COP",
                         'url' => "/agricultural-digital-tools",
                         'color' => 'green_to_gold'
                     ))

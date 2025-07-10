@@ -11,6 +11,8 @@
     ?>
 
     <?php get_template_part("includes/components/common-hero"); ?>
+    <?php get_template_part("includes/sections/community-practice-sections/simple-split-section"); ?>
+    <?php get_template_part("includes/sections/community-practice-sections/split-section-i "); ?>
     <?php get_template_part("includes/sections/community-practice-sections/card-trio"); ?>
 <?php 
     }
