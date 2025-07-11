@@ -12,6 +12,8 @@
 
     <?php get_template_part("includes/components/common-hero"); ?>
     <?php get_template_part("includes/sections/sea-sections/map-section"); ?>
+    <?php get_template_part("includes/sections/sea-sections/quick-facts"); ?>
+    <?php get_template_part("includes/sections/sea-sections/topics-section"); ?>
 <?php 
     }
     get_footer()
