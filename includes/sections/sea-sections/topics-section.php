@@ -29,9 +29,9 @@
     <?php foreach ($topic_group as $topic) : ?>
         <div class="bg-[#ffffff] py-[100px]">
             <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div id="<?php echo esc_html($topic["topic_title"]); ?>">
-                    <div class="text-[#000000] flex flex-col items-center justify-center">
-                        <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[10px] w-[40%] mx-auto text-center"><?php echo esc_html($topic["topic_title"]); ?></h2>
+                <div id="<?php echo esc_html($topic["topic_category"]); ?>" class="flex flex-col gap-[20px] hidden">
+                    <div class="text-[#000000] flex flex-col">
+                        <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[10px] text-left"><?php echo esc_html($topic["topic_title"]); ?></h2>
                     </div>
                     <?php 
                         $subtopic_group = $topic["subtopics"];
@@ -43,15 +43,23 @@
                                 $type = $sub_topics_description['bullet_type'];
                                 $color = $sub_topics_description['bullet_color'] ?? '#096936'; 
                         ?>
-                                <div class="text-[#000000] flex flex-col items-center justify-center">
-                                    <h6 class="text-display-18 lg:text-display-24 font-bold pb-[20px] lg:pb-[10px] w-[40%] mx-auto text-center"><?php echo esc_html($subtopic["sub_topics_title"]); ?></h6>
-                                    <ul class="flex flex-col w-full gap-[5px] lg:gap-[20px] py-[20px] lg:pt-[30px] agpractices-list">
+                                <div class="text-[#000000] flex flex-col">
+                                    <h6 class="text-display-18 lg:text-display-24 font-bold w-[40%] mr-auto text-left"><?php echo esc_html($subtopic["sub_topics_title"]); ?></h6>
+                                    <ul class="flex flex-col w-full gap-[5px] lg:gap-[20px] agpractices-list">
                                         <li class="flex flex-col items-start gap-[10px]">
                                             <div class="flex gap-[10px] items-center">
                                                 <?php bullet_template('bullet-template', compact('type', 'color')); ?>
                                             </div>
                                             <div class="text-display-14 md:text-display-16">
-                                                <?php echo wp_kses_post($sub_topics_description['sub_topics_description_content']); ?>
+                                                <?php if (!empty($sub_topics_description["flex_std_content"])) :  
+                                                    $flex_std_content = $sub_topics_description["flex_std_content"]
+                                                ?>
+                                                    <div class="flex flex-col">
+                                                        <?php foreach($flex_std_content as $content) : ?>
+                                                            <p><?php echo esc_html($content["flexy_std_text_group"]["flex_std_content_text"]); ?></p>
+                                                        <?php endforeach ?>
+                                                    </div>
+                                                <?php endif; ?>
                                             </div>
                                         </li>
                                     </ul>
