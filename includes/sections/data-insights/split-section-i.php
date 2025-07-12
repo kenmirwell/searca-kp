@@ -19,9 +19,9 @@ if ($group) :
 ?>
   <div class="w-[100%] md:w-[50%] flex items-center">
     <div class="">
-      <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?>">
-          <h2 class="text-display-18 md:text-display-24 lg:text-display-42 font-bold"><?php echo esc_html($section_title); ?></h2>
-      </div>
+        <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?>">
+            <h2 class="text-display-18 md:text-display-24 lg:text-display-42 font-bold"><?php echo esc_html($section_title); ?></h2>
+        </div>
         <p class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> pt-[10px] text-display-14 md:text-display-16"><?php echo wp_kses_post($descriptions); ?></p>
 
 
