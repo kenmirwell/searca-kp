@@ -992,6 +992,70 @@ class ModalManager {
 
 /***/ }),
 
+/***/ "./modules/SeaprofileContent.js":
+/*!**************************************!*\
+  !*** ./modules/SeaprofileContent.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class SeaprofileContent {
+  constructor() {}
+  InitializeContent() {
+    const content = document.querySelectorAll(".topic-content");
+    const topics = document.querySelectorAll(".topic-category");
+    content.forEach(data => {
+      data.style.display = data.getAttribute("data-index") === "0" ? "block" : "none";
+    });
+    topics.forEach(topic => {
+      const index = topic.getAttribute("data-index");
+      topic.style.backgroundColor = index === "0" ? "#0C5C32" : "#B59637";
+      if (index === "0") topic.classList.add("active");else topic.classList.remove("active");
+    });
+  }
+  handleChooseContent() {
+    const topics = document.querySelectorAll(".topic-category");
+    const content = document.querySelectorAll(".topic-content");
+    topics.forEach(topic => {
+      topic.addEventListener("click", function () {
+        const index = topic.getAttribute("data-index");
+        content.forEach(data => {
+          data.style.display = data.getAttribute("data-index") === index ? "block" : "none";
+        });
+        topics.forEach(t => {
+          const tIndex = t.getAttribute("data-index");
+          if (tIndex === index) {
+            t.classList.add("active");
+            t.style.backgroundColor = "#096936";
+          } else {
+            t.classList.remove("active");
+            t.style.backgroundColor = "#B59637";
+          }
+        });
+      });
+    });
+  }
+  onMouseHover() {
+    const topics = document.querySelectorAll(".topic-category");
+    topics.forEach(topic => {
+      topic.addEventListener("mouseenter", () => {
+        topic.style.backgroundColor = "#096936";
+      });
+      topic.addEventListener("mouseleave", () => {
+        if (!topic.classList.contains("active")) {
+          topic.style.backgroundColor = "#B59637";
+        }
+      });
+    });
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SeaprofileContent);
+
+/***/ }),
+
 /***/ "./modules/VideoFunc.js":
 /*!******************************!*\
   !*** ./modules/VideoFunc.js ***!
@@ -1123,9 +1187,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/KmFilterAcc  */ "./modules/KmFilterAcc .js");
 /* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
 /* harmony import */ var _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modules/AgdomImageTransition */ "./modules/AgdomImageTransition.js");
-/* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
-/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
-/* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
+/* harmony import */ var _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modules/SeaprofileContent */ "./modules/SeaprofileContent.js");
+/* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
+/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
+/* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
+
 
 
 
@@ -1141,7 +1207,6 @@ __webpack_require__.r(__webpack_exports__);
 // import MouseOverFunc from "../modules/MouseOverFunc";
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("#agri-featured-resources", document.getElementById("agri-featured-resources"));
   const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
   const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
   const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
@@ -1151,9 +1216,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const kmFilterAcc = new _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__["default"]();
   const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__["default"]();
   const agdomImageTransition = new _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_8__["default"]();
-  const consortiumInteractive = new _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_9__["default"]();
-  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_10__["default"]();
-  const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_11__["default"]();
+  const seaprofileContent = new _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_9__["default"]();
+  const consortiumInteractive = new _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_10__["default"]();
+  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_11__["default"]();
+  const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_12__["default"]();
   // const mousehover = new MouseOverFunc();
 
   gsapControls.heroSlider();
@@ -1260,7 +1326,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   homeResourceSearch.handleSearch();
   window.onload = function () {
-    console.log("on load");
     const accElement = document.getElementById("answer-0");
     const accContainer = document.getElementById("answer-container-0");
     const accGroup = document.getElementById("faq-group-0");
@@ -1272,6 +1337,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const agdomKeypoint = document.getElementById('agdom-keypoints');
     const consorInteractive = document.getElementById('consorInteractive');
     const cadreVideo = document.getElementById("cadrein-action-video");
+    const topicContent = document.getElementById("sea-topic-profile");
 
     //initial setup for accordion in FAQ in homepage
     if (accElement) {
@@ -1297,6 +1363,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (cadreVideo) {
       customVideoButton.handleCustomVideoButton();
+    }
+    if (topicContent) {
+      seaprofileContent.InitializeContent();
+      seaprofileContent.onMouseHover();
+      seaprofileContent.handleChooseContent();
     }
     if (document.getElementById("swiper-wrapper")) {
       const swiper = new Swiper(".mySwiper", {

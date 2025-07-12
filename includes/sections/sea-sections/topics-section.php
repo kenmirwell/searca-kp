@@ -3,22 +3,22 @@
 
     $topic_group = $group["topic"];
 ?>
-<div class="bg-[#B59637]">
+<div id="sea-topic-profile" class="bg-[#B59637]">
     <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex justify-between items-center">
-            <div id="geographic-profile" class="text-[#ffffff] flex items-center justify-center py-[20px] w-full bg-[#B59637] hover:bg-[#096936] transition-all duration-200 ease ">
+            <div id="profile-0" data-index="0" class="topic-category geographic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Geographic Profile</p>
             </div>
-            <div id="demographic-profile" class="text-[#ffffff] flex items-center justify-center py-[20px] w-full bg-[#B59637] hover:bg-[#096936] transition-all duration-200 ease ">
+            <div id="profile-1" data-index="1" class="topic-category demographic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Demographic Profile</p>
             </div>
-            <div id="economic-profile" class="text-[#ffffff] flex items-center justify-center py-[20px] w-full bg-[#B59637] hover:bg-[#096936] transition-all duration-200 ease ">
+            <div id="profile-2" data-index="2" class="topic-category economic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Economic Profile</p>
             </div>
-            <div id="main-products" class="text-[#ffffff] flex items-center justify-center py-[20px] w-full bg-[#B59637] hover:bg-[#096936] transition-all duration-200 ease ">
+            <div id="profile-3" data-index="3" class="topic-category main-products cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Main Products</p>
             </div>
-            <div id="current-concerns" class="text-[#ffffff] flex items-center justify-center py-[20px] w-full bg-[#B59637] hover:bg-[#096936] transition-all duration-200 ease ">
+            <div id="profile-4" data-index="4" class="topic-category current-concerns cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Current Concerns</p>
             </div>
         </div>
@@ -26,10 +26,12 @@
 </div>
 
 <?php if (!empty($topic_group)) : ?>
-    <?php foreach ($topic_group as $topic) : ?>
-        <div class="bg-[#ffffff] py-[100px]">
+    <?php foreach ($topic_group as $index => $topic) : 
+        
+    ?>
+        <div class="topic-content bg-[#ffffff] py-[100px]" data-index="<?php echo $index ?>">
             <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
-                <div id="<?php echo esc_html($topic["topic_category"]); ?>" class="flex flex-col gap-[20px] hidden">
+                <div class="flex flex-col gap-[20px]">
                     <div class="text-[#000000] flex flex-col">
                         <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[10px] text-left"><?php echo esc_html($topic["topic_title"]); ?></h2>
                     </div>

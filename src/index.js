@@ -7,6 +7,7 @@ import HomeFilterAcc from "../modules/FrontpageFilterAcc"
 import KmFilterAcc from "../modules/KmFilterAcc ";
 import KmFilter from "../modules/KmFilter";
 import AgdomTransition from "../modules/AgdomImageTransition";
+import SeaprofileContent from "../modules/SeaprofileContent";
 import ConsortiumInteractive from "../modules/ConsortiumInteractive";
 import CustomVideoButton from "../modules/VideoFunc";
 import GsapControls from "../modules/Gsap";
@@ -14,8 +15,6 @@ import GsapControls from "../modules/Gsap";
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("#agri-featured-resources", document.getElementById("agri-featured-resources"));
-
     const modalManager = new ModalManager();
     const homeResourceSearch = new HomeResourceSearch();
     const faqAcc = new FaqAcc();
@@ -25,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const kmFilterAcc = new KmFilterAcc();
     const knFilter  = new KmFilter();
     const agdomImageTransition = new AgdomTransition();
+    const seaprofileContent = new SeaprofileContent();
     const consortiumInteractive = new ConsortiumInteractive();
     const customVideoButton = new CustomVideoButton();
     const gsapControls = new GsapControls();
@@ -152,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
     homeResourceSearch.handleSearch();
 
     window.onload = function() {
-        console.log("on load")
         const accElement = document.getElementById("answer-0");
         const accContainer = document.getElementById("answer-container-0");
         const accGroup = document.getElementById("faq-group-0");
@@ -169,7 +168,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const consorInteractive = document.getElementById('consorInteractive');
 
-        const cadreVideo = document.getElementById("cadrein-action-video")
+        const cadreVideo = document.getElementById("cadrein-action-video");
+
+        const topicContent = document.getElementById("sea-topic-profile");
 
         //initial setup for accordion in FAQ in homepage
         if(accElement) {    
@@ -204,6 +205,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if(cadreVideo) {
             customVideoButton.handleCustomVideoButton();
         }
+
+        if(topicContent) {
+            seaprofileContent.InitializeContent();
+            seaprofileContent.onMouseHover();
+            seaprofileContent.handleChooseContent();
+        }
+        
 
         if(document.getElementById("swiper-wrapper")) {
             const swiper = new Swiper(".mySwiper", {
