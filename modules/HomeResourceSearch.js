@@ -114,7 +114,7 @@ class HomeResourcesSearch {
 
       debounceTimer = setTimeout(() => {
         const searchValue = e.target.value.trim();
-
+        
         // Reset other search mode when switching
         if (this.searchBy === "search") {
           delete this.selectedValues["title_search"];
@@ -135,6 +135,8 @@ class HomeResourcesSearch {
   }
 
   performSearch(selectedValues) {
+
+    console.log("selectedValues", selectedValues)
     let queryString = Object.keys(selectedValues)
       .map((tax) => selectedValues[tax].map((val) => `${tax}=${encodeURIComponent(val)}`).join("&"))
       .join("&");

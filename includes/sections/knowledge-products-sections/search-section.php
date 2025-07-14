@@ -1,3 +1,11 @@
+<?php 
+   $filter_group = array(
+        array( 'key' => 'Type', 'value' => 'km_category', 'index' => 0),
+        array( 'key' => 'Author', 'value' => 'research_author', 'index' => 1),
+        array( 'key' => 'Country', 'value' => 'country', 'index' => 2),
+        array( 'key' => 'Date', 'value' => 'published_date', 'index' => 3)
+    );
+?>
 <div class="py-[50px]">
   <div class="lg:w-[1024px] xl:w-[1280px] mx-auto justify-between">
     <div class="flex gap-[120px] items-center">
@@ -14,50 +22,34 @@
             <input id="knowledge-products-search-input" class="pl-[40px] py-[10px] pr-[10px] text-[#000000] w-[100%] border-[1px] border-[#CECECE]" type="text" placeholder="Select by ">
           </div>
           <div class="flex gap-[20px] w-[100%] justify-end pt-[30px]">
-            <div>
-              <p>By Title</p>
-            </div>
-            <div class="text-[#CECECE]">|</div>
-            <div>
-              <p>By Autor</p>
-            </div>
-            <div class="text-[#CECECE]">|</div>
-            <div>
-              <p>By Keyword</p>
-            </div>
-            <div class="text-[#CECECE]">|</div>
-            <div>
-              <p>By Country</p>
-            </div>
+              <div>
+                <p>By Title</p>
+              </div>
+              <div class="text-[#CECECE]">|</div>
+              <div>
+                <p>By Autor</p>
+              </div>
+              <div class="text-[#CECECE]">|</div>
+              <div>
+                <p>By Keyword</p>
+              </div>
+              <div class="text-[#CECECE]">|</div>
+              <div>
+                <p>By Country</p>
+              </div>
           </div>
         </div>
       </div>
     </div>
     <div class="flex gap-[20px] justify-between pt-[20px]">
-      <div id="type-filter" class="w-[25%] flex items-center justify-between bg-[#F5F8FC] py-[10px] px-[20px]">
-        <div>Type:</div>
-        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.71094 1V15M1.71094 8H15.7109" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div id="author-filter" class="w-[25%] flex items-center justify-between bg-[#F5F8FC] py-[10px] px-[20px]">
-        <div>Author:</div>
-        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.71094 1V15M1.71094 8H15.7109" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div id="country-filter" class="w-[25%] flex items-center justify-between bg-[#F5F8FC] py-[10px] px-[20px]">
-        <div>Country:</div>
-        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.71094 1V15M1.71094 8H15.7109" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div id="date-filter" class="w-[25%] flex items-center justify-between bg-[#F5F8FC] py-[10px] px-[20px]">
-        <div>Date:</div>
-        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M8.71094 1V15M1.71094 8H15.7109" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
+      <?php foreach ($filter_group as $filter): ?>
+        <div id="type-filter" class="w-[25%] flex items-center justify-between bg-[#F5F8FC] py-[10px] px-[20px]">
+          <div>Type:</div>
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.71094 1V15M1.71094 8H15.7109" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </div>

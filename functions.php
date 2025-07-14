@@ -40,6 +40,9 @@
     //gsap
     include(get_stylesheet_directory() . '/includes/functions/gsap.php');
 
+    //conutry-pfile-slug modification
+    include(get_stylesheet_directory() . '/includes/functions/country-profile-slug.php');
+
     //shortcode
     include(get_stylesheet_directory() . '/includes/shortcodes/agpractices-shortcode.php');
     include(get_stylesheet_directory() . '/includes/shortcodes/cadre-components-shortcode.php');

@@ -33,7 +33,7 @@ while (have_posts()) {
     </style>
 
     <div class="relative h-[800px] flex jusitify-center">
-        <div class="flex items-center w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[150px] font-light z-[2]">
+        <div class="flex gap-[50px] items-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[150px] font-light z-[2]">
             <div class="w-[100%]">
                 <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight pb-[20px]">
                     <p class="cursor-pointer text-[#ffffff]"><a href="/">Home | Agricultural Statistics Data |</a></p>
@@ -51,34 +51,41 @@ while (have_posts()) {
                     ?>
                 </div>
             </div>
-            <div class="relative w-[100%] h-[100%]">
-                <div class="featured-image-container absolute z-[1]"></div> 
+            <div class="justify-center items-center w-[100%] h-[100%] hidden md:flex relative w-[100%]">
+                <!-- <div class="featured-image-container absolute z-[1]"></div> 
                 <?php 
-                    if(!empty(get_the_post_thumbnail_url())) {
-                ?>
-                    <div class="bg-[#B59637] absolute w-[280px] h-[200px] absolute top-[140px] left-[0] z-[0] rounded-xl" style="transform: rotate(80deg);"></div> 
-                <?php } ?>
+                    // if(!empty(get_the_post_thumbnail_url())) {
+                ?> -->
+                    <!-- <div class="fadein-shape bg-[#B59637] absolute w-[280px] h-[200px] absolute top-[140px] left-[0] z-[0] rounded-xl" style="transform: rotate(80deg);"></div>  -->
+                <?php //} ?>
+                <div class="image-element-container hidden md:flex relative w-[100%]">
+                    <img class="w-full z-[1]" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                </div>
             </div>
         </div>
         <div class="bg-gradient-to-r from-black/90 to-black/40 w-full h-full absolute top-0 left-0 z-[1]"></div>
         <img class="absolute w-full h-full object-cover z-[0]" src="<?php echo esc_url($hero_background); ?>" alt="<?php the_title(); ?>">
     </div>
+    <?php 
+        // if (strcasecmp(get_the_title(), "philippines") === 0): 
+        if (have_rows('quick_facts')):
+    ?>
     <div class="bg-[#2a7f3d] py-[50px]">
         <?php 
             $qf_desc = get_field('quick_facts_description');
         ?>
         <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
             <div class="text-[#ffffff] flex flex-col items-center justify-center">
-                <h2 class="text-[42px] font-bold">Quick Facts</h2>
-                <h6 class="flex text-[18px] justify-center items-center text-center w-[50%]">Agriculture plays a vital role in the Philippine economy, contributing significantly to employment and GDP.</h6>
+                <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[0px]">Quick Facts</h2>
+                <h6 class="flex text-display-14 lg:text-[18px] justify-center items-center xl:text-center w-[100%] lg:w-[50%]"><?php echo $qf_desc ?></h6>
             </div>
-            <div class="pt-[20px]">
+            <div class="pt-[50px]">
                 <?php if (have_rows('quick_facts')): ?>
-                    <div class="flex justify-between">
+                    <div class="flex flex-col gap-[50px] lg:flex-row justify-between">
                         <?php while (have_rows('quick_facts')): the_row(); ?>
                             <div class="flex flex-col text-center justify-center items-center">
-                                <img class="w-[100px] h-[100px]" src="<?php echo esc_url(get_sub_field('fact_icon')); ?>" alt="">
-                                <h6 class="text-[#ceab23] font-bold text-[32px]"><?php the_sub_field('fact_figure'); ?></h6>
+                                <img class="w-[56px] h-[56px]" src="<?php echo esc_url(get_sub_field('fact_icon')); ?>" alt="">
+                                <h6 class="text-[#ceab23] font-bold text-[22px]"><?php the_sub_field('fact_figure'); ?></h6>
                                 <p class="text-[#ffffff] pb-[10px] text-[14px]"><?php the_sub_field('fact'); ?></p>
                             </div>
                         <?php endwhile; ?>
@@ -87,6 +94,11 @@ while (have_posts()) {
             </div>
         </div>
     </div>
+    <?php endif; ?>
+    <?php 
+        // if (strcasecmp(get_the_title(), "philippines") === 0): 
+        if (have_rows('background')):
+    ?>
     <div class="py-[50px]">
         <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
             <div class="flex flex-row-reverse gap-[20px]">
@@ -130,7 +142,7 @@ while (have_posts()) {
                         </div>
                     </div>
                 </div>
-                <div class="w-[70%] border-r-[1px] pr-[40px]">
+                <div class="single-country-content w-[70%] border-r-[1px] pr-[40px]">
                     <div>
                         <h2 class="text-[36px] font-bold pb-[20px]">Background</h2>
                         <?php if (have_rows('background')): ?>
@@ -145,61 +157,23 @@ while (have_posts()) {
                         <?php if (have_rows('topics')): ?>
                             <div class="flex flex-col gap-[10px]">
                                 <?php while (have_rows('topics')): the_row(); ?>
-                                    <div class="relative h-[500px] w-[100%] my-[20px]">
-                                        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="<?php echo esc_url(get_sub_field('topic_image')); ?>" alt="">
-                                    </div>
-                                    <h2 class="text-[#000000] pb-[10px] text-[36px] font-bold"><?php the_sub_field('topic'); ?></h2>
-
+                                    <?php if(get_sub_field('topic_image')): ?>
+                                        <div class="relative h-[500px] w-[100%] my-[20px]">
+                                            <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="<?php echo esc_url(get_sub_field('topic_image')); ?>" alt="">
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if(get_sub_field('topic_image')): ?>
+                                        <h2 class="text-[#000000] pb-[10px] text-[36px] font-bold"><?php the_sub_field('topic'); ?></h2>
+                                    <?php else: ?>
+                                        <!-- this gives PADDING-TOP of 50PX when there is no image -->
+                                        <h2 class="text-[#000000] pt-[50px] text-[36px] font-bold"><?php the_sub_field('topic'); ?></h2>
+                                    <?php endif;?>
                                     <?php if (have_rows('content')): ?>
-                                        <div class="flex flex-col gap-[10px]">
+                                        <div class="content-pertopic flex flex-col gap-[10px]">
                                             <?php while (have_rows('content')): the_row(); ?>
-                                                <h6 class="text-[#000000] pb-[10px] text-[22px] font-bold"><?php the_sub_field('sub_topic'); ?></h6>
-
-                                                <?php if (have_rows('content_sub_topic')): ?>
-                                                    <div class="flex flex-col gap-[10px]">
-                                                        <?php while (have_rows('content_sub_topic')): the_row(); ?>
-
-                                                            <?php if (have_rows('text_content_group')): ?>
-                                                                <div class="flex flex-col gap-[10px]">
-                                                                    <?php while (have_rows('text_content_group')): the_row(); ?>
-                                                                        
-                                                                        <?php 
-                                                                        $layout = get_row_layout(); // Get the current layout
-                                                                        ?>
-
-                                                                        <div class="flex gap-[10px] items-center">
-                                                                            
-                                                                            <?php if ($layout === 'paragraph_1st_layer'): ?>  
-                                                                                <?php if (get_sub_field('text_content')): ?>
-                                                                                    <p class="text-[#000000] text-[14px]"><?php the_sub_field('text_content'); ?></p>
-                                                                                <?php endif; ?>
-
-                                                                            <?php elseif ($layout === 'bullet_1st_layer'): ?>  
-                                                                                <?php if (get_sub_field('text_content')): ?>
-                                                                                    <p class="text-[#000000] text-[14px]"><?php the_sub_field('text_content'); ?></p>
-                                                                                <?php endif; ?>
-
-                                                                            <?php elseif ($layout === 'paragraph_2nd_layer'): ?>  
-                                                                                <?php if (get_sub_field('text_content')): ?>
-                                                                                    <p class="text-[#000000] text-[14px]"><?php the_sub_field('text_content'); ?></p>
-                                                                                <?php endif; ?>
-
-                                                                            <?php elseif ($layout === 'bullet_2nd_layer'): ?>  
-                                                                                <?php if (get_sub_field('text_content')): ?>
-                                                                                    <p class="text-[#000000] text-[14px]"><?php the_sub_field('text_content'); ?></p>
-                                                                                <?php endif; ?>
-
-                                                                            <?php endif; ?>
-
-                                                                        </div>
-
-                                                                    <?php endwhile; ?>
-                                                                </div>
-                                                            <?php endif; ?>
-
-                                                        <?php endwhile; ?>
-                                                    </div>
-                                                <?php endif; ?>
+                                                <h6 class="text-[#000000] pt-[10px] text-[22px] font-bold"><?php the_sub_field('sub_topic'); ?></h6>
+                                    
+                                                <?php the_sub_field('content_editor'); ?>
 
                                             <?php endwhile; ?>
                                         </div>
@@ -214,6 +188,17 @@ while (have_posts()) {
             </div>
         </div>
     </div>
+    <?php endif; ?>
+    <?php if(!have_rows('background') && !have_rows('quick_facts')): ?>
+        <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
+            <div class="h-[500px] flex justify-center">
+                <div class="flex flex-col gap-[20px] justify-center items-center">
+                    <h4 class="text-[36px]">We're Sorry, This Section is Unavailable</h4>
+                    <p class="">It seems this section is currently empty. You can return to <a class="text-[#2a7f3d] font-bold" href="https://cadre.searca.org/agricultural-statistics-data/">Agricultural Statistics Data</a> for more information.</p>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 <?php 
 }
 get_footer();

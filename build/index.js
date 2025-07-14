@@ -534,6 +534,7 @@ class HomeResourcesSearch {
     });
   }
   performSearch(selectedValues) {
+    console.log("selectedValues", selectedValues);
     let queryString = Object.keys(selectedValues).map(tax => selectedValues[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
     let apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${queryString}`;
     console.log("apiUrl", apiUrl);
@@ -677,6 +678,35 @@ class KmFilterAcc {
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (KmFilterAcc);
+
+/***/ }),
+
+/***/ "./modules/KnowledgeProductsSearch.js":
+/*!********************************************!*\
+  !*** ./modules/KnowledgeProductsSearch.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _src_config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/config.js */ "./src/config.js");
+
+class KnowledgeProductsSearch {
+  constructor() {}
+  handleSearch() {
+    const inputField = document.getElementById("knowledge-products-search-input");
+    inputField.addEventListener("input", e => {
+      const searchValue = e.target.value.trim();
+      this.performSearch(searchValue);
+    });
+  }
+  performSearch(selectedValues) {
+    console.log("selectedValues", selectedValues);
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (KnowledgeProductsSearch);
 
 /***/ }),
 
@@ -1180,17 +1210,19 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/ModalManager */ "./modules/ModalManager.js");
 /* harmony import */ var _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/HomeResourceSearch */ "./modules/HomeResourceSearch.js");
-/* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
-/* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
-/* harmony import */ var _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/MenuFunctionality */ "./modules/MenuFunctionality.js");
-/* harmony import */ var _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modules/FrontpageFilterAcc */ "./modules/FrontpageFilterAcc.js");
-/* harmony import */ var _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/KmFilterAcc  */ "./modules/KmFilterAcc .js");
-/* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
-/* harmony import */ var _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modules/AgdomImageTransition */ "./modules/AgdomImageTransition.js");
-/* harmony import */ var _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modules/SeaprofileContent */ "./modules/SeaprofileContent.js");
-/* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
-/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
-/* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
+/* harmony import */ var _modules_KnowledgeProductsSearch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/KnowledgeProductsSearch */ "./modules/KnowledgeProductsSearch.js");
+/* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
+/* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
+/* harmony import */ var _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modules/MenuFunctionality */ "./modules/MenuFunctionality.js");
+/* harmony import */ var _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/FrontpageFilterAcc */ "./modules/FrontpageFilterAcc.js");
+/* harmony import */ var _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../modules/KmFilterAcc  */ "./modules/KmFilterAcc .js");
+/* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
+/* harmony import */ var _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modules/AgdomImageTransition */ "./modules/AgdomImageTransition.js");
+/* harmony import */ var _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/SeaprofileContent */ "./modules/SeaprofileContent.js");
+/* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
+/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
+/* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
+
 
 
 
@@ -1209,17 +1241,18 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener("DOMContentLoaded", function () {
   const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
   const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
-  const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_2__["default"]();
-  const homeFilterAcc = new _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_5__["default"]();
-  const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_3__["default"]();
-  const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_4__["default"]();
-  const kmFilterAcc = new _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_6__["default"]();
-  const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_7__["default"]();
-  const agdomImageTransition = new _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_8__["default"]();
-  const seaprofileContent = new _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_9__["default"]();
-  const consortiumInteractive = new _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_10__["default"]();
-  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_11__["default"]();
-  const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_12__["default"]();
+  const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  const homeFilterAcc = new _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_4__["default"]();
+  const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_5__["default"]();
+  const kmFilterAcc = new _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_7__["default"]();
+  const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_8__["default"]();
+  const agdomImageTransition = new _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_9__["default"]();
+  const seaprofileContent = new _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_10__["default"]();
+  const consortiumInteractive = new _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_11__["default"]();
+  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_12__["default"]();
+  const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  const knowledgeProductsSearch = new _modules_KnowledgeProductsSearch__WEBPACK_IMPORTED_MODULE_2__["default"]();
   // const mousehover = new MouseOverFunc();
 
   gsapControls.heroSlider();
@@ -1338,6 +1371,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const consorInteractive = document.getElementById('consorInteractive');
     const cadreVideo = document.getElementById("cadrein-action-video");
     const topicContent = document.getElementById("sea-topic-profile");
+    const knowledgeProductsSearchInput = document.getElementById("knowledge-products-search-input");
 
     //initial setup for accordion in FAQ in homepage
     if (accElement) {
@@ -1368,6 +1402,9 @@ document.addEventListener("DOMContentLoaded", function () {
       seaprofileContent.InitializeContent();
       seaprofileContent.onMouseHover();
       seaprofileContent.handleChooseContent();
+    }
+    if (knowledgeProductsSearchInput) {
+      knowledgeProductsSearch.handleSearch();
     }
     if (document.getElementById("swiper-wrapper")) {
       const swiper = new Swiper(".mySwiper", {

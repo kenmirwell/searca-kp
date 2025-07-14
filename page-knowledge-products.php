@@ -4,7 +4,7 @@
     while (have_posts()) {
         the_post();
 
-    $page = get_page_by_title('Knowledge Resources Test'); // this is a child page
+    $page = get_page_by_title('Knowledge Products'); 
     
     set_query_var('page_id', $page->ID);
 

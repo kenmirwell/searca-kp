@@ -1,5 +1,6 @@
 import ModalManager from "../modules/ModalManager";
 import HomeResourceSearch from "../modules/HomeResourceSearch";
+import KnowledgeProductsSearch from "../modules/KnowledgeProductsSearch";
 import FaqAcc from "../modules/FaqAcc";
 import MapFunc from "../modules/MapFunc";
 import MobileMenuFunc from "../modules/MenuFunctionality";
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const consortiumInteractive = new ConsortiumInteractive();
     const customVideoButton = new CustomVideoButton();
     const gsapControls = new GsapControls();
+    const knowledgeProductsSearch = new KnowledgeProductsSearch();
     // const mousehover = new MouseOverFunc();
 
     gsapControls.heroSlider();
@@ -172,6 +174,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const topicContent = document.getElementById("sea-topic-profile");
 
+        const knowledgeProductsSearchInput = document.getElementById("knowledge-products-search-input");
+
         //initial setup for accordion in FAQ in homepage
         if(accElement) {    
             const height = accElement.offsetHeight;
@@ -210,6 +214,10 @@ document.addEventListener("DOMContentLoaded", function () {
             seaprofileContent.InitializeContent();
             seaprofileContent.onMouseHover();
             seaprofileContent.handleChooseContent();
+        }
+
+        if(knowledgeProductsSearchInput) {
+            knowledgeProductsSearch.handleSearch();
         }
         
 
