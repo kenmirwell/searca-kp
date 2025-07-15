@@ -135,8 +135,6 @@ class HomeResourcesSearch {
   }
 
   performSearch(selectedValues) {
-
-    console.log("selectedValues", selectedValues)
     let queryString = Object.keys(selectedValues)
       .map((tax) => selectedValues[tax].map((val) => `${tax}=${encodeURIComponent(val)}`).join("&"))
       .join("&");

@@ -10,27 +10,6 @@ while (have_posts()) {
     $hero_background = get_field('hero_background');
     $hero_description = get_field('hero_description');
 ?>
-    <style>
-        .featured-image-container {
-            width: 100%; /* Adjust as needed */
-            height: 100%;
-            background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');
-            background-repeat: no-repeat;
-            background-size: cover; /* or 'contain' if needed */
-            background-position: center;
-            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1496 1291"><path d="M158.935 180.624C164.854 142.622 195.826 113.493 234.119 109.915L1404.18 0.579571C1453.45 -4.02386 1496 34.7365 1496 84.2152V1207C1496 1253.39 1458.39 1291 1412 1291H84.0952C32.5499 1291 -6.83645 1245 1.09582 1194.07L158.935 180.624Z" fill="white"/></svg>');
-            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1496 1291"><path d="M158.935 180.624C164.854 142.622 195.826 113.493 234.119 109.915L1404.18 0.579571C1453.45 -4.02386 1496 34.7365 1496 84.2152V1207C1496 1253.39 1458.39 1291 1412 1291H84.0952C32.5499 1291 -6.83645 1245 1.09582 1194.07L158.935 180.624Z" fill="white"/></svg>');
-
-            -webkit-mask-size: contain;
-            mask-size: contain;
-
-            -webkit-mask-repeat: no-repeat;
-            mask-repeat: no-repeat;
-
-            -webkit-mask-position: center;
-            mask-position: center;
-        }
-    </style>
 
     <div class="relative h-[800px] flex jusitify-center">
         <div class="flex gap-[50px] items-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[150px] font-light z-[2]">
