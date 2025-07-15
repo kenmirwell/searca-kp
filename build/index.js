@@ -104,6 +104,70 @@ class ConsortiumInteractive {
 
 /***/ }),
 
+/***/ "./modules/CountryprofileContent.js":
+/*!******************************************!*\
+  !*** ./modules/CountryprofileContent.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class CountryprofileContent {
+  constructor() {}
+  InitializeContent() {
+    const content = document.querySelectorAll(".country-topic-content");
+    const topics = document.querySelectorAll(".country-topic-category");
+    content.forEach(data => {
+      data.style.display = data.getAttribute("data-index") === "0" ? "block" : "none";
+    });
+    topics.forEach(topic => {
+      const index = topic.getAttribute("data-index");
+      topic.style.backgroundColor = index === "0" ? "#B59637" : "#096936";
+      if (index === "0") topic.classList.add("active");else topic.classList.remove("active");
+    });
+  }
+  handleChooseContent() {
+    const topics = document.querySelectorAll(".country-topic-category");
+    const content = document.querySelectorAll(".country-topic-content");
+    topics.forEach(topic => {
+      topic.addEventListener("click", function () {
+        const index = topic.getAttribute("data-index");
+        content.forEach(data => {
+          data.style.display = data.getAttribute("data-index") === index ? "block" : "none";
+        });
+        topics.forEach(t => {
+          const tIndex = t.getAttribute("data-index");
+          if (tIndex === index) {
+            t.classList.add("active");
+            t.style.backgroundColor = "#B59637";
+          } else {
+            t.classList.remove("active");
+            t.style.backgroundColor = "#096936";
+          }
+        });
+      });
+    });
+  }
+  onMouseHover() {
+    const topics = document.querySelectorAll(".country-topic-category");
+    topics.forEach(topic => {
+      topic.addEventListener("mouseenter", () => {
+        topic.style.backgroundColor = "#B59637";
+      });
+      topic.addEventListener("mouseleave", () => {
+        if (!topic.classList.contains("active")) {
+          topic.style.backgroundColor = "#096936";
+        }
+      });
+    });
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CountryprofileContent);
+
+/***/ }),
+
 /***/ "./modules/FaqAcc.js":
 /*!***************************!*\
   !*** ./modules/FaqAcc.js ***!
@@ -1219,9 +1283,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
 /* harmony import */ var _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modules/AgdomImageTransition */ "./modules/AgdomImageTransition.js");
 /* harmony import */ var _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/SeaprofileContent */ "./modules/SeaprofileContent.js");
-/* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
-/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
-/* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
+/* harmony import */ var _modules_CountryprofileContent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/CountryprofileContent */ "./modules/CountryprofileContent.js");
+/* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
+/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
+/* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
+
 
 
 
@@ -1249,9 +1315,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_8__["default"]();
   const agdomImageTransition = new _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_9__["default"]();
   const seaprofileContent = new _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_10__["default"]();
-  const consortiumInteractive = new _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_11__["default"]();
-  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_12__["default"]();
-  const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  const countryprofileContent = new _modules_CountryprofileContent__WEBPACK_IMPORTED_MODULE_11__["default"]();
+  const consortiumInteractive = new _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_12__["default"]();
+  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_14__["default"]();
   const knowledgeProductsSearch = new _modules_KnowledgeProductsSearch__WEBPACK_IMPORTED_MODULE_2__["default"]();
   // const mousehover = new MouseOverFunc();
 
@@ -1371,6 +1438,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const consorInteractive = document.getElementById('consorInteractive');
     const cadreVideo = document.getElementById("cadrein-action-video");
     const topicContent = document.getElementById("sea-topic-profile");
+    const countryTopicContent = document.getElementById("country-profile-topic");
     const knowledgeProductsSearchInput = document.getElementById("knowledge-products-search-input");
 
     //initial setup for accordion in FAQ in homepage
@@ -1402,6 +1470,11 @@ document.addEventListener("DOMContentLoaded", function () {
       seaprofileContent.InitializeContent();
       seaprofileContent.onMouseHover();
       seaprofileContent.handleChooseContent();
+    }
+    if (countryTopicContent) {
+      countryprofileContent.InitializeContent();
+      countryprofileContent.onMouseHover();
+      countryprofileContent.handleChooseContent();
     }
     if (knowledgeProductsSearchInput) {
       knowledgeProductsSearch.handleSearch();

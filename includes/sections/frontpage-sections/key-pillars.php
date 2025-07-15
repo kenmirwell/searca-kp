@@ -1,4 +1,4 @@
-<div class="py-[80px]">
+<div class="key-pillars py-[80px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="simple-header flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
             <div class="text-left w-[100%] lg:w-[50%]">
@@ -34,8 +34,10 @@
                                         <p class="font-extralight text-[10px] xl:text-[14px] text-white"><?php echo esc_html($sub2); ?></p>
 
                                         <?php if ($link): ?>
-                                            <a class="block w-auto max-h-0 group-hover:max-h-[300px] overflow-hidden transition-all duration-300 ease-in-out delay-150 pt-[10px]" 
-                                            href="<?php echo esc_url($link); ?>">
+                                            <a 
+                                                class="block w-auto max-h-0 group-hover:max-h-[300px] overflow-hidden transition-all duration-300 ease-in-out delay-150 pt-[10px]" 
+                                                href="<?php echo esc_url($link); ?>"
+                                            >
                                                 <div class="flex justify-between items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#096936] hover:bg-[#B59637] transition-all duration-200 ease rounded-full">
                                                     <p class="hover:text-black text-white">Learn More</p>
                                                     <div class="bg-[#B59637] hover:bg-[#096936] rounded-full p-[15px] transition-all duration-200 ease">
@@ -56,7 +58,6 @@
                                 </div>
                             </div>
                         </div>
-
                     <?php endwhile; ?>
                 <!-- </div> -->
             <?php endif; ?>

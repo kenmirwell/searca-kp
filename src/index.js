@@ -9,6 +9,7 @@ import KmFilterAcc from "../modules/KmFilterAcc ";
 import KmFilter from "../modules/KmFilter";
 import AgdomTransition from "../modules/AgdomImageTransition";
 import SeaprofileContent from "../modules/SeaprofileContent";
+import CountryprofileContent from "../modules/CountryprofileContent";
 import ConsortiumInteractive from "../modules/ConsortiumInteractive";
 import CustomVideoButton from "../modules/VideoFunc";
 import GsapControls from "../modules/Gsap";
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const knFilter  = new KmFilter();
     const agdomImageTransition = new AgdomTransition();
     const seaprofileContent = new SeaprofileContent();
+    const countryprofileContent = new CountryprofileContent();
     const consortiumInteractive = new ConsortiumInteractive();
     const customVideoButton = new CustomVideoButton();
     const gsapControls = new GsapControls();
@@ -174,6 +176,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const topicContent = document.getElementById("sea-topic-profile");
 
+        const countryTopicContent = document.getElementById("country-profile-topic");
+
         const knowledgeProductsSearchInput = document.getElementById("knowledge-products-search-input");
 
         //initial setup for accordion in FAQ in homepage
@@ -214,6 +218,12 @@ document.addEventListener("DOMContentLoaded", function () {
             seaprofileContent.InitializeContent();
             seaprofileContent.onMouseHover();
             seaprofileContent.handleChooseContent();
+        }
+
+        if(countryTopicContent) {
+            countryprofileContent.InitializeContent();
+            countryprofileContent.onMouseHover();
+            countryprofileContent.handleChooseContent();
         }
 
         if(knowledgeProductsSearchInput) {
