@@ -598,7 +598,6 @@ class HomeResourcesSearch {
     });
   }
   performSearch(selectedValues) {
-    console.log("selectedValues", selectedValues);
     let queryString = Object.keys(selectedValues).map(tax => selectedValues[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
     let apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${queryString}`;
     console.log("apiUrl", apiUrl);
@@ -758,16 +757,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_config_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../src/config.js */ "./src/config.js");
 
 class KnowledgeProductsSearch {
-  constructor() {}
-  handleSearch() {
-    const inputField = document.getElementById("knowledge-products-search-input");
-    inputField.addEventListener("input", e => {
-      const searchValue = e.target.value.trim();
-      this.performSearch(searchValue);
-    });
+  constructor() {
+    this.searchResultBox = document.getElementById("knowledge-products-search-result");
+    this.resultContent = document.getElementById("kp-search-result-content");
+    this.handleSearch();
   }
-  performSearch(selectedValues) {
-    console.log("selectedValues", selectedValues);
+  handleSearch() {
+    const input = document.getElementById("knowledge-products-search-input");
+    if (!input) return;
+    const debounced = this.debounce(e => {
+      const value = e.target.value.trim();
+      this.toggleSection(value);
+      if (value) {
+        this.showLoader();
+        // Simulate search request
+        setTimeout(() => {
+          this.updateSearchResults(`<div>No results yet</div>`);
+        }, 1500);
+      }
+    }, 1000);
+    input.addEventListener("input", debounced);
+  }
+  toggleSection(value) {
+    const mainSection = document.getElementById("knowledge-products-content");
+    if (!mainSection) return;
+
+    // Hide the main content if search has value
+    mainSection.classList.toggle("hidden", !!value);
+
+    // Show or hide the search result container
+    if (value) {
+      this.searchResultBox.classList.remove("hidden");
+    } else {
+      this.searchResultBox.classList.add("hidden");
+    }
+  }
+  showLoader() {
+    this.updateSearchResults(`
+            <div class="loader-container"><div class="loader"></div></div>
+        `);
+  }
+  updateSearchResults(html) {
+    if (this.resultContent) {
+      this.resultContent.innerHTML = html;
+    }
+  }
+  debounce(fn, delay) {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn.apply(this, args), delay);
+    };
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (KnowledgeProductsSearch);

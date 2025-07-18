@@ -1,25 +1,69 @@
 import ENV_VARS from "../src/config.js";
 
-class KnowledgeProductsSearch { 
+class KnowledgeProductsSearch {
     constructor() {
-        
+        this.searchResultBox = document.getElementById("knowledge-products-search-result");
+        this.resultContent = document.getElementById("kp-search-result-content");
+
+        this.handleSearch();
     }
 
     handleSearch() {
-        const inputField = document.getElementById("knowledge-products-search-input");
+        const input = document.getElementById("knowledge-products-search-input");
+        if (!input) return;
 
-        inputField.addEventListener("input", (e) => {
-        
-            const searchValue = e.target.value.trim();
-                    
-            this.performSearch(searchValue);
-            
-        });
+        const debounced = this.debounce((e) => {
+            const value = e.target.value.trim();
+            this.toggleSection(value);
+
+            if (value) {
+                this.showLoader();
+                // Simulate search request
+                setTimeout(() => {
+                    this.updateSearchResults(`<div>No results yet</div>`);
+                }, 1500);
+            }
+        }, 1000);
+
+        input.addEventListener("input", debounced);
     }
 
-    performSearch(selectedValues) {
-        console.log("selectedValues", selectedValues)
+    toggleSection(value) {
+        const mainSection = document.getElementById("knowledge-products-content");
+        if (!mainSection) return;
+
+        // Hide the main content if search has value
+        mainSection.classList.toggle("hidden", !!value);
+
+        // Show or hide the search result container
+        if (value) {
+            this.searchResultBox.classList.remove("hidden");
+        } else {
+            this.searchResultBox.classList.add("hidden");
+        }
+    }
+
+    showLoader() {
+        this.updateSearchResults(`
+            <div class="loader-container"><div class="loader"></div></div>
+        `);
+    }
+
+    updateSearchResults(html) {
+        if (this.resultContent) {
+            this.resultContent.innerHTML = html;
+        }
+    }
+
+    debounce(fn, delay) {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => fn.apply(this, args), delay);
+        };
     }
 }
 
 export default KnowledgeProductsSearch;
+
+
