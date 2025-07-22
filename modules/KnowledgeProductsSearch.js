@@ -10,6 +10,23 @@ class KnowledgeProductsSearch {
 
     handleSearch() {
         const input = document.getElementById("knowledge-products-search-input");
+        const searchBytitle = document.getElementById("kp-search-title");
+        const searchBykeyword = document.getElementById("kp-search-keyword");
+        const searchByauthor = document.getElementById("kp-search-author");
+        const searchBycountry = document.getElementById("kp-search-country");
+
+        const categoryButtons = document.querySelectorAll(".kp-search-category");
+
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                // Remove 'kp-search-active' from all
+                categoryButtons.forEach(btn => btn.classList.remove("kp-search-active"));
+
+                // Add 'kp-search-active' to the clicked one
+                button.classList.add("kp-search-active");
+            });
+        });
+
         if (!input) return;
 
         const debounced = this.debounce((e) => {

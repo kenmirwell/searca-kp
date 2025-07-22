@@ -1020,6 +1020,10 @@ select {
     display: none;
 }
 
+.kp-search-active {
+    color: #096936;
+    font-weight: bold;
+}
 
 
 @keyframes spin {

@@ -22,19 +22,19 @@
             <input id="knowledge-products-search-input" class="pl-[40px] py-[10px] pr-[10px] text-[#000000] w-[100%] border-[1px] border-[#CECECE]" type="text" placeholder="Select by ">
           </div>
           <div class="flex gap-[20px] w-[100%] justify-end pt-[30px]">
-              <div>
+              <div id="kp-search-title" class="cursor-pointer kp-search-category kp-search-active">
                 <p>By Title</p>
               </div>
               <div class="text-[#CECECE]">|</div>
-              <div>
+              <div id="kp-search-author" class="cursor-pointer kp-search-category">
                 <p>By Autor</p>
               </div>
               <div class="text-[#CECECE]">|</div>
-              <div>
+              <div id="kp-search-keyword" class="cursor-pointer kp-search-category">
                 <p>By Keyword</p>
               </div>
               <div class="text-[#CECECE]">|</div>
-              <div>
+              <div id="kp-search-country" class="cursor-pointer kp-search-category">
                 <p>By Country</p>
               </div>
           </div>
