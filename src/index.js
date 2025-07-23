@@ -257,6 +257,10 @@ document.addEventListener("DOMContentLoaded", function () {
         homeFilterAcc.handleHomeFilterAcc(elementId, containerId, headId, index)
     }
 
+    window.handleKPfilteraccordion = function(elementId, index) {
+        knowledgeProductsSearch.handleFilter(elementId, index)
+    }
+
     window.handleKmFilterAccordion = function(elementId, groupId, index) {
         kmFilterAcc.handleKmFilterAcc(elementId, groupId, index)
     }

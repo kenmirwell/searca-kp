@@ -761,6 +761,20 @@ class KnowledgeProductsSearch {
     this.searchResultBox = document.getElementById("knowledge-products-search-result");
     this.resultContent = document.getElementById("kp-search-result-content");
     this.handleSearch();
+    this.handleFilter();
+  }
+  handleFilter(elementId, index) {
+    const accElement = document.getElementById(elementId);
+    const height = accElement.offsetHeight < 200 ? accElement.offsetHeight : 200;
+    for (let i = 0; i < 4; i++) {
+      if (index !== i) {
+        document.getElementById(`home-side-filter-container-${i}`).style.height = 0;
+        document.getElementById(`home-side-filter-container-${i}`).style.margin = "0";
+      } else {
+        document.getElementById(`home-side-filter-container-${i}`).style.height = height + "px";
+        document.getElementById(`home-side-filter-container-${i}`).style.margin = "10px 0";
+      }
+    }
   }
   handleSearch() {
     const input = document.getElementById("knowledge-products-search-input");
@@ -1553,6 +1567,9 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   window.handleHomeAccordion = function (elementId, containerId, headId, index) {
     homeFilterAcc.handleHomeFilterAcc(elementId, containerId, headId, index);
+  };
+  window.handleKPfilteraccordion = function (elementId, index) {
+    knowledgeProductsSearch.handleFilter(elementId, index);
   };
   window.handleKmFilterAccordion = function (elementId, groupId, index) {
     kmFilterAcc.handleKmFilterAcc(elementId, groupId, index);
