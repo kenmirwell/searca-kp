@@ -761,8 +761,7 @@ class KnowledgeProductsSearch {
   constructor() {
     this.searchResultBox = document.getElementById("knowledge-products-search-result");
     this.resultContent = document.getElementById("kp-search-result-content");
-    this.searchBy = "search"; // default
-    this.searchValue = "";
+    this.searchBy = "search"; // default search mode
     this.handleSearch();
     this.handleFilter();
   }
@@ -791,7 +790,7 @@ class KnowledgeProductsSearch {
     const input = document.getElementById("knowledge-products-search-input");
     const categoryButtons = document.querySelectorAll(".kp-search-category");
 
-    // Handle search by category
+    // Category click handling
     categoryButtons.forEach(button => {
       button.addEventListener("click", () => {
         categoryButtons.forEach(btn => btn.classList.remove("kp-search-active"));
@@ -806,33 +805,29 @@ class KnowledgeProductsSearch {
         } else if (clickedId === "kp-search-country") {
           this.searchBy = "country";
         }
-
-        // Optional: immediately trigger search again with new category
-        if (this.searchValue) this.performSearch(this.searchValue);
+        console.log("Search category set to:", this.searchBy);
       });
     });
     if (!input) return;
-
-    // Attach debounced input handler
     const debouncedInput = this.debounce(e => {
       const value = e.target.value.trim();
-      this.searchValue = value;
       this.performSearch(value);
     }, 1000);
     input.addEventListener("input", debouncedInput);
   }
   performSearch(value) {
     const query = typeof value === "string" ? value.trim() : "";
-    const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}`;
-    console.log("apiUrl", apiUrl);
-    this.showLoader(); // ✅ always show loader first
+    this.toggleSection(query); // ✅ Make sure result box is visible first
+    this.showLoader(); // ✅ Now inject loader content
 
     setTimeout(() => {
       if (query) {
-        this.toggleSection(query);
+        const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}`;
+        console.log("API URL:", apiUrl);
+
+        // Placeholder result while mocking data
         this.updateSearchResults(`<div>No results yet for "<strong>${query}</strong>"</div>`);
       } else {
-        this.toggleSection("");
         this.updateSearchResults(`<div>No results yet</div>`);
       }
     }, 1500);
