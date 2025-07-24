@@ -44,50 +44,50 @@
     <div class="flex gap-[20px] justify-between pt-[20px]">
       <?php foreach ($filter_group as $filter): ?>
         <div class="relative w-[100%]">
-          <div id="type-filter" class="w-[100%] flex items-center justify-between bg-[#F5F8FC] py-[10px] px-[20px]">
+          <div 
+            id="type-filter" 
+            class="w-[100%] flex items-center justify-between bg-[#F5F8FC] py-[10px] px-[20px]"
+            onclick="handleKPfilteraccordion('kp-filter-content-<?php echo $filter['index']; ?>', <?php echo $filter['index']; ?>)"  
+          >
             <div><?php echo $filter["key"] ?></div>
             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.71094 1V15M1.71094 8H15.7109" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <!-- dropdown choices -->
-          <div class="absolute w-[100%]">
-            <?php
-              $taxonomy = $filter['value'];
-              $terms = get_categories(array(
-                  'taxonomy'   => $taxonomy, 
-                  'hide_empty' => true,
-              ));
-            ?>
-            <?php if (!is_wp_error($terms)) : ?>
-              <ul id="" class="relative py-[20px] px-[10px] z-[99] w-[100%] flex flex-col shadow bg-[#ffffff]">
-                <?php foreach ($terms as $term) : ?>
-                  <div 
-                    class="flex items-center"  
-                    id=""
-                  >
-                    <li 
-                        class="w-[200px] flex gap-[10px] font-[200] hover:font-[600] text-[#000000] text-[14px] py-[2px] cursor-pointer" 
-                        data-name="" 
-                        data-value=""
-                        data-taxonomy=""
-                    >
-                        <div class="selection-box">
-                            <svg class="unchecked-box" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" stroke="#D3D3D3"/>
-                            </svg>
-                            <svg class="checked-box hidden" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" fill="#DFF8EA"/>
-                                <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" stroke="#096936"/>
-                                <path d="M13.5 5.625L7.3125 11.8125L4.5 9" stroke="#096936" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        <?php echo esc_html($term->name); ?>
-                    </li>
-                  </div>
-                <?php endforeach; ?>
-              </ul>
-            <?php endif; ?>
+          <div class="absolute w-[100%] bg-[#F5F8FC]">
+             <div 
+                id="kp-filter-container-<?php echo $filter['index']; ?>" 
+                class="rounded-lg overflow-y-scroll pr-[20px] scrollbar-custom h-[100%] transition-all duration-200 ease"
+                style="height: 0;" 
+              >
+                <div id="kp-filter-content-<?php echo $filter['index']; ?>" class="relative py-[20px] px-[10px] z-[99] w-[100%] flex flex-col">
+                  <?php
+                    $taxonomy = $filter['value'];
+                    $terms = get_categories(array(
+                        'taxonomy'   => $taxonomy, 
+                        'hide_empty' => true,
+                    ));
+                  ?>
+                  <?php if (!is_wp_error($terms)) : ?>
+                    <?php foreach ($terms as $term) : ?>
+                      <div class="w-[200px] flex gap-[10px] font-[200] hover:font-[600] text-[#000000] text-[14px] py-[2px] cursor-pointer">
+                          <div class="selection-box">
+                              <svg class="unchecked-box" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" stroke="#D3D3D3"/>
+                              </svg>
+                              <svg class="checked-box hidden" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" fill="#DFF8EA"/>
+                                  <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" stroke="#096936"/>
+                                  <path d="M13.5 5.625L7.3125 11.8125L4.5 9" stroke="#096936" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                          </div>
+                          <?php echo esc_html($term->name); ?>
+                      </div>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                </div>
+              </div>
           </div>
         </div>
       <?php endforeach; ?>
