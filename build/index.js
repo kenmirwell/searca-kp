@@ -761,9 +761,9 @@ class KnowledgeProductsSearch {
   constructor() {
     this.searchResultBox = document.getElementById("knowledge-products-search-result");
     this.resultContent = document.getElementById("kp-search-result-content");
-    this.searchBy = "search"; // default search mode
+    this.searchBy = "search";
+    this.selectedFilters = new Set();
     this.handleSearch();
-    this.handleFilter();
   }
   handleFilter(elementId, index) {
     const accElement = document.getElementById(elementId);
@@ -784,27 +784,43 @@ class KnowledgeProductsSearch {
           }
         }
       }
+
+      // 🟩 Attach filter selection behavior inside the opened dropdown
+      const filterItems = accElement.querySelectorAll("[data-slug]");
+      filterItems.forEach(item => {
+        item.addEventListener("click", () => {
+          const slug = item.getAttribute("data-slug");
+          const checked = item.querySelector(".checked-box");
+          const unchecked = item.querySelector(".unchecked-box");
+          const isSelected = !checked.classList.contains("hidden");
+          if (isSelected) {
+            this.selectedFilters.delete(slug);
+            checked.classList.add("hidden");
+            unchecked.classList.remove("hidden");
+            item.classList.remove("font-[600]");
+          } else {
+            this.selectedFilters.add(slug);
+            checked.classList.remove("hidden");
+            unchecked.classList.add("hidden");
+            item.classList.add("font-[600]");
+          }
+          const input = document.getElementById("knowledge-products-search-input");
+          if (input && input.value.trim()) {
+            this.performSearch(input.value.trim());
+          }
+        });
+      });
     }
   }
   handleSearch() {
     const input = document.getElementById("knowledge-products-search-input");
     const categoryButtons = document.querySelectorAll(".kp-search-category");
-
-    // Category click handling
     categoryButtons.forEach(button => {
       button.addEventListener("click", () => {
         categoryButtons.forEach(btn => btn.classList.remove("kp-search-active"));
         button.classList.add("kp-search-active");
         const clickedId = button.id;
-        if (clickedId === "kp-search-title") {
-          this.searchBy = "title_search";
-        } else if (clickedId === "kp-search-keyword") {
-          this.searchBy = "search";
-        } else if (clickedId === "kp-search-author") {
-          this.searchBy = "author";
-        } else if (clickedId === "kp-search-country") {
-          this.searchBy = "country";
-        }
+        if (clickedId === "kp-search-title") this.searchBy = "title_search";else if (clickedId === "kp-search-keyword") this.searchBy = "search";else if (clickedId === "kp-search-author") this.searchBy = "author";else if (clickedId === "kp-search-country") this.searchBy = "country";
         console.log("Search category set to:", this.searchBy);
       });
     });
@@ -814,19 +830,31 @@ class KnowledgeProductsSearch {
       this.performSearch(value);
     }, 1000);
     input.addEventListener("input", debouncedInput);
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        this.performSearch(input.value.trim());
+      }
+    });
   }
   performSearch(value) {
     const query = typeof value === "string" ? value.trim() : "";
-    this.toggleSection(query); // ✅ Make sure result box is visible first
-    this.showLoader(); // ✅ Now inject loader content
-
+    this.toggleSection(query);
+    this.showLoader();
     setTimeout(() => {
       if (query) {
-        const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}`;
+        const filters = Array.from(this.selectedFilters);
+        const filterQuery = filters.length ? `&filters=${filters.join(",")}` : "";
+        const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}${filterQuery}`;
         console.log("API URL:", apiUrl);
 
-        // Placeholder result while mocking data
-        this.updateSearchResults(`<div>No results yet for "<strong>${query}</strong>"</div>`);
+        // this.updateSearchResults(`
+        //     <div>No results yet for "<strong>${query}</strong>"<br/>
+        //     ${filters.length ? `Filters applied: ${filters.join(", ")}` : `No filters applied`}</div>
+        // `);
+        this.updateSearchResults(`
+                    <div>No results yet for "<strong>${query}</strong>"<br/>
+                `);
       } else {
         this.updateSearchResults(`<div>No results yet</div>`);
       }

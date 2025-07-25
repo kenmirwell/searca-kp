@@ -71,7 +71,10 @@
                   ?>
                   <?php if (!is_wp_error($terms)) : ?>
                     <?php foreach ($terms as $term) : ?>
-                      <div class="w-[200px] flex gap-[10px] font-[200] hover:font-[600] text-[#000000] text-[14px] py-[2px] cursor-pointer">
+                      <div
+                        data-slug="<?php echo esc_attr( $term->slug ); ?>" 
+                        class="<?php echo esc_attr( $term->slug ); ?> w-[200px] flex gap-[10px] font-[200] hover:font-[600] text-[#000000] text-[14px] py-[2px] cursor-pointer"
+                      >
                           <div class="selection-box">
                               <svg class="unchecked-box" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <rect x="0.5" y="0.5" width="17" height="17" rx="2.5" stroke="#D3D3D3"/>
