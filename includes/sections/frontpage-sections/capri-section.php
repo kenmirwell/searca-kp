@@ -71,7 +71,7 @@
                                 button_template('common-button', array(
                                     'title' => "Learn More About CAPRI",
                                     'url' => "/agricultural-digital-tools",
-                                    'color' => 'gold_to_green'
+                                    'color' => 'green_to_gold'
                                 ));
                             ?>
                         </div>

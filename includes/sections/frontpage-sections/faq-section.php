@@ -3,7 +3,7 @@
         <div class="block md:flex gap-[20px] lg:gap-[80px]">
             <div class="flex flex-col gap-[20px] w-[100%] md:w-[50%]">
                 <h2 class="text-display-22 lg:text-display-42 text-[#ffffff] font-[700]">Frequently Asked</br> Questions</h2>
-                <p  class="text-display-14 lg:text-display-18 text-[#ffffff]">Find answers to common questions about CADRE, our platform, and how we support sustainable agriculture in Southeast Asia.</p>
+                <p  class="text-display-14 lg:text-display-18 text-[#ffffff]">Find answers to common questions about CAPRI, our platform, and how we support sustainable agriculture in Southeast Asia.</p>
                 <div class="flex">
                     <?php
                         button_template('common-button', array(
