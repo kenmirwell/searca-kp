@@ -784,8 +784,6 @@ class KnowledgeProductsSearch {
           }
         }
       }
-
-      // 🟩 Attach filter selection behavior inside the opened dropdown
       const filterItems = accElement.querySelectorAll("[data-slug]");
       filterItems.forEach(item => {
         item.addEventListener("click", () => {
@@ -841,24 +839,37 @@ class KnowledgeProductsSearch {
     const query = typeof value === "string" ? value.trim() : "";
     this.toggleSection(query);
     this.showLoader();
-    setTimeout(() => {
-      if (query) {
-        const filters = Array.from(this.selectedFilters);
-        const filterQuery = filters.length ? `&filters=${filters.join(",")}` : "";
-        const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}${filterQuery}`;
-        console.log("API URL:", apiUrl);
-
-        // this.updateSearchResults(`
-        //     <div>No results yet for "<strong>${query}</strong>"<br/>
-        //     ${filters.length ? `Filters applied: ${filters.join(", ")}` : `No filters applied`}</div>
-        // `);
-        this.updateSearchResults(`
-                    <div>No results yet for "<strong>${query}</strong>"<br/>
-                `);
-      } else {
-        this.updateSearchResults(`<div>No results yet</div>`);
+    if (!query) {
+      this.updateSearchResults(`<div>No results yet</div>`);
+      return;
+    }
+    const filters = Array.from(this.selectedFilters);
+    const filterQuery = filters.length ? `&filters=${filters.join(",")}` : "";
+    const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}${filterQuery}`;
+    console.log("API URL:", apiUrl);
+    fetch(apiUrl).then(res => {
+      if (!res.ok) throw new Error("Failed to fetch");
+      return res.json();
+    }).then(data => {
+      if (!Array.isArray(data) || data.length === 0) {
+        this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
+        return;
       }
-    }, 1500);
+      console.log("data", data);
+      this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
+      // const html = data.map(item => `  
+      //     <div class="border p-4 mb-2 rounded shadow-sm bg-white">
+      //         <h3 class="text-lg font-bold">${item.title || "No title"}</h3>
+      //         <p class="text-sm text-gray-600">${item.author || "Unknown author"}</p>
+      //         <p class="mt-2 text-sm">${item.summary || "No summary available."}</p>
+      //     </div>
+      // `).join("");
+
+      // this.updateSearchResults(html);
+    }).catch(err => {
+      console.error("Error during search:", err);
+      this.updateSearchResults(`<div class="text-red-600">Error loading results. Please try again later.</div>`);
+    });
   }
   toggleSection(value) {
     const mainSection = document.getElementById("knowledge-products-content");
@@ -868,7 +879,9 @@ class KnowledgeProductsSearch {
   }
   showLoader() {
     this.updateSearchResults(`
-            <div class="loader-container"><div class="loader"></div></div>
+            <div class="loader-container flex justify-center py-10">
+                <div class="loader border-4 border-blue-400 border-t-transparent rounded-full w-10 h-10 animate-spin"></div>
+            </div>
         `);
   }
   updateSearchResults(html) {

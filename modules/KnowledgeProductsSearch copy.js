@@ -31,12 +31,14 @@ class KnowledgeProductsSearch {
                 }
             }
 
+            // 🟩 Attach filter selection behavior inside the opened dropdown
             const filterItems = accElement.querySelectorAll("[data-slug]");
             filterItems.forEach(item => {
                 item.addEventListener("click", () => {
                     const slug = item.getAttribute("data-slug");
                     const checked = item.querySelector(".checked-box");
                     const unchecked = item.querySelector(".unchecked-box");
+
                     const isSelected = !checked.classList.contains("hidden");
 
                     if (isSelected) {
@@ -102,45 +104,21 @@ class KnowledgeProductsSearch {
         this.toggleSection(query);
         this.showLoader();
 
-        if (!query) {
-            this.updateSearchResults(`<div>No results yet</div>`);
-            return;
-        }
+        setTimeout(() => {
+            if (query) {
+                const filters = Array.from(this.selectedFilters);
+                const filterQuery = filters.length ? `&filters=${filters.join(",")}` : "";
 
-        const filters = Array.from(this.selectedFilters);
-        const filterQuery = filters.length ? `&filters=${filters.join(",")}` : "";
+                const apiUrl = `${ENV_VARS.API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}${filterQuery}`; //I'm not sure if the value here will really fetch anything
+                console.log("API URL:", apiUrl);
 
-        const apiUrl = `${ENV_VARS.API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}${filterQuery}`;
-        console.log("API URL:", apiUrl);
-
-        fetch(apiUrl)
-            .then(res => {
-                if (!res.ok) throw new Error("Failed to fetch");
-                return res.json();
-            })
-            .then(data => {
-                if (!Array.isArray(data) || data.length === 0) {
-                    this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
-                    return;
-                }
-
-                console.log("data", data)
-
-                this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
-                // const html = data.map(item => `  
-                //     <div class="border p-4 mb-2 rounded shadow-sm bg-white">
-                //         <h3 class="text-lg font-bold">${item.title || "No title"}</h3>
-                //         <p class="text-sm text-gray-600">${item.author || "Unknown author"}</p>
-                //         <p class="mt-2 text-sm">${item.summary || "No summary available."}</p>
-                //     </div>
-                // `).join("");
-
-                // this.updateSearchResults(html);
-            })
-            .catch(err => {
-                console.error("Error during search:", err);
-                this.updateSearchResults(`<div class="text-red-600">Error loading results. Please try again later.</div>`);
-            });
+                this.updateSearchResults(`
+                    <div>No results yet for "<strong>${query}</strong>"<br/>
+                `);
+            } else {
+                this.updateSearchResults(`<div>No results yet</div>`);
+            }
+        }, 1500);
     }
 
     toggleSection(value) {
@@ -153,9 +131,7 @@ class KnowledgeProductsSearch {
 
     showLoader() {
         this.updateSearchResults(`
-            <div class="loader-container flex justify-center py-10">
-                <div class="loader border-4 border-blue-400 border-t-transparent rounded-full w-10 h-10 animate-spin"></div>
-            </div>
+            <div class="loader-container"><div class="loader"></div></div>
         `);
     }
 
