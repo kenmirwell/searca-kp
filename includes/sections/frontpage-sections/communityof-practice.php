@@ -25,7 +25,7 @@
                 <?php
                     button_template('common-button', array(
                         'title' => "Learn More About COP",
-                        'url' => "/agricultural-digital-tools",
+                        'url' => "/community-of-practice",
                         'color' => 'green_to_gold'
                     ))
                 ?>

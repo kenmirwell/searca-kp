@@ -69,7 +69,7 @@
                         <div class="flex">
                             <?php
                                 button_template('common-button', array(
-                                    'title' => "Learn More About CAPRI",
+                                    'title' => "Learn More About Platform",
                                     'url' => "/agricultural-digital-tools",
                                     'color' => 'gold_to_green'
                                 ));
@@ -77,8 +77,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
