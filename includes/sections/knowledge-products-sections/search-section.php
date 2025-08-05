@@ -73,6 +73,8 @@
                     <?php foreach ($terms as $term) : ?>
                       <div
                         data-slug="<?php echo esc_attr( $term->slug ); ?>" 
+                        data-taxonomy="<?php echo $filter['value']; ?>[]"
+                        data-value="<?php echo esc_attr($term->term_id); ?>"
                         class="<?php echo esc_attr( $term->slug ); ?> w-[200px] flex gap-[10px] font-[200] hover:font-[600] text-[#000000] text-[14px] py-[2px] cursor-pointer"
                       >
                           <div class="selection-box">

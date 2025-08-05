@@ -28,7 +28,6 @@ class HomeResourcesSearch {
       searchByKeyword.classList.add("inactive-searchby");
       searchByKeyword.classList.remove("active-searchby");
 
-      console.log("this.selectedValues", this.selectedValues)
       if (this.selectedValues["search"] && this.selectedValues["search"].length > 0) {
         this.selectedValues["title_search"] = this.selectedValues["search"];
         delete this.selectedValues["search"];
@@ -45,8 +44,6 @@ class HomeResourcesSearch {
       searchByTitle.classList.remove("active-searchby");
       searchByKeyword.classList.add("active-searchby");
       searchByKeyword.classList.remove("inactive-searchby");
-
-      console.log("this.selectedValues", this.selectedValues)
 
       if (this.selectedValues["title_search"] && this.selectedValues["title_search"].length > 0) {
         this.selectedValues["search"] = this.selectedValues["title_search"];
@@ -141,8 +138,6 @@ class HomeResourcesSearch {
       .join("&");
 
     let apiUrl = `${ENV_VARS.API_URL}knowledge-management?${queryString}`;
-
-    console.log("apiUrl", apiUrl);
 
     requestAnimationFrame(() => { //built in javascript function
       this.toggleSearch(apiUrl, selectedValues);

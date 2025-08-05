@@ -508,7 +508,6 @@ class HomeResourcesSearch {
       searchByTitle.classList.remove("inactive-searchby");
       searchByKeyword.classList.add("inactive-searchby");
       searchByKeyword.classList.remove("active-searchby");
-      console.log("this.selectedValues", this.selectedValues);
       if (this.selectedValues["search"] && this.selectedValues["search"].length > 0) {
         this.selectedValues["title_search"] = this.selectedValues["search"];
         delete this.selectedValues["search"];
@@ -523,7 +522,6 @@ class HomeResourcesSearch {
       searchByTitle.classList.remove("active-searchby");
       searchByKeyword.classList.add("active-searchby");
       searchByKeyword.classList.remove("inactive-searchby");
-      console.log("this.selectedValues", this.selectedValues);
       if (this.selectedValues["title_search"] && this.selectedValues["title_search"].length > 0) {
         this.selectedValues["search"] = this.selectedValues["title_search"];
         delete this.selectedValues["title_search"];
@@ -601,7 +599,6 @@ class HomeResourcesSearch {
   performSearch(selectedValues) {
     let queryString = Object.keys(selectedValues).map(tax => selectedValues[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
     let apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${queryString}`;
-    console.log("apiUrl", apiUrl);
     requestAnimationFrame(() => {
       //built in javascript function
       this.toggleSearch(apiUrl, selectedValues);
@@ -762,7 +759,8 @@ class KnowledgeProductsSearch {
     this.searchResultBox = document.getElementById("knowledge-products-search-result");
     this.resultContent = document.getElementById("kp-search-result-content");
     this.searchBy = "search";
-    this.selectedFilters = new Set();
+    // this.selectedFilters = new Set();
+    this.selectedFilters = {};
     this.handleSearch();
   }
   handleFilter(elementId, index) {
@@ -788,16 +786,33 @@ class KnowledgeProductsSearch {
       filterItems.forEach(item => {
         item.addEventListener("click", () => {
           const slug = item.getAttribute("data-slug");
+          const dataValue = item.getAttribute("data-value");
+          const dataTaxonomy = item.getAttribute("data-taxonomy");
           const checked = item.querySelector(".checked-box");
           const unchecked = item.querySelector(".unchecked-box");
           const isSelected = !checked.classList.contains("hidden");
           if (isSelected) {
-            this.selectedFilters.delete(slug);
+            // Remove the value from the array
+            if (this.selectedFilters[dataTaxonomy]) {
+              this.selectedFilters[dataTaxonomy] = this.selectedFilters[dataTaxonomy].filter(v => v !== dataValue);
+              // If the array becomes empty, optionally delete it
+              if (this.selectedFilters[dataTaxonomy].length === 0) {
+                delete this.selectedFilters[dataTaxonomy];
+              }
+            }
             checked.classList.add("hidden");
             unchecked.classList.remove("hidden");
             item.classList.remove("font-[600]");
           } else {
-            this.selectedFilters.add(slug);
+            // Add the value to the array
+            if (!this.selectedFilters[dataTaxonomy]) {
+              this.selectedFilters[dataTaxonomy] = [];
+            }
+
+            // Add only if it doesn't already exist
+            if (!this.selectedFilters[dataTaxonomy].includes(dataValue)) {
+              this.selectedFilters[dataTaxonomy].push(dataValue);
+            }
             checked.classList.remove("hidden");
             unchecked.classList.add("hidden");
             item.classList.add("font-[600]");
@@ -843,9 +858,13 @@ class KnowledgeProductsSearch {
       this.updateSearchResults(`<div>No results yet</div>`);
       return;
     }
-    const filters = Array.from(this.selectedFilters);
-    const filterQuery = filters.length ? `&filters=${filters.join(",")}` : "";
-    const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}${filterQuery}`;
+
+    // const filters = Array.from(this.selectedFilters);
+    // const filterQuery = filters.length ? `&filters=${filters.join(",")}` : "";
+
+    let queryString = Object.keys(this.selectedFilters).map(tax => this.selectedFilters[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
+    console.log("queryString", queryString);
+    const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}&_embed=1&${queryString}`;
     console.log("API URL:", apiUrl);
     fetch(apiUrl).then(res => {
       if (!res.ok) throw new Error("Failed to fetch");
@@ -856,16 +875,22 @@ class KnowledgeProductsSearch {
         return;
       }
       console.log("data", data);
-      this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
-      // const html = data.map(item => `  
-      //     <div class="border p-4 mb-2 rounded shadow-sm bg-white">
-      //         <h3 class="text-lg font-bold">${item.title || "No title"}</h3>
-      //         <p class="text-sm text-gray-600">${item.author || "Unknown author"}</p>
-      //         <p class="mt-2 text-sm">${item.summary || "No summary available."}</p>
-      //     </div>
-      // `).join("");
 
-      // this.updateSearchResults(html);
+      // this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
+      const html = data.map(item => {
+        const imageUrl = item._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+        return `  
+                    <div class="kp-searched-item">
+                        <div>
+                            ${imageUrl ? `<img src="${imageUrl}" alt="${item.title.rendered}" class="" />` : ""}
+                            <h3 class="text-lg font-bold">${item.title.rendered || "No title"}</h3>
+                            <p class="text-sm text-gray-600">${item.research_author.length > 0 ? item.research_author[0] : "Unknown author"}</p>
+                            <p class="mt-2 text-sm">${item.content.rendered || "No summary available."}</p>
+                        </div>
+                    </div>
+                `;
+      }).join("");
+      this.updateSearchResults(html);
     }).catch(err => {
       console.error("Error during search:", err);
       this.updateSearchResults(`<div class="text-red-600">Error loading results. Please try again later.</div>`);
