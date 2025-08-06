@@ -20,7 +20,7 @@
         <?php get_template_part("includes/sections/knowledge-products-sections/all-pubs"); ?>
     </div>
     <div id="knowledge-products-search-result" class="hidden">
-        <div id="kp-search-result-content" class="flex gap-[20px] flex-wrap justify-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[100px] ">
+        <div id="kp-search-result-content" class="flex gap-[20px] flex-wrap justify-start w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[100px] ">
         </div>
     </div>
 <?php 

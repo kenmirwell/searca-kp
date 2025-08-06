@@ -880,15 +880,25 @@ class KnowledgeProductsSearch {
       const html = data.map(item => {
         const imageUrl = item._embedded?.['wp:featuredmedia']?.[0]?.source_url;
         return `  
-                    <div class="kp-searched-item">
-                        <div>
-                            ${imageUrl ? `<img src="${imageUrl}" alt="${item.title.rendered}" class="" />` : ""}
-                            <h3 class="text-lg font-bold">${item.title.rendered || "No title"}</h3>
-                            <p class="text-sm text-gray-600">${item.research_author.length > 0 ? item.research_author[0] : "Unknown author"}</p>
-                            <p class="mt-2 text-sm">${item.content.rendered || "No summary available."}</p>
+                        <div class="kp-searched-item">
+                            <div class="bg-[#F5F8FC] p-[20px]">
+                                 <div class="bg-[#DBE1E9] p-[5px] rounded-[8px] overflow-hidden">
+                                    <div class="relative flex h-[250px] xl:h-[300px] rounded-[8px] overflow-hidden">
+                                        <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease">
+                                        </div>
+                                         ${imageUrl ? `<img src="${imageUrl}" alt="${item.title.rendered}" class="absolute w-full h-full object-cover rounded-[5px]" />` : ""}
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <h3 class="text-lg font-bold">${item.title.rendered || "No title"}</h3>
+                                    <p class="text-sm text-gray-600">${item.research_author.length > 0 ? item.research_author[0] : "Unknown author"}</p>
+                                    <p class="mt-2 text-sm">${item.content.rendered || "No summary available."}</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
       }).join("");
       this.updateSearchResults(html);
     }).catch(err => {

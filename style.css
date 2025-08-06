@@ -1026,8 +1026,7 @@ select {
 }
 
 .kp-searched-item {
-    padding: 20px;
-    border-radius: 20px
+    width: 320px;
 }
 
 
