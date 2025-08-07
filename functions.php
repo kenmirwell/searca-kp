@@ -55,6 +55,7 @@
 
      //custom search query
     include(get_stylesheet_directory() . '/includes/custom-search-query/custom-search-query.php');
+    include(get_stylesheet_directory() . '/includes/custom-search-query/knowledge-product-search-query.php');
 
     //acf styling
     include(get_stylesheet_directory() . '/includes/functions/acf-style.php');

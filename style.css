@@ -676,11 +676,11 @@ select {
 
 #country-Brunei {
     right: 51%;
-    top: 54%;
+    top: 47%;
 }
 
 #country-Singapore {
-    left: 174px;
+    left: 23%;
     top: 64%;
 }
 
@@ -1110,8 +1110,8 @@ select {
     }
 
     #country-Singapore {
-        left: 118px;
-        top: 44%;
+        left: 23%;
+        top: 55%;
     }
 
     #country-Brunei {

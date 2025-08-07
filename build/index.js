@@ -864,7 +864,7 @@ class KnowledgeProductsSearch {
 
     let queryString = Object.keys(this.selectedFilters).map(tax => this.selectedFilters[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
     console.log("queryString", queryString);
-    const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}&_embed=1&${queryString}`;
+    const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}&${queryString}`;
     console.log("API URL:", apiUrl);
     fetch(apiUrl).then(res => {
       if (!res.ok) throw new Error("Failed to fetch");
@@ -878,7 +878,7 @@ class KnowledgeProductsSearch {
 
       // this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
       const html = data.map(item => {
-        const imageUrl = item._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+        const imageUrl = item.custom_fields.featured_image;
         return `  
                         <div class="kp-searched-item">
                             <div class="bg-[#F5F8FC] p-[20px]">
@@ -886,15 +886,22 @@ class KnowledgeProductsSearch {
                                     <div class="relative flex h-[250px] xl:h-[300px] rounded-[8px] overflow-hidden">
                                         <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease">
                                         </div>
-                                         ${imageUrl ? `<img src="${imageUrl}" alt="${item.title.rendered}" class="absolute w-full h-full object-cover rounded-[5px]" />` : ""}
+                                         ${imageUrl ? `<img src="${imageUrl}" alt="Knowledge Products Item" class="absolute w-full h-full object-cover rounded-[5px]" />` : ""}
                                     </div>
                                 </div>
                             </div>
                             <div>
+                                <div class="pb-[10px]">
+                                    <p class="text-sm text-gray-600">${item.custom_fields.author_name || "Unknown author"}</p>
+                                </div>
                                 <div>
-                                    <h3 class="text-lg font-bold">${item.title.rendered || "No title"}</h3>
-                                    <p class="text-sm text-gray-600">${item.research_author.length > 0 ? item.research_author[0] : "Unknown author"}</p>
-                                    <p class="mt-2 text-sm">${item.content.rendered || "No summary available."}</p>
+                                    <h6 class="flex items-end md:text-display-18 font-[600] pt-[10px]">${item.custom_fields.title || "No title"}</h6>
+                                    <div class="text-display-16 pt-[10px] font-[200]">
+                                        ${item.custom_fields.content?.length > 100 ? item.custom_fields.content.slice(0, 100) + "..." : item.custom_fields.content || "No summary available."}
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="${item.custom_fields.permalink || "/"}" class="rounded-full px-[20px] py-[10px] border-[1px] border-[#096936] text-display-16 text-[#096936]">Read More</a>
                                 </div>
                             </div>
                         </div>
