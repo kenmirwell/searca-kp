@@ -1,4 +1,4 @@
-<div class="py-[120px]">
+<div class="pt-[50px] lg:pt-[121px] pb-[121px]">
   <div class="flex gap-[50px] items-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
     <div class="text-[#000000] w-[100%] text-display-24 md:text-display-42 font-bold">
       <h2>Featured Publications</h2>

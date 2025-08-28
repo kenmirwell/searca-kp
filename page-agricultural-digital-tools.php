@@ -6,7 +6,7 @@
 ?>
     <div>
         <?php get_template_part("includes/section/common-hero"); ?>
-        <div class="about-agri-digitools w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
+        <div class="about-agri-digitools w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[50px]">
             <?php if (have_rows('about_agridigital')): ?>
                 <?php while (have_rows('about_agridigital')): the_row(); ?>
                     <div class="text-left flex flex-col gap-[10px] pb-[20px]">
@@ -34,7 +34,7 @@
             <?php endif; ?> 
         </div>
         <div id="agdom-keypoints" class="bg-[#096936]">
-            <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
+            <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
                 <?php if (have_rows('agpractices_platform')): ?>
                     <?php while (have_rows('agpractices_platform')): the_row(); ?>
                         <div class="text-left flex flex-col gap-[10px] pb-[50px] text-[#ffffff]">
@@ -92,7 +92,7 @@
                 <?php endif; ?>
             </div>
         </div>
-        <div class="agri-key-objectives w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
+        <div class="agri-key-objectives w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
             <?php if (have_rows('agri_key_objectives')): ?>
                 <?php while (have_rows('agri_key_objectives')): the_row(); ?>
                     <div class="text-center flex flex-col gap-[10px] pb-[50px]">
@@ -136,7 +136,7 @@
                 <?php endwhile; ?>
             <?php endif; ?> 
         </div>
-        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
+        <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
             <div class="flex flex-col lg:flex-row justify-between">
                 <div class="w-[100%] text-left flex flex-col gap-[10px] lg:pb-[20px] text-[#000000]">
                     <h2 class="text-display-24 lg:text-display-42 font-bold">AgPractices&Domains Web Application</h2>
@@ -155,11 +155,11 @@
                     </a>
                 </div>
             </div>
-            <div class="rounded-xl border-[4px] bg-[#EEEEEE]">
-                <div class="relative rounded-xl overflow-hidden w-[100%] h-[500px]">
+            <div class="">
+                <div class="relative rounded-xl overflow-hidden w-[100%] h-auto lg:h-[500px]">
                     <img 
-                        class="absolute w-full h-full object-cover z-[0]"
-                        src="https://cadre.searca.org/wp-content/uploads/2025/03/image-4-scaled.jpg" 
+                        class="w-full h-full object-cover z-[0]"
+                        src="https://knowledgeplatform.searca.org/wp-content/uploads/2025/03/image-4-scaled.jpg" 
                         alt=""
                     >
                 </div>
@@ -170,7 +170,7 @@
                 style="border: none;">
             </iframe> -->
         </div> 
-        <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
+        <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
             <div class="flex flex-col lg:flex-row justify-between items-center">
                 <div class="flex flex-col gap-[20px]">
                     <h2 class="text-display-24 lg:text-display-42 font-bold">Step-by-Step: How It Works</h2>
@@ -192,7 +192,7 @@
                 <div>
                     <img 
                         class="w-full h-full object-cover z-[0]"
-                        src="https://cadre.searca.org/wp-content/uploads/2025/03/Group-1597884808.png" 
+                        src="https://knowledgeplatform.searca.org/wp-content/uploads/2025/03/Group-1597884808.png" 
                         alt=""
                     >
                 </div>

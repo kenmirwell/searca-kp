@@ -5,12 +5,12 @@
 ?>
 
 <div class="relative">
-    <div class="bg-[#A2A2A2] overflow-hidden">
+    <div class="bg-[#F6F6F6] overflow-hidden">
         <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-            <div class="flex relative pt-[50px] py-[60px] justify-center gap-[50px] items-center">
+            <div class="flex flex-col-reverse md:flex-row relative pt-[50px] py-[60px] justify-center gap-[50px] items-center">
                 <?php if (!empty($group['description'])) : ?> 
                     <div class="text-[#000000] w-[100%] text-display-18 md:text-display-22 font-bold w-[100%] md:w-[70%] lg:mr-auto">
-                        <h6><?php echo esc_html($group['description']); ?></h6>
+                        <h6 class="text-display-14 md:text-display-16"><?php echo esc_html($group['description']); ?></h6>
                     </div>
                 <?php endif; ?> 
                 <?php if (!empty($group['image'])) : ?> 

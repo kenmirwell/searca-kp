@@ -37,12 +37,12 @@ if ($group) :
                         <?php if (!empty($point['point_title'])) : ?>
                             <div class="flex gap-[10px] items-center">
                                 <?php bullet_template('bullet-template', compact('type', 'color')); ?>
-                                <h6 class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> font-[700] text-display-14 md:text-display-16"><?php echo wp_kses_post($point['point_title']); ?></h6>
+                                <h6 class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> font-[700] text-display-16"><?php echo wp_kses_post($point['point_title']); ?></h6>
                             </div>
                         <?php endif; ?>
                         <?php if (!empty($point['point_description'])) : ?>
                             <div class="flex gap-[10px]">
-                                <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> text-display-14 md:text-display-16">
+                                <div class="<?php echo $bg_color === '#096936' ? 'text-white' : ''; ?> text-display-16">
                                     <?php echo wp_kses_post($point['point_description']); ?>
                                 </div>
                             </div>

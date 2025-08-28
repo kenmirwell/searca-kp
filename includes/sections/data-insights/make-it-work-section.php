@@ -8,8 +8,8 @@
               <p class="text-[#ffffff] text-display-14 md:text-display-16">Whether you’re a policymaker, researcher, or development partner, the SEA Agri Outlook Series is designed to serve your specific needs.</p>
           </div>
         </div>
-        <div>
-          <img class="w-full h-full object-cover" src="https://cadre.searca.org/wp-content/uploads/2025/07/Group-1597885126.png" alt="">
+        <div class="pt-[50px] md:pt-[0px]">
+          <img class="w-full h-full object-cover" src="https://knowledgeplatform.searca.org/wp-content/uploads/2025/07/Group-1597885126.png" alt="">
         </div>
     </div>
 </div>

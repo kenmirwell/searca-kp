@@ -7,12 +7,12 @@
     );
 ?>
 <div class="py-[50px]">
-  <div class="lg:w-[1024px] xl:w-[1280px] mx-auto justify-between">
-    <div class="flex gap-[120px] items-center">
-      <div class="text-[#000000] w-[40%] text-display-24 md:text-display-42 font-bold">
+  <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto justify-between">
+    <div class="flex flex-col lg:flex-row gap-[20px] lg:gap-[120px] items-center">
+      <div class="text-[#000000] w-[100%] lg:w-[40%] text-display-24 md:text-display-42 font-bold">
         <h2>Search a publication or document</h2>
       </div>
-      <div class="w-[60%]">
+      <div class="w-[100%] lg:w-[60%]">
         <div class="flex-col items-right">
           <div class="relative flex items-center w-[100%] justify-end">
             <svg class="absolute left-[10px]" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,27 +21,27 @@
             </svg>
             <input id="knowledge-products-search-input" class="pl-[40px] py-[10px] pr-[10px] text-[#000000] w-[100%] border-[1px] border-[#CECECE]" type="text" placeholder="Select by ">
           </div>
-          <div class="flex gap-[20px] w-[100%] justify-end pt-[30px]">
+          <div class="flex gap-[5px] md:gap-[20px] w-[100%] justify-start lg:justify-end pt-[10px] lg:pt-[30px]">
               <div id="kp-search-title" class="cursor-pointer kp-search-category kp-search-active">
-                <p>By Title</p>
+                <p class="text-display-12 md:text-display-16">By Title</p>
               </div>
               <div class="text-[#CECECE]">|</div>
               <div id="kp-search-author" class="cursor-pointer kp-search-category">
-                <p>By Autor</p>
+                <p class="text-display-12 md:text-display-16">By Autor</p>
               </div>
               <div class="text-[#CECECE]">|</div>
               <div id="kp-search-keyword" class="cursor-pointer kp-search-category">
-                <p>By Keyword</p>
+                <p class="text-display-12 md:text-display-16">By Keyword</p>
               </div>
               <div class="text-[#CECECE]">|</div>
               <div id="kp-search-country" class="cursor-pointer kp-search-category">
-                <p>By Country</p>
+                <p class="text-display-12 md:text-display-16">By Country</p>
               </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex gap-[20px] justify-between pt-[20px]">
+    <div class="flex flex-col md:flex-row gap-[20px] justify-between pt-[30px] lg:pt-[20px]">
       <?php foreach ($filter_group as $filter): ?>
         <div class="relative w-[100%]">
           <div 
@@ -49,13 +49,13 @@
             class="w-[100%] flex items-center justify-between bg-[#F5F8FC] py-[10px] px-[20px]"
             onclick="handleKPfilteraccordion('kp-filter-content-<?php echo $filter['index']; ?>', <?php echo $filter['index']; ?>)"  
           >
-            <div><?php echo $filter["key"] ?></div>
+            <div class="text-display-14 md:text-display-16"><?php echo $filter["key"] ?></div>
             <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.71094 1V15M1.71094 8H15.7109" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <!-- dropdown choices -->
-          <div class="absolute w-[100%] bg-[#F5F8FC]">
+          <div class="absolute w-[100%] bg-[#F5F8FC] z-[2]">
              <div 
                 id="kp-filter-container-<?php echo $filter['index']; ?>" 
                 class="rounded-lg overflow-y-scroll pr-[20px] scrollbar-custom h-[100%] transition-all duration-200 ease"

@@ -18,7 +18,7 @@
                 <p class="text-display-16"><?php the_title() ?></p>
             </div>
         </div>
-        <div class="text-[#ffffff] flex flex-col gap-[20px]">
+        <div class="w-[100%] md:w-[80%] lg:w-auto text-[#ffffff] flex flex-col gap-[20px]">
             <h1 class="text-display-32 lg:text-display-48 font-bold"><?php echo esc_html(get_field("page_title")); ?></h1>
             <?php if (have_rows('hero_description')) : ?>
                 <?php while (have_rows('hero_description')) : the_row(); ?>
@@ -36,7 +36,7 @@
             ?>
         </div>
       </div>
-      <div class="w-[100%] lg:w-[50%]">
+      <div class="w-[100%] lg:w-[50%] hidden lg:block">
         <div class="ml-[0px] lg:m-auto w-[80%] md:w-[50%] h-[400px] swiper mySwiper">
             <div id="swiper-wrapper" class="swiper-wrapper">
             <?php

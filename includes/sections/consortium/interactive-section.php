@@ -1,5 +1,5 @@
 <div id="consorInteractive">
-    <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
+    <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
         <?php if (have_rows('interactive_section')): ?>
             <?php while (have_rows('interactive_section')): the_row(); ?>
                 <div class="text-left flex flex-col gap-[10px] pb-[50px] text-[#1F1F1F]">

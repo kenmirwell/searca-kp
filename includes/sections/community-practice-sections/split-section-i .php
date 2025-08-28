@@ -34,9 +34,9 @@ if ($group) :
                 ];
             ?>
 
-            <div class="flex justify-between pt-[30px] border-t-[1px] border-[#D4D4D4]">
+            <div class="flex flex-col lg:flex-row  justify-between pb-[20px] lg:pb-[0px] pt-[30px] border-t-[1px] border-[#D4D4D4]">
                 <?php foreach ($chunks as $chunk) : ?>
-                    <ul class="flex flex-col w-full gap-[5px] lg:gap-[20px] py-[20px] lg:pt-[30px] agpractices-list">
+                    <ul class="flex flex-col w-full gap-[5px] lg:gap-[20px] lg:py-[20px] lg:pt-[30px] agpractices-list">
                         <?php foreach ($chunk as $point) :
                             $type = $point['bullet_type'] ?? 'check';
                             $color = $point['bullet_color'] ?? '#096936';

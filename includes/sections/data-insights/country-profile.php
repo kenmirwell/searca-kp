@@ -1,7 +1,7 @@
 <div class="flex flex-col lg:flex-row relative">
     <!-- Left Side -->
     <div class="w-[100%] lg:w-[50%] bg-[#096936] flex items-center">
-        <div class="flex flex-col w-[90%] lg:w-[650px] ml-auto lg:ml-auto mr-auto lg:mr-[0px] pr-[0px] lg:pr-[50px] py-[20px]">
+        <div class="flex flex-col w-[90%] lg:w-[650px] ml-auto lg:ml-auto mr-auto lg:mr-[0px] pr-[0px] lg:pr-[50px] py-[80px] md:py-[20px]">
             <div class="border-b-[1px] border-[#D4D4D4] pb-[20px]">
                 <h2 class="text-white text-display-24 md:text-display-42 font-bold">
                     Country Agri Profile<br>Across Southeast Asia

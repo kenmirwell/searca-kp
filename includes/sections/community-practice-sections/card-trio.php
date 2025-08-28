@@ -8,7 +8,7 @@
 
         <!-- Header -->
         <div class="flex flex-col lg:flex-row justify-center pb-[50px]">
-            <div class="flex flex-col gap-[20px]">
+            <div class="flex flex-col lg:gap-[20px]">
                 <?php if (!empty($group['image_cards_container_title'])) : ?>
                     <div class="font-bold">
                         <h2 class="w-[100%] lg:w-[500px] text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]">
@@ -19,7 +19,7 @@
 
                 <?php if (!empty($group['image_cards_container_description'])) : ?>
                     <div>
-                        <p class="text-[#1f1f1f]">
+                        <p class="text-display-14 lg:text-display-16 text-[#1f1f1f]">
                             <?php echo esc_html($group['image_cards_container_description']); ?>
                         </p>
                     </div>
@@ -27,7 +27,7 @@
             </div>
 
             <!-- Button -->
-            <div class="flex">
+            <div class="flex pt-[30px] lg:pt-[0px]">
                 <?php
                     button_template('common-button', array(
                         'title' => "Register for Free",
@@ -42,20 +42,20 @@
         <div class="flex flex-col lg:flex-row gap-[50px] justify-between">
             <?php if (!empty($group['image_cards'])) : ?>
                 <?php foreach ($group['image_cards'] as $card) : ?>
-                    <div class="flex flex-col gap-[10px] w-[100%] md:w-[33.33%] text-left border-t-[1px] border-[#C2C2C2] pt-[50px]">
+                    <div class="flex flex-col gap-[10px] w-[100%] lg:w-[33.33%] text-left border-t-[1px] border-[#C2C2C2] pt-[20px] lg:pt-[50px]">
                         <?php if (!empty($card['image_card_icon'])) : ?>
-                            <img class="w-[50px]" src="<?php echo esc_url($card['image_card_icon']); ?>" alt="">
+                            <img class="w-[30px] md:w-[50px]" src="<?php echo esc_url($card['image_card_icon']); ?>" alt="">
                         <?php endif; ?>
 
                         <div class="text-left">
                             <?php if (!empty($card['image_card_title'])) : ?>
-                                <h6 class="font-bold text-display-24 text-[#1f1f1f]">
+                                <h6 class="font-bold ttext-display-18 md:text-display-24 text-[#1f1f1f]">
                                     <?php echo esc_html($card['image_card_title']); ?>
                                 </h6>
                             <?php endif; ?>
                             
                             <?php if (!empty($card['image_card_description'])) : ?>
-                                <p class="text-[#1f1f1f]">
+                                <p class="text-display-14 md:text-display-16 text-[#1f1f1f]">
                                     <?php echo esc_html($card['image_card_description']); ?>
                                 </p>
                             <?php endif; ?>

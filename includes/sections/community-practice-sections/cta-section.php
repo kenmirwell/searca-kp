@@ -19,7 +19,7 @@
                 <?php endif; ?>
 
                 <?php if (!empty($group['cta_section_description'])) : ?>
-                    <div class="w-[70%] mx-auto">
+                    <div class="w-[100%] lg:w-[70%] mx-auto">
                         <p class="text-[#ffffff]">
                             <?php echo esc_html($group['cta_section_description']); ?>
                         </p>
@@ -39,5 +39,5 @@
             </div>
         </div>      
     </div>
-    <img class="absolute w-full h-full object-cover top-0" src="https://cadre.searca.org/wp-content/uploads/2025/07/image-390.png" alt="<?php the_title(); ?>">
+    <img class="absolute w-full h-full object-cover top-0" src="https://knowledgeplatform.searca.org/wp-content/uploads/2025/07/image-390.png" alt="<?php the_title(); ?>">
 </div>

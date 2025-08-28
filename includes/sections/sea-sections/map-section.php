@@ -1,10 +1,14 @@
-<div class="bg-[#ffffff] py-[100px] px-[20px] md:px-[0px]">
-    <div class="flex relative justify-center overflow-x-scroll md:overflow-x-visible w-[100%] lg:w-[1024px] xl:w-[1280px] mx-auto h-[100%] ">
-        <div class="flex w-[100%] h-[100%] py-[20px] z-[1]">
+<div class="bg-[#ffffff] py-[50px] lg:py-[100px] px-[20px] md:px-[0px]">
+    <div class="flex flex-col lg:flex-row relative justify-center overflow-x-scroll md:overflow-x-visible w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto h-[100%] ">
+        <div class="block lg:hidden w-[100%] flex flex-col gap-[20px] text-[#000000]">
+            <h2 class="text-display-24 lg:text-display-42 font-bold text-left">South East Asian Countries</h2>
+            <p class="text-left text-display-14 lg:text-display-16">Southeast Asia is consists of 11 countries that are generally divided into “mainland” and “island” zones. The mainland zones are essentially viewed as an extension of the Asian continent, and these include Cambodia, Lao PDR, Myanmar, Thailand, and Vietnam. The Islands of Southeast Asia, also known as the Insular Region, include Brunei Darussalam, Indonesia, Malaysia, Philippines, Singapore, and Timor-Leste.</p>
+        </div>
+        <div class="flex w-[100%] h-[100%] pt-[130px] lg:pt-[20px] pb-[20px] z-[1]">
             <div class="w-[100%] flex items-center justify-center relative">
-                <div class="w-[100%] mx-auto mt-[-80px] mb-[40px]">
+                <div class="flex justify-center md:justify-start w-[100%] mx-auto mt-[-80px] mb-[40px]">
                         <!-- Shared container -->
-                        <div class="relative w-full max-w-[80%]" style="aspect-ratio: 4 / 3;">
+                        <div class="relative w-full max-w-[100%] lg:max-w-[80%]" style="aspect-ratio: 4 / 3;">
                             <!-- MAP IMAGES -->
                             <?php 
                                 $countries = new WP_Query(array(
@@ -65,7 +69,7 @@
                 </div>
                 </div>
         </div>
-        <div class="hidden lg:block absolute w-[100%] top-[-50px] right-0 flex flex-col gap-[20px] text-[#000000] z-[0] w-[500px]">
+        <div class="hidden lg:block absolute w-[100%] top-[-50px] right-0 flex flex-col gap-[20px] text-[#000000] z-[1] w-[500px]">
             <h2 class="text-display-42 font-bold text-left">South East Asian Countries</h2>
             <p class="text-left">Southeast Asia is consists of 11 countries that are generally divided into “mainland” and “island” zones. The mainland zones are essentially viewed as an extension of the Asian continent, and these include Cambodia, Lao PDR, Myanmar, Thailand, and Vietnam. The Islands of Southeast Asia, also known as the Insular Region, include Brunei Darussalam, Indonesia, Malaysia, Philippines, Singapore, and Timor-Leste.</p>
         </div>

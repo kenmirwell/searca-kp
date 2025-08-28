@@ -11,7 +11,7 @@
             $knowledge_management = new WP_Query($args);
         ?>
         <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] relative mx-auto flex flex-col lg:flex-row justify-between gap-[40px]">
-            <div class="grid grid-cols-3 gap-6 w-[100%] gap-[30px] relative justify-right">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-[100%] gap-[30px] relative justify-right">
                 <?php                            
                     if ($knowledge_management->have_posts()) {
                         while ($knowledge_management->have_posts()){
@@ -22,9 +22,9 @@
                             
                             $trimmed_author = mb_strimwidth($author_name, 0, 15, "..."); 
                 ?>
-                    <div class="flex w-[100%] gap-[20px] items-start group transition-all duration-200 ease cursor-pointer py-[20px] border-b-[1px] border-[#C0C0C0]">
+                    <div class="flex flex-col md:flex-row w-[100%] gap-[10px] md:gap-[20px] items-start group transition-all duration-200 ease cursor-pointer py-[20px] border-b-[1px] border-[#C0C0C0]">
                         <div class="bg-[#DBE1E9] p-[10px] w-[100%] rounded-[8px]">
-                          <div class="flex rounded-[8px] bg-[#ffffff] items-center w-[100%] h-[180px] overflow-hidden relative">
+                          <div class="flex rounded-[8px] bg-[#ffffff] items-center w-[100%] h-[120px] md:h-[180px] overflow-hidden relative">
                             <a href="<?php echo get_permalink() ?>">
                                 <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
                             </a>
@@ -35,7 +35,7 @@
                                 ?>
                                     <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
                                 <?php } else { ?>
-                                    <img class="w-full h-full object-cover" src="https://cadre.searca.org/wp-content/uploads/2025/03/Frame-2147226575-1.png" alt="<?php the_title(); ?>">
+                                    <img class="w-full h-full object-cover" src="https://knowledgeplatform.searca.org/wp-content/uploads/2025/03/Frame-2147226575-1.png" alt="<?php the_title(); ?>">
                                 <?php } ?>
                             </div>
                           </div>

@@ -4,21 +4,21 @@
     $topic_group = $group["topic"];
 ?>
 <div id="sea-topic-profile" class="bg-[#B59637]">
-    <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="flex justify-between items-center">
-            <div id="profile-0" data-index="0" class="topic-category geographic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
+    <div class="w-[100%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div id="profile-0" data-index="0" class="topic-category geographic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[10px] md:py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Geographic Profile</p>
             </div>
-            <div id="profile-1" data-index="1" class="topic-category demographic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
+            <div id="profile-1" data-index="1" class="topic-category demographic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[10px] md:py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Demographic Profile</p>
             </div>
-            <div id="profile-2" data-index="2" class="topic-category economic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
+            <div id="profile-2" data-index="2" class="topic-category economic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[10px] md:py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Economic Profile</p>
             </div>
-            <div id="profile-3" data-index="3" class="topic-category main-products cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
+            <div id="profile-3" data-index="3" class="topic-category main-products cursor-pointer text-[#ffffff] flex items-center justify-center py-[10px] md:py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Main Products</p>
             </div>
-            <div id="profile-4" data-index="4" class="topic-category current-concerns cursor-pointer text-[#ffffff] flex items-center justify-center py-[20px] w-full transition-all duration-200 ease ">
+            <div id="profile-4" data-index="4" class="topic-category current-concerns cursor-pointer text-[#ffffff] flex items-center justify-center py-[10px] md:py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Current Concerns</p>
             </div>
         </div>
@@ -29,7 +29,7 @@
     <?php foreach ($topic_group as $index => $topic) : 
         
     ?>
-        <div class="topic-content bg-[#ffffff] py-[100px]" data-index="<?php echo $index ?>">
+        <div class="topic-content bg-[#ffffff] py-[60px] md:py-[100px]" data-index="<?php echo $index ?>">
             <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
                 <div class="flex flex-col gap-[20px]">
                     <div class="text-[#000000] flex flex-col">
