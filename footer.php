@@ -33,9 +33,9 @@
     <div class="z-[3] bg-[#ffffff] absolute opacity-[0.05] right-[156px] rotate-[15deg] h-[650px] top-[-80px] w-[146px]"></div>
     <div class="bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.3)] w-[100%] h-[100%] absolute top-0 left-0 z-[2]"></div>
     <?php if(!is_page("community-of-practice")): ?>
-        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/03/Group-1597884740.jpg" alt="">
+        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://knowledgeplatform.searca.org/wp-content/uploads/2025/03/Group-1597884740.jpg" alt="">
     <?php else: ?>
-        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://cadre.searca.org/wp-content/uploads/2025/07/image-15.png" alt="">
+        <img class="absolute top-[0] w-full h-full object-cover z-[1]" src="https://knowledgeplatform.searca.org/wp-content/uploads/2025/07/image-15.png" alt="">
     <?php endif; ?>
 </div>
 <div id="footer" class="bg-[#101010]">
