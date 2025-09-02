@@ -43,7 +43,7 @@
         <div class="flex flex-col md:flex-row gap-[60px] pb-[20px] md:pb-[100px] border-b-[1px] border-opacity-50 border-[#ffffff]">
             <div class="w-[100%]">
                 <a href="/">
-                    <div class="flex gap-[10px] items-baseline">
+                    <div class="flex gap-[20px] items-center">
                         <div class="w-[200px]">
                             <svg width="full" height="full" viewBox="0 0 233 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M70.599 0.130316C70.7061 0.716266 70.6311 1.75796 70.6632 2.35476C70.5348 2.60433 70.385 2.2354 70.3101 2.17029C69.6038 1.64945 67.5918 1.31307 67.4099 2.64773C67.3671 2.96241 67.4955 3.29879 67.7631 3.61347C68.6941 4.67686 70.7382 5.14345 71.5515 6.55407C72.3541 7.94299 71.894 10.0589 71.0164 11.003C70.2673 11.8059 68.9831 12.2834 67.6988 12.2074C66.939 12.164 66.008 11.6757 65.2695 12.0881V9.62489C65.8688 10.0589 66.9176 10.6883 68.1697 10.5255C69.2292 10.3953 70.3315 9.42957 69.9462 7.99725C69.4539 6.18514 65.9973 5.78366 65.4408 3.61347C64.8736 1.37817 66.7678 -0.173511 68.876 0.0109551C69.4432 0.0543589 70.0639 0.379887 70.599 0.130316Z" fill="white"/>
@@ -103,9 +103,9 @@
                                 <path d="M45.1406 40.1592C45.0654 40.1917 45.0117 40.2026 44.9688 40.2351" stroke="white" stroke-width="0.14" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <!-- <div class="text-[#ffffff]">
-                            <h1 id="cadre-footer-text" class="font-[700] text-[23px] lg:text-[47px]">CADRE</h1>
-                        </div> -->
+                        <div class="text-[#ffffff] w-[50%]">
+                            <p id="cadre-footer-text" class="font-[600]">Agriculture, Forestry, and Natural Resources (AFNR) Knowledge Platform</p>
+                        </div>
                     </div>
                 </a>
                 <div class="flex flex-col lg:flex-row lg:justify-between py-[20px]">
