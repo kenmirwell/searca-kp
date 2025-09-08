@@ -1,78 +1,34 @@
 <?php 
-    $group = get_field("topics");
-    $topic_group = $group["topic"];
+    $content_repeater = get_field("country_content");
 ?>
 <div class="py-[100px]">
     <div class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[90%] 2xl:w-[1280px] mx-auto gap-[20px]">
         <div class="w-[70%]">
             <?php get_template_part("includes/sections/single-country-profile-sections/quick-facts"); ?>
-            <?php if (!empty($topic_group)) : ?>
-                <?php foreach ($topic_group as $index => $topic) :   ?>
-                    <div class="country-topic-content bg-[#ffffff] py-[100px]" data-index="<?php echo $index ?>">
+            <?php if (!empty($content_repeater)) : ?>
+                <?php foreach ($content_repeater as $index => $topic) : ?>
+                    <div class="country-topic-content bg-[#ffffff] py-[50px]" data-index="<?php echo $index ?>">
                         <div class="w-100%]">
                             <div class="flex flex-col gap-[20px]">
                                 <div class="text-[#000000] flex flex-col">
-                                    <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[10px] text-left"><?php echo esc_html($topic["topic_title"]); ?></h2>
+                                    <h2 class="text-display-24 lg:text-display-42 font-bold text-left"><?php echo esc_html($topic["topic_title"]); ?></h2>
+                                    <?php if(!empty($topic["topic_description"])) : ?>
+                                        <div class="relative pt-[10px] single-country-content"><?php echo wp_kses_post($topic["topic_description"]); ?></div>
+                                    <?php endif; ?>
                                 </div>
-                                <?php 
-                                    $subtopic_group = $topic["subtopics"];
-                                    if (!empty($subtopic_group)) : 
-                                ?>
-                                    <?php 
-                                        foreach ($subtopic_group as $subtopic) : 
-                                            $sub_topics_description = $subtopic["sub_topics_description"];
-                                            $type = $sub_topics_description['bullet_type'];
-                                            $color = $sub_topics_description['bullet_color'] ?? '#096936'; 
-                                    ?>
+                                
+                                <!-- Loop sub_topics (nested repeater) -->
+                                <?php if (!empty($topic["sub_topics"])) : ?>
+                                    <div class="nested-sub-topics flex flex-col gap-[10px]">
+                                        <?php foreach ($topic["sub_topics"] as $subtopic) : ?>
                                             <div class="text-[#000000] flex flex-col">
                                                 <h6 class="text-display-18 lg:text-display-24 font-bold w-[40%] mr-auto text-left"><?php echo esc_html($subtopic["sub_topics_title"]); ?></h6>
-                                                <ul class="flex flex-col w-full gap-[5px] lg:gap-[20px] agpractices-list">
-                                                    <li class="flex flex-col items-start gap-[10px]">
-                                                        <div class="flex gap-[10px] items-center">
-                                                            <?php bullet_template('bullet-template', compact('type', 'color')); ?>
-                                                        </div>
-                                                        <div class="text-display-14 md:text-display-16">
-                                                            <?php if (!empty($sub_topics_description["flex_std_content"])) :  
-                                                                $flex_std_content = $sub_topics_description["flex_std_content"]
-                                                            ?>
-                                                                <div class="flex flex-col">
-                                                                    <?php foreach($flex_std_content as $content) : ?>
-                                                                         <?php if (!empty($content["flexy_std_text_group"]["flex_std_content_text"])) :   ?>
-                                                                            <p class="pb-[20px]"><?php echo esc_html($content["flexy_std_text_group"]["flex_std_content_text"]); ?></p>
-                                                                        <?php endif; ?>
-                                                                    <?php endforeach ?>
-                                                                </div>
-                                                            <?php endif; ?>
-
-                                                            <?php if (!empty($sub_topics_description["flex_std_content"])) :  
-                                                                $flex_std_content = $sub_topics_description["flex_std_content"]
-                                                            ?>
-                                                                <div class="flex flex-col">
-                                                                    <?php foreach($flex_std_content as $content) : ?>
-                                                                        <?php if (!empty($content["flex_std_image_group"]["image"])) :   ?>
-                                                                            <img class="w-full h-full object-cover" src="<?php echo esc_url($content["flex_std_image_group"]["image"]); ?>" alt="<?php the_title(); ?>">
-                                                                        <?php endif; ?>
-                                                                    <?php endforeach ?>
-                                                                </div>
-                                                            <?php endif; ?>
-                                                            
-                                                            <?php if (!empty($sub_topics_description["flex_std_content"])) :  
-                                                                $flex_std_content = $sub_topics_description["flex_std_content"]
-                                                            ?>
-                                                                <div class="1st-inner flex flex-col">
-                                                                    <?php foreach($flex_std_content as $content) : ?>
-                                                                        <?php if (!empty($content["1st_inner_flexy_std_text_group"]["flex_std_content_text"])) :   ?>
-                                                                            <p class="pb-[20px]"><?php echo esc_html($content["1st_inner_flexy_std_text_group"]["flex_std_content_text"]); ?></p>
-                                                                        <?php endif; ?>
-                                                                    <?php endforeach ?>
-                                                                </div>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                    </li>
-                                                </ul>
+                                                <div class="relative pt-[10px] single-country-subcontent"><?php echo wp_kses_post($subtopic["sub_topics_content"]); ?></div>
                                             </div>
-                                    <?php endforeach; ?>
+                                        <?php endforeach; ?>
+                                    </div>
                                 <?php endif; ?>
+                                <!-- End sub_topics -->
                             </div>
                         </div>
                     </div>

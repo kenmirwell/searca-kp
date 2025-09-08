@@ -710,9 +710,60 @@ select {
 }
 
 .single-country-content > p {
-    font-weight: 300;
+    padding-bottom: 10px;
 }
 
+.single-country-subcontent > p {
+    padding-bottom: 10px;
+}
+
+.single-country-content > ul {
+    padding-bottom: 10px;
+}
+
+.single-country-subcontent > ul {
+    padding-bottom: 10px;
+}
+
+.single-country-content > ol {
+  list-style-type: decimal;
+  margin-left: 1.25rem; /* Tailwind’s ml-5 */
+  padding-bottom: 10px;
+}
+
+.single-country-content > ul > li {
+    position: relative;
+    padding-left: 15px;
+}
+
+.single-country-subcontent > ul > li {
+    position: relative;
+    padding-left: 15px;
+}
+
+.single-country-content > ul > li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-top: 8px;
+    left: 0;
+    border-radius: 1000px;
+    position: absolute;
+    border: solid #000000; /* Dark green check */
+    background-color: #000000;
+}
+
+.single-country-subcontent > ul > li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-top: 8px;
+    left: 0;
+    border-radius: 1000px;
+    position: absolute;
+    border: solid #000000; /* Dark green check */
+    background-color: #000000;
+}
 
 .sea-content > p {
     font-weight: 300;
@@ -721,6 +772,8 @@ select {
 .hide-header {
     transform: translateY(-100%);
 }
+
+
 
 .map-pointer {
     position: relative;

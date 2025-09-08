@@ -526,7 +526,7 @@
                                         ?>
                                             <img class="w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
                                         <?php } else { ?>
-                                            <img class="w-full h-full object-cover" src="https://cadre.searca.org/wp-content/uploads/2025/03/Frame-2147226575-1.png" alt="<?php the_title(); ?>">
+                                            <img class="w-full h-full object-cover" src="https://knowledgeplatform.searca.org/wp-content/uploads/2025/03/Frame-2147226575-1.png" alt="<?php the_title(); ?>">
                                         <?php } ?>
                                     </div>
                                 </div>

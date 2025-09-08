@@ -1373,8 +1373,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const ENV_VARS = {
-  ROOT_URL: "https://cadre.searca.org/",
-  API_URL: "https://cadre.searca.org/wp-json/wp/v2/"
+  ROOT_URL: "https://knowledgeplatform.searca.org/",
+  API_URL: "https://knowledgeplatform.searca.org/wp-json/wp/v2/"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ENV_VARS);
 
