@@ -588,6 +588,10 @@ video {
   }
 }
 
+.visible {
+  visibility: visible;
+}
+
 .static {
   position: static;
 }
@@ -2320,10 +2324,6 @@ video {
   font-size: 22px;
 }
 
-.text-\[23px\] {
-  font-size: 23px;
-}
-
 .text-\[24px\] {
   font-size: 24px;
 }
@@ -3402,10 +3402,6 @@ video {
 
   .lg\:text-\[32px\] {
     font-size: 32px;
-  }
-
-  .lg\:text-\[47px\] {
-    font-size: 47px;
   }
 
   .lg\:text-display-16 {

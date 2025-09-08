@@ -60,6 +60,9 @@
     //acf styling
     include(get_stylesheet_directory() . '/includes/functions/acf-style.php');
 
+    //custm title
+    include(get_stylesheet_directory() . '/includes/functions/title-function.php');
+
     add_action('init', 'theme_set_options');
 
     function theme_set_options() {
