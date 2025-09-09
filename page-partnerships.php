@@ -21,7 +21,7 @@
     <!-- <div class="w-[80%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto"> -->
         <div class="flex">
             <div class="w-[50%] bg-[#095A2F] py-[50px] pl-[90px] pr-[50px]">
-                <h6 class="text-[24px] font-[600] text-[#ffffff]">Join CADRE –</br> Partner with SEARCA</h6>
+                <h6 class="text-[24px] font-[600] text-[#ffffff]">Join Community of Practice</br> Partner with SEARCA</h6>
                 <div class="pt-[20px] text-[#ffffff] font-[300]">
                     <?php the_content() ?>
                 </div>

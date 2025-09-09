@@ -110,7 +110,7 @@
                 </a>
                 <div class="flex flex-col lg:flex-row lg:justify-between py-[20px]">
                     <div class="text-[#ffffff] text-[12px] md:text-[14px] lg:text-[16px]">
-                        <p>Agri-InSight Knowledge Platform: Agricultural Policy Knowledge, Resources, and Collaboration in Southeast Asia</p>
+                        <p>AFNR Knowledge Platform: Agricultural Policy Knowledge, Resources, and Collaboration in Southeast Asia</p>
                         <div class="hidden md:flex gap-[20px] pt-[40px]">
                             <div class="p-[10px] rounded-full bg-[#282828] hover:bg-[#B59637]">
                                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
