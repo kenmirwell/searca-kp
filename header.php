@@ -28,10 +28,8 @@
                                 </svg>
                             </div>
                         </div>
-                        <div id="global-search-content" class="w-[100%]">
-                        </div>
-                        <div class="flex gap-[5px] py-[20px]" id="pagination-container">
-                        </div>
+                        <div id="global-search-content" class="w-[100%]"></div>
+                        <div class="flex gap-[5px] py-[20px]" id="pagination-container"></div>
                     </div>
                 </div>
             </div>

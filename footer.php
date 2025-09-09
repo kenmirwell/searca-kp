@@ -104,7 +104,7 @@
                             </svg>
                         </div>
                         <div class="text-[#ffffff] w-[50%]">
-                            <p id="cadre-footer-text" class="font-[600]">Agriculture, Forestry, and Natural Resources (AFNR) Knowledge Platform</p>
+                            <p class="font-[600]">Agriculture, Forestry, and Natural Resources (AFNR) Knowledge Platform</p>
                         </div>
                     </div>
                 </a>
