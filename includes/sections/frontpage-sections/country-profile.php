@@ -49,7 +49,7 @@
     </div>
 
     <div class="w-[100%] lg:w-[50%] bg-[#F5F8FC] flex items-center justify-center relative">
-       <div class="w-[80%] mx-auto my-[40px]">
+        <div class="w-[80%] mx-auto my-[40px]">
             <!-- Shared container -->
             <div class="relative w-full max-w-[800px]" style="aspect-ratio: 4 / 3;">
                 <!-- MAP IMAGES -->
@@ -108,8 +108,13 @@
                     ?>
                 <!-- </div> -->
             </div>
-            
-       </div>
+        </div>
+        <div id="openMapBtn" class="absolute bottom-[20px] left-[50px] cursor-pointer">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M38 38L29.3 29.3M18 12V24M12 18H24M34 18C34 26.8366 26.8366 34 18 34C9.16344 34 2 26.8366 2 18C2 9.16344 9.16344 2 18 2C26.8366 2 34 9.16344 34 18Z" stroke="#3e3e3eff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
     </div>
-
 </div>
+
+<?php get_template_part("includes/components/map-modal"); ?>

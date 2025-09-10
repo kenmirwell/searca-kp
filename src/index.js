@@ -13,6 +13,7 @@ import CountryprofileContent from "../modules/CountryprofileContent";
 import ConsortiumInteractive from "../modules/ConsortiumInteractive";
 import CustomVideoButton from "../modules/VideoFunc";
 import GsapControls from "../modules/Gsap";
+import MapModal from "../modules/mapModal";
 // import MouseOverFunc from "../modules/MouseOverFunc";
 
 
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const customVideoButton = new CustomVideoButton();
     const gsapControls = new GsapControls();
     const knowledgeProductsSearch = new KnowledgeProductsSearch();
+    const mapModal = new MapModal();
     // const mousehover = new MouseOverFunc();
 
     gsapControls.heroSlider();
@@ -356,6 +358,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+    
+    if (document.getElementById("openMapBtn")) {
+        document.getElementById("openMapBtn").addEventListener("click", () => {
+            mapModal.openMapModal();
+        });
+    }
 
 
 

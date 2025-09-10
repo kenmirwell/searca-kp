@@ -1362,6 +1362,51 @@ class CustomVideoButton {
 
 /***/ }),
 
+/***/ "./modules/mapModal.js":
+/*!*****************************!*\
+  !*** ./modules/mapModal.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class MapModal {
+  constructor() {
+    // don’t fetch elements yet
+  }
+  getModalElements() {
+    this.modal = document.getElementById("mapModal");
+    this.closeBtn = document.getElementById("closeModal");
+    if (this.closeBtn && this.modal) {
+      // Close with button
+      this.closeBtn.addEventListener("click", () => this.closeMapModal());
+
+      // Close with background click
+      this.modal.addEventListener("click", e => {
+        if (e.target === this.modal) {
+          this.closeMapModal();
+        }
+      });
+    }
+  }
+  openMapModal() {
+    this.getModalElements(); // fetch fresh elements
+    if (this.modal) {
+      this.modal.classList.remove("hidden");
+    }
+  }
+  closeMapModal() {
+    if (this.modal) {
+      this.modal.classList.add("hidden");
+    }
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MapModal);
+
+/***/ }),
+
 /***/ "./src/config.js":
 /*!***********************!*\
   !*** ./src/config.js ***!
@@ -1456,6 +1501,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
 /* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
 /* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
+/* harmony import */ var _modules_mapModal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../modules/mapModal */ "./modules/mapModal.js");
+
 
 
 
@@ -1489,6 +1536,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_13__["default"]();
   const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_14__["default"]();
   const knowledgeProductsSearch = new _modules_KnowledgeProductsSearch__WEBPACK_IMPORTED_MODULE_2__["default"]();
+  const mapModal = new _modules_mapModal__WEBPACK_IMPORTED_MODULE_15__["default"]();
   // const mousehover = new MouseOverFunc();
 
   gsapControls.heroSlider();
@@ -1753,6 +1801,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+  if (document.getElementById("openMapBtn")) {
+    document.getElementById("openMapBtn").addEventListener("click", () => {
+      mapModal.openMapModal();
+    });
+  }
   jQuery(document).ready(function ($) {
     $('.banner-slider').slick({
       slidesToShow: 1,
