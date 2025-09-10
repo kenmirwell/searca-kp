@@ -60,9 +60,10 @@
                 <div class="flex flex-col pt-[20px]">
                     <?php 
                         $countries = new WP_Query(array(
-                            "post_type" => "country-profile",
-                            "posts_per_page" => 11,
-                            'order' => 'DESC',     
+                            "post_type"         => "country-profile",
+                            "posts_per_page"    => 11,
+                            'orderby'           => 'title',  // <-- important
+                            'order'             => 'ASC',
                         ));
 
                         if ($countries->have_posts()) {
