@@ -1,4 +1,4 @@
-<div class="py-[50px] bg-[#096936]">
+<div class="py-[50px] bg-[#008c67]">
   <div class="flex flex-col lg:flex-row gap-[50px] lg:gap-[100px] items-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto justify-between">
     <div class="w-[100%] lg:w-[60%] flex flex-col gap-[20px] text-[#ffffff] text-display-24 md:text-display-42 font-bold">
       <h2>Never Miss an Update Subscribe to the Agri-InSight Digest</h2>

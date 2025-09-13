@@ -26,16 +26,8 @@
                 <p class="text-display-12 md:text-display-16">By Title</p>
               </div>
               <div class="text-[#CECECE]">|</div>
-              <div id="kp-search-author" class="cursor-pointer kp-search-category">
-                <p class="text-display-12 md:text-display-16">By Autor</p>
-              </div>
-              <div class="text-[#CECECE]">|</div>
               <div id="kp-search-keyword" class="cursor-pointer kp-search-category">
                 <p class="text-display-12 md:text-display-16">By Keyword</p>
-              </div>
-              <div class="text-[#CECECE]">|</div>
-              <div id="kp-search-country" class="cursor-pointer kp-search-category">
-                <p class="text-display-12 md:text-display-16">By Country</p>
               </div>
           </div>
         </div>

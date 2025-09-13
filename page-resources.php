@@ -4,7 +4,7 @@
     while (have_posts()) {
         the_post();
 
-    $page = get_page_by_title('Resources Test');
+    $page = get_page_by_title('Resources');
     
     set_query_var('page_id', $page->ID);
 

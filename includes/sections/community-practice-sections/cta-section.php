@@ -4,7 +4,7 @@
     $group = get_field('cta_section_group');
 ?>
 
-<div class="py-[50px] lg:py-[100px] bg-[#096936] relative">
+<div class="py-[50px] lg:py-[100px] bg-[#008c67] relative">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
 
         <!-- Header -->

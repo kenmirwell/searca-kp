@@ -2,7 +2,7 @@
     $page_id = get_query_var('page_id');
 ?>
 
-<div class="capri-aims-to-achieve py-[50px] lg:py-[100px] bg-[#096936]">
+<div class="capri-aims-to-achieve py-[50px] lg:py-[100px] bg-[#008c67]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex flex-col w-[80%] lg:flex-row justify-start pb-[60px]">
             <div class="flex flex-col">

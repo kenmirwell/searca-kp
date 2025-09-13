@@ -832,16 +832,16 @@ class KnowledgeProductsSearch {
       button.addEventListener("click", () => {
         categoryButtons.forEach(btn => btn.classList.remove("kp-search-active"));
         button.classList.add("kp-search-active");
-        const clickedId = button.id;
-        if (clickedId === "kp-search-title") this.searchBy = "title_search";else if (clickedId === "kp-search-keyword") this.searchBy = "search";else if (clickedId === "kp-search-author") this.searchBy = "author";else if (clickedId === "kp-search-country") this.searchBy = "country";
-        console.log("Search category set to:", this.searchBy);
+        this.searchBy = button.id === "kp-search-title" ? "title_search" : "search";
+
+        // 🔑 Trigger search again when searchBy changes
+        if (input?.value.trim()) {
+          this.performSearch(input.value.trim());
+        }
       });
     });
     if (!input) return;
-    const debouncedInput = this.debounce(e => {
-      const value = e.target.value.trim();
-      this.performSearch(value);
-    }, 1000);
+    const debouncedInput = this.debounce(e => this.performSearch(e.target.value.trim()), 1000);
     input.addEventListener("input", debouncedInput);
     input.addEventListener("keydown", e => {
       if (e.key === "Enter") {
@@ -851,6 +851,7 @@ class KnowledgeProductsSearch {
     });
   }
   performSearch(value) {
+    console.log("value", value);
     const query = typeof value === "string" ? value.trim() : "";
     this.toggleSection(query);
     this.showLoader();
@@ -863,9 +864,7 @@ class KnowledgeProductsSearch {
     // const filterQuery = filters.length ? `&filters=${filters.join(",")}` : "";
 
     let queryString = Object.keys(this.selectedFilters).map(tax => this.selectedFilters[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
-    console.log("queryString", queryString);
     const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}&${queryString}`;
-    console.log("API URL:", apiUrl);
     fetch(apiUrl).then(res => {
       if (!res.ok) throw new Error("Failed to fetch");
       return res.json();
@@ -874,7 +873,6 @@ class KnowledgeProductsSearch {
         this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
         return;
       }
-      console.log("data", data);
 
       // this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
       const html = data.map(item => {

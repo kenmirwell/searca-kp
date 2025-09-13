@@ -1,4 +1,4 @@
-<div class="bg-[#096936] py-[30px] md:py-[50px] relative">
+<div class="bg-[#008c67] py-[30px] md:py-[50px] relative">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto z-[1] relative">
         <div class="block md:flex gap-[20px] lg:gap-[80px]">
             <div class="flex flex-col gap-[20px] w-[100%] md:w-[50%]">

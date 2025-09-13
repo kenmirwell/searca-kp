@@ -33,7 +33,7 @@
                 <?php endwhile; ?>
             <?php endif; ?> 
         </div>
-        <div id="agdom-keypoints" class="bg-[#096936]">
+        <div id="agdom-keypoints" class="bg-[#008c67]">
             <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
                 <?php if (have_rows('agpractices_platform')): ?>
                     <?php while (have_rows('agpractices_platform')): the_row(); ?>
@@ -116,7 +116,7 @@
                                             <div class="absolute flex w-[40px] h-[40px] justify-center items-center rounded-full bg-[#B59637] border-[4px] border-[#ffffff] top-0 right-[-16px] p-[10px]">
                                                 <p class="text-[#ffffff]"><?php echo $index; ?></p>
                                             </div>
-                                            <div class="bg-[#096936] w-[100%] h-[100%] rounded-full"></div>
+                                            <div class="bg-[#008c67] w-[100%] h-[100%] rounded-full"></div>
                                         </div>
                                         <h6 class="font-[600] text-display-20 lg:text-display-24"><?php echo esc_html(get_sub_field('title')); ?></h6>
                                         <p><?php echo wp_kses_post(get_sub_field('subtext')); ?></p>

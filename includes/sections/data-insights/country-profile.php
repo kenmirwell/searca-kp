@@ -1,6 +1,6 @@
 <div class="flex flex-col lg:flex-row relative">
     <!-- Left Side -->
-    <div class="w-[100%] lg:w-[50%] bg-[#096936] flex items-center">
+    <div class="w-[100%] lg:w-[50%] bg-[#008c67] flex items-center">
         <div class="flex flex-col w-[90%] lg:w-[650px] ml-auto lg:ml-auto mr-auto lg:mr-[0px] pr-[0px] lg:pr-[50px] py-[80px] md:py-[20px]">
             <div class="border-b-[1px] border-[#D4D4D4] pb-[20px]">
                 <h2 class="text-white text-display-24 md:text-display-42 font-bold">
@@ -108,8 +108,12 @@
                     ?>
                 <!-- </div> -->
             </div>
-            
        </div>
+       <div id="openMapBtn" class="absolute bottom-[20px] left-[50px] cursor-pointer rounded-full p-[15px] bg-[#008c67]">
+            <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M38 38L29.3 29.3M18 12V24M12 18H24M34 18C34 26.8366 26.8366 34 18 34C9.16344 34 2 26.8366 2 18C2 9.16344 9.16344 2 18 2C26.8366 2 34 9.16344 34 18Z" stroke="#ffffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
     </div>
-
 </div>
+<?php get_template_part("includes/components/map-modal"); ?>

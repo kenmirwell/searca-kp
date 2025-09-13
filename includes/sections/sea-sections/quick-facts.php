@@ -4,7 +4,7 @@
     $content_group = $group["facts_content"]
 ?>
 
-<div class="bg-[#096936] py-[100px]">
+<div class="bg-[#008c67] py-[100px]">
     <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="text-[#ffffff] flex flex-col items-center justify-center">
             <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[10px] lg:w-[40%] mx-auto text-center"><?php echo esc_html($group["fact_main_title"]); ?></h2>
