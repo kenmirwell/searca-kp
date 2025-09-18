@@ -155,7 +155,7 @@ class KnowledgeProductsSearch {
                     const imageUrl = item.custom_fields.featured_image;
 
                     return `  
-                        <div class="kp-searched-item">
+                        <div class="kp-searched-item" style="height: fit-content;">
                             <div class="bg-[#F5F8FC] p-[20px]">
                                  <div class="bg-[#DBE1E9] p-[5px] rounded-[8px] overflow-hidden">
                                     <div class="relative flex h-[250px] xl:h-[300px] rounded-[8px] overflow-hidden">
@@ -169,17 +169,17 @@ class KnowledgeProductsSearch {
                                 <div class="pb-[10px]">
                                     <p class="text-sm text-gray-600">${item.custom_fields.author_name || "Unknown author"}</p>
                                 </div>
-                                <div>
+                                <div class="mb-[20px]">
                                     <h6 class="flex items-end md:text-display-18 font-[600] pt-[10px]">${item.custom_fields.title || "No title"}</h6>
-                                    <div class="text-display-16 pt-[10px] font-[200]">
-                                        ${(item.custom_fields.content?.length > 100) 
-                                        ? item.custom_fields.content.slice(0, 100) + "..." 
-                                        : item.custom_fields.content || "No summary available."}
-                                    </div>
+                                        <div class="text-display-16 pt-[10px] font-[200]">
+                                        ${item.custom_fields.content 
+                                            ? (item.custom_fields.content.replace(/<[^>]*>?/gm, "").slice(0, 100) + "...") 
+                                            : "No summary available."}
+                                        </div>
                                 </div>
-                                <div>
-                                    <a href="${item.custom_fields.permalink || "/"}" class="rounded-full px-[20px] py-[10px] border-[1px] border-[#096936] text-display-16 text-[#096936]">Read More</a>
-                                </div>
+                                <a href="${item.custom_fields.permalink || '/'}" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border:1px solid #096936;border-radius:9999px;font-size:16px;line-height:1;color:#096936;text-decoration:none;">
+                                    Read More
+                                </a>
                             </div>
                         </div>
                     `

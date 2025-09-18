@@ -170,7 +170,7 @@
                 style="border: none;">
             </iframe> -->
         </div> 
-        <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
+        <!-- <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
             <div class="flex flex-col lg:flex-row justify-between items-center">
                 <div class="flex flex-col gap-[20px]">
                     <h2 class="text-display-24 lg:text-display-42 font-bold">Step-by-Step: How It Works</h2>
@@ -197,7 +197,7 @@
                     >
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 <?php 
     }
