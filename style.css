@@ -655,6 +655,8 @@ select {
     color: #196129;
 }
 
+/* adjustable size */
+
 #country-Philippines {
     right: 37%;
     top: 19%;
@@ -707,6 +709,75 @@ select {
 #country-Timor-Leste {
     right: 213px;
     bottom: 0px;
+}
+
+/* fixed size */
+
+.fixed-size-map-container {
+    overflow-y: scroll;
+}
+
+.fixed-size-map {
+    width: 1050px;
+    height: 855px;
+}
+
+#fixed-country-Philippines {
+    right: 325px;
+    top: 260px;
+}
+
+#fixed-country-Laos {
+    left: 182px;
+    top: 74px;
+}
+
+#fixed-country-Myanmar {
+    top: 0px;
+}
+
+#fixed-country-Vietnam {
+    left: 250px;
+    top: 45px;
+}
+
+#fixed-country-Brunei {
+    right: 530px;
+    top: 440px;
+}
+
+#fixed-country-Singapore {
+    left: 230px;
+    top: 520px;
+}
+
+#fixed-country-Malaysia {
+    top: 435px;
+    left: 205px;
+}
+
+#fixed-country-Cambodia {
+    right: 73%;
+    top: 29%;
+}
+
+#fixed-country-Thailand {
+    left: 97px;
+    top: 128px;
+}
+
+#fixed-country-Indonesia {
+    right: 200px;
+    top: 575px;
+}
+
+#fixed-country-Timor-Leste {
+    right: 280px;
+    bottom: 45px;
+}
+
+#openMapBtn {
+    z-index: 9;
 }
 
 .single-country-content > p {
@@ -928,21 +999,23 @@ select {
 }
 
 .scrollbar-custom::-webkit-scrollbar {
-    width: 4px !important;
-  }
-  
-.scrollbar-custom::-webkit-scrollbar-track {
-    background: #f1f1f1 !important;
+  width: 4px;   /* vertical scrollbar width */
+  height: 2px;  /* horizontal scrollbar height */
 }
-  
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
 .scrollbar-custom::-webkit-scrollbar-thumb {
-    background: #0a875a !important;
-    border-radius: 4px !important;
+  background: #0a875a !important;
+  border-radius: 4px !important;
 }
 
 .scrollbar-custom::-webkit-scrollbar-thumb:hover {
-    background: #0a875a !important
+  background: #0a875a !important;
 }
+
 
 .moss-check-item {
     display: flex;
