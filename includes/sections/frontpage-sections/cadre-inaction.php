@@ -2,7 +2,7 @@
     set_query_var('cadre_in_action_banner', $cadre_in_action_banner);
 ?>
 
-<div id="c-a-video-container" class="flex w-[100%] h-[720px] relative">
+<div id="c-a-video-container" class="flex w-[100%] h-[600px] relative">
     <div class="flex flex-col xl:flex-row w-[90%] lg:w-[1024px] xl:w-[1280px] justify-center xl:w-[60%] mx-auto gap-[100px] items-center relative z-[9]">
         <div id="play-pause-btn" class="flex flex-col items-center justify-center gap-[20px] group">
             <div class="flex relative justify-center items-center">

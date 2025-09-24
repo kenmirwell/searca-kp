@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
+        'display-55': ['55px', { lineHeight: '60px', letterSpacing: '-1.2px' }],
         'display-48': ['48px', { lineHeight: '60px', letterSpacing: '-1.2px' }],
         'display-42': ['42px', { lineHeight: '50px', letterSpacing: '-1.1px' }],
         'display-32': ['32px', { lineHeight: '42px', letterSpacing: '-0.24px' }],

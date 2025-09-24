@@ -105,28 +105,32 @@
                             <a href="<?php echo get_permalink($learning_materials_id) ?>" class="hidden md:flex justify-center gap-[30px] relative py-[10px] h-[500px] h-auto">
                                 <div class="h-auto justify-start gap-[20px] w-[100%]">
                                     <div class="flex flex-col h-auto rounded-[15px] overflow-hidden cursor-pointer">
-                                        <div class="flex h-[250px] xl:h-[300px] relative bg-[#ffffff] rounded-[15px] overflow-hidden">
-                                            <div class="absolute top-[15px] left-[15px] z-[11]">
-                                                <?php 
-                                                    $terms = get_the_terms(get_the_ID(), 'km_category'); 
-                                                    if ($terms && !is_wp_error($terms)) {
-                                                        foreach ($terms as $term) {
-                                                            if (strtolower($term->name) !== 'featured') { 
-                                                                echo '<p class="text-[#ffffff] text-[14px] rounded-full backdrop-blur-lg bg-white/10 py-[8px] px-[20px]">' . esc_html($term->name) . '</p>';
+                                        <div class="bg-[#F5F8FC] p-[20px]">
+                                            <div class="bg-[#DBE1E9] p-[5px] rounded-[8px] overflow-hidden">
+                                                <div class="relative flex h-[250px] xl:h-[300px] rounded-[8px] overflow-hidden">
+                                                    <div class="absolute top-[15px] left-[15px] z-[11]">
+                                                        <?php 
+                                                            $terms = get_the_terms(get_the_ID(), 'km_category'); 
+                                                            if ($terms && !is_wp_error($terms)) {
+                                                                foreach ($terms as $term) {
+                                                                    if (strtolower($term->name) !== 'featured') { 
+                                                                        echo '<p class="text-[#ffffff] text-[14px] rounded-full backdrop-blur-lg bg-white/10 py-[8px] px-[20px]">' . esc_html($term->name) . '</p>';
+                                                                    }
+                                                                }
                                                             }
+                                                        ?>
+                                                    </div>
+                                                    <?php
+                                                        if ( has_post_thumbnail() ) {
+                                                            $thumbnail_url = get_the_post_thumbnail_url();
+                                                    ?>
+                                                         <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
+                                                            <img class="absolute w-full h-full object-cover rounded-[5px]"  src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title();?>">
+                                                        </div>
+                                                    <?php
                                                         }
-                                                    }
-                                                ?>
+                                                    ?>
                                             </div>
-                                            <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
-                                            <?php
-                                                if ( has_post_thumbnail() ) {
-                                                    $thumbnail_url = get_the_post_thumbnail_url();
-                                            ?>
-                                                <img class="absolute w-full h-full object-cover" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php the_title(); ?>">
-                                            <?php
-                                                }
-                                            ?>
                                         </div>
                                         <div class="flex h-auto pb-[10px] md:pb-[20px]">
                                             <div class="pt-[20px] pb-[10px] w-[100%]">

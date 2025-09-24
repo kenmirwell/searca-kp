@@ -38,9 +38,9 @@
                                                 class="block w-auto max-h-0 group-hover:max-h-[300px] overflow-hidden transition-all duration-300 ease-in-out delay-150 pt-[10px]" 
                                                 href="<?php echo esc_url($link); ?>"
                                             >
-                                                <div class="flex justify-between items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#096936] hover:bg-[#B59637] transition-all duration-200 ease rounded-full">
+                                                <div class="flex justify-between items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#008c67] hover:bg-[#B59637] transition-all duration-200 ease rounded-full">
                                                     <p class="hover:text-black text-white">Learn More</p>
-                                                    <div class="bg-[#B59637] hover:bg-[#096936] rounded-full p-[15px] transition-all duration-200 ease">
+                                                    <div class="bg-[#B59637] hover:bg-[#008c67] rounded-full p-[15px] transition-all duration-200 ease">
                                                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" 
                                                                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
