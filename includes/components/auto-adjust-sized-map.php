@@ -40,7 +40,7 @@
                     data-index="<?php echo intval($country_index); ?>" 
                     class="country-<?php echo $country_index; ?> flex items-center absolute font-[200] transition-all duration-200 ease"
                 >
-                    <div class="flag-icon w-[100%] relative transition-all duration-300 ease-in-out z-[1]">
+                    <div class="flag-icon w-[100%] relative transition-all duration-300 ease-in-out z-[1] shadow">
                         <img class="absolute top-[11px] right-[10px] w-[40px] z-[2]" src="<?php echo esc_url($flag_url); ?>" alt="">
                         <div class="z-[2] w-[60px]">
                             <svg width="auto" height="auto" viewBox="0 0 54 69" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,4 +1,4 @@
-<div class="flex justify-end fixed-size-map-container w-[100%] h-[100%] scrollbar-custom">
+<div class="fixed-size-map-container w-[100%] h-[500px] scrollbar-custom">
     <div class="fixed-size-map relative">
         <!-- MAP IMAGES -->
         <?php 

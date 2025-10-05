@@ -718,7 +718,8 @@ select {
 }
 
 .fixed-size-map {
-    width: 1050px;
+    /* width: 1050px; */
+    width: 855px;
     height: 855px;
 }
 
