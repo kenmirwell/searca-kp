@@ -714,7 +714,7 @@ select {
 /* fixed size */
 
 .fixed-size-map-container {
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .fixed-size-map {
@@ -1177,9 +1177,15 @@ select {
     .primary-menu .menu-item {
         font-size: 14px;
     }
+
+    .fixed-size-map {
+        height: 600px;
+        width: 600px;
+    }    
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) {   
+
     .primary-menu {
         display: none;
     }
