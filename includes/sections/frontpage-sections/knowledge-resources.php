@@ -7,18 +7,6 @@
                     <h2 class="block md:hidden text-[#1f1f1f] text-display-22 xl:text-display-42 font-[700]">Knowledge resources Empowering informed decisions</h2>
                     <p class="text-display-12 md:text-display-16">Access a wealth of research, data, and best practices to support informed decision-making in agriculture, forestry, and natural resource management.</p>
                 </div>
-                <!-- <div class="flex">
-                    <a href="/knowledge-resources" class="w-auto group cursor-pointer">
-                        <div class="flex items-center gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#2a7f3d] group-hover:bg-[#ceab23] transition-all duration-200 ease rounded-full">
-                            <p class="text-[#ffffff]">Explore resources</p>
-                            <div class="bg-[#ceab23] group-hover:bg-[#2a7f3d] rounded-full p-[15px] transition-all duration-200 ease">
-                                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.10042 21.8995L21.8994 2.10051M21.8994 2.10051H2.10042M21.8994 2.10051V21.8995" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </a>
-                </div> -->
                 <?php
                     get_button_data('button-template', array(
                         'title' => 'Explore resources',

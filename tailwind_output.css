@@ -1126,10 +1126,6 @@ video {
   width: 1100px;
 }
 
-.w-\[1280px\] {
-  width: 1280px;
-}
-
 .w-\[146px\] {
   width: 146px;
 }
@@ -1574,16 +1570,6 @@ video {
   border-top-right-radius: 0.75rem;
 }
 
-.rounded-t-\[20px\] {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.rounded-b-\[20px\] {
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-}
-
 .rounded-br-full {
   border-bottom-right-radius: 9999px;
 }
@@ -1604,6 +1590,10 @@ video {
   border-width: 1px;
 }
 
+.border-\[30px\] {
+  border-width: 30px;
+}
+
 .border-\[3px\] {
   border-width: 3px;
 }
@@ -1614,10 +1604,6 @@ video {
 
 .border-\[8px\] {
   border-width: 8px;
-}
-
-.border-\[30px\] {
-  border-width: 30px;
 }
 
 .border-b {
@@ -1651,6 +1637,11 @@ video {
 .border-\[\#000000\] {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-\[\#008c67\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 140 103 / var(--tw-border-opacity));
 }
 
 .border-\[\#00b428\] {
@@ -1740,11 +1731,6 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-\[\#008c67\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 140 103 / var(--tw-border-opacity));
 }
 
 .border-opacity-50 {
@@ -2093,6 +2079,11 @@ video {
   padding-right: 35px;
 }
 
+.px-\[40px\] {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
 .px-\[50px\] {
   padding-left: 50px;
   padding-right: 50px;
@@ -2181,11 +2172,6 @@ video {
 .py-\[8px\] {
   padding-top: 8px;
   padding-bottom: 8px;
-}
-
-.px-\[40px\] {
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 .pb-\[10px\] {
@@ -3118,14 +3104,14 @@ video {
     border-radius: 0.75rem;
   }
 
-  .md\:rounded-t-\[20px\] {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-
   .md\:rounded-b-\[20px\] {
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+  }
+
+  .md\:rounded-t-\[20px\] {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 
   .md\:border-r-\[1px\] {
@@ -3301,6 +3287,10 @@ video {
     height: 90px;
   }
 
+  .lg\:w-\[100\%\] {
+    width: 100%;
+  }
+
   .lg\:w-\[1024px\] {
     width: 1024px;
   }
@@ -3363,10 +3353,6 @@ video {
 
   .lg\:w-auto {
     width: auto;
-  }
-
-  .lg\:w-\[100\%\] {
-    width: 100%;
   }
 
   .lg\:grid-cols-3 {

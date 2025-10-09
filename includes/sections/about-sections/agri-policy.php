@@ -35,7 +35,7 @@
                 
                 <?php if (get_field("agri_policy_image", $page_id)) : ?> 
                     <div class="relative h-[400px] w-[100%] md:w-[80%] md:ml-auto">
-                        <img class="absolute w-full h-full object-cover" src="<?php echo get_field('agri_policy_image'); ?>" alt="searca image">
+                        <img class="absolute w-full h-full object-cover rounded-lg" src="<?php echo get_field('agri_policy_image'); ?>" alt="searca image">
                     </div>
                 <?php endif; ?>    
 

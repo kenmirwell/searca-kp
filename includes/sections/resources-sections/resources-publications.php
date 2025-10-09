@@ -16,6 +16,10 @@ if (have_rows('split_section', $page_id)) : ?>
             $descriptions = $title_desc_group['split_section_descriptions'] ?? [];
             $points = $title_desc_group['split_section_points'] ?? [];
 
+            $button_name = get_sub_field('button_name');
+            $button_url  = get_sub_field('button_url');
+
+
             ob_start(); ?>
                 <div class="w-[100%] md:w-[50%] flex items-center">
                     <div class="">
@@ -63,6 +67,18 @@ if (have_rows('split_section', $page_id)) : ?>
                         <?php if (!empty($impact)) : ?>
                             <div class="<?php echo $bg_color === '#008c67' ? 'text-white' : ''; ?> text-display-14 md:text-display-16 font-[200] italic pl-[20px] border-l-[2px] border-[#B59637] py-[10px]">
                                 <?php echo wp_kses_post($impact); ?>
+                            </div>
+                        <?php endif; ?>
+                            
+                        <?php if (!empty($button_name)) : ?>
+                            <div class="flex pt-[20px]">
+                                <?php
+                                    button_template('common-button', array(
+                                        'title' => $button_name,
+                                        'url' => $button_url,
+                                        'color' => 'gold_to_white'
+                                    ))
+                                ?>
                             </div>
                         <?php endif; ?>
                     </div>

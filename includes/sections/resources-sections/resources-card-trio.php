@@ -3,25 +3,30 @@
 ?>
 
 <div class="py-[50px] lg:py-[100px]">
-    <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="flex flex-col lg:flex-row justify-center pb-[50px]">
-            <div class="flex flex-col gap-[20px]">
-                <?php if($page_id) : ?>
-                    <?php if (get_field("image_cards_container_title", $page_id)) : ?>
+    <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto"> 
+        <?php if($page_id) : ?>
+            <?php if (get_field("image_cards_container_title", $page_id)) : ?>
+                <div class="flex flex-col lg:flex-row justify-center pb-[50px]">
+                    <div class="flex flex-col gap-[20px]">
                         <div class="font-bold">
                             <h2 class="w-[100%] lg:w-[500px] text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]"><?php echo get_field("image_cards_container_title", $page->ID); ?></h2>
                         </div>
-                    <?php endif; ?>
-                <?php endif; ?>
-                <?php if($page_id) : ?>
-                    <?php if (get_field("image_cards_container_description", $page_id)) : ?>
+                    </div>
+                </div>    
+            <?php endif; ?>
+        <?php endif; ?>
+
+        <?php if($page_id) : ?>
+            <?php if (get_field("image_cards_container_description", $page_id)) : ?>
+                <div class="flex flex-col lg:flex-row justify-center pb-[50px]">
+                    <div class="flex flex-col gap-[20px]">
                         <div class="">
                             <p class="text-[#1f1f1f]"><?php echo get_field("image_cards_container_description", $page_id); ?></p>
                         </div>
-                    <?php endif; ?>
-                <?php endif; ?>
-            </div>
-        </div>      
+                    </div>
+                </div>     
+            <?php endif; ?>
+        <?php endif; ?>     
         <div class="flex flex-col md:flex-row gap-[50px] justify-between">
             <?php if (have_rows('image_cards', $page_id)) : ?>
                 <?php while (have_rows('image_cards', $page_id)) : the_row(); ?>
