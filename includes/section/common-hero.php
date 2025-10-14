@@ -25,7 +25,7 @@
             <img class="w-full z-[0]" src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
         </div>
     </div>
-    <div class="bg-[#096936] opacity-[0.90] w-full h-full absolute top-0 left-0 z-[1]"></div>
+    <div class="bg-[#008c67] opacity-[0.90] w-full h-full absolute top-0 left-0 z-[1]"></div>
     <img class="absolute w-full h-full object-cover z-[0]" src="<?php echo esc_url(get_field('hero_background')); ?>" alt="<?php the_title(); ?>">
     <div class="absolute bottom-[-16px] z-[1] w-[100%]">
         <svg width="100%" height="100%" viewBox="0 0 1512 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

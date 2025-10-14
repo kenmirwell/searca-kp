@@ -1156,6 +1156,21 @@ select {
     width: 320px;
 }
 
+.no-results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -100px;
+}
+
+.no-pubs {
+    font-size: 28px;
+}
+
+.sorry-message {
+    color: #9E9E9E;
+}
+
 
 @keyframes spin {
     0% { transform: rotate(0deg); }

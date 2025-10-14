@@ -178,6 +178,8 @@ class HomeResourcesSearch {
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
       const data = await response.json();
+      
+      const noResultsImg = `https://knowledgeplatform.searca.org/wp-content/themes/Searca/assets/images/no-results.png`;
 
       if (data.length > 0) {
         const resultsHTML = data
@@ -187,7 +189,15 @@ class HomeResourcesSearch {
         this.updateSearchResults(resultsHTML);
         this.isSpinnerVisible = false;
       } else {
-        this.updateSearchResults(`<div class="loader-container"><p>No result</p></div>`);
+        this.updateSearchResults(`
+          <div class="loader-container">
+            <div class="no-results-container">
+              <img class="no-results-image" src="${noResultsImg}" alt="No results-image" width="250"/>
+              <p class="no-pubs">No publications found</p>
+              <p class="sorry-message">We couldn’t find any documents that match your search.</p>
+            </div>
+          </div>`
+        );
         this.isSpinnerVisible = true;
       }
     } catch (err) {

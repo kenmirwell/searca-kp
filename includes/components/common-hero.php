@@ -29,7 +29,7 @@
             <img class="w-full z-[0]" src="<?php echo esc_url(get_field("featured_image")); ?>" alt="<?php the_title(); ?>">
         </div>
     </div>
-    <div class="bg-[#096936] opacity-[0.90] w-full h-full absolute top-0 left-0 z-[1]"></div>
+    <div class="bg-[#008c67] opacity-[0.90] w-full h-full absolute top-0 left-0 z-[1]"></div>
     <img class="absolute w-full h-full object-cover z-[0]" src="<?php echo esc_url(get_field('hero_background')); ?>" alt="<?php the_title(); ?>">
     <?php if (is_page('country-profile')) : ?>
         <div class="absolute bottom-[-16px] z-[1] w-[100%]">

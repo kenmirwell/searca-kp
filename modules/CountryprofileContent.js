@@ -11,7 +11,7 @@ class CountryprofileContent {
 
     topics.forEach((topic) => {
       const index = topic.getAttribute("data-index");
-      topic.style.backgroundColor = index === "0" ? "#B59637" : "#096936";
+      topic.style.backgroundColor = index === "0" ? "#B59637" : "#008c67";
       if (index === "0") topic.classList.add("active");
       else topic.classList.remove("active");
     });
@@ -36,7 +36,7 @@ class CountryprofileContent {
             t.style.backgroundColor = "#B59637";
           } else {
             t.classList.remove("active");
-            t.style.backgroundColor = "#096936";
+            t.style.backgroundColor = "#008c67";
           }
         });
       });
@@ -53,7 +53,7 @@ class CountryprofileContent {
 
       topic.addEventListener("mouseleave", () => {
         if (!topic.classList.contains("active")) {
-          topic.style.backgroundColor = "#096936";
+          topic.style.backgroundColor = "#008c67";
         }
       });
     });

@@ -2,7 +2,7 @@
     $content_repeater = get_field("country_content");
 ?>
 
-<div id="country-profile-topic" class="bg-[#096936]">
+<div id="country-profile-topic" class="bg-[#008c67]">
     <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="flex justify-between items-center">
              <?php foreach ($content_repeater as $index => $topic) : ?>

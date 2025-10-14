@@ -137,7 +137,7 @@ class KnowledgeProductsSearch {
         .join("&");
 
         const apiUrl = `${ENV_VARS.API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}&${queryString}`;
-        
+        const noResultsImg = `https://knowledgeplatform.searca.org/wp-content/themes/Searca/assets/images/no-results.png`;
 
         fetch(apiUrl)
             .then(res => {
@@ -146,50 +146,63 @@ class KnowledgeProductsSearch {
             })
             .then(data => {
                 if (!Array.isArray(data) || data.length === 0) {
-                    this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
-                    return;
+                this.updateSearchResults(`
+                    <div class="flex flex-col items-center my-[40px] w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto justify-between">
+                        <img class="no-results-image" src="${noResultsImg}" alt="No results-image" width="250"/>
+                        <p class="no-pubs">No publications found</p>
+                        <p class="sorry-message text-center">We couldn’t find any documents that match your search.</p>
+                    </div>
+                `);
+                return;
                 }
 
-                // this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
-                const html = data.map(item => {
+                // ✅ Properly build HTML using template literal and .map()
+                const html = `
+                <div class="grid gap-[20px] w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[100px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    ${data.map(item => {
                     const imageUrl = item.custom_fields.featured_image;
+                    const author = item.custom_fields.author_name || "Unknown author";
+                    const title = item.custom_fields.title || "No title";
+                    const content = item.custom_fields.content
+                        ? item.custom_fields.content.replace(/<[^>]*>?/gm, "").slice(0, 100) + "..."
+                        : "No summary available.";
+                    const permalink = item.custom_fields.permalink || "/";
 
-                    return `  
+                    return `
                         <div class="kp-searched-item" style="height: fit-content;">
-                            <div class="bg-[#F5F8FC] p-[20px]">
-                                 <div class="bg-[#DBE1E9] p-[5px] rounded-[8px] overflow-hidden">
-                                    <div class="relative flex h-[250px] xl:h-[300px] rounded-[8px] overflow-hidden">
-                                        <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease">
-                                        </div>
-                                         ${imageUrl ? `<img src="${imageUrl}" alt="Knowledge Products Item" class="absolute w-full h-full object-cover rounded-[5px]" />` : ""}
-                                    </div>
-                                </div>
+                        <div class="bg-[#F5F8FC] p-[20px]">
+                            <div class="bg-[#DBE1E9] p-[5px] rounded-[8px] overflow-hidden">
+                            <div class="relative flex h-[250px] xl:h-[300px] rounded-[8px] overflow-hidden">
+                                <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
+                                ${imageUrl ? `<img src="${imageUrl}" alt="Knowledge Products Item" class="absolute w-full h-full object-cover rounded-[5px]" />` : ""}
                             </div>
-                            <div>
-                                <div class="pb-[10px]">
-                                    <p class="text-sm text-gray-600">${item.custom_fields.author_name || "Unknown author"}</p>
-                                </div>
-                                <div class="mb-[20px]">
-                                    <h6 class="flex items-end md:text-display-18 font-[600] pt-[10px]">${item.custom_fields.title || "No title"}</h6>
-                                        <div class="text-display-16 pt-[10px] font-[200]">
-                                        ${item.custom_fields.content 
-                                            ? (item.custom_fields.content.replace(/<[^>]*>?/gm, "").slice(0, 100) + "...") 
-                                            : "No summary available."}
-                                        </div>
-                                </div>
-                                <a href="${item.custom_fields.permalink || '/'}" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border:1px solid #096936;border-radius:9999px;font-size:16px;line-height:1;color:#096936;text-decoration:none;">
-                                    Read More
-                                </a>
                             </div>
                         </div>
-                    `
-                }).join("");
+                        <div>
+                            <div class="pb-[10px]">
+                            <p class="text-sm text-gray-600">${author}</p>
+                            </div>
+                            <div class="mb-[20px]">
+                            <h6 class="flex items-end md:text-display-18 font-[600] pt-[10px]">${title}</h6>
+                            <div class="text-display-16 pt-[10px] font-[200]">${content}</div>
+                            </div>
+                            <a href="${permalink}" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border:1px solid #096936;border-radius:9999px;font-size:16px;line-height:1;color:#096936;text-decoration:none;">
+                            Read More
+                            </a>
+                        </div>
+                        </div>
+                    `;
+                    }).join("")}
+                </div>
+                `;
 
                 this.updateSearchResults(html);
             })
             .catch(err => {
                 console.error("Error during search:", err);
-                this.updateSearchResults(`<div class="text-red-600">Error loading results. Please try again later.</div>`);
+                this.updateSearchResults(`
+                <div class="text-red-600">Error loading results. Please try again later.</div>
+                `);
             });
     }
 

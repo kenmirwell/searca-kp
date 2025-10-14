@@ -11,7 +11,7 @@ class SeaprofileContent {
 
     topics.forEach((topic) => {
       const index = topic.getAttribute("data-index");
-      topic.style.backgroundColor = index === "0" ? "#0C5C32" : "#B59637";
+      topic.style.backgroundColor = index === "0" ? "#008c67" : "#B59637";
       if (index === "0") topic.classList.add("active");
       else topic.classList.remove("active");
     });
@@ -33,7 +33,7 @@ class SeaprofileContent {
           const tIndex = t.getAttribute("data-index");
           if (tIndex === index) {
             t.classList.add("active");
-            t.style.backgroundColor = "#096936";
+            t.style.backgroundColor = "#008c67";
           } else {
             t.classList.remove("active");
             t.style.backgroundColor = "#B59637";
@@ -48,7 +48,7 @@ class SeaprofileContent {
 
     topics.forEach((topic) => {
       topic.addEventListener("mouseenter", () => {
-        topic.style.backgroundColor = "#096936";
+        topic.style.backgroundColor = "#008c67";
       });
 
       topic.addEventListener("mouseleave", () => {

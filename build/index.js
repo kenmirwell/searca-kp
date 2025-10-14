@@ -124,7 +124,7 @@ class CountryprofileContent {
     });
     topics.forEach(topic => {
       const index = topic.getAttribute("data-index");
-      topic.style.backgroundColor = index === "0" ? "#B59637" : "#096936";
+      topic.style.backgroundColor = index === "0" ? "#B59637" : "#008c67";
       if (index === "0") topic.classList.add("active");else topic.classList.remove("active");
     });
   }
@@ -144,7 +144,7 @@ class CountryprofileContent {
             t.style.backgroundColor = "#B59637";
           } else {
             t.classList.remove("active");
-            t.style.backgroundColor = "#096936";
+            t.style.backgroundColor = "#008c67";
           }
         });
       });
@@ -158,7 +158,7 @@ class CountryprofileContent {
       });
       topic.addEventListener("mouseleave", () => {
         if (!topic.classList.contains("active")) {
-          topic.style.backgroundColor = "#096936";
+          topic.style.backgroundColor = "#008c67";
         }
       });
     });
@@ -629,12 +629,20 @@ class HomeResourcesSearch {
       const response = await fetch(apiUrl);
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
       const data = await response.json();
+      const noResultsImg = `https://knowledgeplatform.searca.org/wp-content/themes/Searca/assets/images/no-results.png`;
       if (data.length > 0) {
         const resultsHTML = data.map(item => `<div class="home-search-item"><a class="text-[16px]" href="${item.link}">${item.title.rendered}</a></div>`).join("");
         this.updateSearchResults(resultsHTML);
         this.isSpinnerVisible = false;
       } else {
-        this.updateSearchResults(`<div class="loader-container"><p>No result</p></div>`);
+        this.updateSearchResults(`
+          <div class="loader-container">
+            <div class="no-results-container">
+              <img class="no-results-image" src="${noResultsImg}" alt="No results-image" width="250"/>
+              <p class="no-pubs">No publications found</p>
+              <p class="sorry-message">We couldn’t find any documents that match your search.</p>
+            </div>
+          </div>`);
         this.isSpinnerVisible = true;
       }
     } catch (err) {
@@ -865,50 +873,64 @@ class KnowledgeProductsSearch {
 
     let queryString = Object.keys(this.selectedFilters).map(tax => this.selectedFilters[tax].map(val => `${tax}=${encodeURIComponent(val)}`).join("&")).join("&");
     const apiUrl = `${_src_config_js__WEBPACK_IMPORTED_MODULE_0__["default"].API_URL}knowledge-management?${this.searchBy}=${encodeURIComponent(query)}&${queryString}`;
+    const noResultsImg = `https://knowledgeplatform.searca.org/wp-content/themes/Searca/assets/images/no-results.png`;
     fetch(apiUrl).then(res => {
       if (!res.ok) throw new Error("Failed to fetch");
       return res.json();
     }).then(data => {
       if (!Array.isArray(data) || data.length === 0) {
-        this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
+        this.updateSearchResults(`
+                    <div class="flex flex-col items-center my-[40px] w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto justify-between">
+                        <img class="no-results-image" src="${noResultsImg}" alt="No results-image" width="250"/>
+                        <p class="no-pubs">No publications found</p>
+                        <p class="sorry-message text-center">We couldn’t find any documents that match your search.</p>
+                    </div>
+                `);
         return;
       }
 
-      // this.updateSearchResults(`<div>No results found for "<strong>${query}</strong>"</div>`);
-      const html = data.map(item => {
+      // ✅ Properly build HTML using template literal and .map()
+      const html = `
+                <div class="grid gap-[20px] w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[100px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    ${data.map(item => {
         const imageUrl = item.custom_fields.featured_image;
-        return `  
+        const author = item.custom_fields.author_name || "Unknown author";
+        const title = item.custom_fields.title || "No title";
+        const content = item.custom_fields.content ? item.custom_fields.content.replace(/<[^>]*>?/gm, "").slice(0, 100) + "..." : "No summary available.";
+        const permalink = item.custom_fields.permalink || "/";
+        return `
                         <div class="kp-searched-item" style="height: fit-content;">
-                            <div class="bg-[#F5F8FC] p-[20px]">
-                                 <div class="bg-[#DBE1E9] p-[5px] rounded-[8px] overflow-hidden">
-                                    <div class="relative flex h-[250px] xl:h-[300px] rounded-[8px] overflow-hidden">
-                                        <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease">
-                                        </div>
-                                         ${imageUrl ? `<img src="${imageUrl}" alt="Knowledge Products Item" class="absolute w-full h-full object-cover rounded-[5px]" />` : ""}
-                                    </div>
-                                </div>
+                        <div class="bg-[#F5F8FC] p-[20px]">
+                            <div class="bg-[#DBE1E9] p-[5px] rounded-[8px] overflow-hidden">
+                            <div class="relative flex h-[250px] xl:h-[300px] rounded-[8px] overflow-hidden">
+                                <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
+                                ${imageUrl ? `<img src="${imageUrl}" alt="Knowledge Products Item" class="absolute w-full h-full object-cover rounded-[5px]" />` : ""}
                             </div>
-                            <div>
-                                <div class="pb-[10px]">
-                                    <p class="text-sm text-gray-600">${item.custom_fields.author_name || "Unknown author"}</p>
-                                </div>
-                                <div class="mb-[20px]">
-                                    <h6 class="flex items-end md:text-display-18 font-[600] pt-[10px]">${item.custom_fields.title || "No title"}</h6>
-                                        <div class="text-display-16 pt-[10px] font-[200]">
-                                        ${item.custom_fields.content ? item.custom_fields.content.replace(/<[^>]*>?/gm, "").slice(0, 100) + "..." : "No summary available."}
-                                        </div>
-                                </div>
-                                <a href="${item.custom_fields.permalink || '/'}" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border:1px solid #096936;border-radius:9999px;font-size:16px;line-height:1;color:#096936;text-decoration:none;">
-                                    Read More
-                                </a>
                             </div>
                         </div>
+                        <div>
+                            <div class="pb-[10px]">
+                            <p class="text-sm text-gray-600">${author}</p>
+                            </div>
+                            <div class="mb-[20px]">
+                            <h6 class="flex items-end md:text-display-18 font-[600] pt-[10px]">${title}</h6>
+                            <div class="text-display-16 pt-[10px] font-[200]">${content}</div>
+                            </div>
+                            <a href="${permalink}" style="display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border:1px solid #096936;border-radius:9999px;font-size:16px;line-height:1;color:#096936;text-decoration:none;">
+                            Read More
+                            </a>
+                        </div>
+                        </div>
                     `;
-      }).join("");
+      }).join("")}
+                </div>
+                `;
       this.updateSearchResults(html);
     }).catch(err => {
       console.error("Error during search:", err);
-      this.updateSearchResults(`<div class="text-red-600">Error loading results. Please try again later.</div>`);
+      this.updateSearchResults(`
+                <div class="text-red-600">Error loading results. Please try again later.</div>
+                `);
     });
   }
   toggleSection(value) {
@@ -1273,7 +1295,7 @@ class SeaprofileContent {
     });
     topics.forEach(topic => {
       const index = topic.getAttribute("data-index");
-      topic.style.backgroundColor = index === "0" ? "#0C5C32" : "#B59637";
+      topic.style.backgroundColor = index === "0" ? "#008c67" : "#B59637";
       if (index === "0") topic.classList.add("active");else topic.classList.remove("active");
     });
   }
@@ -1290,7 +1312,7 @@ class SeaprofileContent {
           const tIndex = t.getAttribute("data-index");
           if (tIndex === index) {
             t.classList.add("active");
-            t.style.backgroundColor = "#096936";
+            t.style.backgroundColor = "#008c67";
           } else {
             t.classList.remove("active");
             t.style.backgroundColor = "#B59637";
@@ -1303,7 +1325,7 @@ class SeaprofileContent {
     const topics = document.querySelectorAll(".topic-category");
     topics.forEach(topic => {
       topic.addEventListener("mouseenter", () => {
-        topic.style.backgroundColor = "#096936";
+        topic.style.backgroundColor = "#008c67";
       });
       topic.addEventListener("mouseleave", () => {
         if (!topic.classList.contains("active")) {

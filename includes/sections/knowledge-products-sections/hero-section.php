@@ -123,7 +123,7 @@
         </div>
       </div>
     </div>
-    <div class="bg-[#096936] opacity-[0.90] w-full h-full absolute top-0 left-0 z-[1]"></div>
+    <div class="bg-[#008c67] opacity-[0.90] w-full h-full absolute top-0 left-0 z-[1]"></div>
     <?php if ($hero_url): ?>
       <img class="absolute w-full h-full object-cover z-[0]" src="<?php echo esc_url($hero_url); ?>" alt="<?php echo esc_attr(get_the_title($page_id)); ?>">
     <?php endif; ?>
