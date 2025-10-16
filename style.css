@@ -648,6 +648,20 @@ select {
     font-weight: 200;
 }
 
+
+.page-active-faq {
+    transition: all 0.3s ease;
+}
+
+.page-active-faq > .flex > h6 {
+    transition: all 0.3s ease;
+}
+
+.page-active-faq .answer {
+    transition: all 0.3s ease;
+    font-weight: 200;
+}
+
 .colab-list li::before {
     content: "\2713";
     padding-right: 5px;

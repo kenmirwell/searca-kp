@@ -2,6 +2,7 @@ import ModalManager from "../modules/ModalManager";
 import HomeResourceSearch from "../modules/HomeResourceSearch";
 import KnowledgeProductsSearch from "../modules/KnowledgeProductsSearch";
 import FaqAcc from "../modules/FaqAcc";
+import FaqAccPage from "../modules/FaqAccPage";
 import MapFunc from "../modules/MapFunc";
 import MobileMenuFunc from "../modules/MenuFunctionality";
 import HomeFilterAcc from "../modules/FrontpageFilterAcc"
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalManager = new ModalManager();
     const homeResourceSearch = new HomeResourceSearch();
     const faqAcc = new FaqAcc();
+    const faqAccPage = new FaqAccPage();
     const homeFilterAcc = new HomeFilterAcc();
     const mapFunc = new MapFunc();
     const menuFunc = new MobileMenuFunc();
@@ -159,8 +161,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.onload = function() {
         const accElement = document.getElementById("answer-0");
+        const accElementPage = document.getElementById("page-answer-0");
         const accContainer = document.getElementById("answer-container-0");
+        const accContainerPage = document.getElementById("page-answer-container-0");
         const accGroup = document.getElementById("faq-group-0");
+        const accGroupPage = document.getElementById("page-faq-group-0");
 
         const homeaccElement = document.getElementById("home-side-filter-content-0");
         const homeaccContainer = document.getElementById("home-side-filter-container-0");
@@ -188,6 +193,13 @@ document.addEventListener("DOMContentLoaded", function () {
             
             accGroup.classList.add("active-faq");
             accContainer.style.height = height+"px";
+        }
+
+         if(accElementPage) {    
+            const height = accElementPage.offsetHeight;
+
+            accGroupPage.classList.add("page-active-faq");
+            accContainerPage.style.height = height+"px";
         }
 
         if(homeaccContainer) {    
@@ -253,6 +265,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.handleFaqAccordion = function(elementId, containerId, headId, index) {
         faqAcc.handleFaqAcc(elementId, containerId, headId, index);
+    }
+
+    window.handlePageFaqAccordion = function(elementId, containerId, headId, index) {
+        faqAccPage.handlePageFaqAcc(elementId, containerId, headId, index);
     }
 
     window.handleHomeAccordion = function(elementId, containerId, headId, index) {

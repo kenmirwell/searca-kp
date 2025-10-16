@@ -209,6 +209,47 @@ class FaqAcc {
 
 /***/ }),
 
+/***/ "./modules/FaqAccPage.js":
+/*!*******************************!*\
+  !*** ./modules/FaqAccPage.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+class FaqAccPage {
+  constructor() {}
+  handlePageFaqAcc(elementId, index) {
+    const accElement = document.getElementById(elementId);
+    const height = accElement.offsetHeight;
+    console.log(height);
+    for (let i = 0; i < 6; i++) {
+      if (index !== i) {
+        document.getElementById(`page-answer-container-${i}`).style.height = 0;
+        document.getElementById(`page-faq-group-${i}`).classList.remove("page-active-faq");
+      } else {
+        document.getElementById(`page-answer-container-${i}`).style.height = height + "px";
+        document.getElementById(`page-faq-group-${i}`).classList.add("page-active-faq");
+      }
+    }
+
+    // if( accContainer.classList.contains("active") ) {
+    //     accContainer.style.height = 0
+    //     accContainer.classList.remove("active")
+    //     accHead.style.paddingBottom = 0
+    // } else {
+    //     accContainer.style.height = height+"px"
+    //     accContainer.classList.add("active")
+    //     accHead.style.paddingBottom = "10px"
+    // }
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FaqAccPage);
+
+/***/ }),
+
 /***/ "./modules/FrontpageFilterAcc.js":
 /*!***************************************!*\
   !*** ./modules/FrontpageFilterAcc.js ***!
@@ -1510,18 +1551,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/HomeResourceSearch */ "./modules/HomeResourceSearch.js");
 /* harmony import */ var _modules_KnowledgeProductsSearch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/KnowledgeProductsSearch */ "./modules/KnowledgeProductsSearch.js");
 /* harmony import */ var _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/FaqAcc */ "./modules/FaqAcc.js");
-/* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
-/* harmony import */ var _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modules/MenuFunctionality */ "./modules/MenuFunctionality.js");
-/* harmony import */ var _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/FrontpageFilterAcc */ "./modules/FrontpageFilterAcc.js");
-/* harmony import */ var _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../modules/KmFilterAcc  */ "./modules/KmFilterAcc .js");
-/* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
-/* harmony import */ var _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modules/AgdomImageTransition */ "./modules/AgdomImageTransition.js");
-/* harmony import */ var _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/SeaprofileContent */ "./modules/SeaprofileContent.js");
-/* harmony import */ var _modules_CountryprofileContent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/CountryprofileContent */ "./modules/CountryprofileContent.js");
-/* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
-/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
-/* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
-/* harmony import */ var _modules_mapModal__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../modules/mapModal */ "./modules/mapModal.js");
+/* harmony import */ var _modules_FaqAccPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/FaqAccPage */ "./modules/FaqAccPage.js");
+/* harmony import */ var _modules_MapFunc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../modules/MapFunc */ "./modules/MapFunc.js");
+/* harmony import */ var _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../modules/MenuFunctionality */ "./modules/MenuFunctionality.js");
+/* harmony import */ var _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../modules/FrontpageFilterAcc */ "./modules/FrontpageFilterAcc.js");
+/* harmony import */ var _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../modules/KmFilterAcc  */ "./modules/KmFilterAcc .js");
+/* harmony import */ var _modules_KmFilter__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../modules/KmFilter */ "./modules/KmFilter.js");
+/* harmony import */ var _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../modules/AgdomImageTransition */ "./modules/AgdomImageTransition.js");
+/* harmony import */ var _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../modules/SeaprofileContent */ "./modules/SeaprofileContent.js");
+/* harmony import */ var _modules_CountryprofileContent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../modules/CountryprofileContent */ "./modules/CountryprofileContent.js");
+/* harmony import */ var _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../modules/ConsortiumInteractive */ "./modules/ConsortiumInteractive.js");
+/* harmony import */ var _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../modules/VideoFunc */ "./modules/VideoFunc.js");
+/* harmony import */ var _modules_Gsap__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../modules/Gsap */ "./modules/Gsap.js");
+/* harmony import */ var _modules_mapModal__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../modules/mapModal */ "./modules/mapModal.js");
+
 
 
 
@@ -1544,19 +1587,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalManager = new _modules_ModalManager__WEBPACK_IMPORTED_MODULE_0__["default"]();
   const homeResourceSearch = new _modules_HomeResourceSearch__WEBPACK_IMPORTED_MODULE_1__["default"]();
   const faqAcc = new _modules_FaqAcc__WEBPACK_IMPORTED_MODULE_3__["default"]();
-  const homeFilterAcc = new _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_6__["default"]();
-  const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_4__["default"]();
-  const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_5__["default"]();
-  const kmFilterAcc = new _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_7__["default"]();
-  const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_8__["default"]();
-  const agdomImageTransition = new _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_9__["default"]();
-  const seaprofileContent = new _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_10__["default"]();
-  const countryprofileContent = new _modules_CountryprofileContent__WEBPACK_IMPORTED_MODULE_11__["default"]();
-  const consortiumInteractive = new _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_12__["default"]();
-  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_13__["default"]();
-  const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_14__["default"]();
+  const faqAccPage = new _modules_FaqAccPage__WEBPACK_IMPORTED_MODULE_4__["default"]();
+  const homeFilterAcc = new _modules_FrontpageFilterAcc__WEBPACK_IMPORTED_MODULE_7__["default"]();
+  const mapFunc = new _modules_MapFunc__WEBPACK_IMPORTED_MODULE_5__["default"]();
+  const menuFunc = new _modules_MenuFunctionality__WEBPACK_IMPORTED_MODULE_6__["default"]();
+  const kmFilterAcc = new _modules_KmFilterAcc___WEBPACK_IMPORTED_MODULE_8__["default"]();
+  const knFilter = new _modules_KmFilter__WEBPACK_IMPORTED_MODULE_9__["default"]();
+  const agdomImageTransition = new _modules_AgdomImageTransition__WEBPACK_IMPORTED_MODULE_10__["default"]();
+  const seaprofileContent = new _modules_SeaprofileContent__WEBPACK_IMPORTED_MODULE_11__["default"]();
+  const countryprofileContent = new _modules_CountryprofileContent__WEBPACK_IMPORTED_MODULE_12__["default"]();
+  const consortiumInteractive = new _modules_ConsortiumInteractive__WEBPACK_IMPORTED_MODULE_13__["default"]();
+  const customVideoButton = new _modules_VideoFunc__WEBPACK_IMPORTED_MODULE_14__["default"]();
+  const gsapControls = new _modules_Gsap__WEBPACK_IMPORTED_MODULE_15__["default"]();
   const knowledgeProductsSearch = new _modules_KnowledgeProductsSearch__WEBPACK_IMPORTED_MODULE_2__["default"]();
-  const mapModal = new _modules_mapModal__WEBPACK_IMPORTED_MODULE_15__["default"]();
+  const mapModal = new _modules_mapModal__WEBPACK_IMPORTED_MODULE_16__["default"]();
   // const mousehover = new MouseOverFunc();
 
   gsapControls.heroSlider();
@@ -1664,8 +1708,11 @@ document.addEventListener("DOMContentLoaded", function () {
   homeResourceSearch.handleSearch();
   window.onload = function () {
     const accElement = document.getElementById("answer-0");
+    const accElementPage = document.getElementById("page-answer-0");
     const accContainer = document.getElementById("answer-container-0");
+    const accContainerPage = document.getElementById("page-answer-container-0");
     const accGroup = document.getElementById("faq-group-0");
+    const accGroupPage = document.getElementById("page-faq-group-0");
     const homeaccElement = document.getElementById("home-side-filter-content-0");
     const homeaccContainer = document.getElementById("home-side-filter-container-0");
     const kmAccElement = document.getElementById("km-side-filter-content-0");
@@ -1683,6 +1730,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const height = accElement.offsetHeight;
       accGroup.classList.add("active-faq");
       accContainer.style.height = height + "px";
+    }
+    if (accElementPage) {
+      const height = accElementPage.offsetHeight;
+      accGroupPage.classList.add("page-active-faq");
+      accContainerPage.style.height = height + "px";
     }
     if (homeaccContainer) {
       const height = homeaccElement.offsetHeight;
@@ -1733,6 +1785,9 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   window.handleFaqAccordion = function (elementId, containerId, headId, index) {
     faqAcc.handleFaqAcc(elementId, containerId, headId, index);
+  };
+  window.handlePageFaqAccordion = function (elementId, containerId, headId, index) {
+    faqAccPage.handlePageFaqAcc(elementId, containerId, headId, index);
   };
   window.handleHomeAccordion = function (elementId, containerId, headId, index) {
     homeFilterAcc.handleHomeFilterAcc(elementId, containerId, headId, index);
