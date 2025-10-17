@@ -30,23 +30,28 @@
             <?php endif; ?>
         </div>
         <div class="lg:hidden pt-[50px]">
-             <?php if (!empty($content_group)) : ?>
-                <div class="flex flex-col gap-[50px] lg:flex-row justify-between">
-                <?php foreach ($content_group as $content) : ?>
-                    <div class="flex flex-col text-center justify-center items-center gap-[20px]">
-                        <img class="w-[56px] h-[56px]" src="<?php echo esc_url($content["fact_icon"]); ?>" alt="">
-                        <div class="flex flex-col text-center justify-center items-center">
-                            <div class="flex">
-                                <h6 class="text-[#ceab23] font-bold text-[22px]"><?php echo esc_html($content["fact_title"]); ?></h6>
-                                <h6 class="text-[#ceab23] font-bold text-[22px] fact-counter" data-target="<?php echo esc_attr($content["fact_figure"]); ?>">0</h6>
-                                <h6 class="text-[#ceab23] font-bold text-[22px]"><?php echo esc_html($content["fact_unit"]); ?></h6>
+            <div id="factSwiper" class="swiper factSwiper">
+                <?php if (!empty($content_group)) : ?>
+                    <div class="swiper-wrapper">
+                    <?php foreach ($content_group as $content) : ?>
+                        <div class="swiper-slide flex flex-col items-center text-center gap-[20px]">
+                        <img class="w-[56px] h-[56px]" src="<?php echo esc_url($content['fact_icon']); ?>" alt="">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="flex justify-center items-center">
+                            <h6 class="text-[#ceab23] font-bold text-[22px]"><?php echo esc_html($content['fact_title']); ?></h6>
+                            <h6 class="text-[#ceab23] font-bold text-[22px] fact-counter" data-target="<?php echo esc_attr($content['fact_figure']); ?>">0</h6>
+                            <h6 class="text-[#ceab23] font-bold text-[22px]"><?php echo esc_html($content['fact_unit']); ?></h6>
                             </div>
-                            <p class="text-[#ffffff] pb-[10px] text-[14px]"><?php echo esc_html($content["fact_description"]); ?></p>
+                            <p class="text-[#ffffff] pb-[10px] text-[14px]"><?php echo esc_html($content['fact_description']); ?></p>
                         </div>
+                        </div>
+                    <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
+
+                    <!-- Optional: pagination and navigation -->
+                    <div class="swiper-pagination"></div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>

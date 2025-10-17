@@ -1779,6 +1779,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     }
+    if (document.getElementById("factSwiper")) {
+      console.log(document.getElementById("factSwiper"));
+      const factSwiper = new Swiper(".factSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        loop: true,
+        // optional
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false
+        }
+      });
+    }
     if (searchByTitle) {
       knFilter.handleKmSearchby();
     }

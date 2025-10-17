@@ -997,14 +997,14 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 18px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
+    /* border-radius: 18px; */
+    /* font-size: 22px; */
+    /* font-weight: bold; */
+    /* color: #fff; */
 }
 
 .swiper-slide {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
 }
 
 .fadein-shape {
