@@ -154,9 +154,9 @@
                 <div class="text-[12px] md:text-[14px] lg:text-[16px]">
                     <h6 class="font-[600] pb-[20px]">Help</h6>
                     <ul class="footer-quick-links">
-                        <li class="">FAQ</li>
-                        <li class="">Help Center</li>
-                        <li class="">Support</li>
+                        <li class=""><a href="https://knowledgeplatform.searca.org/faqs/">FAQ</a></li>
+                        <li class=""><a href="">Help Center</a></li>
+                        <li class=""><a href="">Support</a></li>
                     </ul>
                 </div>
             </div>
@@ -189,9 +189,9 @@
                 </div>
             </div>
             <ul class="text-[#ffffff] hidden md:flex flex-wrap lg:flex-nowrap justify-end text-[12px] md:text-[14px] lg:text-[16px] gap-[7px] lg:gap-[20px]">
-                <li>FAQ</li>
-                <li>Terms of Service</li>
-                <li>Privacy Policy</li>
+                <li class="hover:border-b-[2px]"><a href="https://knowledgeplatform.searca.org/faqs/">FAQ</a></li>
+                <li class="hover:border-b-[2px]"><a href="https://knowledgeplatform.searca.org/privacy-policy/">Terms of Service</a></li>
+                <li class="hover:border-b-[2px]"><a href="https://knowledgeplatform.searca.org/privacy-policy/">Privacy Policy</a></li>
             </ul>
         </div>
     </div>

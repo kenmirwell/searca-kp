@@ -2,8 +2,8 @@
     $content_repeater = get_field("country_content");
 ?>
 <div class="py-[100px]">
-    <div class="flex sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[90%] 2xl:w-[1280px] mx-auto gap-[20px]">
-        <div class="w-[70%]">
+    <div class="flex flex-col md:flex-row sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[90%] 2xl:w-[1280px] mx-auto gap-[20px]">
+        <div class="w-[100%] md:w-[70%]">
             <?php get_template_part("includes/sections/single-country-profile-sections/quick-facts"); ?>
             <?php if (!empty($content_repeater)) : ?>
                 <?php foreach ($content_repeater as $index => $topic) : ?>
@@ -35,7 +35,7 @@
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
-        <div class="w-[30%] sticky top-[0px] h-[700px]">
+        <div class="w-[100%] md:w-[30%] sticky top-[0px] h-[700px]">
             <?php if(get_field("country_downloadable_file")) : ?>
                 <div class="p-[20px] shadow-lg rounded">
                     <div class="flex gap-[20px] p-[10px] bg-[#FAFAFA] items-center">

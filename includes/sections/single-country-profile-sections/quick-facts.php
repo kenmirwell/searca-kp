@@ -10,7 +10,26 @@
             <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[10px] w-[40%] mx-auto text-center"><?php echo esc_html($group["fact_main_title"]); ?></h2>
             <h6 class="flex text-display-14 lg:text-[18px] justify-center items-center xl:text-center w-[100%]"><?php echo esc_html($group["fact_main_description"]) ?></h6>
         </div>
-        <div class="pt-[50px]">
+        <div class="hidden lg:block pt-[50px]">
+             <?php if (!empty($content_group)) : ?>
+                <div class="flex flex-col gap-[50px] lg:flex-row justify-between">
+                <?php foreach ($content_group as $content) : ?>
+                    <div class="flex flex-col text-center justify-center items-center gap-[20px]">
+                        <img class="w-[56px] h-[56px]" src="<?php echo esc_url($content["fact_icon"]); ?>" alt="">
+                        <div class="flex flex-col text-center justify-center items-center">
+                            <div class="flex">
+                                <h6 class="text-[#ceab23] font-bold text-[22px]"><?php echo esc_html($content["fact_title"]); ?></h6>
+                                <h6 class="text-[#ceab23] font-bold text-[22px] fact-counter" data-target="<?php echo esc_attr($content["fact_figure"]); ?>">0</h6>
+                                <h6 class="text-[#ceab23] font-bold text-[22px]"><?php echo esc_html($content["fact_unit"]); ?></h6>
+                            </div>
+                            <p class="text-[#ffffff] pb-[10px] text-[14px]"><?php echo esc_html($content["fact_description"]); ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+        <div class="lg:hidden pt-[50px]">
              <?php if (!empty($content_group)) : ?>
                 <div class="flex flex-col gap-[50px] lg:flex-row justify-between">
                 <?php foreach ($content_group as $content) : ?>
