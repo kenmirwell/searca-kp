@@ -7,7 +7,7 @@
 <div class="quick-facts py-[60px] px-[50px] bg-[#096936] rounded-lg">
     <div class="w-[100%]">
         <div class="text-[#ffffff] flex flex-col items-center justify-center">
-            <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[10px] w-[40%] mx-auto text-center"><?php echo esc_html($group["fact_main_title"]); ?></h2>
+            <h2 class="text-display-24 lg:text-display-42 font-bold pb-[20px] lg:pb-[10px] w-[100%] lg:w-[40%] mx-auto text-center"><?php echo esc_html($group["fact_main_title"]); ?></h2>
             <h6 class="flex text-display-14 lg:text-[18px] justify-center items-center xl:text-center w-[100%]"><?php echo esc_html($group["fact_main_description"]) ?></h6>
         </div>
         <div class="hidden lg:block pt-[50px]">
@@ -29,12 +29,12 @@
                 </div>
             <?php endif; ?>
         </div>
-        <div class="lg:hidden pt-[50px]">
+        <div class="lg:hidden">
             <div id="factSwiper" class="swiper factSwiper">
                 <?php if (!empty($content_group)) : ?>
                     <div class="swiper-wrapper">
                     <?php foreach ($content_group as $content) : ?>
-                        <div class="swiper-slide flex flex-col items-center text-center gap-[20px]">
+                        <div class="faqs-swiper-slide swiper-slide flex flex-col items-center text-center gap-[20px]">
                         <img class="w-[56px] h-[56px]" src="<?php echo esc_url($content['fact_icon']); ?>" alt="">
                         <div class="flex flex-col items-center text-center">
                             <div class="flex justify-center items-center">

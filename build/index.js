@@ -1790,10 +1790,9 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         loop: true,
         // optional
-        autoplay: {
-          delay: 3500,
-          disableOnInteraction: false
-        }
+        autoplay: false
+        // slideClass: 'faqs-swiper-slide',
+        // wrapperClass: 'swiper-wrapper',
       });
     }
     if (searchByTitle) {

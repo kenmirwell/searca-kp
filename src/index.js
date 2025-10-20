@@ -263,14 +263,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 slidesPerView: 1,
                 spaceBetween: 30,
                 pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
+                    el: ".swiper-pagination",
+                    clickable: true,
                 },
                 loop: true, // optional
-                autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-                },
+                autoplay: false,
+                // slideClass: 'faqs-swiper-slide',
+                // wrapperClass: 'swiper-wrapper',
             });
         }
 
