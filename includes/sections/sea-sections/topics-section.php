@@ -3,9 +3,9 @@
 
     $topic_group = $group["topic"];
 ?>
-<div id="sea-topic-profile" class="bg-[#B59637]">
-    <div class="w-[100%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center">
+<div id="sea-topic-profile" class="bg-[#B59637] overflow-x-scroll">
+    <div class="w-[100%] w-[1024px] xl:w-[1280px] mx-auto">
+        <div class="flex flex-row justify-between items-center">
             <div id="profile-0" data-index="0" class="topic-category geographic-profile cursor-pointer text-[#ffffff] flex items-center justify-center py-[10px] md:py-[20px] w-full transition-all duration-200 ease ">
                 <p class="text-display-14 lg:text-[18px] text-center w-[100%]">Geographic Profile</p>
             </div>
