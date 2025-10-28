@@ -1,10 +1,10 @@
 <div class="relative h-[500px] flex items-center overflow-hidden">
-    <div class="items-center text-center w-[90%] flex flex-col justify-center md:w-[768px] mx-auto z-[3] relative text-[#ffffff] gap-[15px]">
+    <div class="items-center text-center w-[90%] flex flex-col justify-center md:w-[768px] mx-auto z-[5] relative text-[#ffffff] gap-[15px]">
         <?php if(!is_page("community-of-practice")): ?>
         <h2 class="text-display-24 lg:text-display-48  font-bold italic">Stay Updated with the Research Bulletin</h2>
         <p class="text-display-16 md:text-display-18 pb-[10px]">Get the latest policy insights, research highlights, and knowledge resources from across Southeast Asia delivered straight to your inbox.</p>
         <div class="flex pl-[20px] py-[5px] pr-[5px] rounded-full items-center justify-between bg-[#ffffff] w-max">
-            <input class="p-[10px] text-[#000000]" type="text" placeholder="Email">
+            <input class="p-[10px] text-[#000000] w-[120px] md:w-auto" type="text" placeholder="Email">
             <div class="flex justify-center">
                 <?php
                     button_template('common-button', array(
@@ -43,7 +43,7 @@
         <div class="flex flex-col md:flex-row gap-[60px] pb-[20px] md:pb-[100px] border-b-[1px] border-opacity-50 border-[#ffffff]">
             <div class="w-[100%]">
                 <a href="/">
-                    <div class="flex gap-[20px] items-center">
+                    <div class="flex flex-col md:flex-row gap-[20px] items-start md:items-center">
                         <div class="w-[200px]">
                             <svg width="full" height="full" viewBox="0 0 233 57" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M70.599 0.130316C70.7061 0.716266 70.6311 1.75796 70.6632 2.35476C70.5348 2.60433 70.385 2.2354 70.3101 2.17029C69.6038 1.64945 67.5918 1.31307 67.4099 2.64773C67.3671 2.96241 67.4955 3.29879 67.7631 3.61347C68.6941 4.67686 70.7382 5.14345 71.5515 6.55407C72.3541 7.94299 71.894 10.0589 71.0164 11.003C70.2673 11.8059 68.9831 12.2834 67.6988 12.2074C66.939 12.164 66.008 11.6757 65.2695 12.0881V9.62489C65.8688 10.0589 66.9176 10.6883 68.1697 10.5255C69.2292 10.3953 70.3315 9.42957 69.9462 7.99725C69.4539 6.18514 65.9973 5.78366 65.4408 3.61347C64.8736 1.37817 66.7678 -0.173511 68.876 0.0109551C69.4432 0.0543589 70.0639 0.379887 70.599 0.130316Z" fill="white"/>
@@ -103,7 +103,7 @@
                                 <path d="M45.1406 40.1592C45.0654 40.1917 45.0117 40.2026 44.9688 40.2351" stroke="white" stroke-width="0.14" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <div class="text-[#ffffff] w-[50%]">
+                        <div class="text-[#ffffff] w-[100%] md:w-[50%]">
                             <p class="font-[600]">Agriculture, Forestry, and Natural Resources (AFNR) Knowledge Platform</p>
                         </div>
                     </div>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex w-[100%] justify-end text-[#ffffff] gap-[50px]">
+            <div class="flex w-[100%] justfy-between md:justify-end text-[#ffffff] gap-[50px]">
                 <div class="text-[12px] md:text-[14px] lg:text-[16px]">
                     <h6 class="font-[600] pb-[20px]">Quick Links</h6>
                     <?php
