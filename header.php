@@ -203,11 +203,11 @@
                     ?>
                 </div>
             </div>
-            <div id="mobile-menu-container" class="md:hidden bg-transparent absolute top-0 h-screen w-[100%] z-[9999] inactive-mobile-menu">
-                <div class="bg-[#000000] opacity-[0.8] absolute top-0 w-[100%] h-[100%] z-[0]"></div>
-                <div class="absolute w-[100%] bg-[#ffffff] h-[500px] rounded-t-2xl bottom-0 p-[20px] pt-[50px] z-[1]">
-                    <div class="flex justify-between items-center pb-[20px]">
-                        <div id="contactus-header-button" class="py-[10px] px-[20px] text-[#ffffff] border-[1px] border-[#2a7f3d] bg-[#2a7f3d] rounded-full overflow-hidden transition-all duration-200 ease">
+             <div id="mobile-menu-container" class="md:hidden bg-transparent fixed inset-0 z-[9999] inactive-mobile-menu">
+                <div onclick="handleMobileMenu()" class="bg-[#000000] opacity-[0.8] absolute top-0 w-[100%] h-[100%] z-[0]"></div>
+                <div class="absolute w-[100%] bg-[#ffffff] max-h-[85vh] rounded-t-2xl bottom-0 p-[20px] pt-[50px] z-[1] flex flex-col overflow-hidden">
+                    <div class="flex justify-between items-center pb-[20px] flex-shrink-0">
+                        <div class="py-[10px] px-[20px] text-[#ffffff] border-[1px] border-[#2a7f3d] bg-[#2a7f3d] rounded-full overflow-hidden transition-all duration-200 ease">
                             <button class="w-[90px]">Contact us</button>
                         </div>
                         <div onclick="handleMobileMenu()" class="flex justify-end mr-[20px]">
@@ -216,7 +216,7 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="pt-[20px] border-t-[1px] border-[#DBDBDB]">
+                    <div id="main-menu-mobile-container" class="pt-[20px] border-t-[1px] border-[#DBDBDB] overflow-y-auto flex-1 min-h-0 pb-[30px]">
                         <div class="flex primary-menu-mobile-home w-[100%]">
                             <a href="/" class="w-[100%]">Home</a>
                         </div>

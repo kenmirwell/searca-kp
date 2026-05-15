@@ -1106,8 +1106,16 @@ video {
   max-height: 600px;
 }
 
+.max-h-\[85vh\] {
+  max-height: 85vh;
+}
+
 .min-h-\[30px\] {
   min-height: 30px;
+}
+
+.min-h-0 {
+  min-height: 0px;
 }
 
 .w-\[100\%\] {
@@ -1316,6 +1324,14 @@ video {
   max-width: 980px;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
 .translate-x-\[-15px\] {
   --tw-translate-x: -15px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1483,6 +1499,10 @@ video {
 
 .overflow-scroll {
   overflow: scroll;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .overflow-x-scroll {
