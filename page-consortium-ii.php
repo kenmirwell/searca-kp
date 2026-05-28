@@ -14,9 +14,10 @@
     <?php get_template_part("includes/sections/consortium/split-section"); ?>
     <?php get_template_part("includes/sections/consortium/split-section-ii"); ?>
     <?php get_template_part("includes/sections/consortium/card-trio"); ?>
-    <?php //get_template_part("includes/sections/consortium/text-trio"); ?>
     <?php get_template_part("includes/sections/consortium/image-cards-trio"); ?>
     <?php get_template_part("includes/sections/consortium/interactive-section-ii"); ?>
+    <?php get_template_part("includes/sections/consortium/split-section-iii"); ?>
+    <?php get_template_part("includes/sections/consortium/text-trio"); ?>
 <?php 
     }
     get_footer()

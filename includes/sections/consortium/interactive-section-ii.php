@@ -16,11 +16,11 @@
                         <!-- Left: Circular Image with numbered nodes -->
                         <div class="relative w-[100%] lg:w-[55%] flex items-center justify-start">
 
-                            <!-- Outer wrapper: defines the space, allows nodes to overflow -->
+                            <!-- Outer wrapper -->
                             <div class="relative flex-shrink-0" style="width: 480px; height: 480px;">
 
-                                <!-- Circle image: clips to circle, takes full wrapper size -->
-                                <div class="absolute inset-0 rounded-full overflow-hidden" style="left: -80px; width: 480px; height: 480px;">
+                                <!-- Circle image -->
+                                <div class="absolute rounded-full overflow-hidden z-[9]" style="left: -80px; top: 0; width: 480px; height: 480px;">
                                     <?php foreach ($key_points as $index => $point): ?>
                                         <div 
                                             class="image-wrapper" 
@@ -36,37 +36,53 @@
                                     <?php endforeach; ?>
                                 </div>
 
-                                <!-- Nodes + SVG curve: positioned on right edge of wrapper -->
-                                <div style="position: absolute; top: 0; right: -26px; height: 100%; width: 52px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; padding: 60px 0; z-index: 10;">
+                                <!-- Circle SVG outline -->
+                                <svg style="position: absolute; top: 0; transform: translateX(-20%); height: 100%; overflow: visible;" width="716" height="678" viewBox="0 0 716 678" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M358 1C555.198 1 715 155.494 715 346C715 536.506 555.198 691 358 691C160.802 691 1 536.506 1 346C1 155.494 160.802 1 358 1Z" stroke="#A7D5CC" stroke-width="2"/>
+                                </svg>
 
-                                    <!-- SVG curved line behind nodes -->
-                                    <svg style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 100%; width: 40px; overflow: visible;" viewBox="0 0 40 100" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M 20 0 Q 0 50 20 100" stroke="#5cb88a" stroke-width="0.8" fill="none"/>
-                                    </svg>
+                                <!-- Nodes on circle arc -->
+                                <?php 
+                                    $circle_cx = 330;
+                                    $circle_cy = 240;
+                                    $circle_r  = 240;
+                                    $angles    = [-50, 0, 50];
+                                    foreach ($key_points as $index => $point):
+                                        $angle_rad = deg2rad($angles[$index]);
+                                        $x = $circle_cx + $circle_r * cos($angle_rad) - 80 - 26;
+                                        $y = $circle_cy + $circle_r * sin($angle_rad);
+                                ?>
+                                    <div 
+                                        class="key-point-node cursor-pointer flex items-center justify-center rounded-full border-[2px] transition-all duration-300"
+                                        data-index="<?php echo $index; ?>"
+                                        style="
+                                            position: absolute;
+                                            width: 52px; 
+                                            height: 52px; 
+                                            left: <?php echo $x; ?>px;
+                                            top: <?php echo $y; ?>px;
+                                            transform: translate(-50%, -50%);
+                                            background-color: <?php echo $index === 0 ? '#1a7a4a' : '#ffffff'; ?>; 
+                                            border-color: #5cb88a; 
+                                            z-index: 11;
+                                        "
+                                    >
+                                        <span style="font-size: 14px; font-weight: 600; color: <?php echo $index === 0 ? '#ffffff' : '#1a7a4a'; ?>;">
+                                            <?php echo str_pad($index + 1, 2, '0', STR_PAD_LEFT); ?>
+                                        </span>
+                                    </div>
+                                <?php endforeach; ?>
 
-                                    <?php foreach ($key_points as $index => $point): ?>
-                                        <div 
-                                            class="key-point-node cursor-pointer flex items-center justify-center rounded-full border-[2px] transition-all duration-300"
-                                            data-index="<?php echo $index; ?>"
-                                            style="width: 52px; height: 52px; flex-shrink: 0; background-color: <?php echo $index === 0 ? '#1a7a4a' : '#ffffff'; ?>; border-color: #5cb88a; position: relative; z-index: 1;"
-                                        >
-                                            <span style="font-size: 14px; font-weight: 600; color: <?php echo $index === 0 ? '#ffffff' : '#1a7a4a'; ?>;">
-                                                <?php echo str_pad($index + 1, 2, '0', STR_PAD_LEFT); ?>
-                                            </span>
-                                        </div>
-                                    <?php endforeach; ?>
-
-                                </div>
                             </div>
                         </div>
 
                         <!-- Right: Text content -->
-                        <div class="flex flex-col gap-[40px] items-start w-[100%] lg:w-[45%] pl-[20px] lg:pl-[40px]">
+                        <div class="items-start w-[100%] lg:w-[45%] pl-[20px] lg:pl-[40px]" style="position: relative; min-height: 480px;">
                             <?php foreach ($key_points as $index => $point): ?>
                                 <div 
                                     class="key-point-content text-[#1F1F1F] transition-all duration-300" 
                                     data-index="<?php echo $index; ?>"
-                                    style="opacity: <?php echo $index === 0 ? '1' : '0.3'; ?>;"
+                                    style="position: absolute !important; width: 80%; opacity: <?php echo $index === 0 ? '1' : '0.3'; ?>;"
                                 >
                                     <h6 class="font-[700] text-display-20 lg:text-display-24 mb-[10px]"><?php echo $point['title']; ?></h6>
                                     <p class="text-display-14 lg:text-display-16 text-[#4a4a4a]"><?php echo $point['subtext']; ?></p>
@@ -86,6 +102,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const nodes = document.querySelectorAll('#consorInteractive .key-point-node');
     const images = document.querySelectorAll('#consorInteractive .image-wrapper');
     const contents = document.querySelectorAll('#consorInteractive .key-point-content');
+
+    function alignContent() {
+        const containerRect = contents[0].parentElement.getBoundingClientRect();
+        const rightColRect = contents[0].parentElement.getBoundingClientRect();
+
+        nodes.forEach((node, i) => {
+            const content = contents[i];
+            if (content) {
+                const nodeRect = node.getBoundingClientRect();
+                
+                // Vertical: center content with node
+                const nodeTop = (nodeRect.top + window.scrollY) - (containerRect.top + window.scrollY) + (nodeRect.height / 2);
+                
+                // Horizontal: offset from node's right edge
+                const nodeLeft = (nodeRect.left + window.scrollX) - (rightColRect.left + window.scrollX) + nodeRect.width + 20;
+
+                content.style.top = nodeTop + 'px';
+                content.style.left = nodeLeft + 'px';
+                content.style.transform = 'translateY(-50%)';
+                content.style.width = (rightColRect.width - nodeLeft) + 'px';
+            }
+        });
+    }
 
     function setActive(index) {
         nodes.forEach((node, i) => {
@@ -118,5 +157,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     setActive(0);
+    setTimeout(alignContent, 100);
+    window.addEventListener('resize', alignContent);
+    window.addEventListener('scroll', alignContent);
 });
 </script>
