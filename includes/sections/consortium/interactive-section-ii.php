@@ -1,4 +1,4 @@
-<div id="consorInteractive">
+<div id="consorInteractive" class="bg-[#F5F8FC]">
     <div class="w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[60px]">
         <?php if (have_rows('interactive_section_ii')): ?>
             <?php while (have_rows('interactive_section_ii')): the_row(); ?>
