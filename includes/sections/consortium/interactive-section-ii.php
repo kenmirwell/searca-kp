@@ -11,12 +11,40 @@
                     $key_points = get_sub_field('key_points');
                     if ($key_points): 
                 ?>
-                    <div class="flex flex-col lg:flex-row items-center justify-between relative">
+
+                    <!-- MOBILE/TABLET layout (below lg) -->
+                    <div class="flex flex-col gap-[30px] lg:hidden">
+                        <?php foreach ($key_points as $index => $point): ?>
+                            <div class="flex flex-col gap-[15px]">
+                                <!-- Square image with rounded corners -->
+                                <div class="w-full rounded-[80px] overflow-hidden" style="height: 250px;">
+                                    <img 
+                                        style="width: 100%; height: 100%; object-fit: cover; display: block;"
+                                        src="<?php echo esc_url($point['image']); ?>" 
+                                        alt="<?php echo esc_attr($point['title']); ?>"
+                                    >
+                                </div>
+                                <!-- Number + Text -->
+                                <div class="flex gap-[15px] items-start">
+                                    <div class="flex-shrink-0 flex items-center justify-center rounded-full border-[2px] border-[#5cb88a]" style="width: 44px; height: 44px; background-color: <?php echo $index === 0 ? '#1a7a4a' : '#ffffff'; ?>;">
+                                        <span style="font-size: 13px; font-weight: 600; color: <?php echo $index === 0 ? '#ffffff' : '#1a7a4a'; ?>;">
+                                            <?php echo str_pad($index + 1, 2, '0', STR_PAD_LEFT); ?>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <h6 class="font-[700] text-display-18 md:text-display-20 mb-[8px]"><?php echo $point['title']; ?></h6>
+                                        <p class="text-display-14 md:text-display-16 text-[#4a4a4a]"><?php echo $point['subtext']; ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- DESKTOP layout (lg and above) -->
+                    <div class="hidden lg:flex flex-row items-center justify-between relative">
 
                         <!-- Left: Circular Image with numbered nodes -->
-                        <div class="relative w-[100%] lg:w-[55%] flex items-center justify-start">
-
-                            <!-- Outer wrapper -->
+                        <div class="relative w-[55%] flex items-center justify-start">
                             <div class="relative flex-shrink-0" style="width: 480px; height: 480px;">
 
                                 <!-- Circle image -->
@@ -77,7 +105,7 @@
                         </div>
 
                         <!-- Right: Text content -->
-                        <div class="items-start w-[100%] lg:w-[45%] pl-[20px] lg:pl-[40px]" style="position: relative; min-height: 480px;">
+                        <div class="items-start w-[45%] pl-[40px]" style="position: relative; min-height: 480px;">
                             <?php foreach ($key_points as $index => $point): ?>
                                 <div 
                                     class="key-point-content text-[#1F1F1F] transition-all duration-300" 
@@ -91,6 +119,7 @@
                         </div>
 
                     </div>
+
                 <?php endif; ?>
             <?php endwhile; ?>
         <?php endif; ?>
@@ -104,24 +133,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const contents = document.querySelectorAll('#consorInteractive .key-point-content');
 
     function alignContent() {
+        if (!contents.length || !nodes.length) return;
         const containerRect = contents[0].parentElement.getBoundingClientRect();
-        const rightColRect = contents[0].parentElement.getBoundingClientRect();
-
         nodes.forEach((node, i) => {
             const content = contents[i];
             if (content) {
                 const nodeRect = node.getBoundingClientRect();
-                
-                // Vertical: center content with node
-                const nodeTop = (nodeRect.top + window.scrollY) - (containerRect.top + window.scrollY) + (nodeRect.height / 2);
-                
-                // Horizontal: offset from node's right edge
-                const nodeLeft = (nodeRect.left + window.scrollX) - (rightColRect.left + window.scrollX) + nodeRect.width + 20;
-
-                content.style.top = nodeTop + 'px';
+                const nodeCenter = (nodeRect.top + window.scrollY) - (containerRect.top + window.scrollY) + (nodeRect.height / 2);
+                const nodeLeft = (nodeRect.left + window.scrollX) - (containerRect.left + window.scrollX) + nodeRect.width + 20;
+                content.style.top = nodeCenter + 'px';
                 content.style.left = nodeLeft + 'px';
                 content.style.transform = 'translateY(-50%)';
-                content.style.width = (rightColRect.width - nodeLeft) + 'px';
+                content.style.width = (containerRect.width - nodeLeft) + 'px';
             }
         });
     }
