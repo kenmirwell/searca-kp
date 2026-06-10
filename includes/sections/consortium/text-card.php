@@ -16,7 +16,9 @@ if (have_rows('text_card')): ?>
                 $title       = get_sub_field('title');
                 $description = get_sub_field('description');
                 $tags        = get_sub_field('tag_repeater');
-                $url         = get_sub_field('url');
+
+                $button_name = get_sub_field('button_name');
+                $button_url  = get_sub_field('button_url');
             ?>
                 <div class="flex flex-col gap-[15px] bg-[#F5F8FC] border-[1px] border-[#E0E8F0] rounded-[20px] p-[30px] justify-between">
                     
@@ -24,7 +26,7 @@ if (have_rows('text_card')): ?>
                     <?php if (!empty($tags)): ?>
                         <div class="flex flex-wrap gap-[8px]">
                             <?php foreach ($tags as $tag): ?>
-                                <span class="text-[#008c67] bg-[#E0F2EE] text-display-12 md:text-display-14 px-[12px] py-[5px] rounded-full">
+                                <span class="text-[#008C67] bg-[#D7EBE9] text-display-12 md:text-display-14 px-[12px] py-[5px] rounded-full">
                                     <?php echo esc_html($tag['tag']); ?>
                                 </span>
                             <?php endforeach; ?>
@@ -41,9 +43,8 @@ if (have_rows('text_card')): ?>
                         <?php endif; ?>
                     </div>
 
-                    <!-- Learn More -->
-                    <?php if (!empty($url)): ?>
-                        <a href="<?php echo esc_url($url); ?>" class="flex items-center gap-[8px] text-[#B59637] text-display-14 md:text-display-16 font-[500] group w-fit">
+                    <?php if (!empty($button_name)): ?>
+                        <a href="<?php echo esc_url($button_url); ?>" class="flex items-center gap-[8px] text-[#B59637] text-display-14 md:text-display-16 font-[500] group w-fit">
                             Learn More
                             <span class="group-hover:translate-x-[4px] transition-all duration-200 ease">→</span>
                         </a>
