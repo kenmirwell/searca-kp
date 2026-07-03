@@ -22,12 +22,11 @@
                             
                             $trimmed_author = mb_strimwidth($author_name, 0, 15, "..."); 
                 ?>
+                    <a href="<?php echo get_permalink() ?>">
                     <div class="flex flex-col md:flex-row w-[100%] gap-[10px] md:gap-[20px] items-start group transition-all duration-200 ease cursor-pointer py-[20px] border-b-[1px] border-[#C0C0C0]">
                         <div class="bg-[#DBE1E9] p-[10px] w-[100%] rounded-[8px]">
                           <div class="flex rounded-[8px] bg-[#ffffff] items-center w-[100%] h-[120px] md:h-[180px] overflow-hidden relative">
-                            <a href="<?php echo get_permalink() ?>">
-                                <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
-                            </a>
+                            <div class="bg-black opacity-5 w-[100%] h-[100%] absolute top-0 left-0 z-10 group-hover:opacity-0 transition-all duration-200 ease"></div>
                             <div class="w-[100%] h-[100%] absolute">
                                 <?php
                                     if ( has_post_thumbnail() ) {
@@ -59,6 +58,7 @@
                             </div>
                         </div>
                     </div>
+                    </a>
                 <?php   }
                     } 
                 ?>

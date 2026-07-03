@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-[1100px] mx-auto pt-[50px]">
+        <div class="w-[1100px] mx-auto py-[100px]">
             <div class="flex gap-[40px] relative">
                 <div class="w-[30%] h-[100%] sticky top-[50px]">
                     <div class="shadow rounded-xl overflow-hidden">
@@ -90,21 +90,21 @@
                         </div>
                     </div>
                     <div class="">
-                        <div class="pt-[50px]">
-                            <h6 class="text-[16px] font-[600]">Background</h6>
+                        <div class="pt-[30px]">
+                            <h6 class="text-[18px] font-[600]">Background</h6>
                         </div>
-                        <div class="font-[300] text-[14px] pt-[10px]">
+                        <div class="font-[300] text-[16px] pt-[10px]">
                             <?php the_content(); ?>
                         </div>
                     </div>
-                    <div>
-                        <div class="pt-[50px]">
+                    <!-- <div>
+                        <div class="pt-[30px]">
                             <h6 class="text-[16px] font-[600]">Content</h6>
                         </div>
                         <div class="font-[300] text-[14px] pt-[10px]">
-                            <?php the_content(); ?>
+                            <?php //the_content(); ?>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
