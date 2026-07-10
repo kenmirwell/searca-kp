@@ -3,7 +3,7 @@
         <div class="simple-header flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
             <div class="text-left w-[100%] lg:w-[50%]">
                 <h6 class="text-display-24 md:text-display-42 text-[#1f1f1f] pb-[10px] font-bold">Our Platform Essentials</h6>
-                <p class="text-display-12 md:text-display-16">Driving agricultural transformation and evidence-based policymaking through knowledge, data-driven research, and colloboration across Southeast Asia.</p>
+                <p class="text-display-12 md:text-display-16">Driving agricultural transformation and evidence-based policymaking through knowledge, data-driven research, and collaboration across Southeast Asia.</p>
             </div>
         </div>
         <div class="flex flex-wrap xl:flex-nowrap flex-col sm:flex-row justify-start xl:justify-between items-start gap-[5px] lg:gap-[10px] xl:gap-[20px]">
