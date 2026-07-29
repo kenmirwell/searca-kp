@@ -6,6 +6,12 @@
                     <div class="flex space-between gap-[30px] items-end slide-content h-full w-full relative y-thumbnail">
                         <div class="w-[80%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
                             <div class="flex flex-col items-left gap-[20px] text-container ml-[0px] mr-auto w-[90%] lg:w-[740px]">
+                                <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight mb-[10px]">
+                                    <div class="flex gap-[10px] items-center py-[10px] px-[15px] rounded-full border-[1px] border-[#EBEBEB82]">
+                                        <div class="h-[10px] w-[10px] bg-[#F7D671] rounded-full"></div>
+                                        <p class="text-display-16"><?php echo get_sub_field('hero_banner_label'); ?></p>
+                                    </div>
+                                </div>
                                 <div class="items-end">
                                     <h1 class="text-display-55"><?php echo get_sub_field('hero_banner_title'); ?></h1>
                                 </div>

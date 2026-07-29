@@ -18,6 +18,7 @@
         <?php get_template_part("includes/sections/frontpage-sections/hero-section"); ?>
     </div>
     <?php get_template_part("includes/sections/frontpage-sections/key-pillars"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/knowledge-watch-section"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/country-profile");?>
     <?php get_template_part("includes/sections/frontpage-sections/knowledge-resources"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/cadre-inaction"); ?>
