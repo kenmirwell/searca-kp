@@ -13,7 +13,7 @@
                                     </div>
                                 </div>
                                 <div class="items-end">
-                                    <h1 class="text-display-55"><?php echo get_sub_field('hero_banner_title'); ?></h1>
+                                    <h1 class="font-semibold text-display-55"><?php echo get_sub_field('hero_banner_title'); ?></h1>
                                 </div>
                                 <div class="items-end tracking-wide leading-relaxed text-display-14 md:text-display-18">
                                     <p><?php echo get_sub_field('hero_banner_sub'); ?></p>
