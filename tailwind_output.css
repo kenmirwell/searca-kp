@@ -1106,6 +1106,10 @@ video {
   height: max-content;
 }
 
+.h-\[475px\] {
+  height: 475px;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -1583,6 +1587,10 @@ video {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
 }
 
 .rounded-b-lg {
@@ -2438,6 +2446,10 @@ video {
 
 .pt-\[80px\] {
   padding-top: 80px;
+}
+
+.pb-\[80px\] {
+  padding-bottom: 80px;
 }
 
 .text-left {
