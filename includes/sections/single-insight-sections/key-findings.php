@@ -8,27 +8,27 @@
         <p class="font-light">Key Regional Highlights</p>
     </div>
     <div class="flex flex-wrap gap-[20px] pb-[20px]">
-        <div class="rounded-xl p-[30px] bg-[#008C67] w-[350px] text-white">
+        <div class="rounded-xl p-[30px] bg-[#008C67] w-[300px] text-white">
             <p class="text-display-42">14%</p>
             <p class="font-light">of Southeast Asia's population continues to experience food insecurity, despite sustained economic growth and improvements in agricultural productivity (FAO 2025).</p>
         </div>
-        <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[350px]">
+        <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[300px]">
             <p class="text-display-42">228M</p>
             <p class="font-light">people across ASEAN, roughly one in every three residents, cannot afford a healthy diet, highlighting that food affordability has become one of the region's most pressing food security challenges (FAO 2025).</p>
         </div>
-        <div class="rounded-xl p-[30px] bg-[#008C67] w-[350px] text-white">
+        <div class="rounded-xl p-[30px] bg-[#008C67] w-[300px] text-white">
             <p class="text-display-42">6.4%</p>
             <p class="font-light">The Asia-Pacific region reduced the prevalence of undernourishment to this figure in 2024, equivalent to approximately 25 million fewer hungry people than the previous year (FAO et al. 2025).</p>
         </div>
-        <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[350px]">
+        <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[300px]">
             <p class="text-display-42">~40%</p>
             <p class="font-light">The region still accounts for nearly this share of the world's undernourished population, indicating that progress remains uneven (FAO et al. 2025).</p>
         </div>
-        <div class="rounded-xl p-[30px] bg-[#008C67] w-[350px] text-white">
+        <div class="rounded-xl p-[30px] bg-[#008C67] w-[300px] text-white">
             <p class="text-display-42">3×</p>
             <p class="font-light">Southeast Asia continues to experience the triple burden of malnutrition, where child stunting and micronutrient deficiencies coexist with rapidly increasing rates of overweight, obesity, and diet-related noncommunicable diseases (FAO et al. 2025; UNICEF, WHO, and World Bank 2025).</p>
         </div>
-        <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[350px]">
+        <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[300px]">
             <p class="text-display-42">2026–30</p>
             <p class="font-light">ASEAN has responded by prioritizing food and nutrition security, climate resilience, digital transformation, and sustainable agriculture under the ASEAN Food, Agriculture and Forestry Sectoral Plan (FAF-SP) 2026–2030 (ASEAN 2025).</p>
         </div>

@@ -1150,6 +1150,11 @@ video {
   height: 1px;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -1924,6 +1929,11 @@ video {
 
 .border-\[D3D3D3\] {
   border-color: D3D3D3;
+}
+
+.border-\[\#D9D9D9\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(217 217 217 / var(--tw-border-opacity));
 }
 
 .border-b-\[\#000000\] {

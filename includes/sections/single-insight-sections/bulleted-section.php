@@ -1,5 +1,5 @@
 <!-- bulleted section -->
-<div class="pt-[40px]">
+<div class="">
         <?php if (have_rows('flexicon_section_repeater')) : ?>
             <div class="flex justify-between gap-[20px]">
                 <?php while (have_rows('flexicon_section_repeater')) : the_row(); ?>
