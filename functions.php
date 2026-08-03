@@ -106,7 +106,9 @@
             'material-author',
             "component",
             'knowledge-management',
+            "knowledge-watch",
             'country-profile',
+            'news'
         ));
 
         add_theme_support('custom-logo', array(

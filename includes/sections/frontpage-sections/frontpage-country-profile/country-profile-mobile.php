@@ -1,4 +1,4 @@
-<div class="country-profile-section-mobile flex flex-col lg:flex-row relative">
+<div class="country-profile-section-mobile flex flex-col lg:flex-row relative py-[40px]">
     <div class="w-[100%] md:w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <!-- Left Side -->
         <div class="w-[100%] bg-[#008c67] flex items-center py-[30px] px-[40px] md:rounded-t-[20px]">

@@ -17,14 +17,15 @@
     <div class="pt-[30px] md:pt-[70px]">
         <?php get_template_part("includes/sections/frontpage-sections/hero-section"); ?>
     </div>
-    <?php get_template_part("includes/sections/frontpage-sections/key-pillars"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/our-platform-essentials");?>
     <?php get_template_part("includes/sections/frontpage-sections/knowledge-watch-section"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/news-section"); ?>
+    <?php get_template_part("includes/sections/frontpage-sections/insights-section"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/country-profile");?>
+    <?php get_template_part("includes/sections/frontpage-sections/events-section"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/knowledge-resources"); ?>
-    <?php get_template_part("includes/sections/frontpage-sections/cadre-inaction"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/capri-section"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/communityof-practice"); ?> 
-    <?php get_template_part("includes/sections/frontpage-sections/faq-section"); ?>
 <?php 
     }
     get_footer();

@@ -11,7 +11,7 @@
     ?>
 
     <?php get_template_part("includes/components/common-hero"); ?>
-    <?php get_template_part("includes/sections/events-sections/events-section-new"); ?>
+    <?php get_template_part("includes/sections/knowledge-watch-sections/all-knowledge-watch"); ?>
 <?php 
     }
     get_footer()
