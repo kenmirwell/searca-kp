@@ -1,7 +1,7 @@
 <div class="py-[30px] md:py-[50px] relative">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto z-[1] relative">
         <div class="">
-            <div class="flex gap-[40px]">
+            <div class="flex flex-col md:flex-row gap-[40px]">
                 <?php //I'm not getting anything from here inside
                     $event = new WP_Query(array(
                         "post_type" => "event",
@@ -38,7 +38,7 @@
                                 }
                             }
                         ?>
-                            <div class="w-[447px] shadow">
+                            <div class="w-[100%] md:w-[447px] shadow">
                                 <div class="relative w-full h-[350px] rounded-lg group overflow-hidden">
                                     <img class="w-full h-full object-cover" src="<?php echo esc_url($event_thumbnail); ?>" alt="event thumbnail">
                                 </div>

@@ -1,8 +1,8 @@
 <div class="w-full z-[1] relative">
-  <div class="w-[90%] lg:w-[1104px] xl:w-[1360px] mt-[-100px] py-[50px] px-[40px] mx-auto rounded-3xl shadow bg-white">
-      <div class="flex justify-between items-center">
+  <div class="w-[90%] lg:w-[1104px] xl:w-[1360px] mt-[-100px] py-[20px] md:py-[50px] px-[20px] md:px-[40px] mx-auto rounded-3xl shadow bg-white">
+      <div class="flex flex-col gap-[20px] md:flex-row justify-between  md:items-center">
         <div class="flex flex-col gap-[10px]">
-          <h2 class="text-display-32">Stay Informed</h2>
+          <h2 class="text-display-24 md:text-display-32">Stay Informed</h2>
           <p>Explore the latest news, research highlights, policy developments.</p>
         </div>
         <a href="<?php echo esc_url(get_sub_field('button_link')); ?>" class="group cursor-pointer w-fit">
@@ -28,7 +28,7 @@
 
           if ($news_query->have_posts()) : ?>
 
-              <div class="flex flex-wrap xl:flex-nowrap flex-col sm:flex-row justify-start xl:justify-between items-start gap-[5px] lg:gap-[10px] xl:gap-[20px] py-[20px]">
+              <div class="flex flex-wrap xl:flex-nowrap flex-col sm:flex-row justify-start xl:justify-between items-start gap-[20px] py-[20px]">
                   <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
 
                       <?php
@@ -45,7 +45,7 @@
                       <div class="news-card w-[100%]">
 
                         <div class="w-[100%] md:w-auto h-[370px] xl:h-[435px] rounded-[20px] group">
-                            <div class="flex flex-col relative h-full w-full md:w-[250px] lg:w-[400px] rounded-3xl overflow-hidden border-[1px] border-[#CFCFCF]">
+                            <div class="flex flex-col relative h-full w-full lg:w-[400px] rounded-3xl overflow-hidden border-[1px] border-[#CFCFCF]">
                               <?php if ($thumbnail) : ?>
                                   <div class="relative w-full h-[450px]">
                                     <img src="<?php echo esc_url($thumbnail); ?>" 

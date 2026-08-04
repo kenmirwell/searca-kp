@@ -68,7 +68,7 @@
       ?>
 
       <div class="flex flex-col gap-[20px]">
-          <h3 class="font-bold text-display-24">More Related Links</h3>
+          <h3 class="font-bold text-display-24">More News</h3>
 
           <?php foreach ($related_ids as $post_id) :
               $permalink = get_permalink($post_id);

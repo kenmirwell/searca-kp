@@ -18,7 +18,7 @@
                                 <div class="items-end tracking-wide leading-relaxed text-display-14 md:text-display-18">
                                     <p><?php echo get_sub_field('hero_banner_sub'); ?></p>
                                 </div>
-                                <a id="slider-banner-button" href="<?php echo esc_url(get_sub_field('hero_banner_button_link')); ?>" class="w-auto cursor-pointer group">
+                                <a id="slider-banner-button" href="<?php echo esc_url(get_sub_field('hero_banner_button')); ?>" class="w-auto cursor-pointer group">
                                     <div class="items-center w-max flex gap-[20px] py-[5px] pl-[20px] pr-[5px] bg-[#008c67] group-hover:bg-[#B59637] transition-all duration-200 ease rounded-full">
                                         <p class="w-max p-[0px]"><?php echo get_sub_field('hero_banner_button_name'); ?></p>
                                         <div class="h-max bg-[#ceab23] group-hover:bg-[#008c67] rounded-full p-[15px] transition-all duration-200 ease">

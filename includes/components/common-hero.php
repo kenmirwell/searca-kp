@@ -1,5 +1,5 @@
-<div class="common-hero-container relative h-[700px] xl:h-[800px] flex jusitify-center">
-    <div class="flex gap-[50px] items-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto py-[150px] font-light z-[2]">
+<div class="common-hero-container relative flex jusitify-center">
+    <div class="flex gap-[50px] items-center w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto pt-[150px] pb-[40px] md:pb-[120px] font-light z-[2]">
         <div class="text-element-container opacity-[0] w-[100%] flex flex-col gap-[30px]">
             <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight mb-[10px]">
                 <div class="flex gap-[10px] items-center py-[10px] px-[15px] rounded-full border-[1px] border-[#EBEBEB82]">

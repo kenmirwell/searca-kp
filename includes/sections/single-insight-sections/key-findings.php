@@ -107,8 +107,8 @@
             <div>
                 <p class="font-light">SOFI 2026 highlights the growing coexistence of undernutrition, micronutrient deficiencies, overweight, and obesity. While child stunting has continued to decline gradually, progress remains insufficient to meet the 2030 global nutrition targets. At the same time, obesity and diet-related noncommunicable diseases continue to increase across all regions (FAO et al. 2026).</p>
             </div>
-            <div class="flex gap-[40px]">
-                <div class="border-[1px] border-[#D3D3D3] rounded-xl p-[40px] flex flex-col items-center gap-[20px] w-[30%]">
+            <div class="flex flex-col md:flex-row gap-[40px]">
+                <div class="border-[1px] border-[#D3D3D3] rounded-xl p-[40px] flex flex-col items-center gap-[20px] w-[100%] md:w-[30%]">
                     <div class="w-[50px] h-[50px] flex items-center justify-center bg-[#F2F6F3] rounded-full">
                         <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M17.5 0C16.3739 0.0175149 15.2724 0.331853 14.3067 0.911271C13.341 1.49069 12.5453 2.31467 12 3.3C11.4546 2.31467 10.6589 1.49069 9.6932 0.911271C8.7275 0.331853 7.62601 0.0175149 6.49996 0C4.7049 0.0779907 3.01366 0.863254 1.79574 2.18423C0.577818 3.50521 -0.0677922 5.25453 -4.17093e-05 7.05C-4.17093e-05 11.597 4.78596 16.563 8.79996 19.93C9.69618 20.6831 10.8293 21.096 12 21.096C13.1706 21.096 14.3037 20.6831 15.2 19.93C19.214 16.563 24 11.597 24 7.05C24.0677 5.25453 23.4221 3.50521 22.2042 2.18423C20.9863 0.863254 19.295 0.0779907 17.5 0ZM13.915 18.4C13.3789 18.8514 12.7007 19.0989 12 19.0989C11.2992 19.0989 10.621 18.8514 10.085 18.4C4.94696 14.089 1.99996 9.953 1.99996 7.05C1.9316 5.78472 2.36632 4.54373 3.20932 3.5977C4.05232 2.65167 5.23519 2.07735 6.49996 2C7.76472 2.07735 8.9476 2.65167 9.7906 3.5977C10.6336 4.54373 11.0683 5.78472 11 7.05C11 7.31522 11.1053 7.56957 11.2929 7.75711C11.4804 7.94464 11.7347 8.05 12 8.05C12.2652 8.05 12.5195 7.94464 12.7071 7.75711C12.8946 7.56957 13 7.31522 13 7.05C12.9316 5.78472 13.3663 4.54373 14.2093 3.5977C15.0523 2.65167 16.2352 2.07735 17.5 2C18.7647 2.07735 19.9476 2.65167 20.7906 3.5977C21.6336 4.54373 22.0683 5.78472 22 7.05C22 9.953 19.053 14.089 13.915 18.396V18.4Z" fill="#008C67"/>
@@ -117,7 +117,7 @@
                     <h6 class="font-bold">Undernutrition & Stunting</h6>
                     <p class="text-center font-light">Continued to decline over the past two decades, but rates remain above global nutrition targets in many countries (FAO et al. 2025).</p>
                 </div>
-                <div class="border-[1px] border-[#D3D3D3] rounded-xl p-[40px] flex flex-col items-center gap-[20px] w-[30%]">
+                <div class="border-[1px] border-[#D3D3D3] rounded-xl p-[40px] flex flex-col items-center gap-[20px] w-[100%] md:w-[30%]">
                     <div class="w-[50px] h-[50px] flex items-center justify-center bg-[#F2F6F3] rounded-full">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1933_5853)">
@@ -133,7 +133,7 @@
                     <h6 class="font-bold">Micronutrient Deficiencies</h6>
                     <p class="text-center font-light">Anaemia among women of reproductive age continues to be a major public health concern (FAO et al. 2025).</p>
                 </div>
-                <div class="border-[1px] border-[#D3D3D3] rounded-xl p-[40px] flex flex-col items-center gap-[20px] w-[30%]">
+                <div class="border-[1px] border-[#D3D3D3] rounded-xl p-[40px] flex flex-col items-center gap-[20px] w-[100%] md:w-[30%]">
                     <div class="w-[50px] h-[50px] flex items-center justify-center bg-[#F2F6F3] rounded-full">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1933_5849)">

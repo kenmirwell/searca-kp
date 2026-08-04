@@ -163,7 +163,7 @@
         </div>
         <div class="flex justify-center md:justify-between py-[20px] md:py-[10px]">
             <div class="flex flex-col md:flex-row justify-center md:justify-between lg:pt-0 text-[12px] md:text-[14px] lg:text-[16px]">
-                <p class="text-[#ffffff]">© 2025 SEARCA Agriculture, Forestry, and Natural Resources Knowledge Platform, All Rights Reserved.</p>
+                <p class="text-[#ffffff]">© 2026 SEARCA Agriculture, Forestry, and Natural Resources Knowledge Platform, All Rights Reserved.</p>
                 <div class="flex justify-center md:hidden gap-[20px]">
                     <div class="p-[10px] rounded-full bg-[#282828] hover:bg-[#096936]">
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
