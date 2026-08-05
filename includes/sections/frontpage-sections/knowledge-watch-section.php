@@ -27,6 +27,24 @@
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Add this block — repositions arrows to bottom on mobile/tablet */
+@media (max-width: 767px) {
+    #knowledge-watch-swiper .swiper-button-prev,
+    #knowledge-watch-swiper .swiper-button-next {
+        top: auto;
+        bottom: 125px;
+    }
+
+    #knowledge-watch-swiper .swiper-button-prev {
+        left: unset !important;
+        right: 60px !important; /* sits just left of the next button, no change to next's own right: 20px rule */
+    }
+
+    #knowledge-watch-swiper {
+        height: 820px
+    }
+}
+
 #knowledge-watch-swiper .swiper-button-prev:hover,
 #knowledge-watch-swiper .swiper-button-next:hover {
     background-color: #EDEDED;
@@ -101,7 +119,7 @@ if ($kw_swiper_query->have_posts()) :
                     <div class="absolute inset-0 bg-black/40 z-[1]"></div>
                 <?php endif; ?>
 
-                <div class="relative z-[2] h-full flex justify-center items-center text-white mt-[-50px] md:mt-[-100px]">
+                <div class="relative z-[2] h-full flex justify-center items-center text-white  mt-[-50px] md:mt-[-100px]">
                     <div class="flex flex-col gap-[20px] w-[80%] xl:w-[1280px] mx-auto">
                         <div class="w-[100%] xl:w-[50%] flex flex-col gap-[20px]">
                             <h6 class="text-display-14 font-semibold">KNOWLEDGE WATCH</h6>

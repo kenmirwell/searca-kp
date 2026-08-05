@@ -1,5 +1,5 @@
 <div class="w-full z-[1] relative">
-  <div class="w-[90%] lg:w-[1104px] xl:w-[1360px] mt-[-100px] py-[20px] md:py-[50px] px-[20px] md:px-[40px] mx-auto rounded-3xl shadow bg-white">
+  <div class="w-[90%] lg:w-[1024px] xl:w-fit mt-[-60px] md:mt-[-100px] py-[20px] md:py-[50px] px-[20px] md:px-[40px] mx-auto rounded-3xl shadow bg-white">
       <div class="flex flex-col gap-[20px] md:flex-row justify-between  md:items-center">
         <div class="flex flex-col gap-[10px]">
           <h2 class="text-display-24 md:text-display-32">Stay Informed</h2>
@@ -42,10 +42,10 @@
                           $thumbnail = get_field('thumbnail'); // ACF Image field
                       ?>
 
-                      <div class="news-card w-[100%]">
+                      <div class="news-card w-[100%] md:w-[30%] xl:w-[100%]">
 
                         <div class="w-[100%] md:w-auto h-[370px] xl:h-[435px] rounded-[20px] group">
-                            <div class="flex flex-col relative h-full w-full lg:w-[400px] rounded-3xl overflow-hidden border-[1px] border-[#CFCFCF]">
+                            <div class="flex flex-col relative h-full w-full xl:w-[400px] rounded-3xl overflow-hidden border-[1px] border-[#CFCFCF]">
                               <?php if ($thumbnail) : ?>
                                   <div class="relative w-full h-[450px]">
                                     <img src="<?php echo esc_url($thumbnail); ?>" 
@@ -54,7 +54,7 @@
                                   </div>
                               <?php endif; ?>
 
-                              <div class="absolute p-[20px] z-[2] w-full bg-[#ffffff] min-h-[180px] bottom-0">
+                              <div class="p-[20px] z-[2] w-full bg-[#ffffff] min-h-[180px] bottom-0">
                                   
                                   <div class="flex flex-col gap-[20px]">
                                     <div class="flex justify-between">
@@ -64,13 +64,21 @@
                                       <?php endif; ?>
                                     </div>
 
-                                    <h3 class=""><?php echo esc_html($title); ?></h3>
+                                    <?php
+                                        $full_title = $title;
+                                        $short_title = mb_strimwidth($title, 0, 40, '...'); // multibyte-safe truncation
+                                    ?>
+
+                                    <h3 class="">
+                                        <span class="hidden md:block xl:hidden"><?php echo esc_html($short_title); ?></span>
+                                        <span class="inline md:hidden xl:inline"><?php echo esc_html($full_title); ?></span>
+                                    </h3>
 
                                     <!-- <div class="excerpt">
                                         <?php //echo wp_trim_words($content, 20); ?>
                                     </div> -->
 
-                                    <a class="flex gap-[20px]" href="<?php echo esc_url($link); ?>">Read more 
+                                    <a class="flex gap-[10px] items-center" href="<?php echo esc_url($link); ?>">Read more 
                                       <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.5 5.5L10.5 5.5M5.5 0.5L10.5 5.5L5.5 10.5" stroke="#525355" stroke-linecap="round" stroke-linejoin="round"/>
                                       </svg>

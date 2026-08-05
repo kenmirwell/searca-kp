@@ -23,28 +23,36 @@
             }
         }
     ?>
-    <div class="relative h-[500px] lg:h-[650px] w-[90%] lg:w-[1104px] xl:w-[1360px] mx-auto rounded-3xl shadow overflow-hidden">
+    <div class="relative w-[90%] lg:w-[1104px] xl:w-[1360px] mx-auto rounded-3xl shadow overflow-hidden">
         <div class="flex space-between gap-[30px] items-end slide-content h-full w-full relative y-thumbnail">
-            <div class="w-[80%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
+            <div class="z-[2] px-[20px] md:px-[40px] py-[50px] md:py-[100px]">
                 <div class="flex flex-col items-left gap-[20px] text-container ml-[0px] mr-auto w-[90%] lg:w-[980px]">
                     <div class="flex gap-[5px] text-[#ffffff] text-[14px] font-extralight mb-[10px]">
                         <div class="flex gap-[10px] items-center py-[10px] px-[15px] rounded-full border-[1px] border-[#EBEBEB82]">
                             <div class="h-[10px] w-[10px] bg-[#F7D671] rounded-full"></div>
-                            <p>Home</p>
+                            <a href="/" class="text-display-14">Home</a>
                             <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.650391 0.650025L4.32492 4.35457C4.75888 4.79207 4.75888 5.50798 4.32492 5.94548L0.650391 9.65002" stroke="white" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <p>Events</p>
+                            <a href="https://knowledgeplatform.searca.org/events/" class="text-display-14">Events</a>
                             <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.650391 0.650025L4.32492 4.35457C4.75888 4.79207 4.75888 5.50798 4.32492 5.94548L0.650391 9.65002" stroke="white" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <p class="text-display-16"><?php echo get_field('bread_crumb'); ?></p>
+
+                            <?php
+                                $breadcrumb_full = get_field('bread_crumb');
+                                $breadcrumb_short = mb_strimwidth($breadcrumb_full, 0, 25, '...');
+                            ?>
+                            <a class="text-display-14">
+                                <span class="xl:hidden"><?php echo esc_html($breadcrumb_short); ?></span>
+                                <span class="hidden xl:inline"><?php echo esc_html($breadcrumb_full); ?></span>
+                            </a>
                         </div>
                     </div>
                     <div class="items-end">
-                        <h1 class="font-semibold text-display-55 text-[#ffffff]"><?php the_title(); ?></h1>
+                        <h1 class="font-semibold text-display-24 md:text-display-32 lg:text-display-55 text-[#ffffff]"><?php the_title(); ?></h1>
                     </div>
-                    <div class="w-[400px] border-[1px] bg-[#ffffff] my-[20px] ">
+                    <div class="w-[90%] md:w-[400px] border-[1px] bg-[#ffffff] my-[20px] ">
 
                     </div>
                     <div class="flex flex-col gap-[20px] text-display-14 md:text-display-18">

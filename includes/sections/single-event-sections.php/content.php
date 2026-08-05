@@ -1,15 +1,15 @@
 <div class="w-[80%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto pb-[80px]">
-  <div class="flex justify-between gap-[60px]">
-    <div class="w-[70%]">
+  <div class="flex flex-col lg:flex-row justify-between gap-[60px]">
+    <div class="w-[100%] lg:w-[70%]">
         <div class="pb-[20px]">
-            <h2 class="text-display-32">Event Overview</h2>
+            <h2 class="text-display-24 md:text-display-32">Event Overview</h2>
         </div>
         <div class="[&_p]:mb-4 font-light">
             <?php echo wp_kses_post(wpautop(get_the_content())); ?>
         </div>
     </div>
 
-    <div class="w-[30%]">
+    <div class="w-[100%] lg:w-[30%]">
         <?php
             $event_location = get_field('event_location'); // or get_field('event_location', $post_id) if outside the main loop
             if ($event_location) :
@@ -145,8 +145,8 @@
                                 </span>
                             <?php endif; ?>
                             <?php if ($event_location) : ?>
-                                <span class="flex items-center gap-[10px] text-[#096936] text-display-14">
-                                    <div class="w-[20px]">
+                                <span class="flex items-start gap-[10px] text-[#096936] text-display-14">
+                                    <div class="w-[20px] pt-[5px]">
                                         <svg width="24" height="26" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3.06943 3.01343C4.55975 1.55292 6.56623 0.739562 8.65286 0.750101C10.7395 0.76064 12.7377 1.59423 14.2131 3.06971C15.6886 4.5452 16.5222 6.54337 16.5328 8.63C16.5433 10.7166 15.7299 12.7231 14.2694 14.2134L10.0834 18.3994C9.70837 18.7744 9.19976 18.985 8.66943 18.985C8.1391 18.985 7.63048 18.7744 7.25543 18.3994L3.06943 14.2134C1.58432 12.7282 0.75 10.7138 0.75 8.61343C0.75 6.51306 1.58432 4.4987 3.06943 3.01343Z" stroke="#096936" stroke-width="1.5" stroke-linejoin="round"/>
                                             <path d="M8.66797 11.6138C10.3248 11.6138 11.668 10.2706 11.668 8.61377C11.668 6.95691 10.3248 5.61377 8.66797 5.61377C7.01111 5.61377 5.66797 6.95691 5.66797 8.61377C5.66797 10.2706 7.01111 11.6138 8.66797 11.6138Z" stroke="#096936" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

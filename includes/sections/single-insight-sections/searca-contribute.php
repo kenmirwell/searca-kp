@@ -1,8 +1,8 @@
 <div class="pb-[40px]">
     <div>
         <div class="flex flex-col gap-[10px]">
-            <h3 class="text-display-32 font-semibold">What Can SEARCA Contribute?</h3>
-            <p class="font-light">The recommendations of SOFI 2026 closely align with SEARCA's mandate of advancing agricultural and rural development through research, graduate education, capacity building, knowledge management, and policy advocacy. As Southeast Asia's regional center of excellence, SEARCA can serve as a catalyst for agrifood systems transformation by bridging science, policy, and practice.</p>
+            <h3 class="text-display-24 md:text-display-32 font-semibold">What Can SEARCA Contribute?</h3>
+            <p class="font-light text-display-14 md:text-display-16">The recommendations of SOFI 2026 closely align with SEARCA's mandate of advancing agricultural and rural development through research, graduate education, capacity building, knowledge management, and policy advocacy. As Southeast Asia's regional center of excellence, SEARCA can serve as a catalyst for agrifood systems transformation by bridging science, policy, and practice.</p>
         </div>
 
         <div>
@@ -13,8 +13,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="text-display-24 font-semibold">Generate Evidence for Policy Transformation</h4>
-                    <p class="font-light">SEARCA can strengthen evidence-based policymaking by producing policy-oriented research on food systems transformation, climate resilience, nutrition-sensitive agriculture, digital agriculture, and agricultural innovation. Through policy briefs, foresight studies, impact assessments, and regional dialogues, the Center can help governments translate scientific evidence into practical policy solutions.</p>
+                    <h4 class="text-display-18 md:text-display-24 font-semibold">Generate Evidence for Policy Transformation</h4>
+                    <p class="font-light" text-display-14 md:text-display-16>SEARCA can strengthen evidence-based policymaking by producing policy-oriented research on food systems transformation, climate resilience, nutrition-sensitive agriculture, digital agriculture, and agricultural innovation. Through policy briefs, foresight studies, impact assessments, and regional dialogues, the Center can help governments translate scientific evidence into practical policy solutions.</p>
                 </div>
             </div>
 
@@ -25,8 +25,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="text-display-24 font-semibold">Strengthen the Science–Policy–Practice Interface</h4>
-                    <p  class="font-light">One of SEARCA's comparative advantages lies in convening researchers, policymakers, development organizations, farmers, and the private sector. Through initiatives such as the Consortium for Agricultural Policy Research Initiatives (CAPRI), the Center can facilitate regional policy learning, support science-informed decision-making, and strengthen collaboration across ASEAN.</p>
+                    <h4 class="text-display-18 md:text-display-24 font-semibold">Strengthen the Science–Policy–Practice Interface</h4>
+                    <p  class="font-light text-display-14 md:text-display-16">One of SEARCA's comparative advantages lies in convening researchers, policymakers, development organizations, farmers, and the private sector. Through initiatives such as the Consortium for Agricultural Policy Research Initiatives (CAPRI), the Center can facilitate regional policy learning, support science-informed decision-making, and strengthen collaboration across ASEAN.</p>
                 </div>
             </div>
 
@@ -37,8 +37,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="text-display-24 font-semibold">Advance Climate-Smart and Nutrition-Sensitive Agriculture</h4>
-                    <p  class="font-light">SEARCA's work on climate-smart agriculture, regenerative farming, biodiversity conservation, and the School-plus-Home Gardens cum Biodiversity Enhancement Enterprise (SHGBEE) model demonstrates how agricultural innovations can simultaneously improve productivity, nutrition, environmental sustainability, and rural livelihoods. Scaling these innovations throughout Southeast Asia would directly support ASEAN's priorities on food and nutrition security.</p>
+                    <h4 class="text-display-18 md:text-display-24 font-semibold">Advance Climate-Smart and Nutrition-Sensitive Agriculture</h4>
+                    <p  class="font-light text-display-14 md:text-display-16">SEARCA's work on climate-smart agriculture, regenerative farming, biodiversity conservation, and the School-plus-Home Gardens cum Biodiversity Enhancement Enterprise (SHGBEE) model demonstrates how agricultural innovations can simultaneously improve productivity, nutrition, environmental sustainability, and rural livelihoods. Scaling these innovations throughout Southeast Asia would directly support ASEAN's priorities on food and nutrition security.</p>
                 </div>
             </div>
 
@@ -49,8 +49,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="text-display-24 font-semibold">Accelerate Digital Agriculture</h4>
-                    <p  class="font-light">Digital transformation represents one of SEARCA's strongest strategic opportunities. Through the SEARCA Knowledge Platform, the Southeast Asian Agricultural Statistics Database (SAASD), and research on digital agriculture, SEARCA can support governments in strengthening agricultural data systems, digital governance, interoperability, artificial intelligence applications, and precision agriculture. These initiatives can improve evidence-based planning while enhancing regional cooperation.</p>
+                    <h4 class="text-display-18 md:text-display-24 font-semibold">Accelerate Digital Agriculture</h4>
+                    <p  class="font-light text-display-14 md:text-display-16">Digital transformation represents one of SEARCA's strongest strategic opportunities. Through the SEARCA Knowledge Platform, the Southeast Asian Agricultural Statistics Database (SAASD), and research on digital agriculture, SEARCA can support governments in strengthening agricultural data systems, digital governance, interoperability, artificial intelligence applications, and precision agriculture. These initiatives can improve evidence-based planning while enhancing regional cooperation.</p>
                 </div>
             </div>
 
@@ -61,8 +61,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="text-display-24 font-semibold">Build Human Capital for Agrifood Systems Transformation</h4>
-                    <p  class="font-light">Achieving food security requires investments in people. SEARCA's graduate scholarships, leadership development programs, youth initiatives, and professional training contribute directly to developing the next generation of agricultural scientists, innovators, extension professionals, and policymakers. Particular emphasis should be placed on empowering women, youth, and young agripreneurs as drivers of agricultural transformation.</p>
+                    <h4 class="text-display-18 md:text-display-24 font-semibold">Build Human Capital for Agrifood Systems Transformation</h4>
+                    <p  class="font-light text-display-14 md:text-display-16">Achieving food security requires investments in people. SEARCA's graduate scholarships, leadership development programs, youth initiatives, and professional training contribute directly to developing the next generation of agricultural scientists, innovators, extension professionals, and policymakers. Particular emphasis should be placed on empowering women, youth, and young agripreneurs as drivers of agricultural transformation.</p>
                 </div>
             </div>
 
@@ -73,8 +73,8 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="text-display-24 font-semibold">Foster Regional Cooperation and Knowledge Sharing</h4>
-                    <p  class="font-light">Agrifood systems challenges transcend national borders. Through regional conferences, policy dialogues, communities of practice, and knowledge-sharing platforms, SEARCA can facilitate the exchange of best practices among ASEAN Member States. These platforms can accelerate the adoption of successful innovations while supporting the implementation of the ASEAN Food, Agriculture and Forestry Sectoral Plan (2026–2030).</p>
+                    <h4 class="text-display-18 md:text-display-24 font-semibold">Foster Regional Cooperation and Knowledge Sharing</h4>
+                    <p  class="font-light text-display-14 md:text-display-16">Agrifood systems challenges transcend national borders. Through regional conferences, policy dialogues, communities of practice, and knowledge-sharing platforms, SEARCA can facilitate the exchange of best practices among ASEAN Member States. These platforms can accelerate the adoption of successful innovations while supporting the implementation of the ASEAN Food, Agriculture and Forestry Sectoral Plan (2026–2030).</p>
                 </div>
             </div>
 
@@ -96,10 +96,10 @@
                     </svg>
                 </div>
                 <div>
-                    <h4 class="text-display-24 font-semibold">Support Data-Driven Decision-Making</h4>
+                    <h4 class="text-display-18 md:text-display-24 font-semibold">Support Data-Driven Decision-Making</h4>
                     <div  class="font-light">
-                        <p>Reliable, harmonized, and timely data are fundamental to effective policymaking. SEARCA's ongoing development of the Southeast Asian Agricultural Statistics Database (SAASD) offers an opportunity to establish a regional platform for monitoring agricultural transformation, climate resilience, food security, nutrition, and SDG indicators. Such a platform would complement ASEAN's efforts to strengthen evidence-based regional governance and enable more targeted policy interventions.</p>
-                        <p>Ultimately, SEARCA's greatest contribution lies in operationalizing agrifood systems transformation. By generating evidence, strengthening science-policy interfaces, empowering communities, fostering innovation, and promoting regional collaboration, the Center can help ASEAN Member States translate the aspirations of SOFI 2026, the ASEAN Food, Agriculture and Forestry Sectoral Plan (2026–2030), and the 2030 Agenda for Sustainable Development into tangible improvements in food security, nutrition, resilience, and rural prosperity.</p>
+                        <p class="text-display-14 md:text-display-16">Reliable, harmonized, and timely data are fundamental to effective policymaking. SEARCA's ongoing development of the Southeast Asian Agricultural Statistics Database (SAASD) offers an opportunity to establish a regional platform for monitoring agricultural transformation, climate resilience, food security, nutrition, and SDG indicators. Such a platform would complement ASEAN's efforts to strengthen evidence-based regional governance and enable more targeted policy interventions.</p>
+                        <p class="text-display-14 md:text-display-16">Ultimately, SEARCA's greatest contribution lies in operationalizing agrifood systems transformation. By generating evidence, strengthening science-policy interfaces, empowering communities, fostering innovation, and promoting regional collaboration, the Center can help ASEAN Member States translate the aspirations of SOFI 2026, the ASEAN Food, Agriculture and Forestry Sectoral Plan (2026–2030), and the 2030 Agenda for Sustainable Development into tangible improvements in food security, nutrition, resilience, and rural prosperity.</p>
                     </div>
                 </div>
             </div>

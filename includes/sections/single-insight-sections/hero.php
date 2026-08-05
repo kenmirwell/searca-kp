@@ -1,13 +1,13 @@
 <div class="relative pt-[80px]">
-    <div class="w-[80%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
+    <div class="w-[90%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="bread-crumb-container bg-[#008C67] rounded-full p-[10px] w-fit mb-[20px] md:mb-[50px] min-w-fit max-w-full">
             <div class="flex text-white justify-center gap-[10px] items-center text-[14px] font-light">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
                     <rect width="12" height="12" rx="6" fill="#B59637" fill-opacity="0.6"/>
                 </svg>
-                <span class="hidden sm:inline">
+                <a href="/" class="hidden sm:inline cursor-pointer">
                     Home
-                </span>
+                </a>
                 <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden sm:inline shrink-0">
                     <path d="M0.649902 0.649994L4.32444 4.35454C4.75839 4.79204 4.75839 5.50795 4.32444 5.94545L0.649902 9.64999" stroke="white" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -17,9 +17,9 @@
                 <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
                     <path d="M0.649902 0.649994L4.32444 4.35454C4.75839 4.79204 4.75839 5.50795 4.32444 5.94545L0.649902 9.64999" stroke="white" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span>
+                <a href="https://knowledgeplatform.searca.org/insights/" class="cursor-pointer">
                     Insights
-                </span>
+                </a >
                 <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
                     <path d="M0.649902 0.649994L4.32444 4.35454C4.75839 4.79204 4.75839 5.50795 4.32444 5.94545L0.649902 9.64999" stroke="white" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -47,7 +47,7 @@
                 <div class="flex flex-col md:flex-row justify-between gap-[20px]">
                     <?php while (have_rows('figures_repeater')) : the_row(); ?>
                         <div class="flex flex-col border-[1px] border-[#D3D3D3] rounded-2xl p-[20px]">
-                            <div class="flex gap-[5px] items-center text-display-42 font-bold">
+                            <div class="flex gap-[5px] items-center text-display-24 md:text-display-42 font-bold">
                                 <?php if (get_sub_field('figure')) : ?>
                                     <h3><?php echo esc_html(get_sub_field('figure')); ?></h3>
                                 <?php endif; ?>
@@ -69,12 +69,12 @@
                 </div>
             <?php endif; ?>
         </div>
-        <div class="flex gap-[40px] items-center">
+        <div class="flex flex-col md:flex-row gap-[40px] items-start md:items-center">
             <?php if ( have_rows('author_group') ) : ?>
                 <div class="flex items-center gap-[5px]">
                     <?php  while ( have_rows('author_group') ) : the_row(); ?>
                         <?php if (get_sub_field('author_icon')) : ?>
-                            <img src="<?php echo esc_url(get_sub_field('author_icon')); ?>" alt="hero background" class="w-full h-full object-cover">
+                            <img src="<?php echo esc_url(get_sub_field('author_icon')); ?>" alt="hero background" class="w-[50px] h-[50px] object-cover">
                         <?php else : ?>
                             <div class="h-[50px] w-[50px] rounded-full bg-[#BE9D38]"></div>
                         <?php endif; ?>
@@ -88,7 +88,7 @@
                         </div>
                     <?php endwhile; ?>
                 </div>
-            <?php endif; ?>      
+            <?php endif; ?>        
             <?php if (get_field('date_from')) : ?>
                 <div class="flex gap-[10px] items-center">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

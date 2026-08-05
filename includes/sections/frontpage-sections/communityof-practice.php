@@ -4,8 +4,8 @@
 
 <div class="py-[50px] lg:py-[100px]">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="flex flex-col lg:flex-row justify-center pb-[50px]">
-            <div class="flex flex-col gap-[20px]">
+        <div class="flex flex-col gap-[20px] lg:flex-row justify-center pb-[50px]">
+            <div class="flex flex-col lg:gap-[20px]">
                 <?php if($page_id) : ?>
                     <?php if (get_field("image_cards_container_title", $page_id)) : ?>
                         <div class="font-bold">

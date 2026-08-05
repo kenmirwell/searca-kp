@@ -6,7 +6,7 @@
                 <span class="text-[12px]">In Summary</span>
             </div>
             <div>
-                <p>Achieving food security is no longer simply about producing more food it is about building agrifood systems that nourish people, sustain the planet, and create resilient rural economies across Southeast Asia and beyond.</p>
+                <p class="text-display-14 md:text-display-16">Achieving food security is no longer simply about producing more food it is about building agrifood systems that nourish people, sustain the planet, and create resilient rural economies across Southeast Asia and beyond.</p>
             </div>
         </div>
         <img class="absolute w-full h-full object-cover top-0 z-0 left-0" src="https://knowledgeplatform.searca.org/wp-content/uploads/2026/07/Frame-2147231092-1.png" alt="hero image">

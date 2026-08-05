@@ -1,6 +1,6 @@
-<div class="w-[80%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[80px]">
-  <div class="flex justify-between gap-[60px]">
-    <div class="w-[70%]">
+<div class="w-[80%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto py-[40px] md:py-[80px]">
+  <div class="flex flex-col lg:flex-row justify-between gap-[60px]">
+    <div class="w-[100%] lg:w-[70%]">
       <div class="flow-root pb-[40px]">
         <?php if (get_field('initial')) : ?>
             <p class="font-bold text-display-42 float-left pr-3">
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="w-[30%]">
+    <div class="w-[100%] lg:w-[30%]">
       <?php
         $current_id = get_the_ID();
         $related_ids = [];
@@ -71,13 +71,21 @@
           <h3 class="font-bold text-display-24">More News</h3>
 
           <?php foreach ($related_ids as $post_id) :
-              $permalink = get_permalink($post_id);
-              $title     = get_the_title($post_id);
-              $date      = get_the_date('M j, Y', $post_id);
+                $permalink = get_permalink($post_id);
+                $title     = get_the_title($post_id);
+                $date_from_raw = get_field('date_from', $post_id);
+                $date = '';
 
-              $content    = get_post_field('post_content', $post_id);
-              $word_count = str_word_count(wp_strip_all_tags($content));
-              $read_mins  = max(1, ceil($word_count / 200));
+                if ($date_from_raw) {
+                    $date_obj = DateTime::createFromFormat('d/m/Y', $date_from_raw);
+                    if ($date_obj) {
+                        $date = $date_obj->format('M j, Y');
+                    }
+                }
+
+                $content    = get_post_field('post_content', $post_id);
+                $word_count = str_word_count(wp_strip_all_tags($content));
+                $read_mins  = max(1, ceil($word_count / 200));
           ?>
 
               <div class="flex flex-col gap-[8px] pb-[16px] border-b border-[#E5E5E5] last:border-b-0">

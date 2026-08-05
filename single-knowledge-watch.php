@@ -28,8 +28,8 @@ while (have_posts()) {
 
     <div class="pt-[30px] md:pt-[70px]">
         <?php get_template_part("includes/sections/single-knowledge-watch-sections/hero"); ?>
-        <div class="relative flex justify-between sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto gap-[100px]">
-            <div class="w-[80%] mb-[100px] pt-[40px]">
+        <div class="relative flex justify-between w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto gap-[100px]">
+            <div class="w-[100%] lg:w-[80%] mb-[100px] pt-[40px]">
                 <div class="">
                     <?php if (have_rows('flexicon_section_repeater')) : ?>
                         <div class="flex flex-col justify-between gap-[20px]">
@@ -50,7 +50,7 @@ while (have_posts()) {
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="w-[20%] sticky h-fit top-0 pt-[40px] pb-[40px]">
+            <div class="hidden lg:block w-[20%] sticky h-fit top-0 pt-[40px] pb-[40px]">
                 <?php get_template_part("includes/sections/single-knowledge-watch-sections/right-side-bar"); ?>
             </div>
         </div>

@@ -6,7 +6,7 @@ while (have_posts()) {
 ?>
     <div class="pt-[30px] md:pt-[70px]">
         <?php get_template_part("includes/sections/single-insight-sections/hero"); ?>
-        <div class="relative flex justify-between sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto gap-[100px]">
+        <div class="relative flex justify-between w-[90%] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto gap-[100px]">
             <div class="w-[100%] lg:w-[80%] mb-[100px] pt-[40px]">
                 <div>
                     <div id="key-policy-messages">

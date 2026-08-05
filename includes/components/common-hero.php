@@ -15,15 +15,17 @@
                     <?php endwhile; ?>
                 <?php endif; ?> 
             </div>
-            <div class="flex">
-                <?php
-                    button_template('common-button', array(
-                        'title' => get_field('button_name'),
-                        'url' => get_field('button_link'),
-                        'color' => 'gold_to_white'
-                    ))
-                ?>
-            </div>
+            <?php if(get_field('button_name')) : ?>
+                <div class="flex">
+                    <?php
+                        button_template('common-button', array(
+                            'title' => get_field('button_name'),
+                            'url' => get_field('button_link'),
+                            'color' => 'gold_to_white'
+                        ))
+                    ?>
+                </div>
+            <?php endif; ?>
         </div>
         <div class="image-element-container hidden md:flex relative w-[100%] opacity-[0]">
             <img class="w-full z-[0]" src="<?php echo esc_url(get_field("featured_image")); ?>" alt="<?php the_title(); ?>">

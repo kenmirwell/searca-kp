@@ -9,7 +9,7 @@
                                 <?php while (have_rows('flexicon_repeater')) : the_row(); ?>
                                      <?php if (get_sub_field('section_class_name') === 'green-number-bullet') : ?>
                                         <?php if (have_rows('insights_flexicon')): ?>
-                                            <div class="bg-[#EBF2EC] rounded-2xl border-[1px] border-[#D3DBD5] pl-[40px] pr-[80px] py-[40px]">
+                                            <div class="bg-[#EBF2EC] rounded-2xl border-[1px] border-[#D3DBD5] pl-[10px] md:pl-[40px] pr-[10px] md:pr-[80px] py-[40px]">
                                                 <?php while (have_rows('insights_flexicon')): the_row(); 
                                                     $layout = get_row_layout();
                                                 ?>
@@ -25,8 +25,8 @@
                                                             <div class="flex flex-col gap-[20px]">
                                                                 <?php while (have_rows('bulleted_repeater')) : the_row(); ?>
                                                                     <div class="flex flex-col gap-[5px] pb-[20px] border-b-[0.1px] border-b-[#000000]">
-                                                                        <div class="flex gap-[10px] items-center">
-                                                                            <div>
+                                                                        <div class="flex gap-[10px] items-start">
+                                                                            <div class="pt-[5px]">
                                                                                 <?php if (get_sub_field('icon')) : ?>
                                                                                     <img src="<?php echo esc_url(get_sub_field('icon')); ?>" alt="hero background" class="w-full h-full object-cover">
                                                                                 <?php endif; ?>
@@ -44,7 +44,7 @@
                                                                             <?php while (have_rows('description_repeater')) : the_row(); ?>
                                                                                 <div class="pl-[40px]">
                                                                                     <?php if (get_sub_field('description')) : ?>
-                                                                                    <p class="font-light"><?php echo esc_html(get_sub_field('description')); ?></p>
+                                                                                    <p class="font-light text-display-14 md:text-display-16"><?php echo esc_html(get_sub_field('description')); ?></p>
                                                                                 <?php endif; ?>
                                                                                 </div>
                                                                             <?php endwhile; ?>

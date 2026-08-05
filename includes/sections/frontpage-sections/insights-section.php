@@ -1,7 +1,7 @@
 <div class="relative w-full rounded-t-3xl py-[80px] overflow-hidden">
   <div class="relative w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto z-[2]">
     <div>
-      <div class="flex flex-col gap-[20px] w-[100%] lg:w-[80%] lg:w-[1024px] xl:w-[1280px] mx-auto">
+      <div class="flex flex-col gap-[20px]">
         <div class="flex justify-between">
           <div class="flex flex-col gap-[20px] w-[100%] md:w-[60%] text-white">
             <div class="flex flex-col gap-[20px] pb-[20px]">
@@ -9,18 +9,18 @@
                 <p class="text-display-14 font-light">A monthly digest highlighting relevant policies, strategic initiatives, and key documents shaping the agriculture, forestry, and natural resources sector.</p>
             </div>
             <div class="">
-              <h2 class="text-display-32 font-semibold">Beyond Ending Hunger: What the State of Food Security and Nutrition in the World 2026 Means for Southeast Asia</h2>
+              <h2 class="text-display-24 md:text-display-32 font-semibold">Beyond Ending Hunger: What the State of Food Security and Nutrition in the World 2026 Means for Southeast Asia</h2>
             </div>
-            <div class="flex md:hidden flex-col gap-[20px]">
-              <div class="p-[10px] flex gap-[20px] bg-white/30 backdrop-blur-md rounded-xl w-[300px] h-[60px]">
+            <div class="flex lg:hidden flex-col gap-[20px]">
+              <div class="p-[10px] flex gap-[10px] bg-white/30 backdrop-blur-md rounded-xl w-[300px] h-[60px]">
                 <p class="text-display-14 text-[#F4C944] font-bold">14%</p>
                 <p class="text-display-14 text-white">SEAsian population are food insecure</p>
               </div>
-              <div class="p-[10px] flex gap-[20px] bg-white/30 backdrop-blur-md rounded-xl w-[300px] h-[60px]">
+              <div class="p-[10px] flex gap-[10px] bg-white/30 backdrop-blur-md rounded-xl w-[300px] h-[60px]">
                 <p class="text-display-14 text-[#F4C944] font-bold">228M+</p>
                 <p class="text-display-14 text-white">cannot afford a healthy diet</p>
               </div>
-              <div class="p-[10px] flex gap-[20px] bg-white/30 backdrop-blur-md rounded-xl w-[300px] h-[60px]">
+              <div class="p-[10px] flex gap-[10px] bg-white/30 backdrop-blur-md rounded-xl w-[300px] h-[60px]">
                 <p class="text-display-14 text-[#F4C944] font-bold">40%</p>
                 <p class="text-display-14 text-white">of the world's undernourished people are Southeast Asians</p>
               </div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
           </div>
-          <div class="hidden md:flex flex-col gap-[20px]">
+          <div class="hidden lg:flex flex-col gap-[20px]">
             <div class="p-[20px] flex flex-col gap-[20px] bg-white/30 backdrop-blur-md rounded-2xl w-[300px]">
               <p class="text-[#F4C944] font-bold">14%</p>
               <p class="text-white">SEAsian population are food insecure</p>

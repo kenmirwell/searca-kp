@@ -6,12 +6,12 @@
         <?php if (have_rows('inner_section_repeater')) : ?>
           <div class="flex flex-col">
             <?php while (have_rows('inner_section_repeater')) : the_row(); ?>
-              <div class="pb-[40px]">
+              <div class="pb-[20px] md:pb-[40px]">
                 <?php while (have_rows('flexicon')): the_row(); 
                     $layout = get_row_layout();
                 ?>
                   <?php if ($layout === 'title_layout') : ?>
-                    <h3 class="font-bold text-display-32">
+                    <h3 class="font-bold text-display-24 md:text-display-32">
                       <?php echo esc_html(get_sub_field('title')); ?>
                     </h3>
                   <?php endif; ?>
@@ -27,14 +27,14 @@
                       <?php endif; ?>
                       
                       <?php if (get_sub_field('bullet')) : ?>
-                          <div class="flex justify-center items-center w-[30px] h-[30px] bg-[#BE9D38] rounded-full">
+                          <div class="flex justify-center items-center min-w-[30px] w-[30px] h-[30px] bg-[#BE9D38] rounded-full">
                               <span class="text-[#ffffff]"><?php echo esc_html(get_sub_field('bullet')); ?></span>
                           </div>
                       <?php endif; ?>
 
                       <?php if (get_sub_field('text')) : ?>
                           <div class="">
-                              <h4 class="text-display-24 font-bold"><?php echo esc_html(get_sub_field('text')); ?></h4>
+                              <h4 class="text-display-18 md:text-display-24 font-bold"><?php echo esc_html(get_sub_field('text')); ?></h4>
                           </div>
                       <?php endif; ?>
                     </div>
@@ -53,7 +53,7 @@
                   <?php if ($layout === 'image_layout') : ?>
                       <div class="rounded-2xl overflow-hidden">
                           <?php if (get_sub_field('image')) : ?>
-                              <img src="<?php echo esc_url(get_sub_field('image')); ?>" alt="image" class="w-full h-[475px] object-cover">
+                              <img src="<?php echo esc_url(get_sub_field('image')); ?>" alt="image" class="w-full h-[200px] md:h-[475px] object-cover">
                           <?php endif; ?>
                       </div>
                   <?php endif; ?>

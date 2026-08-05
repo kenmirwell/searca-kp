@@ -8,8 +8,8 @@
                             <?php while (have_rows('flexicon_repeater')) : the_row(); ?>
                                 <?php if (get_sub_field('section_class_name') === 'initialed-paragraph') : ?>
                                     <?php if (have_rows('insights_flexicon')): ?>
-                                        <div class="py-[40px]">
-                                            <div class="flow-root pb-[40px]">
+                                        <div class="py-[20px] md:py-[40px]">
+                                            <div class="flow-root pb-[20px] md:pb-[40px]">
                                                 <?php while (have_rows('insights_flexicon')): the_row();
                                                     $layout = get_row_layout();
                                                 ?>
@@ -23,7 +23,7 @@
 
                                                     <?php if ($layout === 'initial_layout') : ?>
                                                         <?php if (get_sub_field('initial')) : ?>
-                                                            <p class="font-bold text-display-42 float-left pr-3">
+                                                            <p class="font-bold text-display-32 md:text-display-42 float-left pr-3">
                                                                 <?php echo esc_html(get_sub_field('initial')); ?>
                                                             </p>
                                                         <?php endif; ?>
@@ -31,7 +31,7 @@
 
                                                     <?php if ($layout === 'wysiwyg_layout') : ?>
                                                         <?php if (get_sub_field('wysiwyg')) : ?>
-                                                            <div class="[&_p]:mb-4 font-light">
+                                                            <div class="[&_p]:mb-4 font-light text-display-14 md:text-display-16">
                                                                 <?php echo wp_kses_post(get_sub_field('wysiwyg')); ?>
                                                             </div>
                                                         <?php endif; ?>
@@ -45,7 +45,7 @@
                                                     <?php if ($layout === 'image_layout') : ?>
                                                         <div class="rounded-2xl overflow-hidden">
                                                             <?php if (get_sub_field('image')) : ?>
-                                                                <img src="<?php echo esc_url(get_sub_field('image')); ?>" alt="image" class="w-full h-[475px] object-cover">
+                                                                <img src="<?php echo esc_url(get_sub_field('image')); ?>" alt="image" class="w-full h-[200] md:h-[475px] object-cover">
                                                             <?php endif; ?>
                                                         </div>
                                                     <?php endif; ?>

@@ -10,7 +10,7 @@
                     $layout = get_row_layout();
                 ?>
                   <?php if ($layout === 'title_layout') : ?>
-                    <h3 class="font-bold text-display-32">
+                    <h3 class="font-bold text-display-24 md:text-display-32">
                       <?php echo esc_html(get_sub_field('title')); ?>
                     </h3>
                   <?php endif; ?>
@@ -34,7 +34,7 @@
       <!-- Bulleted -->
       <?php if (get_sub_field('class_name') === 'bullet-group') : ?>
         <?php if (have_rows('inner_section_repeater')) : ?>
-          <div class="grid grid-cols-2 md:grid-cols-1 gap-[20px] w-full items-start">
+          <div class="gap-[20px] w-full items-start">
             <?php while (have_rows('inner_section_repeater')) : the_row(); ?>
               <div class="">
                 <?php while (have_rows('flexicon')): the_row(); 
@@ -59,7 +59,7 @@
                       <div class="flex flex-col gap-[10px]">
                         <?php if (get_sub_field('text')) : ?>
                             <div class="">
-                                <h4 class="text-display-24 font-bold"><?php echo esc_html(get_sub_field('text')); ?></h4>
+                                <h4 class="text-display-18 md:text-display-24 font-bold"><?php echo esc_html(get_sub_field('text')); ?></h4>
                             </div>
                         <?php endif; ?>
 
@@ -81,7 +81,7 @@
 
       <?php if (get_sub_field('class_name') === 'simple-text') : ?>
         <?php if (have_rows('inner_section_repeater')) : ?>
-          <div class="grid grid-cols-2 md:grid-cols-1 gap-[20px] w-full items-start">
+          <div class=" gap-[20px] w-full items-start">
             <?php while (have_rows('inner_section_repeater')) : the_row(); ?>
               <div class="">
                 <?php while (have_rows('flexicon')): the_row(); 

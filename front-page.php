@@ -14,7 +14,7 @@
         set_query_var('root_url', $root_url);
         set_query_var('cadre_in_action_banner', $cadre_in_action_banner);
 ?>
-    <div class="pt-[30px] md:pt-[70px]">
+    <div class="pt-[30px] sm:pt-[70px]">
         <?php get_template_part("includes/sections/frontpage-sections/hero-section"); ?>
     </div>
     <?php get_template_part("includes/sections/frontpage-sections/our-platform-essentials");?>
@@ -22,7 +22,12 @@
     <?php get_template_part("includes/sections/frontpage-sections/news-section"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/insights-section"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/country-profile");?>
-    <?php get_template_part("includes/sections/frontpage-sections/events-section"); ?>
+    <div class="hidden lg:block">
+        <?php get_template_part("includes/sections/frontpage-sections/events-section-desktop"); ?>
+    </div>
+    <div class="block lg:hidden">
+        <?php get_template_part("includes/sections/frontpage-sections/events-section-mobile"); ?>
+    </div>
     <?php get_template_part("includes/sections/frontpage-sections/knowledge-resources"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/capri-section"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/communityof-practice"); ?> 

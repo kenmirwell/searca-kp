@@ -11,7 +11,7 @@
     ?>
 
     <?php get_template_part("includes/components/common-hero"); ?>
-    <?php get_template_part("includes/sections/resources-sections/resources-card-trio"); ?>
+    <?php get_template_part("includes/components/common-hero"); ?>
     <?php get_template_part("includes/sections/resources-sections/resources-publications"); ?>
 <?php 
     }

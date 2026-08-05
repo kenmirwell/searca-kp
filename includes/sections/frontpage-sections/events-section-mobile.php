@@ -1,5 +1,9 @@
 <div class="py-[30px] md:py-[50px] relative">
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto z-[1] relative">
+        <div class="flex flex-col gap-[20px] pb-[60px] items-center">
+            <h2 class="font-semibold text-display-42">Upcoming Events</h2>
+            <p>Explore the three main pillars that power evidence-based agricultural policy and innovation.</p>
+        </div>
         <div class="">
             <div class="flex flex-col md:flex-row gap-[40px]">
                 <?php 
@@ -13,7 +17,6 @@
                     <?php while ($event->have_posts()) : ?>
                         <?php
                             $event->the_post();
-                            $link  = get_permalink();
                             $event_index = (int) $event->current_post;
                             $event_location = get_field("event_location");
                             $event_schedule =  get_field("event_schedule");
@@ -57,7 +60,7 @@
                                           <path d="M8.29529 13.7002H8.30427" stroke="#096936" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                           <path d="M8.29688 16.7002H8.30586" stroke="#096936" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                       </svg>
-                                      <div class="flex flex-col lg:flex-row lg:gap-[5px] text-display-16 text-[#096936]">
+                                      <div class="flex gap-[5px] text-display-16 text-[#096936]">
                                           <?php if ($date_range) : ?>
                                               <span><?php echo esc_html($date_range); ?></span>
                                           <?php endif; ?>
@@ -95,12 +98,12 @@
 
                                   <div class="flex">
                                       <?php
-                                            button_template('common-button', array(
-                                                'title' => "View Event",
-                                                'url' => $link,
-                                                'color' => 'green_to_gold'
-                                            ));
-                                        ?>
+                                          button_template('common-button', array(
+                                              'title' => "Register Now",
+                                              'url' => "/agricultural-digital-tools",
+                                              'color' => 'green_to_gold'
+                                          ))
+                                      ?>
                                   </div>
                               </div>
                             </div>

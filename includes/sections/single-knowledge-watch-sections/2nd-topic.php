@@ -5,12 +5,12 @@
         <?php if (have_rows('inner_section_repeater')) : ?>
           <div class="flex flex-col">
             <?php while (have_rows('inner_section_repeater')) : the_row(); ?>
-              <div class="pb-[40px]">
+              <div class="pb-[20px] md:pb-[40px]">
                 <?php while (have_rows('flexicon')): the_row(); 
                     $layout = get_row_layout();
                 ?>
                   <?php if ($layout === 'title_layout') : ?>
-                    <h3 class="font-bold text-display-32">
+                    <h3 class="font-bold text-display-24 md:text-display-32">
                       <?php echo esc_html(get_sub_field('title')); ?>
                     </h3>
                   <?php endif; ?>
