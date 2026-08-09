@@ -2,7 +2,7 @@
     <div class="w-[90%] lg:w-[1024px] xl:w-[1280px] mx-auto">
         <div class="simple-header flex flex-col gap-[5px] items-baseline text-center w-[100%] mx-auto pb-[20px] md:pb-[40px]">
             <div class="flex flex-col items-center justify-center text-center w-[100%]">
-                <h6 class="text-display-24 md:text-display-42 text-[#1f1f1f] pb-[10px] font-bold">Our Platform Essentials</h6>
+                <h6 class="text-display-24 md:text-display-42 text-[#1f1f1f] pb-[10px] font-semibold">Our Platform Essentials</h6>
                 <p class="text-display-12 md:text-display-16">Explore the three main pillars that power evidence-based agricultural policy and innovation.</p>
             </div>
         </div>
@@ -18,7 +18,7 @@
                         $image = get_sub_field('component_image');
                     ?>
 
-                        <div class="flex flex-col items-center gap-[20px]">
+                        <div class="flex flex-col gap-[20px]">
                             <div class="component-item-element block w-[100%] h-[355px] rounded-[20px] group w-full md:w-[250px] xl:w-[400px] rounded-3xl overflow-hidden border-[1px] border-[#CFCFCF]">
                                 <div class="relative w-full h-[175px]">
                                     <img class="absolute w-full h-full object-cover scale-[1] group-hover:scale-[1.1] transition-all duration-700 ease" 

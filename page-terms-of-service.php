@@ -11,8 +11,8 @@
         <div class="pb-[20px]">
             <h1 class="text-display-48 font-bold"><?php the_title(); ?></h1>
         </div>
-        <?php if (have_rows('contact_reasons_repeater')): ?>
-            <?php while (have_rows('contact_reasons_repeater')): the_row(); ?>
+        <?php if (have_rows('text_repeater')): ?>
+            <?php while (have_rows('text_repeater')): the_row(); ?>
                 <?php 
                     $title = get_sub_field('title');    
                     $content = get_sub_field('content');

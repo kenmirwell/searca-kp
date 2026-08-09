@@ -2,7 +2,7 @@
   <div class="w-[90%] lg:w-[1024px] xl:w-fit mt-[-60px] md:mt-[-100px] py-[20px] md:py-[50px] px-[20px] md:px-[40px] mx-auto rounded-3xl shadow bg-white">
       <div class="flex flex-col gap-[20px] md:flex-row justify-between  md:items-center">
         <div class="flex flex-col gap-[10px]">
-          <h2 class="text-display-24 md:text-display-32">Stay Informed</h2>
+          <h2 class="text-display-24 md:text-display-32 font-semibold">Stay Informed</h2>
           <p>Explore the latest news, research highlights, policy developments.</p>
         </div>
         <a href="<?php echo esc_url(get_sub_field('button_link')); ?>" class="group cursor-pointer w-fit">
@@ -38,7 +38,7 @@
                           $link    = get_permalink();
 
                           // ACF custom fields (adjust field names to match your ACF setup)
-                          $date      = get_field('date');
+                          $date      = get_field('published_date');
                           $thumbnail = get_field('thumbnail'); // ACF Image field
                       ?>
 
@@ -58,9 +58,9 @@
                                   
                                   <div class="flex flex-col gap-[20px]">
                                     <div class="flex justify-between">
-                                      <p>Policy News</p>
+                                      <p class="text-[#343434] font-normal text-display-14">Policy News</p>
                                       <?php if ($date) : ?>
-                                        <p><?php echo esc_html($date); ?></p>
+                                        <p class="text-[#343434] font-normal text-display-14"><?php echo esc_html($date); ?></p>
                                       <?php endif; ?>
                                     </div>
 
@@ -69,7 +69,7 @@
                                         $short_title = mb_strimwidth($title, 0, 40, '...'); // multibyte-safe truncation
                                     ?>
 
-                                    <h3 class="">
+                                    <h3 class=" font-semibold">
                                         <span class="hidden md:block xl:hidden"><?php echo esc_html($short_title); ?></span>
                                         <span class="inline md:hidden xl:inline"><?php echo esc_html($full_title); ?></span>
                                     </h3>

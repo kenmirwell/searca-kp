@@ -152,6 +152,91 @@
     
     add_filter('script_loader_tag', 'add_module_attribute', 10, 3);
     
+
+
+    // duplicate
+    function custom_duplicate_post_link($actions, $post) {
+
+        if (current_user_can('edit_posts')) {
+            $actions['duplicate'] = sprintf(
+                '<a href="%s">Duplicate</a>',
+                wp_nonce_url(
+                    admin_url('admin.php?action=duplicate_post&post=' . $post->ID),
+                    'duplicate_post_' . $post->ID
+                )
+            );
+        }
+
+        return $actions;
+    }
+
+    add_filter('post_row_actions', 'custom_duplicate_post_link', 10, 2);
+    add_filter('page_row_actions', 'custom_duplicate_post_link', 10, 2);
+
+    function custom_duplicate_post() {
+
+    if (
+        empty($_GET['post']) ||
+        !isset($_GET['_wpnonce']) ||
+        !wp_verify_nonce($_GET['_wpnonce'], 'duplicate_post_' . $_GET['post'])
+    ) {
+        wp_die('Invalid request.');
+    }
+
+    $post_id = absint($_GET['post']);
+    $post = get_post($post_id);
+
+    if (!$post) {
+        wp_die('Post not found.');
+    }
+
+    $new_post = array(
+        'post_title'   => $post->post_title . ' (Copy)',
+        'post_content' => $post->post_content,
+        'post_excerpt' => $post->post_excerpt,
+        'post_status'  => 'draft',
+        'post_type'    => $post->post_type,
+        'post_author'  => get_current_user_id(),
+        'menu_order'   => $post->menu_order,
+    );
+
+    $new_post_id = wp_insert_post($new_post);
+
+    // Copy all post meta (including ACF)
+    $meta = get_post_meta($post_id);
+
+    foreach ($meta as $key => $values) {
+        foreach ($values as $value) {
+            add_post_meta(
+                $new_post_id,
+                $key,
+                maybe_unserialize($value)
+            );
+        }
+    }
+
+    // Copy featured image
+    set_post_thumbnail(
+        $new_post_id,
+        get_post_thumbnail_id($post_id)
+    );
+
+    // Copy taxonomies
+    $taxonomies = get_object_taxonomies($post->post_type);
+
+    foreach ($taxonomies as $taxonomy) {
+        $terms = wp_get_object_terms($post_id, $taxonomy, array(
+            'fields' => 'ids'
+        ));
+
+        wp_set_object_terms($new_post_id, $terms, $taxonomy);
+    }
+
+        wp_redirect(admin_url('post.php?action=edit&post=' . $new_post_id));
+        exit;
+    }
+
+    add_action('admin_action_duplicate_post', 'custom_duplicate_post');
     
 
 

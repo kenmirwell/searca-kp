@@ -1,6 +1,6 @@
 <div class="relative pt-[80px]">
     <div class="w-[90%] mb-[50px] md:mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="bread-crumb-container bg-[#008C67] rounded-full p-[10px] w-fit mb-[20px] md:mb-[50px] min-w-fit max-w-full">
+        <div class="bread-crumb-container bg-[#008C67] rounded-full p-[10px] w-fit mb-[20px] md:mb-[30px] min-w-fit max-w-full">
             <div class="flex text-white justify-center gap-[10px] items-center text-[14px] font-light">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
                     <rect width="12" height="12" rx="6" fill="#B59637" fill-opacity="0.6"/>
@@ -32,7 +32,7 @@
         </div>
         <div class="flex flex-col gap-[20px] w-[100%] md:w-[80%] pb-[40px]">
             <div>
-                <h1 class="text-display-24 md:text-display-32 font-semibold"><?php the_title()?></h1>
+                <h1 class="text-display-24 md:text-display-42 font-semibold"><?php the_title()?></h1>
             </div>
             <?php if (have_rows('description_repeater')) : ?>
                 <?php while (have_rows('description_repeater')) : the_row(); ?>
@@ -49,7 +49,7 @@
                         <?php if (get_sub_field('author_icon')) : ?>
                             <img src="<?php echo esc_url(get_sub_field('author_icon')); ?>" alt="hero background" class="w-[50px] h-[50px] object-cover">
                         <?php else : ?>
-                            <div class="h-[50px] w-[50px] rounded-full bg-[#BE9D38]"></div>
+                            <div class="h-[36px] w-[36px] rounded-full bg-[#BE9D38]"></div>
                         <?php endif; ?>
                         <div class="text-display-14">
                             <?php if (get_sub_field('author_name')) : ?>

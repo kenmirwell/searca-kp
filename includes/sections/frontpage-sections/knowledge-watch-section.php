@@ -18,9 +18,9 @@
 
 #knowledge-watch-swiper .swiper-button-prev,
 #knowledge-watch-swiper .swiper-button-next {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.2);
     border: 1.5px solid #E5E5E5;
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -59,8 +59,8 @@
 #knowledge-watch-swiper .swiper-button-prev::before,
 #knowledge-watch-swiper .swiper-button-next::before {
     content: '';
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-right: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     display: block;
@@ -119,7 +119,7 @@ if ($kw_swiper_query->have_posts()) :
                     <div class="absolute inset-0 bg-black/40 z-[1]"></div>
                 <?php endif; ?>
 
-                <div class="relative z-[2] h-full flex justify-center items-center text-white  mt-[-50px] md:mt-[-100px]">
+                <div class="relative z-[2] h-full flex justify-center items-center text-white ">
                     <div class="flex flex-col gap-[20px] w-[80%] xl:w-[1280px] mx-auto">
                         <div class="w-[100%] xl:w-[50%] flex flex-col gap-[20px]">
                             <h6 class="text-display-14 font-semibold">KNOWLEDGE WATCH</h6>
@@ -131,7 +131,7 @@ if ($kw_swiper_query->have_posts()) :
                             </h2>
                         </div>
                         <div class="w-[100%] xl:w-[60%] flex flex-col gap-[20px]">
-                            <div class="w-[200px] h-[1px] bg-[#ffffff]"></div>
+                            <div class="w-[200px] h-[0.5px] bg-[#ffffff] border-black/20"></div>
                             <?php 
                                 $slide_content = get_the_content();
                             ?>

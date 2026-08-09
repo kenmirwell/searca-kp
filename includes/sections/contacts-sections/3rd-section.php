@@ -1,0 +1,3 @@
+<div class="w-full aspect-video rounded-lg overflow-hidden shadow h-[500px]">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15474.356948918472!2d121.2590813!3d14.1602302!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd60b5fc1817d9%3A0xefc959d751e59daa!2sSEARCA!5e0!3m2!1sen!2sph!4v1786290431360!5m2!1sen!2sph" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>

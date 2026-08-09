@@ -1,13 +1,8 @@
 <style>
 #event-swiper {
     width: 100%;
-    height: 350px; /* adjust to taste */
-    /* border-radius: 1.5rem; */
+    height: 350px;
     overflow: hidden;
-}
-
-@media  {
-  
 }
 
 #event-swiper .swiper-slide {
@@ -28,7 +23,29 @@
 
 #event-swiper .swiper-pagination-bullet-active {
     opacity: 1;
-    background: #2196f3; /* matches the blue active dot in your reference */
+    background: #2196f3;
+}
+
+#event-swiper .swiper-button-next {
+    width: 44px;
+    height: 44px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    padding: 12px;
+}
+
+#event-swiper .swiper-button-next:hover {
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#event-swiper .swiper-button-next::after {
+    content: '';
 }
 </style>
 
@@ -58,7 +75,7 @@ if ($event_query->have_posts()) : ?>
                             $content    = get_the_content();
                             $location   = get_field('event_location');
                             $link       = get_permalink();
-                            $thumbnail  = get_field('event_thumbnail'); // ACF Image field (returns URL string)
+                            $thumbnail  = get_field('event_thumbnail');
                             $event_schedule = get_field('event_schedule');
 
                             $start_time = $event_schedule['event_start_time'] ?? '';
@@ -66,6 +83,7 @@ if ($event_query->have_posts()) : ?>
                             $date_from = $event_schedule['event_date_from'] ?? '';
                             $date_to   = $event_schedule['event_date_to'] ?? '';
 
+                            $formatted_range = '';
                             if ($date_from && $date_to) {
                                 $from = DateTime::createFromFormat('F j, Y', $date_from);
                                 $to   = DateTime::createFromFormat('F j, Y', $date_to);
@@ -90,7 +108,7 @@ if ($event_query->have_posts()) : ?>
                                     <?php endif; ?>
 
                                     <div class="flex flex-col justify-center w-[60%]">
-                                        <div class="flex flex-col gap-[10px] p-[20px]">
+                                        <div class="flex flex-col gap-[10px] pl-[40px] pr-[20px] py-[20px] ">
                                             <div class="flex gap-[20px] items-center">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M8 2V5" stroke="#008C67" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -152,6 +170,11 @@ if ($event_query->have_posts()) : ?>
                 </div>
 
                 <div class="swiper-pagination"></div>
+                <div class="swiper-button-next">
+                    <svg width="14" height="10" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 7H17M11 13L17 7L11 1" stroke="#B59637" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </div>
@@ -163,16 +186,19 @@ if ($event_query->have_posts()) : ?>
 wp_reset_postdata();
 ?>
 
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var eventSwiper = new Swiper('#event-swiper', {
-        slidesPerView: 1.1,   // shows 1 full slide + a 10% peek of the next
-        spaceBetween: 12,     // small gap between the main slide and the peeking one
+        loop: true,
+        slidesPerView: 1.1,
+        spaceBetween: 12,
         centeredSlides: false,
         pagination: {
             el: '#event-swiper .swiper-pagination',
             clickable: true,
+        },
+        navigation: {
+            nextEl: '#event-swiper .swiper-button-next',
         },
     });
 });
