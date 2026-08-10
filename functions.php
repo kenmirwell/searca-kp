@@ -64,8 +64,9 @@
     //custm title
     include(get_stylesheet_directory() . '/includes/functions/title-function.php');
 
+    //register blocks
+    require_once get_template_directory() . '/includes/register-block-functions/bulleted-text-group.php';
 
-    require_once get_template_directory() . '/includes/register-block-functions/bulleted-texts.php';
 
     add_action('init', 'theme_set_options');
 
