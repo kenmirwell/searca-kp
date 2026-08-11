@@ -13,10 +13,6 @@
         </div>
         <?php if (have_rows('contact_reasons_repeater')): ?>
             <?php while (have_rows('contact_reasons_repeater')): the_row(); ?>
-                <?php 
-                    $title = get_sub_field('title');    
-                    $content = get_sub_field('content');
-                ?>
                 <div class="pb-[30px]">
                     <h6 class="text-display-24 pb-[20px] font-bold"><?php echo $title ?></h6>
                     <div class="flex flex-col gap-[10px]">
