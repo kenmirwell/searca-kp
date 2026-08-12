@@ -29,8 +29,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Raleway", sans-serif;
 }
 
+
 p, span {
     font-family: "Inter-Display", sans-serif;
+}
+
+strong {
+    font-weight: 500 !important ;
 }
 
 #cadre-footer-text {

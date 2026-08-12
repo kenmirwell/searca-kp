@@ -20,4 +20,15 @@
             ]);
         }
     });
+
+    add_action('enqueue_block_editor_assets', function() {
+        echo '<style>
+            .wp-block-acf-bulleted-text-group {
+                background-color: #008C67;
+                border: 3px dashed #008C67;
+                padding: 16px;
+                border-radius: 8px;
+            }
+        </style>';
+    });
 ?>
