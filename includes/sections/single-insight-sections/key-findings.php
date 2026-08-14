@@ -10,19 +10,19 @@
     <div class="flex flex-wrap gap-[20px] pb-[20px]">
         <div class="rounded-xl p-[30px] bg-[#008C67] w-[300px] text-white">
             <p class="text-display-24 md:text-display-42">14%</p>
-            <p class="font-light text-display-14 md:text-display-16">of Southeast Asia's population continues to experience food insecurity, despite sustained economic growth and improvements in agricultural productivity (FAO 2025).</p>
+            <p class="font-light text-display-14 md:text-display-16">of Southeast Asia's population continues to experience food insecurity, despite sustained economic growth and improvements in agricultural productivity (FAO et al., 2026).</p>
         </div>
         <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[300px]">
-            <p class="text-display-24 md:text-display-42">228M</p>
-            <p class="font-light text-display-14 md:text-display-16">people across ASEAN, roughly one in every three residents, cannot afford a healthy diet, highlighting that food affordability has become one of the region's most pressing food security challenges (FAO 2025).</p>
+            <p class="text-display-24 md:text-display-42">325M </p>
+            <p class="font-light text-display-14 md:text-display-16">Southeast Asians could not afford a healthy diet in 2025, equivalent to nearly 50% of the subregion’s population (FAO et al., 2026).</p>
         </div>
         <div class="rounded-xl p-[30px] bg-[#008C67] w-[300px] text-white">
-            <p class="text-display-24 md:text-display-42">6.4%</p>
-            <p class="font-light text-display-14 md:text-display-16">The Asia-Pacific region reduced the prevalence of undernourishment to this figure in 2024, equivalent to approximately 25 million fewer hungry people than the previous year (FAO et al. 2025).</p>
+            <p class="text-display-24 md:text-display-42">US$4.75 PPP/day</p>
+            <p class="font-light text-display-14 md:text-display-16">The average cost of a healthy diet in Southeast Asia remains high, limiting access to nutritious diets for millions of people and highlighting affordability as a critical food-system challenge (FAO et al., 2026).</p>
         </div>
         <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[300px]">
-            <p class="text-display-24 md:text-display-42">~40%</p>
-            <p class="font-light text-display-14 md:text-display-16">The region still accounts for nearly this share of the world's undernourished population, indicating that progress remains uneven (FAO et al. 2025).</p>
+            <p class="text-display-24 md:text-display-42">5.1%</p>
+            <p class="font-light text-display-14 md:text-display-16">The prevalence of undernourishment in Southeast Asia declined to this figure in 2025, down from 5.6% in 2021, reflecting continued progress in reducing chronic hunger across the subregion (FAO et al., 2026).</p>
         </div>
         <div class="rounded-xl p-[30px] bg-[#008C67] w-[300px] text-white">
             <p class="text-display-24 md:text-display-42">3×</p>
