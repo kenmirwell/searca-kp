@@ -17,7 +17,7 @@
             <p class="font-light text-display-14 md:text-display-16">Southeast Asians could not afford a healthy diet in 2025, equivalent to nearly 50% of the subregion’s population (FAO et al., 2026).</p>
         </div>
         <div class="rounded-xl p-[30px] bg-[#008C67] w-[300px] text-white">
-            <p class="text-display-24 md:text-display-42">US$4.75 PPP/day</p>
+            <p class="text-display-24 md:text-display-42">US$5.19 PPP/day</p>
             <p class="font-light text-display-14 md:text-display-16">The average cost of a healthy diet in Southeast Asia remains high, limiting access to nutritious diets for millions of people and highlighting affordability as a critical food-system challenge (FAO et al., 2026).</p>
         </div>
         <div class="rounded-xl p-[30px] border-[1px] border-[#D3D3D3] w-[300px]">

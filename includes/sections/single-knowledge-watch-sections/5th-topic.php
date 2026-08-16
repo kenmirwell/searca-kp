@@ -44,8 +44,8 @@
                     <div class="flex gap-[20px] pb-[20px]">
                       <?php $icon = get_sub_field('icon'); ?>
                       <?php if ($icon) : ?>
-                          <div class="">
-                              <img src="<?php echo esc_url(is_array($icon) ? $icon['url'] : $icon); ?>"
+                          <div>
+                              <img class="w-[100px]" src="<?php echo esc_url(is_array($icon) ? $icon['url'] : $icon); ?>"
                                   alt="<?php echo esc_attr(is_array($icon) ? $icon['alt'] : ''); ?>">
                           </div>
                       <?php endif; ?>

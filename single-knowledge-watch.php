@@ -37,6 +37,7 @@ while (have_posts()) {
                                 <?php $section_id = get_sub_field('id'); ?>
                                 <div id="<?php echo esc_attr($section_id); ?>">
                                     <?php get_template_part("includes/sections/single-knowledge-watch-sections/introduction"); ?>
+                                    <?php get_template_part("includes/sections/single-knowledge-watch-sections/post-intro"); ?>
                                     <?php get_template_part("includes/sections/single-knowledge-watch-sections/1st-topic"); ?>
                                     <?php get_template_part("includes/sections/single-knowledge-watch-sections/2nd-topic"); ?>
                                     <?php get_template_part("includes/sections/single-knowledge-watch-sections/3rd-topic"); ?>

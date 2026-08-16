@@ -1516,6 +1516,10 @@ video {
   resize: both;
 }
 
+.list-inside {
+  list-style-position: inside;
+}
+
 .list-disc {
   list-style-type: disc;
 }
@@ -3845,6 +3849,10 @@ video {
     padding-top: 0px;
   }
 
+  .md\:pt-\[100px\] {
+    padding-top: 100px;
+  }
+
   .md\:pt-\[150px\] {
     padding-top: 150px;
   }
@@ -3859,10 +3867,6 @@ video {
 
   .md\:pt-\[70px\] {
     padding-top: 70px;
-  }
-
-  .md\:pt-\[100px\] {
-    padding-top: 100px;
   }
 
   .md\:text-\[12px\] {

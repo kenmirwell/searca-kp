@@ -16,12 +16,18 @@
                   <?php endif; ?>
 
                   <?php if ($layout === 'description_layout') : ?>
-                    <div class="flex flex-col gap-[20px] pt-[20px]"> 
-                      <?php while (have_rows('description_repeater')) : the_row(); ?>
-                        <?php if (get_sub_field('description')) : ?>
-                          <p><?php echo esc_html(get_sub_field('description')); ?></p>
-                        <?php endif; ?>
-                      <?php endwhile; ?>
+                    <div class="pt-[20px]"> 
+                        <ul class="list-disc list-inside flex flex-col gap-[20px]">
+                            <?php while (have_rows('description_repeater')) : the_row(); ?>
+                                <?php if (get_sub_field('description')) : ?>
+                                    <?php if (get_sub_field('class_name') === 'dot-bullet') : ?>
+                                        <li class=""><?php echo esc_html(get_sub_field('description')); ?></li>
+                                    <?php else : ?>
+                                        <p><?php echo esc_html(get_sub_field('description')); ?></p>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            <?php endwhile; ?>
+                        </ul>
                     </div>
                   <?php endif; ?>
                   
