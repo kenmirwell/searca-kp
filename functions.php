@@ -66,6 +66,25 @@
 
     //register blocks
     require_once get_template_directory() . '/includes/register-block-functions/bulleted-text-group.php';
+    require_once get_template_directory() . '/includes/register-block-functions/bulleted-text-group-II-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/initialed-text-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/full-width-image-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/section-name-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/card-section-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/horizontal-bar-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/references-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/quotes-block-fx.php';
+
+    add_action('enqueue_block_editor_assets', function() {
+        wp_register_style('group-block-editor-outline', false);
+        wp_enqueue_style('group-block-editor-outline');
+        wp_add_inline_style('group-block-editor-outline', '
+            .wp-block-group {
+                outline: 4px dashed #a9b3b0;
+                outline-offset: 4px;
+            }
+        ');
+    });
 
 
     add_action('init', 'theme_set_options');

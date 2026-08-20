@@ -21,16 +21,16 @@
     <?php if (have_rows('list_repeater')) : ?>
         <div class="flex flex-col gap-[30px]">
             <?php while (have_rows('list_repeater')) : the_row(); ?>
-                <div class="flex gap-[20px] w-[100%] items-start">
+                <div class="flex flex-col">
                     <?php if (get_sub_field('bullet_icon')) : ?>
-                        <div class="relative w-[100px]">
+                        <div class="relative w-[100%]">
                             <img class="w-full h-full" src="<?php echo esc_url(get_sub_field('bullet_icon')); ?>" alt="">
                         </div>
                     <?php else : ?>
-                        <div class="flex items-center justify-center relative min-w-[30px] h-[30px]" 
+                        <div class="flex items-center justify-center relative w-[30px] h-[30px]" 
                             style="background-color: <?php echo esc_html(get_sub_field('bullet_background_color')); ?>; 
                             border-radius: <?php echo esc_html(get_sub_field('bullet_border_radius')); ?>px">
-                            <p class="absolute text-left text-[14px] md:text-[16px]" style="color: <?php echo esc_html(get_sub_field('bullet_label_color')); ?>"><?php echo esc_html(get_sub_field('bullet_label')); ?></p>
+                            <p class="font-bold absolute text-left text-[24px] md:text-[32px]" style="color: <?php echo esc_html(get_sub_field('bullet_label_color')); ?>"><?php echo esc_html(get_sub_field('bullet_label')); ?></p>
                         </div>
                     <?php endif; ?>
                     <div>

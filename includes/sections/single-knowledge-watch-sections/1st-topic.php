@@ -70,7 +70,7 @@
                       </div>
                   <?php endif; ?>
 
-                 <?php if ($layout === 'inner_group_layout') : ?>
+                <?php if ($layout === 'inner_group_layout') : ?>
                       <div class="p-[40px] rounded-lg border-l border-[#B39354] bg-gradient-to-r from-[#B39354]/[0.24] to-[#B39354]/0 my-[30px]">
                           <?php if (have_rows('text')) : ?>
                               <?php while (have_rows('text')): the_row();
@@ -92,7 +92,6 @@
                           <?php endif; ?>
                       </div>
                   <?php endif; ?>
-                  
                 <?php endwhile; ?>
               </div>
             <?php endwhile; ?>

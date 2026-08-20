@@ -1,4 +1,9 @@
 <?php if (get_sub_field('id') === 'introduction') : ?>
+  <?php if (get_sub_field('section_name') === 'At A Glance') : ?>
+    <h3 class="font-bold text-display-42 pb-[20px]">
+      <?php echo esc_html(get_sub_field('section_name')); ?>
+    </h3>
+  <?php endif; ?>
   <?php if (have_rows('flexicon_repeater')) : ?>
     <?php while (have_rows('flexicon_repeater')) : the_row(); ?>
       <?php if (have_rows('inner_section_repeater')) : ?>
