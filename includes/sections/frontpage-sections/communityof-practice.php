@@ -9,7 +9,7 @@
                 <?php if($page_id) : ?>
                     <?php if (get_field("image_cards_container_title", $page_id)) : ?>
                         <div class="font-semibold">
-                            <h2 class="w-[100%] lg:w-[500px] text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]"><?php echo get_field("image_cards_container_title", $page->ID); ?></h2>
+                            <h2 class="w-[100%] lg:w-[500px] text-display-24 lg:text-display-42 text-[#1f1f1f] pb-[10px]"><?php echo get_field("image_cards_container_title", $page_id); ?></h2>
                         </div>
                     <?php endif; ?>
                 <?php endif; ?>

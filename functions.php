@@ -1,5 +1,21 @@
 <?php
 
+    if (!function_exists('theme_get_page_by_title')) {
+        function theme_get_page_by_title($title, $post_type = 'page') {
+            $query = new WP_Query([
+                'post_type'              => $post_type,
+                'title'                  => $title,
+                'post_status'            => 'publish',
+                'posts_per_page'         => 1,
+                'no_found_rows'          => true,
+                'update_post_meta_cache' => false,
+                'update_post_term_cache' => false,
+            ]);
+
+            return $query->have_posts() ? $query->posts[0] : null;
+        }
+    }
+
     add_action("wp_enqueue_scripts", "tailwind_theme_style");
 
     function tailwind_theme_style() {
@@ -74,6 +90,9 @@
     require_once get_template_directory() . '/includes/register-block-functions/horizontal-bar-block-fx.php';
     require_once get_template_directory() . '/includes/register-block-functions/references-block-fx.php';
     require_once get_template_directory() . '/includes/register-block-functions/quotes-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/bulleted-header-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/badge-header-split-block-fx.php';
+
 
     add_action('enqueue_block_editor_assets', function() {
         wp_register_style('group-block-editor-outline', false);
@@ -260,15 +279,3 @@
     }
 
     add_action('admin_action_duplicate_post', 'custom_duplicate_post');
-    
-
-
-
-
-
-
-    
-
-    
-
-    

@@ -1,30 +1,30 @@
 <div class="relative pt-[80px]">
     <div class="w-[90%] mb-[100px] sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] mx-auto">
-        <div class="bread-crumb-container bg-[#008C67] rounded-full p-[10px] w-fit mb-[20px] md:mb-[50px] min-w-fit max-w-full">
-            <div class="flex text-white justify-center gap-[10px] items-center text-[14px] font-light">
+        <div class="bread-crumb-container bg-[#008C67] rounded-full p-[10px] w-fit mb-[20px] md:mb-[50px] min-w-fit max-w-[280px] sm:max-w-[600px] lg:max-w-[800px]">
+            <div class="flex text-white justify-start gap-[10px] items-center text-[14px] font-light">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
                     <rect width="12" height="12" rx="6" fill="#B59637" fill-opacity="0.6"/>
                 </svg>
-                <a href="/" class="hidden sm:inline cursor-pointer">
+                <a href="/" class="hidden sm:inline shrink-0 whitespace-nowrap cursor-pointer">
                     Home
                 </a>
                 <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden sm:inline shrink-0">
                     <path d="M0.649902 0.649994L4.32444 4.35454C4.75839 4.79204 4.75839 5.50795 4.32444 5.94545L0.649902 9.64999" stroke="white" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span class="hidden sm:inline">
+                <span class="hidden sm:inline shrink-0 whitespace-nowrap">
                     Knowledge
                 </span>
                 <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
                     <path d="M0.649902 0.649994L4.32444 4.35454C4.75839 4.79204 4.75839 5.50795 4.32444 5.94545L0.649902 9.64999" stroke="white" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <a href="https://knowledgeplatform.searca.org/insights/" class="cursor-pointer">
+                <a href="https://knowledgeplatform.searca.org/insights/" class="shrink-0 whitespace-nowrap cursor-pointer">
                     Insights
-                </a >
+                </a>
                 <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0">
                     <path d="M0.649902 0.649994L4.32444 4.35454C4.75839 4.79204 4.75839 5.50795 4.32444 5.94545L0.649902 9.64999" stroke="white" stroke-width="1.3" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <?php if (get_field('bread_crumb')) : ?>
-                    <span class="truncate min-w-0 max-w-[100px] sm:max-w-none">
+                    <span class="truncate min-w-0">
                         <?php echo esc_html(get_field('bread_crumb')); ?>
                     </span>
                 <?php endif; ?>

@@ -23,8 +23,11 @@
             <?php while (have_rows('list_repeater')) : the_row(); ?>
                 <div class="flex gap-[20px] w-[100%] items-start">
                     <?php if (get_sub_field('bullet_icon')) : ?>
-                        <div class="relative w-[100px]">
-                            <img class="w-full h-full" src="<?php echo esc_url(get_sub_field('bullet_icon')); ?>" alt="">
+                        <div class="relative" style="width: <?php echo esc_attr(get_sub_field('bullet_icon_dimension')); ?>px;
+                            background-color: <?php echo esc_html(get_sub_field('bullet_background_color')); ?>; 
+                            border-radius: <?php echo esc_html(get_sub_field('bullet_border_radius')); ?>px
+                        ">
+                            <img class="w-full h-full object-contain" src="<?php echo esc_url(get_sub_field('bullet_icon')); ?>" alt="">
                         </div>
                     <?php else : ?>
                         <div class="flex items-center justify-center relative min-w-[30px] h-[30px]" 
