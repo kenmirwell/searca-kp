@@ -8,7 +8,7 @@
         $faq_list = get_field('faq_list');
         $root_url = get_option('root_url');
 
-        $page = get_page_by_title('Home');
+        $page = theme_get_page_by_title('Home');
 
         set_query_var('page_id', $page->ID);
         set_query_var('root_url', $root_url);
