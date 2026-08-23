@@ -59,7 +59,15 @@ p.wp-block-paragraph {
 }
 
 .wp-block-group {
-    margin-bottom: 80px;
+
+}
+
+.custom-gallery {
+    margin-bottom: 20px !important;
+}
+
+.custom-gallery > .wp-block-group__inner-container {
+    columns: 2;
 }
 
 .insights-bulleted-text {

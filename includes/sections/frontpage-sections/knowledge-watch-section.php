@@ -132,13 +132,12 @@ if ($kw_swiper_query->have_posts()) :
                         </div>
                         <div class="w-[100%] xl:w-[60%] flex flex-col gap-[20px]">
                             <div class="w-[200px] h-[0.5px] bg-[#ffffff] border-black/20"></div>
-                            <?php 
-                                $slide_content = get_the_content();
-                            ?>
-                            <?php if ($slide_content) : ?>
-                                <p class="text-display-16 font-light">
-                                    <?php echo esc_html(wp_trim_words(wp_strip_all_tags($slide_content))); ?>
-                                </p>
+                            <?php if (have_rows('description_repeater')) : ?>
+                                <?php while (have_rows('description_repeater')) : the_row(); ?>
+                                        <div>
+                                            <p class="font-light text-display-14"><?php echo esc_html(get_sub_field('description')); ?></p>
+                                        </div>
+                                <?php endwhile; ?>
                             <?php endif; ?>
                             <a class="flex gap-[20px] text-display-14 font-semibold" href="<?php echo esc_url($slide_link); ?>">
                                 READ FULL STORY 

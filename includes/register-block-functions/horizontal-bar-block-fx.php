@@ -21,7 +21,7 @@
         }
     });
 
-    add_action('enqueue_block_editor_assets', function() {
+    add_action('enqueue_block_assets', function() {
         wp_register_style('horizontal-bar-block-editor-style', false);
         wp_enqueue_style('horizontal-bar-block-editor-style');
         wp_add_inline_style('horizontal-bar-block-editor-style', '

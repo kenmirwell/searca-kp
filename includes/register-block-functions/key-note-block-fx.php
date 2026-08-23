@@ -2,14 +2,14 @@
     add_action('acf/init', function() {
         if( function_exists('acf_register_block_type') ) {
             acf_register_block_type([
-                'name'            => 'bulleted_text_group',
-                'title'           => __('Bulleted Text Group'),
-                'description'     => __('Bulleted group composed of titles, icons and repeaters'),
-                'render_template' => get_template_directory() . '/includes/register-block-templates/bulleted-text-group.php',
+                'name'            => 'key-note-block',
+                'title'           => __('key-note-block'),
+                'description'     => __('Key notes'),
+                'render_template' => get_template_directory() . '/includes/register-block-templates/key-note-block.php',
                 'category'        => 'formatting',
                 'icon'            => [
                                         'background' => '#c1c9ad',
-                                        'foreground' => '#008C67',
+                                        'foreground' => '#0b4133',
                                         'src' => 'list-view',
                                     ],
                 'keywords'        => ['policy', 'messages', 'list'],
@@ -22,12 +22,12 @@
     });
 
     add_action('enqueue_block_assets', function() {
-        wp_register_style('bulleted-text-group-editor-style', false);
-        wp_enqueue_style('bulleted-text-group-editor-style');
-        wp_add_inline_style('bulleted-text-group-editor-style', '
-            .wp-block-acf-bulleted-text-group {
-                background-color: #008C67;
-                border: 3px dashed #008C67;
+        wp_register_style('key-note-block-style', false);
+        wp_enqueue_style('key-note-block-style');
+        wp_add_inline_style('key-note-block-style', '
+            .wp-block-acf-key-note-block {
+                background-color: #0b4133;
+                border: 3px dashed #0b4133;
                 padding: 16px;
                 border-radius: 8px;
             }

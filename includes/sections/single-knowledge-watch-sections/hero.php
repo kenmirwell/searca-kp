@@ -34,13 +34,6 @@
             <div>
                 <h1 class="text-display-24 md:text-display-42 font-semibold"><?php the_title()?></h1>
             </div>
-            <?php if (have_rows('description_repeater')) : ?>
-                <?php while (have_rows('description_repeater')) : the_row(); ?>
-                        <div>
-                            <p><?php echo esc_html(get_sub_field('description')); ?></p>
-                        </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
         </div>
         <div class="flex flex-col md:flex-row gap-[40px] items-start md:items-center">
             <?php if ( have_rows('author_group') ) : ?>

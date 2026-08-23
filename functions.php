@@ -92,7 +92,9 @@
     require_once get_template_directory() . '/includes/register-block-functions/quotes-block-fx.php';
     require_once get_template_directory() . '/includes/register-block-functions/bulleted-header-block-fx.php';
     require_once get_template_directory() . '/includes/register-block-functions/badge-header-split-block-fx.php';
-
+    require_once get_template_directory() . '/includes/register-block-functions/bulleted-htag-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/key-note-block-fx.php';
+    require_once get_template_directory() . '/includes/register-block-functions/card-block-fx.php';
 
     add_action('enqueue_block_editor_assets', function() {
         wp_register_style('group-block-editor-outline', false);
