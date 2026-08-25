@@ -14,7 +14,7 @@
 <?php if (have_rows('reference_repeater')) : ?>
     <div class="flex flex-wrap gap-[30px] mb-[20px]">
         <?php while (have_rows('reference_repeater')) : the_row();  ?>
-          <div class="flex gap-[10px]">
+          <div class="flex gap-[10px] break-words">
               <?php if (get_sub_field('text')) : ?>
                 <span class="font-light text-display-16">
                   <?php echo esc_html(get_sub_field('text')); ?>
