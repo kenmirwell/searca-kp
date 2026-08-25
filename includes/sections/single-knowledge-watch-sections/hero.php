@@ -68,7 +68,7 @@
             <?php endif; ?>
         </div>
     </div>
-    <div class="relative w-full h-[200px] md:h-[575px]">
+    <div class="relative w-full h-[200px] md:h-[475px]">
         <img class="absolute w-full h-full object-cover" src="<?php echo get_field('hero_image'); ?>" alt="hero image">
     </div>
 </div>
