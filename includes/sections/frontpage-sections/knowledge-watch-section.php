@@ -135,7 +135,7 @@ if ($kw_swiper_query->have_posts()) :
                             <?php if (have_rows('description_repeater')) : ?>
                                 <?php while (have_rows('description_repeater')) : the_row(); ?>
                                         <div>
-                                            <p class="font-light text-display-14"><?php echo esc_html(get_sub_field('description')); ?></p>
+                                            <p class="font-light text-display-16"><?php echo esc_html(get_sub_field('description')); ?></p>
                                         </div>
                                 <?php endwhile; ?>
                             <?php endif; ?>

@@ -117,51 +117,53 @@ if ($insights_swiper_query->have_posts()) :
 
                 <div class="relative z-[2] h-full flex justify-center items-center text-white ">
                     <div class="flex justify-between">
-                        <div class="flex flex-col gap-[20px] w-[80%] xl:w-[1280px] mx-auto justify-center">
-                          <div class="w-[100%] xl:w-[50%] flex flex-col gap-[20px]">
-                              <h6 class="text-display-14 font-semibold">INSIGHTS</h6>
-                              <p class="text-display-14 font-light">A monthly digest highlighting relevant policies, strategic initiatives, and key documents shaping the agriculture, forestry, and natural resources sector.</p>
-                          </div>
-                          <div class="w-[100%] xl:w-[60%]">
-                              <h2 class="text-display-24 md:text-display-32 font-semibold">
-                                  <?php echo esc_html($slide_title); ?>
-                              </h2>
-                          </div>
-                          <div class="w-[100%] xl:w-[60%] flex flex-col gap-[20px]">
-                              <div class="w-[200px] h-[0.5px] bg-[#ffffff] border-black/20"></div>
-                              <?php if (have_rows('description_repeater')) : ?>
-                                  <?php while (have_rows('description_repeater')) : the_row(); ?>
-                                          <div>
-                                              <p class="font-light text-display-14"><?php echo esc_html(get_sub_field('description')); ?></p>
-                                          </div>
-                                  <?php endwhile; ?>
-                              <?php endif; ?>
-                              <div class=" flex gap-[20px]">
-                                <a class="flex gap-[20px] text-display-14 font-semibold items-center" href="<?php echo esc_url($slide_link); ?>">
-                                    READ FULL STORY 
-                                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.5 14.3535L21.5 7.35352L14.5 0.353516M21.5 7.35352H0" stroke="white"/>
-                                    </svg>
-                                </a>
-                                <a class="flex gap-[20px] text-display-14 font-semibold items-center" href="https://knowledgeplatform.searca.org/insight/beyond-ending-hunger-what-the-state-of-food-security-and-nutrition-in-the-world-2026-means-for-southeast-asia/"> VIEW ALL INSIGHTS
-                                    <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.5 14.3535L21.5 7.35352L14.5 0.353516M21.5 7.35352H0" stroke="white"/>
-                                    </svg>
-                                </a>
-                              </div>
-                          </div>
-                      </div>
-                      <?php if (have_rows('figures_repeater')) : ?>
-                        <div class="hidden lg:flex flex-col gap-[20px]">
-                          <?php while (have_rows('figures_repeater')) : the_row(); ?>
-                            <div class="p-[20px] flex flex-col gap-[20px] bg-white/30 backdrop-blur-md rounded-2xl w-[300px]">
-                              <p class="text-[#F4C944] font-bold"><?php echo esc_html(get_sub_field('figure')); ?><?php echo esc_html(get_sub_field('unit')); ?></p>
-                              <p class="font-semibold text-white text-display-16"><?php echo esc_html(get_sub_field('description')); ?></p>
-                              <div class="w-[100px] h-[1px] bg-[#F4C944]"></div>
+                        <div class="flex gap-[20px] w-[80%] xl:w-[1280px] mx-auto justify-between items-center">
+                            <div>
+                                <div class="w-[100%] xl:w-[50%] flex flex-col gap-[20px] pb-[20px]">
+                                    <h6 class="text-display-14 font-semibold">INSIGHTS</h6>
+                                    <p class="text-display-14 font-light">A monthly digest highlighting relevant policies, strategic initiatives, and key documents shaping the agriculture, forestry, and natural resources sector.</p>
+                                </div>
+                                <div class="w-[100%] xl:w-[60%] pb-[20px]">
+                                    <h2 class="text-display-24 md:text-display-32 font-semibold">
+                                        <?php echo esc_html($slide_title); ?>
+                                    </h2>
+                                </div>
+                                <div class="w-[100%] xl:w-[60%] flex flex-col gap-[20px]">
+                                    <div class="w-[200px] h-[0.5px] bg-[#ffffff] border-black/20"></div>
+                                    <?php if (have_rows('description_repeater')) : ?>
+                                        <?php while (have_rows('description_repeater')) : the_row(); ?>
+                                                <div>
+                                                    <p class="font-light text-display-14"><?php echo esc_html(get_sub_field('description')); ?></p>
+                                                </div>
+                                        <?php endwhile; ?>
+                                    <?php endif; ?>
+                                    <div class=" flex gap-[20px]">
+                                        <a class="flex gap-[20px] text-display-14 font-semibold items-center" href="<?php echo esc_url($slide_link); ?>">
+                                            READ FULL STORY 
+                                            <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.5 14.3535L21.5 7.35352L14.5 0.353516M21.5 7.35352H0" stroke="white"/>
+                                            </svg>
+                                        </a>
+                                        <a class="flex gap-[20px] text-display-14 font-semibold items-center" href="https://knowledgeplatform.searca.org/insight/beyond-ending-hunger-what-the-state-of-food-security-and-nutrition-in-the-world-2026-means-for-southeast-asia/"> VIEW ALL INSIGHTS
+                                            <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14.5 14.3535L21.5 7.35352L14.5 0.353516M21.5 7.35352H0" stroke="white"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                          <?php endwhile; ?>
+                            <?php if (have_rows('figures_repeater')) : ?>
+                                <div class="hidden lg:flex flex-col gap-[20px]">
+                                <?php while (have_rows('figures_repeater')) : the_row(); ?>
+                                    <div class="p-[20px] flex flex-col gap-[20px] bg-white/30 backdrop-blur-md rounded-2xl w-[300px]">
+                                        <p class="text-[#F4C944] font-bold"><?php echo esc_html(get_sub_field('figure')); ?><?php echo esc_html(get_sub_field('unit')); ?></p>
+                                        <p class="font-semibold text-white text-display-16"><?php echo esc_html(get_sub_field('description')); ?></p>
+                                        <div class="w-[100px] h-[1px] bg-[#F4C944]"></div>
+                                    </div>
+                                <?php endwhile; ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
-                      <?php endif; ?>
                     </div>
                 </div>
             </div>
