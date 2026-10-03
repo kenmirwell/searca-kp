@@ -4,9 +4,6 @@
     while (have_posts()) {
         the_post();
 
-    $page = get_page_by_title('Consortium-ii');
-    
-    set_query_var('page_id', $page->ID);
 
 ?>
     

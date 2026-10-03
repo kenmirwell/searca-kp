@@ -34,7 +34,7 @@
                 $search_text = strtolower($display_title . ' ' . $title . ' ' . $label);
       ?>
 
-      <div class="border-b-[1px] border-[#DADADA] w-[100%] md:w-[447px] knowledge-card" 
+      <div class="border-b-[1px] border-[#DADADA] w-[100%] md:w-[390px] knowledge-card" 
            data-search="<?php echo esc_attr($search_text); ?>">
         <div class="relative w-full h-[250px] lg:h-[350px] rounded-lg group overflow-hidden">
           <?php if ($hero_image) : ?>

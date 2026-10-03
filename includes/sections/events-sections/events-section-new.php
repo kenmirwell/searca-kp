@@ -39,7 +39,7 @@
                                 }
                             }
                         ?>
-                            <div class="w-[100%] md:w-[447px] shadow">
+                            <div class="w-[100%] md:w-[390px] shadow">
                                 <div class="relative w-full h-[350px] rounded-lg group overflow-hidden">
                                     <img class="w-full h-full object-cover" src="<?php echo esc_url($event_thumbnail); ?>" alt="event thumbnail">
                                 </div>

@@ -30,7 +30,8 @@
     </div>
     <?php get_template_part("includes/sections/frontpage-sections/knowledge-resources"); ?>
     <?php get_template_part("includes/sections/frontpage-sections/capri-section"); ?>
-    <?php get_template_part("includes/sections/frontpage-sections/communityof-practice"); ?> 
+    <!-- remove COP for now -->
+    <?php //get_template_part("includes/sections/frontpage-sections/communityof-practice"); ?> 
 <?php 
     }
     get_footer();

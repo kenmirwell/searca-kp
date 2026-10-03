@@ -29,6 +29,7 @@
                 $link  = get_permalink();
                 $label = get_field('label');
                 $title = get_field('title');
+                $volume = get_field('volume');
 
                 $published_date_raw = get_field('published_date');
                 $published_date = '';
@@ -43,7 +44,7 @@
                 $search_text = strtolower($display_title . ' ' . $title . ' ' . $label);
       ?>
 
-      <div class="border-b-[1px] border-[#DADADA] w-[100%] md:w-[447px] knowledge-card" 
+      <div class="border-b-[1px] border-[#DADADA] w-[100%] md:w-[390px] knowledge-card" 
            data-search="<?php echo esc_attr($search_text); ?>">
         <div class="relative w-full h-[250px] rounded-lg group overflow-hidden">
           <?php if (has_post_thumbnail()) : ?>
@@ -55,12 +56,12 @@
         <div class="flex flex-col gap-[20px] py-[20px]">
 
           <div class="flex justify-between text-[#343434]">
-            <?php if ($title) : ?>
-              <span class="text-[#343434]"><?php echo esc_html($title); ?></span>
+            <?php if ($volume) : ?>
+              <span class="text-[#343434] text-display-14">AFNR Knowledge Watch Issue No. <?php echo esc_html($volume); ?></span>
             <?php endif; ?>
 
             <?php if ($published_date) : ?>
-              <span class="text-[#343434]"><?php echo esc_html($published_date); ?></span>
+              <span class="text-[#343434] text-display-14"><?php echo esc_html($published_date); ?></span>
             <?php endif; ?>
           </div>
 

@@ -3636,10 +3636,6 @@ video {
     height: 500px;
   }
 
-  .md\:h-\[575px\] {
-    height: 575px;
-  }
-
   .md\:h-auto {
     height: auto;
   }
@@ -3668,12 +3664,12 @@ video {
     width: 33.33%;
   }
 
-  .md\:w-\[400px\] {
-    width: 400px;
+  .md\:w-\[390px\] {
+    width: 390px;
   }
 
-  .md\:w-\[447px\] {
-    width: 447px;
+  .md\:w-\[400px\] {
+    width: 400px;
   }
 
   .md\:w-\[50\%\] {

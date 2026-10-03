@@ -190,7 +190,7 @@
             </div>
             <ul class="text-[#ffffff] hidden md:flex flex-wrap lg:flex-nowrap justify-end text-[12px] md:text-[14px] lg:text-[16px] gap-[7px] lg:gap-[20px]">
                 <li class="hover:border-b-[2px]"><a href="https://knowledgeplatform.searca.org/faqs/">FAQ</a></li>
-                <li class="hover:border-b-[2px]"><a href="https://knowledgeplatform.searca.org/privacy-policy/">Terms of Service</a></li>
+                <li class="hover:border-b-[2px]"><a href="https://knowledgeplatform.searca.org/terms-of-service/">Terms of Service</a></li>
                 <li class="hover:border-b-[2px]"><a href="https://knowledgeplatform.searca.org/privacy-policy/">Privacy Policy</a></li>
             </ul>
         </div>

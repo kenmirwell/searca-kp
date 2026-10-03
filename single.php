@@ -46,7 +46,7 @@
                                 }
                             ?>
                         </div>
-                        <?php if($permission[0]) { ?>
+                        <?php if( !empty($permission) && $permission[0] ) { ?>
                             <?php if( ! is_user_logged_in() ) { ?>
                                 <div class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease " onclick="onModal('login-modal')" >
                                     <span>Premium access please login</span>
@@ -60,7 +60,7 @@
                             <a class="flex justify-center w-[100%] p-[10px] cursor-pointer bg-[#f3bd1c] hover:bg-[#ffefbe] ransition-all duration-300 ease " href="<?php echo $external_source ?>">
                                 <span>Download</span>
                             </a> 
-                        <?php }?>                            
+                        <?php }?>                        
                     </div>
                 </div>
                 <div class="w-[70%]">

@@ -42,7 +42,7 @@
                         <?php 
                             foreach ($subtopic_group as $subtopic) : 
                                 $sub_topics_description = $subtopic["sub_topics_description"];
-                                $type = $sub_topics_description['bullet_type'];
+                                $type = $sub_topics_description['bullet_type'] ?? '';
                                 $color = $sub_topics_description['bullet_color'] ?? '#096936'; 
                         ?>
                                 <div class="text-[#000000] flex flex-col">
